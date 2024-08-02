@@ -102,10 +102,20 @@ transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
 .search_box{
-    width : 60%;
+    width : 800px;
     border : 2px solid rgb(130,170,73);  
 }
 
 .width{
     width :100%;
+}
+
+.viewWidth{
+    width : 1200px;
+}
+
+.header1{
+    justify-content: space-around;
+    align-items: center;
+    margin : auto;
 }
