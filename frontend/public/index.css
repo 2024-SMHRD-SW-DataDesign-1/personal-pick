@@ -122,4 +122,19 @@ table {
   margin: auto;
 }
 
+.star {
+  width: 10px;
+  height: 10px;
+}
+
+.cos_conater {
+  position: relative;
+  top: -100px;
+  background-color: rgb(236, 204, 204);
+}
+
+.swiper {
+  width: 50%;
+}
+
 /*# sourceMappingURL=index.css.map */
