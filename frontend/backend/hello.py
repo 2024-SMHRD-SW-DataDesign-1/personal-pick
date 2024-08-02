@@ -1,7 +1,8 @@
 from flask_restx import Resource
 from flask import jsonify, request
 from db_utils import testQu, setQuery
-  
+import pymysql
+
 class test(Resource):
 
     def get(self):
@@ -30,12 +31,14 @@ class test(Resource):
 
 
     def post(self): 
+        print('pymysql Version :', pymysql.__version__)
+
         print(request.get_json())
-        # print("getjson1 : ",request.get_json()['data']['name'])
-        # print("getjson2 : ",request.get_json()['data']['id'])
-        # print("getjson3 : ",request.get_json()['data']['pw'])
-        # print("getjson4 : ",request.get_json()['data']['nm'])   
-        sql = "INSERT INTO TEST(NAME, ID, PW, NM) VALUES(%s, %s, %s, %s)"
+        print("getjson1 : ",request.get_json()['data']['name'])
+        print("getjson2 : ",request.get_json()['data']['id'])
+        print("getjson3 : ",request.get_json()['data']['pw'])
+        print("getjson4 : ",request.get_json()['data']['nm'])   
+        sql = "INSERT INTO test(name, id, pw, nm) VALUES(%s, %s, %s, %s)"
         value = request.get_json()['data']['name'], request.get_json()['data']['id'], request.get_json()['data']['pw'], request.get_json()['data']['nm']
 
         testQu(sql, value)
