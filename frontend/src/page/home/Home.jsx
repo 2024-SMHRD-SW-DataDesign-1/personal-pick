@@ -12,7 +12,7 @@ const Home = () => {
     const [data, setData] = useState([]);
     
     useEffect(()=>{
-        sendGet(URL+'/ppMain', setData);
+        sendGet(URL+'/DetailPage', setData);
     },[])
     
     

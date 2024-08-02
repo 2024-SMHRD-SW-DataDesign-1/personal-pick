@@ -12,11 +12,8 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.25.1",
     "react-scripts": "5.0.1",
-<<<<<<< HEAD
     "sass": "^1.77.8",
-=======
     "swiper": "^11.1.9",
->>>>>>> 3fdb13de089db5b9598584b970406b2c59180230
     "web-vitals": "^2.1.4"
   },
   "scripts": {
