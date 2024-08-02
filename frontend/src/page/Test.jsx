@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { sendPost } from '../util/util';
+import { sendPost, URL } from '../util/util';
 
 
 
@@ -19,13 +19,13 @@ const Test = () => {
 
 
     function sendGreenLite(){
-        // sendPost(
-        //     URL + "/HelloTest",
-        //     null, 
-        //     {name:value1, id:value2 , pw:value3 , nm:value4}
-        // )
-        // console.log(1)
-        // // console.log(value1);
+        sendPost(
+            URL + "/HelloTest",
+            null, 
+            {name:value1, id:value2 , pw:value3 , nm:value4}
+        )
+        console.log(1)
+        // console.log(value1);
     }
     // /test
 
