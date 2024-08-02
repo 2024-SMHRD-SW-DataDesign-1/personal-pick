@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 // npm i react-router-dom 
 // npm install concurrently --save : 서버와 클라이언트를 한번에 실행시키기위한 라이브러리
 // npm i axios
+// npm i sass
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>

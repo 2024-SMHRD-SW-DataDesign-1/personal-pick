@@ -28,6 +28,7 @@ def setQuery(sql=None, data = None):
 
 
 
+
 def testQu(sql = None, data = None):
     # MySQL 데이터베이스 연결
     db = pymysql.connect(
@@ -40,9 +41,10 @@ def testQu(sql = None, data = None):
     
     # 데이터에 접근
     cursor = db.cursor()
+
     cursor.execute(sql,data)
     
-    # DB 연결 종료
+    
     db.commit()
     db.close()
     return data
