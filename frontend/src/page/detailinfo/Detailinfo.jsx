@@ -16,7 +16,8 @@ const Detailinfo = () => {
     },[])
 
   return (
-        <div>
+        <div className='container'>
+
         {list.map((item) => (
             <div key = {item.idx}>
 
@@ -29,11 +30,9 @@ const Detailinfo = () => {
                 <img src ={item.cos_img_src}/>
                 </div>
 
-                <div className='iteminfo'>
 
                 <div className='brand'>
-                <img src = {item.brand_img_src}/>
-                <p>{item.brand_name}</p>
+                <img src = {item.brand_img_src}/> <p>{item.brand_name}</p>
                 </div>
 
                 <p>{item.cos_name}</p>
@@ -42,7 +41,6 @@ const Detailinfo = () => {
                 </div>
 
 
-                </div>
         ))}
 
     </div>
