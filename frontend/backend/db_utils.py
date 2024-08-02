@@ -1,7 +1,6 @@
 import pymysql
 
 def setQuery(sql=None, data = None):
-<<<<<<< HEAD
     # MySQL 데이터베이스 연결
     db = pymysql.connect(
         host='project-db-cgi.smhrd.com',
@@ -11,25 +10,7 @@ def setQuery(sql=None, data = None):
         db='campus_24SW_DD_p2_1', 
         charset='utf8mb4'
     )
-=======
-    # # MySQL 데이터베이스 연결
-    # db = pymysql.connect(
-    #     host='127.0.0.1',
-    #     user='root',
-    #     password='1234',
-    #     db='recipe', 
-    #     charset='utf8mb4'
-    # )
->>>>>>> 278433339d7216e1da553442c00ea2d1d89631f0
-    
-    db = pymysql.connect(
-    host='project-db-cgi.smhrd.com',    # 데이터베이스 호스트 주소
-    port=3307,                          # 데이터베이스 포트 번호
-    user='campus_24SW_DD_p2_1',         # 사용자 이름
-    password='smhrd1',                  # 비밀번호
-    db='Project_1',                     # 데이터베이스 이름
-    charset='utf8mb4'                   # 문자 인코딩
-    )
+
 
     # 데이터에 접근
     cursor = db.cursor()
@@ -52,7 +33,6 @@ def setQuery(sql=None, data = None):
 
 def testQu(sql = None, data = None):
     # MySQL 데이터베이스 연결
-<<<<<<< HEAD
     db = pymysql.connect(
         host='project-db-cgi.smhrd.com',
         port=3307,
@@ -60,24 +40,6 @@ def testQu(sql = None, data = None):
         password='smhrd1',
         db='campus_24SW_DD_p2_1', 
         charset='utf8mb4'
-    )
-=======
-    # db = pymysql.connect(
-    #     host='127.0.0.1',
-    #     user='root',
-    #     password='1234',
-    #     db='recipe', 
-    #     charset='utf8mb4'
-    # )
->>>>>>> 278433339d7216e1da553442c00ea2d1d89631f0
-    
-    db = pymysql.connect(
-    host='project-db-cgi.smhrd.com',    # 데이터베이스 호스트 주소
-    port=3307,                          # 데이터베이스 포트 번호
-    user='campus_24SW_DD_p2_1',         # 사용자 이름
-    password='smhrd1',                  # 비밀번호
-    db='Project_1',                     # 데이터베이스 이름
-    charset='utf8mb4'                   # 문자 인코딩
     )
 
     # 데이터에 접근
