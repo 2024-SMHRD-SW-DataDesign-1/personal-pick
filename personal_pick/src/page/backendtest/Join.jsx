@@ -17,7 +17,7 @@ const Join = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post(URL + "/join", {
+            const response = await axios.post(URL + "/JoinPage", {
                 name,
                 nickname,
                 id,
