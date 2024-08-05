@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import InputBox from "../../components/inputbox/InputBox";
 import { sendGet, URL } from "../../util/util";
 import Category from "../../components/category/Category";
-import Itemview from "../../components/itemview/Itemveiw"
+import Itemview from "../../components/itemview/Itemview"
 
 // <div className='MainView inner'>    
 

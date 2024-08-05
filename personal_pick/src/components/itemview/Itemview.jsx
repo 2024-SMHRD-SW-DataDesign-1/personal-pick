@@ -1,4 +1,5 @@
 import React from 'react'
+import './Itemview.scss'
 
 const Itemveiw = () => {
 
@@ -73,12 +74,13 @@ const Itemveiw = () => {
 
 
   return (
-    <div>
+    <div className='flex_row alldiv'>
         {itemDic.map((item) => (
-            <div key={item.idx}>
+            <div className='itemBox' key={item.idx}>
                 <p> {item.brand_name} {item.cos_name}</p>
                 <p>{item.grade} ({item.grade_count})</p>
                 <p>정가 {item.price}원 / {item.vol}ml</p>
+                < br />
                 
             </div>
 
