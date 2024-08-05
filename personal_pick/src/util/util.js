@@ -42,8 +42,8 @@ export function sendDel(url, func=null, data=null)
         })
 }
 
-export const URL = "http://192.168.219.111:5001";
-<<<<<<< HEAD
-// export const URL = "http://192.168.219.81:5001";
-=======
->>>>>>> 864d38c621427ef89e485e5025daa9fde8ee6690
+// export const URL = "http://192.168.219.111:5001";
+
+export const URL = "http://192.168.219.81:5001";
+
+
