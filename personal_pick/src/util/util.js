@@ -87,7 +87,6 @@ export const dummyCategory = {
 }
 
 export function showSwal(strTag){
-    console.log(strTag)
     withReactContent(Swal).fire({
         title: "Custom animation with Animate.css",
         html : strTag,

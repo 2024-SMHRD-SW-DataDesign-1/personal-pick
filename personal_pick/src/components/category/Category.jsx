@@ -5,12 +5,16 @@ const titleList = [
     "카테고리 전체", "스킨케어", "클랜징/필링", "마스크/팩", "선케어", 
     "바디", "헤어", "네일", "향수", "기타"
 ]
+function test(e)
+{
+    console.log(1);
+}
 
 function showModal()
 {
     let str = "";
     titleList.map((item, idx)=>{
-        str += `<div onClick="${underView(idx)}">${item}</div>`;
+        str += `<div onClick=${(e)=>test(e)}>${item}</div>`;
     })
     
     showSwal(str)
