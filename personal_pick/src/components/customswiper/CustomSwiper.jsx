@@ -1,18 +1,16 @@
-// npm install swiper
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules';
-// Import Swiper styles
+import './CustomSwiper.scss'
 import 'swiper/css';
 import { useEffect, useState } from 'react';
 import Star from '../../img/별.png'
 
 const CustomSwiper = ({ list }) => {
-    console.log(list)
+    
     return (
         <Swiper
             modules={[Autoplay]}
-            spaceBetween={2000}
+            spaceBetween={0}
             slidesPerView={1}
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}
@@ -43,9 +41,6 @@ const CustomSwiper = ({ list }) => {
                 </SwiperSlide>
                 )
             })}
-            
-
-
         </Swiper>
     );
 };

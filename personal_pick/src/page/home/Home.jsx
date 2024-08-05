@@ -4,11 +4,29 @@ import CustomSwiper from '../../components/customswiper/CustomSwiper'
 import { useNavigate } from "react-router-dom";
 import InputBox from "../../components/inputbox/InputBox";
 import { sendGet, URL } from "../../util/util";
+import Category from "../../components/category/Category";
+import Itemview from "../../components/itemview/Itemview"
+
+
+// <div className='MainView inner'>    
+
+// {/* Main */}
+// <div className='viewWidth flex_col '>
+//     <img src="" alt="팀로고" />
+//     <InputBox func={show}/>
+// </div>
+// <CustomSwiper list={data}/>
+// <p>
+//     화해 고객들이 직접 선택한 랭킹🎁
+// </p>
+
+// </div>
 
 function show(data)
 {
     console.log(data)
 }
+
 const Home = () => {
     // 페이지 이동 함수
     const nav = useNavigate();
@@ -25,17 +43,24 @@ const Home = () => {
     // 데이터 로드 확인
 
     return (
-        <div className='width'>    
+        <div id='wrapper' className='MainView inner'>    
 
             {/* Main */}
-            <div id="main" className='viewWidth flex_col header1'>
+            <div className='flex_col width inner'>
                 <img src="" alt="팀로고" />
                 <InputBox func={show}/>
             </div>
-            <CustomSwiper list={data}/>
-
-
+            <div>
+                <CustomSwiper list={data}/>
+            </div>
+            <p>
+                화해 고객들이 직접 선택한 랭킹🎁
+            </p>
+            <Category/>
+            <Itemview/>
+            
         </div>
+        
     );
 };
 
