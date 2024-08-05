@@ -35,48 +35,63 @@ const Search = () => {
             // 최신 검색어 리스트를 반환하여 상태 업데이트
             return newHistory;
         });
- };
+    };
 
 
- // 검색어를 삭제하는 함수
- const searchDelete = (indexToDelete) => {
-    // filter 메서드는 주어진 함수를 실행하여 조건을 만족하는 요소를 모아 새로운 배열로 반환
-    // 여기서 (_(=item), index) => index !== indexToDelete 함수는 
-    // 각 요소의 인덱스(index)가 indexToDelete와 같지 않은 요소만 새로운 배열에 포함시킴
-    // item을 사용하지 않기에 _ 로 표기 => 해당 인자를 사용하지 않겠다는 의미
-    setSearchHistory((prevHistory) => 
-        prevHistory.filter((_, index) => index !== indexToDelete)
-    );
-};
+    // 검색어를 삭제하는 함수
+    const searchDelete = (indexToDelete) => {
+        // filter 메서드는 주어진 함수를 실행하여 조건을 만족하는 요소를 모아 새로운 배열로 반환
+        // 여기서 (_(=item), index) => index !== indexToDelete 함수는 
+        // 각 요소의 인덱스(index)가 indexToDelete와 같지 않은 요소만 새로운 배열에 포함시킴
+        // item을 사용하지 않기에 _ 로 표기 => 해당 인자를 사용하지 않겠다는 의미
+        setSearchHistory((prevHistory) =>
+            prevHistory.filter((_, index) => index !== indexToDelete)
+        );
+    };
 
     return (
         <div>
             <div className=''>
                 {/* InputBox 컴포넌트에 searchAdd 함수를 전달하여 검색어 입력 시 호출되게 함 */}
                 <InputBox func={searchAdd}></InputBox>
-                <div style={{ height: '120px' }}>
-                    <h2>최근 검색어</h2>
-                    <ul>
+                {/* <div style={{ height: '120px' }}> */}
+                <div>
+                    <div className='recent'>
+                        <h2>최근 검색어</h2>
+                    </div>
+                    <div className='search'>
                         {/* 검색 기록을 화면에 표시 */}
                         {searchHistory.map((item, index) => (
                             // 각 검색어를 리스트 아이템으로 표시
-                            <li key={index}>{item}<button onClick={() => searchDelete(index)}> X</button></li>
+                            <span key={index}>{item}<button onClick={() => searchDelete(index)}> X</button></span>
                             // <li key="0">검색어1</li>
                             // <li key="1">검색어2</li>
                             // <li key="2">검색어3</li>
                         ))}
-                    </ul>
+                    </div>
+                    <hr className='line' />
                 </div>
                 {/* 서버에서 가져온 제품 리스트를 화면에 표시 */}
-                {list.map((item) => (
-                    <div key={item.idx}>
-                        <img src={item.cos_img_src} style={{ width: '80px' }} alt={item.cos_name}></img>
-                        <p>브랜드명: {item.brand_name} 상품이름: {item.cos_name}</p>
-                        <p>⭐평점: {item.grade} (평점수: {item.grade_count})</p>
-                        <p>ml/g: {item.vol}ml / 가격: {item.price}원</p>
-                        <br />
-                    </div>
-                ))}
+                <div className='product'>
+                    <h2>제품</h2>
+                </div>
+                <div className='products'>
+                    <ul>
+                        {list.map((item) => (
+                            <li className='product1' key={item.idx}>
+                                <a className='flex' href="">
+                                    <span><img src={item.cos_img_src} style={{ width: '80px' }} alt={item.cos_name}></img></span>
+                                    <div className='items'>
+                                    <div><span>브랜드명: {item.brand_name}</span> <span>상품이름: {item.cos_name}</span></div> <br />
+                                    <div><span>⭐평점: {item.grade}</span> <span>(평점수: {item.grade_count})</span></div> <br />
+                                    <div><span>ml/g: {item.vol}ml / 가격: {item.price}원</span></div>
+                                    <br />
+                                    </div>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </div>
     );

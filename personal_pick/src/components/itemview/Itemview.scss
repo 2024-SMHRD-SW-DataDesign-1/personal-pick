@@ -1,6 +1,6 @@
 .alldiv{
-    height: 400px;
-    width: 800px;
+    height: 500px;
+    width: 700px;
     flex-wrap: wrap;
     text-align: center;
     
@@ -9,8 +9,34 @@
 .itemBox{
     color: black;
     // display: flex;
-    height: 120px;
-    width: 300px;
-    
+    height: 160px;
+    width: 400px;
+}
+
+
+.rank_brand_name{
+    font-size: 15px;
+    color: gray;
+}
+
+.rank_cos_name{
+    color: rgb(34, 33, 33);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.rank_cos_price{
+    font-size: 17px;
+    color: rgb(92, 89, 89);
+    font-weight: bold;
+}
+.rank_cos_grade{
+    color: rgb(92, 89, 89);
+    font-size: 13px;
+}
+
+.cos_grade_cnt{
+    color: rgb(156, 154, 154);
+    font-size: 13px;
 
 }
