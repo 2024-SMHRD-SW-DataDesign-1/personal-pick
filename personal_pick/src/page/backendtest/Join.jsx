@@ -3,6 +3,7 @@ import axios from 'axios'
 import { URL } from '../../util/util'
 import { useNavigate } from 'react-router-dom';
 
+// 000
 const Join = () => {
     // 페이지 이동 함수
     const navigate = useNavigate();
@@ -18,17 +19,19 @@ const Join = () => {
         event.preventDefault();
         try {
             const response = await axios.post(URL + "/JoinPage", {
-                name,
-                nickname,
-                id,
-                pw
+                name: name,
+                nickname: nickname,
+                id: id,
+                pw: pw
             });
-            setMessage(response.data.message);
+            
 
-            if (response.status === 201) {
+            if (response.data === 201) {
                 // 회원가입 성공 시 홈 페이지로 이동
                 alert('회원가입 성공');
                 navigate('/');
+            }else{
+                setMessage("회원가입 실패");
             }
 
         } catch (error) {
