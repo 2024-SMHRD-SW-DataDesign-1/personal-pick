@@ -18,7 +18,7 @@ const Home = () => {
 
     // [] -> 첫 렌더링에만 실행
     useEffect(()=>{        
-        sendGet(URL+'/detailPage', setData);        
+        sendGet(URL+'/MainPage', setData);        
     },[])
 
     // data 값이 변경될 때마다 실행
