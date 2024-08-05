@@ -42,13 +42,8 @@ export function sendDel(url, func=null, data=null)
         })
 }
 
-<<<<<<< HEAD
 export const URL = "http://192.168.219.111:5001";
-//export const URL = "http://192.168.219.97:5001";
-=======
-// export const URL = "http://192.168.219.111:5001";
-
-export const URL = "http://192.168.219.81:5001";
+// export const URL = "http://192.168.219.81:5001";
 
 export const dummyCategory = {
     skinCare : [
@@ -66,4 +61,3 @@ export const dummyCategory = {
     ]
 
 }
->>>>>>> 6e56b370b2b720141daa533e3239c3e022afb01d
