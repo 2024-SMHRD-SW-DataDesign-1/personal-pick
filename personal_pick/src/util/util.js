@@ -23,7 +23,7 @@ export function sendPost(url, func=null, data = null) {
             data : data
         })
         .then(res => {
-
+            // func()
         })
         .catch(error => {
             console.error("요청 실패 : ", error);
