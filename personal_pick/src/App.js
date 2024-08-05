@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Home from './page/home/Home';
 import Search from './page/search/Search';
+import Mypage from './page/backendtest/Mypage';
 import Detailinfo from './page/detailinfo/Detailinfo';
 import Login from './page/backendtest/Login';
 import Join from './page/backendtest/Join';
@@ -15,6 +16,7 @@ function App() {
                     <Route path='/' element={<Home />}></Route>
                     <Route path='/join' element={<Join />}></Route>
                     <Route path='/login' element={<Login />}></Route>
+                    <Route path='/mypage' element={<Mypage />}></Route>
                     <Route path='/search' element={<Search />}></Route>
                     <Route path='/detailinfo' element={<Detailinfo />}></Route>
                 </Routes>
