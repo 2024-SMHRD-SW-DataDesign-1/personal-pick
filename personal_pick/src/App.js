@@ -1,10 +1,11 @@
 // npm i -s react-router-dom
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './page/Home';
-import Join from './page/Join';
-import Login from './page/Login';
-import Search from './page/Search'
-import Detailinfo from './page/Detailinfo';
+
+import Home from './page/home/Home';
+import Search from './page/search/Search';
+import Detailinfo from './page/detailinfo/Detailinfo';
+import Login from './page/backendtest/Login';
+import Join from './page/backendtest/Join';
 
 function App() {
     return (
