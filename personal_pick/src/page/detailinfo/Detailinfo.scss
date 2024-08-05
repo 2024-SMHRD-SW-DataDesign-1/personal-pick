@@ -12,12 +12,23 @@
   }
 
 
-.itemname {
+  .itemname {
+    position: fixed;
+    height: 38px;
+    background: white;
     text-align: center;
-    font-size: 25px;
-    font-family: 'Pretendard-Regular';
-    height: 95px;
+    width: 31.6%;
+    border-bottom: 1px solid silver;
 }
+
+.itemname label {
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    transform: translateY(-50%);
+    font-family: "Pretendard-Regular";
+}
+
 .brandimg {
     border: 1px;
 }
@@ -37,12 +48,13 @@
 
 #brandname {
     display: flex;
-    transform: translate(42px, -28px);
+    transform: translate(38px, -25px);
 }
 
 .nameinfo {
     display: flex;
     font-size: 25px;
+    font-weight: 700;
 }
 
 .priceinfo {
@@ -53,6 +65,7 @@
 .price {
     display: flex;
     margin-right: 40px;
+    font-weight: 700;
 }
 
 .rankinginfo {
@@ -63,4 +76,19 @@
 .ranking {
     display: flex;
     margin-right: 40px;
+    font-weight: 700;
 }
+
+.reviewinfo {
+    font-family: 'Pretendard-Regular';
+    font-weight: 700;
+    font-size: 23px;
+    transform: translate(0px, 85px);
+}
+
+#main1{
+    /* float: left; */
+    height: 149vh;
+    background-color: greenyellow;
+}
+

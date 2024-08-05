@@ -131,12 +131,6 @@ table {
   height: 10px;
 }
 
-.cos_conater {
-  position: relative;
-  top: -100px;
-  background-color: rgb(236, 204, 204);
-}
-
 #wrapper {
   height: 100vh;
   width: 100%;
