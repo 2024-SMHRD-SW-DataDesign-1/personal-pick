@@ -14,7 +14,9 @@ const Search = () => {
     
     
     useEffect(() => {
-        sendGet(URL + "/ppMain", showConsole)
+        sendGet(URL + "/MainPage", showConsole)
+        // sendGet(URL + "/ppMain", showConsole)
+
     }, [])
     
     
@@ -39,7 +41,9 @@ const Search = () => {
         <div>
             <div className=''>
                 <InputBox func={setSearch}></InputBox>
-                <h2>최근 검색어</h2>
+                <div style={{height:'80px'}}>
+                    <h2>최근 검색어</h2>
+                </div>
                 {list.map((item) => (
                     <div key={item.idx}>
                         <img src={item.cos_img_src} style={{width:'80px'}}></img>
