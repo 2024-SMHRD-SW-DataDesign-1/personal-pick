@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import InputBox from '../../components/inputbox/InputBox';
 import { sendGet, URL } from '../../util/util';
 import './Search.scss';
+import Star from '../../img/별.png'
 
 const Search = () => {
     // 내가 찾고 싶은 제품을 검색했을 때 나타나는 제품리스트
@@ -63,7 +64,9 @@ const Search = () => {
                         {/* 검색 기록을 화면에 표시 */}
                         {searchHistory.map((item, index) => (
                             // 각 검색어를 리스트 아이템으로 표시
-                            <span key={index}>{item}<button onClick={() => searchDelete(index)}> X</button></span>
+
+                            <span className='recent_search' key={index}>{item}<button onClick={() => searchDelete(index)}> X</button></span>
+
                             // <li key="0">검색어1</li>
                             // <li key="1">검색어2</li>
                             // <li key="2">검색어3</li>
@@ -80,11 +83,11 @@ const Search = () => {
                         {list.map((item) => (
                             <li className='product1' key={item.idx}>
                                 <a className='flex' href="">
-                                    <span><img src={item.cos_img_src} style={{ width: '80px' }} alt={item.cos_name}></img></span>
+                                    <span><img src={item.cos_img_src} style={{ width: '90px' }} alt={item.cos_name}></img></span>
                                     <div className='items'>
-                                    <div><span>브랜드명: {item.brand_name}</span> <span>상품이름: {item.cos_name}</span></div> <br />
-                                    <div><span>⭐평점: {item.grade}</span> <span>(평점수: {item.grade_count})</span></div> <br />
-                                    <div><span>ml/g: {item.vol}ml / 가격: {item.price}원</span></div>
+                                    <div><span className='gray'>{item.brand_name}</span> <span>{item.cos_name}</span></div> <br />
+                                    <div><span>⭐<img className='star' src={Star} alt="" ></img>{item.grade}</span> <span className='gray'>({item.grade_count})</span></div> <br />
+                                    <div><span>{item.vol}ml / {item.price}원</span></div>
                                     <br />
                                     </div>
                                 </a>
