@@ -1,13 +1,12 @@
 import axios from 'axios'
+import withReactContent from 'sweetalert2-react-content'
+import Swal from 'sweetalert2'
+import 'animate.css';
 
 export function sendGet(url, func=null ) {
-    console.log("sendGet 호출 성공");
     axios
         .get(url)
         .then(res => {
-            console.log("sendGet 요청 성공");
-            console.log("응답 데이터 : ", res.data);
-            
             if (func) {
                 func(res.data);
             }
@@ -42,9 +41,8 @@ export function sendDel(url, func=null, data=null)
         })
 }
 
-// export const URL = "http://192.168.219.111:5001";
-
-export const URL = "http://192.168.219.81:5001";
+export const URL = "http://192.168.219.111:5001";
+// export const URL = "http://192.168.219.81:5001";
 
 export const dummyCategory = {
     skinCare : [
@@ -86,4 +84,26 @@ export const dummyCategory = {
         "전체", "물티슈", "기타"
     ]
 
+}
+
+export function showSwal(strTag){
+    console.log(strTag)
+    withReactContent(Swal).fire({
+        title: "Custom animation with Animate.css",
+        html : strTag,
+        showClass: {
+          popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+          `
+        },
+        hideClass: {
+          popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+          `
+        }
+    })
 }

@@ -1,13 +1,16 @@
 .alldiv{
-    height: 200px;
-    width: 600px;
+    height: 400px;
+    width: 800px;
     flex-wrap: wrap;
+    text-align: center;
     
 }
 
 .itemBox{
-    color: red;
+    color: black;
     // display: flex;
+    height: 120px;
+    width: 300px;
     
 
 }

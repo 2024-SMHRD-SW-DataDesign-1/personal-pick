@@ -6,7 +6,7 @@ import InputBox from "../../components/inputbox/InputBox";
 import { sendGet, URL } from "../../util/util";
 import Category from "../../components/category/Category";
 import Itemview from "../../components/itemview/Itemview"
-import Scroll from "../../components/test/Scroll";
+
 
 // <div className='MainView inner'>    
 
@@ -21,16 +21,12 @@ import Scroll from "../../components/test/Scroll";
 // </p>
 
 // </div>
-let list = []
-for(let i =0 ; i< 100; i++)
-{
-    list.push(<div>{i}</div>)
-}
 
 function show(data)
 {
     console.log(data)
 }
+
 const Home = () => {
     // 페이지 이동 함수
     const nav = useNavigate();
@@ -62,7 +58,7 @@ const Home = () => {
             </p>
             <Category/>
             <Itemview/>
-            <Scroll tagList={list}/>
+            
         </div>
         
     );
