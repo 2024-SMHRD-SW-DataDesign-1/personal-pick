@@ -3,10 +3,7 @@
    License: none (public domain)
 */
 
-.swiper{
-    width : 50%;
 
-}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -134,4 +131,9 @@ transform: translateX(-9%) translateY(-25%) rotate(45deg);
     position: relative;
     top : -100px;
     background-color : rgb(236, 204, 204);
+}
+
+.swiper{
+    width : 50%;
+
 }
