@@ -7,6 +7,7 @@ import { sendGet, URL } from "../../util/util";
 import Category from "../../components/category/Category";
 import Itemview from "../../components/itemview/Itemview"
 
+
 // <div className='MainView inner'>    
 
 // {/* Main */}
@@ -25,6 +26,7 @@ function show(data)
 {
     console.log(data)
 }
+
 const Home = () => {
     // 페이지 이동 함수
     const nav = useNavigate();
@@ -56,6 +58,7 @@ const Home = () => {
             </p>
             <Category/>
             <Itemview/>
+            
         </div>
         
     );

@@ -1,8 +1,6 @@
-// npm install swiper
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules';
-// Import Swiper styles
+import './CustomSwiper.scss'
 import 'swiper/css';
 import { useEffect, useState } from 'react';
 import Star from '../../img/별.png'

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import './Detailinfo.scss'
 import star from '../../img/별.png'
 
+
 const Detailinfo = () => {
     // 페이지 이동 함수
     const navigate = useNavigate();
@@ -15,6 +16,7 @@ const Detailinfo = () => {
         sendGet(URL + "/DetailPage", setData);
     },[]);
 
+
   return (
         <div id="wrapper" className='container'>
 
@@ -24,14 +26,15 @@ const Detailinfo = () => {
                 data.map((item, index) => (
                     <div key={index}>
 
-                        <div id = 'header'>
-                        {/* 화장품 이름 */}
-                        <div className='itemname'>
-                            {item.cos_name}
-                        </div>
-                        </div>
+                    <div id = 'head'>
+                    {/* 화장품 이름 */}
+                    
+                    <div className='itemname'>
+                    <label>{item.cos_name}</label>
+                    </div>
+                    </div>
 
-                        <div id = 'main'>
+                        <div id = 'main1'>
                         {/* 화장품 사진 */}
                         <img src ={item.cos_img_src}/>
 
@@ -66,6 +69,10 @@ const Detailinfo = () => {
                         </div>
                         </div>
 
+
+                        <div className='reviewinfo'>
+                        리뷰
+                        </div>
                         </div>
 
                         {/* <h2>{item.brand_name}</h2>
@@ -75,11 +82,14 @@ const Detailinfo = () => {
                             <p>{"   " + item.grade + " (" + item.grade_count + ")"}</p>
                         </div> */}
                     </div>
+                    
+                    
                 ))
             ) : (
             // 데이터를 불러오는데 실패하면 실행
                 <p>데이터 연결 실패</p>
             )}
+            
     </div>
    
   )
