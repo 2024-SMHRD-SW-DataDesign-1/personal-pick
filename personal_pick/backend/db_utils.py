@@ -31,22 +31,25 @@ def setQuery(sql=None, data = None):
 
 
 def PostQuery(sql = None, data = None):
-    # MySQL 데이터베이스 연결
-    db = pymysql.connect(
-        host='project-db-cgi.smhrd.com',
-        port=3307,
-        user='campus_24SW_DD_p2_1',
-        password='smhrd1',
-        db='campus_24SW_DD_p2_1', 
-        charset='utf8mb4'
-    )
+    try:
+        # MySQL 데이터베이스 연결
+        db = pymysql.connect(
+            host='project-db-cgi.smhrd.com',
+            port=3307,
+            user='campus_24SW_DD_p2_1',
+            password='smhrd1',
+            db='campus_24SW_DD_p2_1', 
+            charset='utf8mb4'
+        )
 
-    # 데이터에 접근
-    cursor = db.cursor()
+        # 데이터에 접근
+        cursor = db.cursor()
 
-    cursor.execute(sql,data)
-    
-    
-    db.commit()
-    db.close()
-    return data
+        cursor.execute(sql,data)
+        
+        db.commit()
+        db.close()
+
+        return 201
+    except Exception as e:
+        return 500
