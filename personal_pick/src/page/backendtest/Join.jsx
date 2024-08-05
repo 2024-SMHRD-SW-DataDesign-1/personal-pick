@@ -3,6 +3,7 @@ import axios from 'axios'
 import { URL } from '../../util/util'
 import { useNavigate } from 'react-router-dom';
 
+// 000
 const Join = () => {
     // 페이지 이동 함수
     const navigate = useNavigate();
