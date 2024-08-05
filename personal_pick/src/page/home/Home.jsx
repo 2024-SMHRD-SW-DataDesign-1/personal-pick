@@ -6,6 +6,7 @@ import InputBox from "../../components/inputbox/InputBox";
 import { sendGet, URL } from "../../util/util";
 import Category from "../../components/category/Category";
 import Itemview from "../../components/itemview/Itemview"
+import Scroll from "../../components/test/Scroll";
 
 // <div className='MainView inner'>    
 
@@ -20,6 +21,11 @@ import Itemview from "../../components/itemview/Itemview"
 // </p>
 
 // </div>
+let list = []
+for(let i =0 ; i< 100; i++)
+{
+    list.push(<div>{i}</div>)
+}
 
 function show(data)
 {
@@ -56,6 +62,7 @@ const Home = () => {
             </p>
             <Category/>
             <Itemview/>
+            <Scroll tagList={list}/>
         </div>
         
     );
