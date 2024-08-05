@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import InputBox from "../../components/inputbox/InputBox";
 import { sendGet, URL } from "../../util/util";
 import Category from "../../components/category/Category";
-
+import Itemview from "../../components/itemview/Itemveiw"
 
 // <div className='MainView inner'>    
 
@@ -55,6 +55,7 @@ const Home = () => {
                 화해 고객들이 직접 선택한 랭킹🎁
             </p>
             <Category/>
+            <Itemview/>
         </div>
         
     );

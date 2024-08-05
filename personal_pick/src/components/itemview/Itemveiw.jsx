@@ -2,7 +2,7 @@ import React from 'react'
 
 const Itemveiw = () => {
 
-    itemDic = [
+    let itemDic = [
         {idx:1,
             brand_name:'일번',
             cos_name:'코스네임일',
@@ -74,7 +74,7 @@ const Itemveiw = () => {
 
   return (
     <div>
-        {itemDic((item) => (
+        {itemDic.map((item) => (
             <div key={item.idx}>
                 <p> {item.brand_name} {item.cos_name}</p>
                 <p>{item.grade} ({item.grade_count})</p>
