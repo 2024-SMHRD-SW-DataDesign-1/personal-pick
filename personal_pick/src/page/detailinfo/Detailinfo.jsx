@@ -74,7 +74,7 @@ const Detailinfo = () => {
 
 
                         <div className='reviewinfo'>
-                        AI가 분석한 리뷰
+                        AI 가 분석한 리뷰
                         </div>
                         </div>
 

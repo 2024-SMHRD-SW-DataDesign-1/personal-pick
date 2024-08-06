@@ -1,6 +1,7 @@
 import React from 'react'
 import './Itemview.scss'
 import Star from '../../img/별.png'
+import { useNavigate } from 'react-router-dom'
 
 const Itemveiw = () => {
 
@@ -85,13 +86,13 @@ const Itemveiw = () => {
 
         // 데이터 6개만 받아올 예정!
 
-
+        const nav = useNavigate();
 
 
         return (
                 <div className='flex_row alldiv'>
                         {itemDic.map((item, idx) => (
-                                <div className='itemBox flex_col' key={item.idx}>
+                                <div className='itemBox flex_col' key={item.idx} onClick={()=> nav('detailinfo/'+idx)}>
                                       
                                         <div className='rank_num'  key={rankingDic[idx].id}>{rankingDic[idx].rank}</div>
                                         
