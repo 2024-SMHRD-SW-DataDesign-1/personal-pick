@@ -3,16 +3,14 @@ from flask import request, jsonify
 from db_utils import setQuery
 
 class ppSearch(Resource):
-    def post(self):
-        data = request.get_json()
-        print(data)
+    def get(self):
+        value = request.args.to_dict()
+        data = str(value['value'])
 
         sql = "SELECT * FROM cos_data WHERE cos_name LIKE %s"
-        # value = ("%"+data['text']+"%")
-        value = f"%{data}%"
-
+        text = f"%{data}%"
+        
+        result = setQuery(sql, text)
         print(value)
 
-        result = setQuery(sql, value)
-        return result
-    
+        return jsonify(result)
