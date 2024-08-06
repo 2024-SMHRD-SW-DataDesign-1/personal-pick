@@ -1,6 +1,6 @@
 .alldiv{
     height: 500px;
-    width: 700px;
+    width: 1020px;
     flex-wrap: wrap;
     text-align: center;
     
@@ -9,8 +9,8 @@
 .itemBox{
     color: black;
     // display: flex;
-    height: 160px;
-    width: 400px;
+    height: 130px;
+    width: 330px;
     justify-content: center;
     align-items: center;
 }
@@ -25,12 +25,8 @@
 .rank_cos_name{
     color: #111111;
     font-size: 14px;
-    // font-weight: bold;
     display: inline-block;
 }
-// .rank_star{
-//     display: inline;
-// }
 
 .rank_cos_price{
     font-size: 15px;

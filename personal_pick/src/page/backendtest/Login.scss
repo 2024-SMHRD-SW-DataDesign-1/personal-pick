@@ -1,0 +1,79 @@
+#login,
+#join{
+    #main{
+        /* 박스 내용 중앙 정렬 */
+        /* 가운데 정렬 */
+        display: flex;
+        /* 수직 */
+        /* align-items: center; */
+        /* 수평 */
+        justify-content: center;
+    
+        background-color: white;
+    }
+    
+    
+    .table{
+        /* display: flex; */
+        /* 수직 정렬 */
+        flex-direction: column;
+        /* 수평 정렬 */
+        /* align-items: center; */
+        /* box-sizing: border-box; */
+        
+        /* 위쪽 공간 띄움 */
+        padding: 3vh 0 0 0;
+        height: 20vh;
+    }
+    
+    .table h2 {
+        margin-bottom: 2.5vh;
+        font-size: 10vh;
+        color: #333;
+    
+        /* position: left; */
+        font-weight: bold;
+        font-size: 3.5vh;
+    }
+    
+    /* 입력 필드 스타일 */
+    .textbox {
+        /* width: 100% - 2vh; */
+        padding: 1vh;
+        margin-bottom: 1.5vh;
+    
+        font-size: 2vh;
+        border-width: 0.1vh;
+        border-style: solid;
+        border-color: gray;
+    }
+    
+    
+    /* 버튼 스타일 */
+    button {
+        height: 5vh;
+        width: 40%;
+        padding: 0.5vw;
+        margin: 0vh 5%;
+        
+        border-width: 0.1vh;
+        border-style: solid;
+        border-color: gray;
+        border-radius: 0.5vh;
+    
+        /* background-color: #007bff; */
+        /* color: #fff; */
+        font-size: 2vh;
+    
+        /* 마우스 올릴 때 커서 손모양으로 변환 */
+        cursor: pointer;
+        
+        /* hover 설정 */
+        transition: background-color 0.3s ease;
+    }
+    
+    
+    button:hover {
+        background-color: rgb(169, 169, 169);
+    }
+}
