@@ -11,32 +11,65 @@
     // display: flex;
     height: 160px;
     width: 400px;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .rank_brand_name{
-    font-size: 15px;
+    font-size: 14px;
     color: gray;
+    display: inline-block;
 }
 
 .rank_cos_name{
     color: rgb(34, 33, 33);
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
+    display: inline-block;
 }
+// .rank_star{
+//     display: inline;
+// }
 
 .rank_cos_price{
-    font-size: 17px;
+    font-size: 15px;
     color: rgb(92, 89, 89);
-    font-weight: bold;
+    // font-weight: bold;
 }
 .rank_cos_grade{
     color: rgb(92, 89, 89);
     font-size: 13px;
 }
 
-.cos_grade_cnt{
-    color: rgb(156, 154, 154);
+.rank_cos_grade_cnt{
+    color: rgb(158, 158, 158);
     font-size: 13px;
 
+}
+
+.rank_text{
+    font-size: 13px;
+    color: rgb(110, 110, 110);
+}
+
+
+.rank_vol{
+    color: rgb(167, 167, 167);
+    font-size: 14px;
+}
+
+.rank_grade{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.rank_price{
+    text-align: left;
+}
+
+.rank_img{
+    margin-top: 10px;
+    margin-right: 10px;
 }
