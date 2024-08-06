@@ -24,7 +24,7 @@ import Itemview from "../../components/itemview/Itemview"
 
 function show(data)
 {
-    console.log(data)
+
 }
 
 const Home = () => {
@@ -57,7 +57,7 @@ const Home = () => {
                 화해 고객들이 직접 선택한 랭킹🎁
             </p>
             <Category/>
-            <Itemview/>
+            <Itemview />
             
         </div>
         

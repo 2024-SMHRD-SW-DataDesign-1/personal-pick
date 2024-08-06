@@ -29,10 +29,10 @@ const CustomSwiper = ({ list }) => {
         >
             {list.length > 0 && list.map((item, i)=>{
                 return (
-                <SwiperSlide key={i} onClick={()=> nav('detailinfo/'+(i+1))}>
-                    <img src={item.cos_img_src} alt="" />   
-                    <ul>
-                    <li className='cos_conater'>
+                <SwiperSlide key={i} >
+                    <img className='cursor' src={item.cos_img_src} alt=""  onClick={()=> nav('detailinfo/'+(i+1))}/>   
+                    <ul >
+                    <li className='cos_conater' onClick={()=> nav('detailinfo/'+(i+1))}>
                         <div className='brand_name'><span>
                             {item.brand_name}</span>
                         </div>
