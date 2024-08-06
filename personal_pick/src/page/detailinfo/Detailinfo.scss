@@ -19,6 +19,8 @@
     text-align: center;
     width: 31.6%;
     border-bottom: 1px solid silver;
+    top:0px;
+    z-index: 10;
 }
 
 .itemname label {
@@ -88,7 +90,76 @@
 
 #main1{
     /* float: left; */
-    height: 149vh;
+    height: 266vh;
     background-color: greenyellow;
 }
 
+.smile{
+    margin: auto;
+    transform: translate(0px, 27px);
+}
+
+.like {
+    margin: auto;
+    display: flex;
+    transform: translate(52px, -13px);
+    font-size: 21px;
+}
+
+.bar {
+    --tw-bg-opacity: 1;
+    background-color: rgba(242, 242, 242, var(--tw-bg-opacity));
+    height: 10px;
+    border-width: 0;
+    transform: translate(0px, 21px);
+}
+
+.bar2 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(242, 242, 242, var(--tw-bg-opacity));
+    height: 10px;
+    border-width: 0;
+    transform: translate(0px, -200px);
+}
+
+.margintop1 {
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: -24px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 500
+}
+
+.dislike {
+    margin: auto;
+    transform: translate(346px, -255px);
+}
+
+.margintop2 {
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: -24px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 500
+}
+
+.review {
+    margin: auto;
+    transform: translate(0px, -146px);
+    display: flex;
+}
+
+.reviewcount{
+    margin: auto;
+    margin-left: 26px;
+    font-size: 18px;
+}
+.reviewrate {
+    margin: auto;
+}
+
+.reviewratecount {
+    margin: auto;
+}
