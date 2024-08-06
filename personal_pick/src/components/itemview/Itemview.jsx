@@ -92,7 +92,7 @@ const Itemveiw = () => {
         return (
                 <div className='flex_row alldiv'>
                         {itemDic.map((item, idx) => (
-                                <div className='itemBox flex_col' key={item.idx} onClick={()=> nav('detailinfo/'+idx)}>
+                                <div className='itemBox flex_col' key={item.idx} onClick={()=> nav('detailinfo/'+(idx+1))}>
                                       
                                         <div className='rank_num'  key={rankingDic[idx].id}>{rankingDic[idx].rank}</div>
                                         
