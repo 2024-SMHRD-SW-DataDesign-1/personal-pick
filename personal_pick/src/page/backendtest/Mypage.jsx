@@ -49,6 +49,7 @@ const Join = () => {
 
     return (
         
+        <div id='mypage'>
         <div id="Mypage">
         <div id='wrapper'>
             <div id='head'>
@@ -154,6 +155,7 @@ const Join = () => {
                     <img src="https://cdn-icons-png.flaticon.com/512/2824/2824318.png" alt="" />
                 </span>
             </div>
+        </div>
         </div>
         </div>
     );

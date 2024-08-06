@@ -4,7 +4,6 @@ import { URL } from '../../util/util'
 import { useNavigate } from 'react-router-dom';
 import './Login.scss'
 
-// 000
 const Join = () => {
     // 페이지 이동 함수
     const navigate = useNavigate();
@@ -17,6 +16,13 @@ const Join = () => {
     const [message, setMessage] = useState('');
 
     const handleSubmit = async (event) => {
+        console.log({
+            name: name,
+            nickname: nickname,
+            id: id,
+            pw: pw
+        });
+        
         event.preventDefault();
         try {
             const response = await axios.post(URL + "/JoinPage", {
@@ -25,7 +31,6 @@ const Join = () => {
                 id: id,
                 pw: pw
             });
-            
 
             if (response.data === 201) {
                 // 회원가입 성공 시 홈 페이지로 이동
@@ -78,7 +83,7 @@ const Join = () => {
                         <div>
                             <input
                                 className='textbox'
-                                placeholder='닉네임'
+                                placeholder='ID'
                                 type="text"
                                 value={id}
                                 onChange={(e) => setId(e.target.value)}
@@ -88,7 +93,7 @@ const Join = () => {
                         <div>
                             <input
                                 className='textbox'
-                                placeholder='닉네임'
+                                placeholder='Password'
                                 type="text"
                                 value={pw}
                                 onChange={(e) => setPw(e.target.value)}

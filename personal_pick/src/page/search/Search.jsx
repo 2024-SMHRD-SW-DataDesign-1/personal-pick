@@ -4,6 +4,7 @@ import { sendGet, URL } from '../../util/util';
 import './Search.scss';
 import Star from '../../img/별.png'
 
+import axios from 'axios';
 const Search = () => {
     // 내가 찾고 싶은 제품을 검색했을 때 나타나는 제품리스트
     const [list, setList] = useState([]);
@@ -25,6 +26,21 @@ const Search = () => {
 
     // 검색어를 추가하는 함수
     const searchAdd = (searchTerm) => {  // 새로운 검색어, 사용자가 검색을 수행할 때 handleSearch 함수로 전달
+        console.log("searchTerm : "+searchTerm );
+
+        // URL + /login 경로로 id, pw를 담아서 요청을 보냄
+        const handleLogin = async (searchTerm) => {
+            searchTerm.preventDefault();           
+            // URL + /login 경로로 id, pw를 담아서 요청을 보냄
+            const response = await axios.post(URL + '/SearchPage', {
+                searchTerm
+            });
+
+            console.log(response);
+            console.log(response.data);
+            
+            
+        }
         setSearchHistory((prevHistory) => { // 기존(이전)에 검색했던 데이터 리스트(배열)
             // 이전 검색어 리스트에 새로운 검색어를 배열 끝에 추가
             // 스프레드 문법(...) : 내가 보관하고 있던 이전까지의 데이터 유지시킨 후 그 뒤에 데이터 연결
