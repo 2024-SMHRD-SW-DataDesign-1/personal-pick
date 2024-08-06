@@ -17,4 +17,4 @@ const personalReducer = (state = initialState, action) => {
     }
 }
 
-export default counterReducer;
+export default personalReducer;
