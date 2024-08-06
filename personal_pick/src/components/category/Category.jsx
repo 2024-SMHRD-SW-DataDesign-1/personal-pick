@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { dummyCategory, showSwal } from '../../util/util';
-
+import './Category.scss'
 const titleList = [
     "카테고리 전체", "스킨케어", "클랜징/필링", "마스크/팩", "선케어", 
     "바디", "헤어", "네일", "향수", "기타"
@@ -10,10 +10,10 @@ function showModal()
 {
     let str = "";
     titleList.map((item, idx)=>{
-        str += `<div className='subtitle'>${item}</div>`;
+        str += `<div class='subtitle cursor'>${item}</div>`;
     })
     
-    showSwal(str)
+    showSwal(str, underView)
 }
 
 function underView(e, idx)
@@ -56,11 +56,15 @@ function underView(e, idx)
             result = dummyCategory.other
             break;
     }
+    let tag ='<div class="flex_col flex_wrap">';
+    
     result.map((item)=>{
-        e.target.innerHTML += `<div>${item}</div>`;
+        tag += `<div class="category_item">${item}</div>`;
     })
 
-
+    tag += '</div>';
+    
+    e.target.innerHTML += tag;
     // return result.map((item)=>{
     //     return <div>{item}</div>
     // });
