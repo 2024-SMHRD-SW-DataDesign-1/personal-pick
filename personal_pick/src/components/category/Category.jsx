@@ -23,6 +23,7 @@ function showModal()
 
 function underView(e, idx)
 {
+    let titleTag = document.getElementsByClassName("subtitle");
     if(idx == 0)
     {
         return
@@ -33,21 +34,12 @@ function underView(e, idx)
 
     if(categoryState[idx])
     {
-        console.log(e.target)
-        console.log(e.target.innerText);
-        //e.target.innerText = titleList[idx];
-        if(e.target.innerText == "")
-        {
-        }
-        e.target.innerHTML = titleList[idx]
-        imgTag[idx].src = Right;
-        // e.target.innerHTML = `<img class="category_arrow" src="${idx == 0? Up : Right}" alt="팀로고" />`;
+        titleTag[idx].innerHTML =titleList[idx] + `<img class="category_arrow" src="${idx == 0? Up : Right}" alt="팀로고" />`;
         categoryState[idx] = !categoryState[idx]
         return;
     }
     else
     {
-        console.log(2)
         imgTag[idx].src = Down;
         categoryState[idx] = !categoryState[idx]
     }
@@ -83,14 +75,16 @@ function underView(e, idx)
             break;
     }
     let tag ='<div class="flex_col flex_wrap">';
-    
+    console.log("===============================")
+    console.log(categoryState[idx])
+    console.log("===============================")
     result.map((item)=>{
         tag += `<div class="category_item">${item}</div>`;
     })
 
     tag += '</div>';
     
-    e.target.innerHTML += tag;
+    titleTag[idx].innerHTML += tag;
 
 
     let itemTag = document.getElementsByClassName("category_item");

@@ -10,7 +10,6 @@ const CustomSwiper = ({ list }) => {
 
     const nav = useNavigate();
     
-    
     return (
         <Swiper
             modules={[Autoplay]}
