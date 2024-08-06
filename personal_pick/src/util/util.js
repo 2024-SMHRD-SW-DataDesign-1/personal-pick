@@ -110,7 +110,7 @@ export function showSwal(strTag, func){
             let list = document.getElementsByClassName("subtitle");
             for(let i = 0; i < list.length; i++)
             {
-                console.log(list[i])
+                
                 list[i].addEventListener("click",function(e){
                     func(e, i)
                 })
