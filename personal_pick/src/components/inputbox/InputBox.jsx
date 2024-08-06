@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './InputBox.scss'
 const InputBox = ({func}) => {
     const [value, setValue] = useState("");
     console.log(value);
