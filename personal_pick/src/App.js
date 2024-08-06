@@ -7,21 +7,30 @@ import Mypage from './page/backendtest/Mypage';
 import Detailinfo from './page/detailinfo/Detailinfo';
 import Login from './page/backendtest/Login';
 import Join from './page/backendtest/Join';
+import { createStore } from 'redux';
+import personalReducer from './redux/reducer/reducer';
+import { Provider } from 'react-redux';
+
+
+
+const store = createStore(personalReducer)
 
 function App() {
     return (
-        <BrowserRouter>
-            <div className="App">
-                <Routes>
-                    <Route path='/' element={<Home />}></Route>
-                    <Route path='/join' element={<Join />}></Route>
-                    <Route path='/login' element={<Login />}></Route>
-                    <Route path='/mypage' element={<Mypage />}></Route>
-                    <Route path='/search' element={<Search />}></Route>
-                    <Route path='/detailinfo' element={<Detailinfo />}></Route>
-                </Routes>
-            </div>
-        </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <div className="App">
+                    <Routes>
+                        <Route path='/' element={<Home />}></Route>
+                        <Route path='/join' element={<Join />}></Route>
+                        <Route path='/login' element={<Login />}></Route>
+                        <Route path='/mypage' element={<Mypage />}></Route>
+                        <Route path='/search' element={<Search />}></Route>
+                        <Route path='/detailinfo' element={<Detailinfo />}></Route>
+                    </Routes>
+                </div>
+            </BrowserRouter>
+        </Provider>
     );
 }
 

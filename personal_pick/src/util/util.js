@@ -104,6 +104,10 @@ export function showSwal(strTag){
             animate__fadeOutDown
             animate__faster
           `
-        }
+        },
+        didOpen : () => {
+            let list = document.getElementsByClassName("subtitle");
+            console.log(list);
+        },
     })
 }
