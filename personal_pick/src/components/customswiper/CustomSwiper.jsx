@@ -4,10 +4,11 @@ import './CustomSwiper.scss'
 import 'swiper/css';
 import { useEffect, useState } from 'react';
 import Star from '../../img/별.png'
+import { useNavigate } from 'react-router-dom';
 
 const CustomSwiper = ({ list }) => {
 
-    console.log(list);
+    const nav = useNavigate();
     
     
     return (
@@ -28,7 +29,7 @@ const CustomSwiper = ({ list }) => {
         >
             {list.length > 0 && list.map((item, i)=>{
                 return (
-                <SwiperSlide key={i}>
+                <SwiperSlide key={i} onClick={()=> nav('detailinfo/'+(i+1))}>
                     <img src={item.cos_img_src} alt="" />   
                     <ul>
                     <li className='cos_conater'>
