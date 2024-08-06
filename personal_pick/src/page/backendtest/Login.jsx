@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { URL } from '../../util/util'
 import { useNavigate } from 'react-router-dom';
+import './Login.scss'
 
 const Login = () => {
     // 페이지 이동 함수
@@ -43,32 +44,41 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={handleLogin}>
-                <div>
-                    <label>ID : </label>
-                    <input
-                        type="text"
-                        value={id}
-                        onChange={(e) => setId(e.target.value)}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>PW : </label>
-                    <input
-                        type="password"
-                        value={pw}
-                        onChange={(e) => setPw(e.target.value)}
-                        required
-                    />
-                </div>
-                <button type="submit">로그인</button>
-                <button onClick={home}>뒤로가기</button>
-                {/* 회원가입 실패 시 출력 */}
-                {error && <p style={{ color: 'red' }}>{error}</p>}
-            </form>
+        <div id='login'>
+        <div id='wrapper'>
+            <div id='main'>
+                <form className='table' onSubmit={handleLogin}>
+                    <h2>Login</h2>
+                    <div>
+                        <input
+                            className='textbox'
+                            placeholder='Id'
+                            type="text"
+                            value={id}
+                            onChange={(e) => setId(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <input
+                            className='textbox'
+                            placeholder='Password'
+                            type="password"
+                            value={pw}
+                            onChange={(e) => setPw(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <button type="submit">로그인</button>
+                        <button onClick={home}>뒤로가기</button>
+                    </div>
+                        {/* 회원가입 실패 시 출력 */}
+                        {error && <p style={{ color: 'red' }}>{error}</p>}
+                        
+                </form>
+            </div>
+        </div>
         </div>
     );
 };

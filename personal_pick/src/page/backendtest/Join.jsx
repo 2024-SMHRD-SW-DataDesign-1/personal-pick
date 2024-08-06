@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios'
 import { URL } from '../../util/util'
 import { useNavigate } from 'react-router-dom';
+import './Login.scss'
 
 // 000
 const Join = () => {
@@ -49,31 +50,58 @@ const Join = () => {
     };
 
     return (
-        <div>
-            <h1>회원가입</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>이름 : </label>
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+        <div id='join'>
+            <div id='wrapper'>
+                <div id='main'>
+                    <form className='table' onSubmit={handleSubmit}>
+                        <h1>회원가입</h1>
+                        <div>
+                            <input
+                                className='textbox'
+                                placeholder='이름'
+                                type="text"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <input
+                                className='textbox'
+                                placeholder='닉네임'
+                                type="text"
+                                value={nickname}
+                                onChange={(e) => setNickname(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <input
+                                className='textbox'
+                                placeholder='닉네임'
+                                type="text"
+                                value={id}
+                                onChange={(e) => setId(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <input
+                                className='textbox'
+                                placeholder='닉네임'
+                                type="text"
+                                value={pw}
+                                onChange={(e) => setPw(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <button type="submit">회원가입</button>
+                        <button onClick={home}>뒤로가기</button>
+                            {/* 회원가입 실패 시 message 출력 */}
+                        <p style={{ color: 'red' }}>{message}</p>
+                    </form>
                 </div>
-                <div>
-                    <label>닉네임 : </label>
-                    <input type="text" value={nickname} onChange={(e) => setNickname(e.target.value)} required />
-                </div>
-                <div>
-                    <label>ID : </label>
-                    <input type="text" value={id} onChange={(e) => setId(e.target.value)} required />
-                </div>
-                <div>
-                    <label>PW : </label>
-                    <input type="password" value={pw} onChange={(e) => setPw(e.target.value)} required />
-                </div>
-                <button type="submit">회원가입</button>
-                <button onClick={home}>뒤로가기</button>
-            </form>
-            {/* 회원가입 실패 시 message 출력 */}
-            <p>{message}</p>
-            
+            </div>
         </div>
     );
 };
