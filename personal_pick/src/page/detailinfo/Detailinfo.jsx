@@ -3,7 +3,7 @@ import {sendGet , URL } from '../../util/util'
 import { useNavigate } from 'react-router-dom'
 import './Detailinfo.scss'
 import star from '../../img/별.png'
-
+import { useParams } from 'react-router-dom'
 
 const Detailinfo = () => {
     // 페이지 이동 함수
@@ -12,10 +12,13 @@ const Detailinfo = () => {
 
     const [data , setData] = useState([]);
 
+    const {idx} = useParams()
+
     useEffect(()=>{
-        sendGet(URL + "/DetailPage", setData);
+         sendGet(URL + "/DetailPage?idx="+idx , setData);
     },[]);
 
+    
 
   return (
         <div id="wrapper" className='container'>
@@ -51,7 +54,7 @@ const Detailinfo = () => {
                         </div>
 
                         <div className='starinfo'>
-                        <img src = {star} className='star'/>{item.grade}({item.grade_count})
+                        <img src = {star} className='star' width={18}/>{item.grade}({item.grade_count})
                         </div>
 
                         <div className='priceinfo'>
@@ -71,7 +74,7 @@ const Detailinfo = () => {
 
 
                         <div className='reviewinfo'>
-                        리뷰
+                        AI 가 분석한 리뷰
                         </div>
                         </div>
 
