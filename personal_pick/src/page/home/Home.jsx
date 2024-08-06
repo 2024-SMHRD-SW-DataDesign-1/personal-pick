@@ -94,7 +94,7 @@ let itemDic = [
 
 function show(data)
 {
-    console.log(data)
+
 }
 
 const Home = () => {
