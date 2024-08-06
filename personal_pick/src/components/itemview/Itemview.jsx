@@ -32,9 +32,10 @@ const Itemveiw = ({data}) => {
                     <div className='rank_num' key={rankingDic[idx].id}>{rankingDic[idx].rank}</div>
                     <img src={item.cos_img_src} alt="" style={{ width: 80, height: 80 }} className='rank_img' />
                     <div>
-                        <span className='rank_brand_name'>{item.brand_name} </span>
-                        <span className='rank_cos_name'>&nbsp;{item.cos_name}</span>
-
+                        <div className='rank_name'>
+                            <span className='rank_brand_name'>{item.brand_name} </span>
+                            <span className='rank_cos_name'>&nbsp;{item.cos_name}</span>
+                        </div>
                         <div className='rank_grade'>
                             <img className='star' src={Star} alt="" />
                             <span className='rank_cos_grade'>&nbsp;{item.grade}</span>

@@ -6,6 +6,7 @@ import InputBox from "../../components/inputbox/InputBox";
 import { sendGet, URL } from "../../util/util";
 import Category from "../../components/category/Category";
 import Itemview from "../../components/itemview/Itemview"
+import './Home.scss'
 
 
 // <div className='MainView inner'>    
@@ -28,6 +29,7 @@ let itemDic = [
         idx: 1,
         brand_name: '브랜드이름1',
         cos_name: '코스네임일',
+        // cos_name: '여기이름길면줄바꿈되게해야함',
         cos_img_src: 'https://img.hwahae.co.kr/products/2107141/2107141_20240715175717.jpg?format=webp&size=600x600',
         grade: 4.74,
         grade_count: 2456,
@@ -156,17 +158,16 @@ const Home = () => {
             <div>
                 <CustomSwiper list={data}/>
             </div>
-            <p>
-                화해 고객들이 직접 선택한 랭킹🎁
-            </p>
+            <h2 className="basic-text">화해 고객들이 직접 <span> 선택한 랭킹🎁 </span> </h2> 
+            
             <Category/>
             <Itemview data={itemDic}/>
             {/* sendGet으로 필요한 데이터 세 가지 받아오고 그 데이터 이름을 data라는 키 값으로 보내주면 됨! */}
 
-            <p>내 피부에 꼭 맞는 제품 랭킹</p>
+            <h2 className="basic-text">내 피부에 꼭 맞는 제품 랭킹</h2>
             <Itemview data={itemDic}/>
 
-            <p>나이대별 추천</p>
+            <h2 className="basic-text">나이대별 추천</h2>
             <Itemview data={itemDic}/>
 
   
