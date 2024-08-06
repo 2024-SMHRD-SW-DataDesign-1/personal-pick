@@ -3,6 +3,8 @@ import InputBox from '../../components/inputbox/InputBox';
 import { sendGet, URL } from '../../util/util';
 import './Search.scss';
 import Star from '../../img/별.png'
+import { useNavigate, useParams } from 'react-router-dom';
+
 
 const Search = () => {
     // 내가 찾고 싶은 제품을 검색했을 때 나타나는 제품리스트
@@ -50,6 +52,9 @@ const Search = () => {
         );
     };
 
+    const nav = useNavigate();
+    const {value} = useParams()
+
     return (
         <div>
             <div className=''>
@@ -65,7 +70,7 @@ const Search = () => {
                         {searchHistory.map((item, index) => (
                             // 각 검색어를 리스트 아이템으로 표시
 
-                            <span className='recent_search' key={index}>{item}<button onClick={() => searchDelete(index)}> X</button></span>
+                            <span className='recent_search cursor' key={index}>{item}<button onClick={() => searchDelete(index)}> X</button></span>
 
                             // <li key="0">검색어1</li>
                             // <li key="1">검색어2</li>
@@ -80,13 +85,13 @@ const Search = () => {
                 </div>
                 <div className='products'>
                     <ul>
-                        {list.map((item) => (
-                            <li className='product1' key={item.idx}>
+                        {list.map((item, idx) => (
+                            <li className='product1 cursor' key={item.idx} onClick={()=>nav('/detailinfo/'+(idx+1))}>
                                 <a className='flex' href="">
                                     <span><img src={item.cos_img_src} style={{ width: '90px' }} alt={item.cos_name}></img></span>
                                     <div className='items'>
                                     <div><span className='gray'>{item.brand_name}</span> <span>{item.cos_name}</span></div> <br />
-                                    <div><span>⭐<img className='star' src={Star} alt="" ></img>{item.grade}</span> <span className='gray'>({item.grade_count})</span></div> <br />
+                                    <div><span><img className='star' src={Star} alt="" ></img>{item.grade}</span> <span className='gray'>({item.grade_count})</span></div> <br />
                                     <div><span>{item.vol}ml / {item.price}원</span></div>
                                     <br />
                                     </div>
