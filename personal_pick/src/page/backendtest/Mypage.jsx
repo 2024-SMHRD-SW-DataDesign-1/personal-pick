@@ -4,48 +4,14 @@ import { URL } from '../../util/util'
 import { useNavigate } from 'react-router-dom';
 
 import './Mypage.scss'
+import { useDispatch, useSelector } from 'react-redux';
 
 const Join = () => {
-    // // 페이지 이동 함수
-    // const navigate = useNavigate();
-    // const home = () => navigate('/');
-
-    // const [name, setName] = useState('');
-    // const [nickname, setNickname] = useState('');
-    // const [id, setId] = useState('');
-    // const [pw, setPw] = useState('');
-    // const [message, setMessage] = useState('');
-
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault();
-    //     try {
-    //         const response = await axios.post(URL + "/join", {
-    //             name,
-    //             nickname,
-    //             id,
-    //             pw
-    //         });
-    //         setMessage(response.data.message);
-
-    //         if (response.status === 201) {
-    //             // 회원가입 성공 시 홈 페이지로 이동
-    //             alert('회원가입 성공');
-    //             navigate('/');
-    //         }
-
-    //     } catch (error) {
-    //     if (error.response) {
-    //         // 서버가 응답했지만 오류 응답 코드가 반환된 경우
-    //         setMessage('An error occurred: ' + error.response.data.error);
-    //     } else if (error.request) {
-    //         // 요청이 만들어졌지만 응답을 받지 못한 경우
-    //         setMessage('No response received from the server.');
-    //     } else {
-    //         // 요청을 만들 때 오류가 발생한 경우
-    //         setMessage('Error: ' + error.message);
-    //     }
-    // }
-    // };
+    // 상태 저장
+    const state = useSelector(state => state);
+    
+    // 상태 변경
+    const dispatch = useDispatch();
 
     return (
         
@@ -67,7 +33,7 @@ const Join = () => {
                 <div className='fst'>
                     <img src="https://cdn-icons-png.flaticon.com/512/6063/6063734.png" alt="" />
                     <span className='middle'>
-                        <h1>닉네임</h1>
+                        <h1>{state.userData.nickname}</h1>
                         <p>연령대 피부타입</p>
                     </span>
                     <span className='right'>
@@ -125,6 +91,11 @@ const Join = () => {
                     <p>이벤트 신청/당첨 내역</p>
                     <p>찜한 이벤트</p>
                     <p>이벤트 배송지 수정</p>
+                </div>
+
+                <div className='ad2'>
+                    <p>출석체크, 친구초대 등 다양한 이벤트는</p>
+                    <p>혜택 앱을 통해 참여할 수 있어요</p>
                 </div>
 
                 <div className='last'>
