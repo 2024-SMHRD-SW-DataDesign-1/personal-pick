@@ -1,11 +1,31 @@
 // 최근 검색어
 .recent {
-    font-size: 22px;
-    font-weight: 700;
     padding-top: 16px;
     padding-left: 20px;
     padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
 }
+
+.recentName {
+    font-size: 22px;
+    font-weight: 700;
+    
+}
+
+// .searchbtn {
+//     display: flex;
+//     justify-content: center;
+// }
+
+.btn {
+    font-size: 15px;
+    font-weight: 700;
+    border: 0;
+    background-color: transparent;
+}
+
+
 
 // 최근 검색어의 검색어
 .search {
@@ -22,7 +42,6 @@
     padding: 5px; /* 요소 내부의 여백을 줌 */
     border: 1px solid black; /* 테두리 설정 */
     border-radius: 5px; /* 테두리 둥글게 설정 */
-    
 }
 
 // 최근 검색어 아래의 줄
@@ -38,15 +57,18 @@
     font-weight: 700;
     padding-top: 16px;
     padding-right: 20px;    
+    padding-bottom: 16px;
 }
 // 검색했을 때 나오는 전체 제품들 양 옆 패딩 주기
 .products {
     padding-left: 20px;
     padding-right: 20px;
+    align-items: center;
 }
 // 제품 하나
 .product1 {
-    margin-top: 8px;
+    margin-top: 15px;
+    
 }
 // 한 개의 제품마다 사진이랑 제품명들 양 옆으로 조정 후 위아래 패딩
 .flex {
@@ -55,16 +77,68 @@
     padding-top: 8px;
     text-decoration: none;
     color: black;
-    background-color: rgb(221, 191, 205);
+    //background-color: rgb(221, 191, 205);
+}
+.idx {
+    display: flex;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 4px;
+    width: 30px;
+    height: 72px;
+    justify-content: center;
+    align-items: center;
 }
 
 .items {
     margin-left: 12px;
     align-items: center;
+    font-size: 20px;
+    letter-spacing: -.1px;
 }
 
+.review {
+    margin-top: 5px;
+    margin-bottom: 12px;
+    
+}
+
+.font {
+    font-size: 18px;
+    align-items: center;
+}
 .gray {
-    color :#848484 ;
+    font-size: 16px;
+    color :#999;
 }
 
+.jungga {
+    color: #666;
+    font-size: 15px;
+}
 
+.won {
+    margin-right: 3px;
+}
+
+.brand {
+    font-size: 18px;
+    color :#999;
+    margin-right: 3px;
+}
+
+.star {
+    width: 14px;
+    height: 13px;
+    margin-right: 3px;
+}
+
+.grade {
+    color: #666;
+    margin-right: 1.5px;
+    font-size: 16px;
+}
+
+// .sPrice {
+//     font-size: 18px;
+// }
