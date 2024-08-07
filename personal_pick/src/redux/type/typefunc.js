@@ -1,10 +1,11 @@
 import * as types from './types'
 
-export const login =() => ({
+export const login =(userData) => ({
     type : types.LOGIN,
-    data : 10
+    data : userData
 })
 
 export const logout =() => ({
-    type : types.LOGOUT
+    type : types.LOGOUT,
+    data : 'logout'
 })

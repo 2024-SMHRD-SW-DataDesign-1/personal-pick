@@ -11,4 +11,4 @@ class ppLogin(Resource):
         value = data['id'], data['pw']
 
         result = setQuery(sql, value)
-        return result
+        return jsonify(result)
