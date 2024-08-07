@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { dummyCategory, modalClose, sendPost, showSwal, URL } from '../../util/util';
 import Up from '../../img/위쪽.png'
 import Down from '../../img/아래쪽.png'
@@ -54,7 +54,8 @@ const Category = ({categoryList,setCategoryList,categoryTitle,setCategoryTitle})
     {
         let str = "";
         titleList.map((item, idx)=>{
-            str += `<div class='subtitle cursor'>${item} <img class="category_arrow" src="${idx == 0? Up : Right}" alt="팀로고" /></div>`;
+            str += `<div class='subtitle cursor'>${item} <img class="category_arrow" src="${idx === 0? Up : Right}" alt="팀로고" /></div>`;
+            return null;
         })
         
         showSwal(str, underView)
@@ -63,7 +64,7 @@ const Category = ({categoryList,setCategoryList,categoryTitle,setCategoryTitle})
     function underView(e, idx)
     {
         let titleTag = document.getElementsByClassName("subtitle");
-        if(idx == 0)
+        if(idx === 0)
         {
             setCategoryList([])
             setCategoryTitle(titleList[0])
@@ -76,7 +77,7 @@ const Category = ({categoryList,setCategoryList,categoryTitle,setCategoryTitle})
     
         if(categoryState[idx])
         {
-            titleTag[idx].innerHTML =titleList[idx] + `<img class="category_arrow" src="${idx == 0? Up : Right}" alt="팀로고" />`;
+            titleTag[idx].innerHTML =titleList[idx] + `<img class="category_arrow" src="${idx === 0? Up : Right}" alt="팀로고" />`;
             categoryState[idx] = !categoryState[idx]
             return;
         }
@@ -89,6 +90,7 @@ const Category = ({categoryList,setCategoryList,categoryTitle,setCategoryTitle})
         let tag ='<div class="flex_col flex_wrap">';
         result.map((item)=>{
             tag += `<div class="category_item">${item}</div>`;
+            return null;
         })
         tag += '</div>';
         
