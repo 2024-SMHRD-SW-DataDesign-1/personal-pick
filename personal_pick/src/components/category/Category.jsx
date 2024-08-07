@@ -114,8 +114,11 @@ const Category = ({categoryList,setCategoryList,categoryTitle,setCategoryTitle})
     }
 
     useEffect(()=>{
-        sendPost(URL+ "/SearchObject", null, ['r','a','s','c','v'])
+        sendPost(URL+ "/SearchList", null, ['r','a','s','c','v'])
     },[])
+    // useEffect(()=>{
+    //     sendPost(URL+ "/SearchList", null, [1,2,3,4,5])
+    // },[])
     return (
         <div>
             <button onClick={() =>showModal()}>
