@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom'
 import smile from '../../img/smile.png'
 import notsmile from '../../img/notSmile.png'
 import StarRating from './StarRating'
+import account from '../../img/account.png'
 
 
 const Detailinfo = () => {
@@ -131,9 +132,31 @@ const Detailinfo = () => {
                             <div className='reviewratestar'>
                             <StarRating />
                             </div>
+                    
+                        
+                        <div className='graphbarmain'>
+                        <div className='graphbar'/>
+                        <span className='graphbartext'>5점</span>
+                        <div className='graphbar'/>
+                        <span className='graphbartext'>4점</span>
+                        <div className='graphbar'/>
+                        <span className='graphbartext'>3점</span>
+                        <div className='graphbar'/>
+                        <span className='graphbartext'>2점</span>
+                        <div className='graphbar'/>
+                        <span className='graphbartext'>1점</span>
+                        </div>
 
-
-
+                        <div className='accountimg'>
+                            <img src = {account} width={50}/>
+                            </div>
+                        <div className='accountinfo'>
+                            <span className='nickname'>닉네임</span>
+                            <span className='skintype'>20대/건성/아토피/여드름</span>
+                            </div>
+                        <div className='accountstar'>
+                            <StarRating/>
+                            </div>
                         </div>
                         </div>
                     </div> 

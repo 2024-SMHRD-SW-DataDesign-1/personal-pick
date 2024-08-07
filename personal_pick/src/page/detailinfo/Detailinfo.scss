@@ -158,13 +158,13 @@
 }
 .reviewrate {
     margin: auto;
-    transform: translate(73px, -98px);
+    transform: translate(108px, -105px);
 }
 
 .reviewratestar {
     margin: auto;
     display: flex;
-    transform: translate(35px, -83px);
+    transform: translate(71px, -96px);
 }
 
 .reviewratecount {
@@ -179,4 +179,51 @@ input[type="radio"] {
 .starrate{
     cursor: pointer;
     transition: color 200ms;
+}
+
+.graphbarmain {
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    transform: translate(-110px, -174px);
+}
+
+.graphbartext {
+    transform: translate(-14px, 58px);
+    font-size: 16px;
+}
+
+.graphbar {
+    margin-top: 4px;
+    height: 50px;
+    width: 4px;
+    border-radius: 99999px;
+    background-color: #f7f7f7;
+}
+
+.accountinfo{
+    display: flex;
+    transform: translate(70px, -167px);
+}
+
+.accountimg{
+    display: flex;
+    transform: translate(10px, -119px);
+}
+
+.nickname{
+    display: flex;
+    font-size: 19px;
+}
+
+.skintype{
+    display: flex;
+    font-size: 15px;
+    line-height: 29px;
+    color: gray;
+}
+
+.accountstar{
+    display: flex;
+    transform: translate(67px, -171px);
 }
