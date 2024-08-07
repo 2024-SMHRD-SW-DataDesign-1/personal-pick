@@ -1,6 +1,7 @@
 from flask_restx import Resource
 from flask import request, jsonify
-from db_utils import setQuery
+from db_utils import setQuery, searchQuery, testQuery
+import pymysql
 
 class ppSearch(Resource):
     def get(self):
@@ -14,3 +15,50 @@ class ppSearch(Resource):
         print(value)
 
         return jsonify(result)
+    
+
+
+class ppSearchList(Resource):
+
+    def post(self):
+        value = request.get_json()
+        print("val", value)
+
+     # MySQL 데이터베이스 연결
+        db = pymysql.connect(
+            host='project-db-cgi.smhrd.com',
+            port=3307,
+            user='campus_24SW_DD_p2_1',
+            password='smhrd1',
+            db='campus_24SW_DD_p2_1', 
+            charset='utf8mb4'
+        )
+        
+        # 데이터베이스 커서 생성
+        cursor = db.cursor()
+
+        try:
+            delsql = "delete from searchlist"
+            searchQuery(cursor, delsql)
+
+            for i in value["data"]:
+                print("print:", i)
+                insql = f"INSERT INTO searchlist VALUES (%s)"
+                searchQuery(cursor, insql, (i,))
+                # cursor.execute 메서드는 두 번째 인수로 튜플을 기대하기 때문에 단일 요소 튜플 형식으로 생성한 것
+
+            # DB 변경 사항 커밋
+            db.commit()
+        except Exception as e:
+            # 예외 처리, rollback
+            db.rollback()
+        finally:
+            # DB 연결 종료
+            cursor.close()
+            db.close()
+
+    
+    def get(self):
+        data = setQuery("select * from searchlist")
+        # print("select data:", data)
+        return jsonify(data)
