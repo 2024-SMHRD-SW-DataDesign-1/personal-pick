@@ -34,7 +34,7 @@ const Search = () => {
     const [searchText, setSearchText] = useState([]);
 
     const {value} = useParams()
-    console.log("value : "+ value);
+    console.log("now value : "+ value);
 
     useEffect(()=>{
         sendGet(URL + "/SearchPage?value="+value , setSearchText);
