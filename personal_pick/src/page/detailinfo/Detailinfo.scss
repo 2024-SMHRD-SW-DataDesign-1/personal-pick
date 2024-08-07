@@ -18,7 +18,7 @@
     background: white;
     text-align: center;
     width: 31.6%;
-    border-bottom: 1px solid silver;
+    border-bottom: 1px solid rgb(255, 255, 255);
     top:0px;
     z-index: 10;
 }
@@ -95,35 +95,26 @@
     font-weight: 700;
 }
 
-.reviewinfo {
-    font-family: 'Pretendard-Regular';
-    font-weight: 700;
-    font-size: 23px;
-    transform: translate(0px, 85px);
-}
 
 #main1{
     /* float: left; */
     height: 266vh;
-    background-color: greenyellow;
+    background-color: rgb(255, 255, 255);
 }
 
 .smile{
     margin: auto;
-    transform: translate(0px, 27px);
 }
 
 .like {
     margin: auto;
-    display: flex;
-    transform: translate(33px, -2px);
+    margin-left: 8px;
     font-size: 19px;
 }
 
 .dontlike{
     margin: auto;
-    display: flex;
-    transform: translate(30px, -1px);
+    margin-left: 8px;
     font-size: 19px;
 }
 
@@ -146,7 +137,7 @@
 .bar3 {
     --tw-bg-opacity: 1;
     background-color: rgb(242, 242, 242, var(--tw-bg-opacity));
-    height: 1px;
+    height: 6px;
     border-width: 0px;
     transform: translate(0px, -124px);
 }
@@ -154,51 +145,94 @@
 .margintop1 {
     margin: auto;
     margin-top: 8px;
-    margin-bottom: -24px;
     display: flex;
     font-size: 16px;
     font-weight: 500
 }
 
+
+.likereview{
+    display:table-cell;
+}
+
 .dislike {
-    margin: auto;
-    transform: translate(346px, -232px);
+    display:table-cell;
+    vertical-align: middle;
+    margin-left: 191px;
+}
+
+.aireview {
+    margin-top: 23px;
+    display: flex;
+    font-family: 'Pretendard-Regular';
+    font-size: 26px;
+    margin-bottom: 23px;
+    
+}
+
+.ai{
+    font-weight: 700;
+}
+
+.reviewinfo {
+    display:flex;
+    font-family: 'Pretendard-Regular';
+    font-weight: 700;
+    font-size: 23px;
 }
 
 .margintop2 {
     margin: auto;
     margin-top: 8px;
-    margin-bottom: -24px;
     display: flex;
     font-size: 16px;
     font-weight: 500
 }
 
-.review {
+.detailreview {
     margin: auto;
-    transform: translate(0px, -146px);
     display: flex;
+    font-family: "Pretendard-Regular";
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 48px;
+    margin-bottom: 9px;
 }
+
+.reviewall {
+    display: flex;
+    width: 28vw;
+}
+
+.reviewratemain {
+    display: inline-grid;
+    /* align-items: center; */
+    justify-content: center;
+    width: 29vw;
+    font-family: "Pretendard-Regular";
+    text-align: center;
+}
+
+.graphbarmain {
+        display: ruby;
+        width: 20vw;
+        margin-top: 43px;
+}
+
 
 .reviewcount{
     margin: auto;
     margin-left: 26px;
     font-size: 18px;
 }
+
 .reviewrate {
     margin: auto;
-    transform: translate(108px, -105px);
+    font-size: 25px;
+    font-weight: 600;
 }
 
-.reviewratestar {
-    margin: auto;
-    display: flex;
-    transform: translate(71px, -96px);
-}
 
-.reviewratecount {
-    margin: auto;
-}
 
 
 input[type="radio"] {
@@ -210,15 +244,9 @@ input[type="radio"] {
     transition: color 200ms;
 }
 
-.graphbarmain {
-    margin: auto;
-    display: flex;
-    justify-content: flex-end;
-    transform: translate(-110px, -174px);
-}
+
 
 .graphbartext {
-    transform: translate(-14px, 58px);
     font-size: 16px;
 }
 
@@ -227,12 +255,13 @@ input[type="radio"] {
     height: 50px;
     width: 4px;
     border-radius: 99999px;
-    background-color: #f7f7f7;
+    background-color: #cdc2c2;
 }
 
 
 .accountmain {
     margin: auto;
+    transform: translate(10px, 159px);
 }
 
 .accountinfo{
@@ -350,8 +379,29 @@ input[type="radio"] {
     transform: translate(-2px, -3px);
 }
 
+.ingredientmain{
+    font-family: "Pretendard-Regular";
+    margin-top: 70px;
+    font-size: 25px;
+    font-weight: 600;
+}
 
 
 
+.up-btn{
+    width: 200px;
+    height: 200px;
+    background-color: purple;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    text-align: center;
+    line-height: 200px;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
 
 
