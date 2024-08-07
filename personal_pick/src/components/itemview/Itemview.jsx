@@ -16,17 +16,18 @@ const Itemveiw = ({data}) => {
         { id: 6, rank: 6 },
         { id: 7, rank: 7 },
         { id: 8, rank: 8 },
-        { id: 9, rank: 9 }
+        { id: 9, rank: 9 },
+        { id: 10, rank: 10 }
     ]
 
 
 
     const nav = useNavigate();
 
-
+    console.log(data);
     return (
         <div className='flex_row alldiv'>
-            {data.map((item, idx) => (
+            {data.length >0 && data.map((item, idx) => (
                 <div className='itemBox flex_col cursor' key={item.idx} onClick={() => nav('detailinfo/' + (idx + 1))}>
                     {/* 금메달, 은메달 등 rankingDic을 itemDic map 함수 돌린 거에 맞춰 꺼내옴 */}
                     <div className='rank_num' key={rankingDic[idx].id}>{rankingDic[idx].rank}</div>
