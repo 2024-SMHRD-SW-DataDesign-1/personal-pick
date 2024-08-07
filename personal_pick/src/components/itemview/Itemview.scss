@@ -1,29 +1,35 @@
 .alldiv{
     height: 400px;
-    width: 1020px;
+    width: 1152px;
     flex-wrap: wrap;
-    text-align: center;
+    // text-align: center;
+    // background-color: aqua;
     
 }
 
 .itemBox{
+    margin-left: 20px;
+    // border: 1px solid #999999 ;
     height: 130px;
-    width: 330px;
-    justify-content: center;
+    width: 340px;
+    // 하 이거 핑크 박스 안에 데이터 자꾸 삐뚤해져서 주석처리 해놨음
+    // justify-content: center;
     align-items: center;
+    // background-color: pink;
 }
 
 
 .rank_brand_name{
     font-size: 14px;
     color: #999999;
-    display: inline-block;
+    // display: inline-block;
+    
 }
 
 .rank_cos_name{
     color: #111111;
     font-size: 14px;
-    display: inline-block;
+    // display: inline-block;
 }
 
 .rank_cos_price{
@@ -55,7 +61,7 @@
 }
 
 .rank_grade{
-    margin-top: 5px;
+    margin-top: 4px;
     margin-bottom: 10px;
     text-align: left;
 }
@@ -71,12 +77,4 @@
 .rank_num{
     font-weight: bold;
 }
-
-// .rank_name{
-//     // width: max-content;
-//     // max-width: 170px;
-//     // word-break: break-all;
-//     text-overflow: clip;
-//     text-align: left;
-// }
 
