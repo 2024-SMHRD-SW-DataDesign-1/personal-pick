@@ -27,6 +27,7 @@ export function sendPost(url, func=null, data = null) {
         .catch(error => {
             console.error("요청 실패 : ", error);
         });
+        
 }
 
 
