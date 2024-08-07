@@ -28,8 +28,8 @@ const CustomSwiper = ({ list }) => {
             {list.length > 0 && list.map((item, i)=>{
                 return (
                 <SwiperSlide key={i} >
-                    <img className='cursor' src={item.cos_img_src} alt=""  onClick={()=> nav('detailinfo/'+(i+1))}/>   
-                    <ul >
+                    <img className='cursor slilder_img' src={item.cos_img_src} alt=""  onClick={()=> nav('detailinfo/'+(i+1))}/>   
+                    
                     <li className='cos_conater' onClick={()=> nav('detailinfo/'+(i+1))}>
                         <div className='brand_name'><span>
                             {item.brand_name}</span>
@@ -44,7 +44,7 @@ const CustomSwiper = ({ list }) => {
                             <span className='cos_grade_cnt'>   {"("+item.grade_count+")"}</span></div>
                         </div>
                     </li> 
-                    </ul>
+                    
                 </SwiperSlide>
                 )
             })}

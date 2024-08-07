@@ -59,6 +59,11 @@ class ppSearchList(Resource):
 
     
     def get(self):
+        list = []
+        
         data = setQuery("select * from searchlist")
-        # print("select data:", data)
-        return jsonify(data)
+        for value in data:
+            list.append(value['product'])
+        print("select data:", data)
+        print("list : " ,list)
+        return list

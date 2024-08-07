@@ -9,7 +9,7 @@ const InputBox = ({func}) => {
     
 
     return (
-        <div className='flex_col ' >
+        <div className='flex_col inputBox' >
             <input className='search_box' type="text" onChange={(e)=>setValue(e.target.value)}/>
             <button className="btntype" onClick={()=>{
                 

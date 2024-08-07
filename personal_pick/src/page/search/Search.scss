@@ -23,12 +23,15 @@
 }
 
 .backbtn {
-    width: 15px;
+    // width: 15px;
     height: 18px;
     // color: black;
-    display: block;
+    // display: block;
     border: 0;
     background-color: transparent;
+    float: left;
+    // margin-right: 10px;
+
 }
 
 .back {
@@ -52,7 +55,7 @@
 
 }
 // 최근 검색어의 사용자가 검색한 단어 버튼
-.researchbtn {
+.recentSearchName {
     display: inline-block; /* 이 요소가 다른 요소와 나란히 배치되도록 함 */
     margin: 5px; /* 검색어 간 간격을 줌 */
     padding: 5px; /* 요소 내부의 여백을 줌 */
@@ -66,6 +69,10 @@
     align-items: center;
     height: 32px;
     display: inline-flex;
+}
+
+.recentSearchbtn {
+    margin-left: 10px;
 }
 
 // 최근 검색어 아래의 줄
@@ -138,7 +145,7 @@
     margin-right: 3px;
 }
 
-.review {
+.review1 {
     margin-top: 5px;
     margin-bottom: 12px;
     
