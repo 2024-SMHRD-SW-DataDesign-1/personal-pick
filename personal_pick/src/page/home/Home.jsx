@@ -6,6 +6,7 @@ import InputBox from "../../components/inputbox/InputBox";
 import { sendGet, URL } from "../../util/util";
 import Category from "../../components/category/Category";
 import Itemview from "../../components/itemview/Itemview"
+import './Home.scss'
 
 
 // <div className='MainView inner'>    
@@ -22,15 +23,120 @@ import Itemview from "../../components/itemview/Itemview"
 
 // </div>
 
+// 데이터 6개만 받아올 예정!
+let itemDic = [
+    {
+        idx: 1,
+        brand_name: '브랜드이름1',
+        cos_name: '코스네임일',
+        // cos_name: '여기이름길면줄바꿈되게해야함',
+        cos_img_src: 'https://img.hwahae.co.kr/products/2107141/2107141_20240715175717.jpg?format=webp&size=600x600',
+        grade: 4.74,
+        grade_count: 2456,
+        price: 4000,
+        vol: 40,
+        ranking: '1'
+    },
+    {
+        idx: 2,
+        brand_name: '브랜드이름2',
+        cos_name: '코스네임이',
+        cos_img_src: 'https://img.hwahae.co.kr/products/1993475/1993475_20240312112855.jpg?format=webp&size=600x600',
+        grade: 4.74,
+        grade_count: 2456,
+        price: 4000,
+        vol: 40,
+        ranking: '34'
+    },
+    {
+        idx: 3,
+        brand_name: '브랜드이름3',
+        cos_name: '코스네임삼',
+        cos_img_src: 'https://img.hwahae.co.kr/products/1993475/1993475_20240312112855.jpg?format=webp&size=600x600',
+        grade: 4.74,
+        grade_count: 2456,
+        price: 4000,
+        vol: 40,
+        ranking: '34'
+    },
+    {
+        idx: 4,
+        brand_name: '브랜드이름4',
+        cos_name: '코스네임사',
+        cos_img_src: 'https://img.hwahae.co.kr/products/1832892/1832892_20220801000000.jpg?format=webp&size=600x600',
+        grade: 4.74,
+        grade_count: 2456,
+        price: 4000,
+        vol: 40,
+        ranking: '34'
+    },
+    {
+        idx: 5,
+        brand_name: '브랜드이름5',
+        cos_name: '코스네임오',
+        cos_img_src: "https://img.hwahae.co.kr/products/1897092/1897092_20220801000000.jpg?format=webp&size=600x600",
+        grade: 4.74,
+        grade_count: 2456,
+        price: 4000,
+        vol: 40,
+        ranking: '34'
+    },
+    {
+        idx: 6,
+        brand_name: '브랜드이름6',
+        cos_name: '코스네임육',
+        cos_img_src: 'https://img.hwahae.co.kr/products/2058047/2058047_20230808102719.jpg?format=webp&size=600x600',
+        grade: 4.74,
+        grade_count: 2456,
+        price: 4000,
+        vol: 40,
+        ranking: '34'
+    },
+    {
+        idx: 7,
+        brand_name: '브랜드이름4',
+        cos_name: '코스네임사',
+        cos_img_src: 'https://img.hwahae.co.kr/products/1832892/1832892_20220801000000.jpg?format=webp&size=600x600',
+        grade: 4.74,
+        grade_count: 2456,
+        price: 4000,
+        vol: 40,
+        ranking: '34'
+    },
+    {
+        idx: 8,
+        brand_name: '브랜드이름5',
+        cos_name: '코스네임오',
+        cos_img_src: "https://img.hwahae.co.kr/products/1897092/1897092_20220801000000.jpg?format=webp&size=600x600",
+        grade: 4.74,
+        grade_count: 2456,
+        price: 4000,
+        vol: 40,
+        ranking: '34'
+    },
+    {
+        idx: 9,
+        brand_name: '브랜드이름6',
+        cos_name: '코스네임육',
+        cos_img_src: 'https://img.hwahae.co.kr/products/2058047/2058047_20230808102719.jpg?format=webp&size=600x600',
+        grade: 4.74,
+        grade_count: 2456,
+        price: 4000,
+        vol: 40,
+        ranking: '34'
+    }
+]
+
 function show(data)
 {
-    console.log(data)
+
 }
 
 const Home = () => {
     // 페이지 이동 함수
     const nav = useNavigate();
-
+    const [categoryList, setCategoryList] = useState([]);
+    const [categoryTitle, setCategoryTitle] = useState("카테고리 전체");
 
     const [data, setData] = useState([]);
 
@@ -53,12 +159,19 @@ const Home = () => {
             <div>
                 <CustomSwiper list={data}/>
             </div>
-            <p>
-                화해 고객들이 직접 선택한 랭킹🎁
-            </p>
-            <Category/>
-            <Itemview/>
+            <h2 className="basic-text">화해 고객들이 직접 <span> 선택한 랭킹🎁 </span> </h2> 
             
+            <Category categoryList={categoryList} setCategoryList={setCategoryList} categoryTitle={categoryTitle} setCategoryTitle={setCategoryTitle}/>
+            <Itemview data={itemDic}/>
+            {/* sendGet으로 필요한 데이터 세 가지 받아오고 그 데이터 이름을 data라는 키 값으로 보내주면 됨! */}
+
+            <h2 className="basic-text">내 피부에 꼭 맞는 제품 랭킹</h2>
+            <Itemview data={itemDic}/>
+
+            <h2 className="basic-text">나이대별 추천</h2>
+            <Itemview data={itemDic}/>
+
+  
         </div>
         
     );

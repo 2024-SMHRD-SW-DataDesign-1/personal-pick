@@ -3,7 +3,7 @@ import axios from 'axios'
 import { URL } from '../../util/util'
 import { useNavigate } from 'react-router-dom';
 
-import './Mypage.css'
+import './Mypage.scss'
 
 const Join = () => {
     // // 페이지 이동 함수
@@ -48,11 +48,9 @@ const Join = () => {
     // };
 
     return (
-        // <div id='header'>
-
-
-        // </div>
-
+        
+        <div id='mypage'>
+        <div id="Mypage">
         <div id='wrapper'>
             <div id='head'>
                 <span className="left">마이페이지</span>
@@ -158,7 +156,8 @@ const Join = () => {
                 </span>
             </div>
         </div>
-
+        </div>
+        </div>
     );
 };
 

@@ -2,9 +2,15 @@ import React, { useEffect, useState } from 'react';
 import InputBox from '../../components/inputbox/InputBox';
 import { sendGet, URL } from '../../util/util';
 import './Search.scss';
-import Star from '../../img/별.png'
+import Star from '../../img/별.png';
+
+import axios from 'axios';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Search = () => {
+    // 페이지 이동 함수
+    const nav = useNavigate();
+
     // 내가 찾고 싶은 제품을 검색했을 때 나타나는 제품리스트
     const [list, setList] = useState([]);
 
@@ -23,8 +29,32 @@ const Search = () => {
     // searchHistory : 최근 검색어를 저장할 상태 변수(최근 검색어를 저장하는 배열)
     const [searchHistory, setSearchHistory] = useState([]);
 
+    const {value} = useParams()
+    console.log("value : "+ value);
+
+    useEffect(()=>{
+        sendGet(URL + "/SearchPage?value="+value , setSearchHistory);
+    },[]);
+    
+    console.log(searchHistory);
+    
     // 검색어를 추가하는 함수
     const searchAdd = (searchTerm) => {  // 새로운 검색어, 사용자가 검색을 수행할 때 handleSearch 함수로 전달
+        console.log("searchTerm : "+searchTerm );
+        
+        // URL + /login 경로로 id, pw를 담아서 요청을 보냄
+        const handleLogin = async (searchTerm) => {
+            searchTerm.preventDefault();           
+            // URL + /login 경로로 id, pw를 담아서 요청을 보냄
+            const response = await axios.post(URL + '/SearchPage', {
+                searchTerm
+            });
+            
+            console.log(response);
+            console.log(response.data);
+            
+            
+        }
         setSearchHistory((prevHistory) => { // 기존(이전)에 검색했던 데이터 리스트(배열)
             // 이전 검색어 리스트에 새로운 검색어를 배열 끝에 추가
             // 스프레드 문법(...) : 내가 보관하고 있던 이전까지의 데이터 유지시킨 후 그 뒤에 데이터 연결
@@ -38,6 +68,7 @@ const Search = () => {
         });
     };
 
+    
 
     // 검색어를 삭제하는 함수
     const searchDelete = (indexToDelete) => {
@@ -50,44 +81,62 @@ const Search = () => {
         );
     };
 
+    // 제품 클릭 시 detailinfo 페이지로 이동하는 함수
+    const handleProductClick = (idx) => {
+        nav(`/detailinfo/${idx}`);
+    };
+
     return (
         <div>
-            <div className=''>
+            <div id='wrapper' className='Search'>
                 {/* InputBox 컴포넌트에 searchAdd 함수를 전달하여 검색어 입력 시 호출되게 함 */}
-                <InputBox func={searchAdd}></InputBox>
+                <div className='searchbtn'>
+                    <InputBox func={searchAdd}></InputBox>
+                </div>
                 {/* <div style={{ height: '120px' }}> */}
                 <div>
                     <div className='recent'>
-                        <h2>최근 검색어</h2>
+                        <h className='recentName'>최근 검색어</h>
+                        <button type='button' className='btn'><span>전체 삭제</span></button>
                     </div>
+                        
                     <div className='search'>
                         {/* 검색 기록을 화면에 표시 */}
                         {searchHistory.map((item, index) => (
                             // 각 검색어를 리스트 아이템으로 표시
-
                             <span className='recent_search' key={index}>{item}<button onClick={() => searchDelete(index)}> X</button></span>
-
-                            // <li key="0">검색어1</li>
-                            // <li key="1">검색어2</li>
-                            // <li key="2">검색어3</li>
                         ))}
                     </div>
                     <hr className='line' />
                 </div>
                 {/* 서버에서 가져온 제품 리스트를 화면에 표시 */}
                 <div className='product'>
-                    <h2>제품</h2>
+                    <h2>지금 가장 많이 구매하고 있어요 :)</h2>
+                    {/* <strong>검색한 제품 개수{idx}</strong> */}
                 </div>
                 <div className='products'>
                     <ul>
                         {list.map((item) => (
-                            <li className='product1' key={item.idx}>
-                                <a className='flex' href="">
+                            <li className='product1' key={item.idx} onClick={() => handleProductClick(item.idx)}>
+                                <a className='flex'>
+                                    <div className='idx'>{item.idx}</div>
                                     <span><img src={item.cos_img_src} style={{ width: '90px' }} alt={item.cos_name}></img></span>
                                     <div className='items'>
-                                    <div><span className='gray'>{item.brand_name}</span> <span>{item.cos_name}</span></div> <br />
-                                    <div><span>⭐<img className='star' src={Star} alt="" ></img>{item.grade}</span> <span className='gray'>({item.grade_count})</span></div> <br />
-                                    <div><span>{item.vol}ml / {item.price}원</span></div>
+                                    <div className='font'>
+                                        <span className='brand'>{item.brand_name}</span>
+                                        <span>{item.cos_name}</span>
+                                        </div> 
+                                       
+                                    <div className='review'>
+                                        <span><img className='star' src={Star}></img></span>
+                                        <span className='grade'>{item.grade}</span>
+                                        <span className='gray'>({item.grade_count})</span>
+                                    </div> 
+                                    <div>
+                                        <span className='jungga'>정가 </span>
+                                        <span className='won'>{item.price}원</span>
+                                        <span className='gray'>/{item.vol}ml</span>
+                                        </div>
                                     <br />
                                     </div>
                                 </a>

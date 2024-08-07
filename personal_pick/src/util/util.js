@@ -41,8 +41,9 @@ export function sendDel(url, func=null, data=null)
         })
 }
 
-export const URL = "http://192.168.219.111:5001";
+ export const URL = "http://192.168.219.111:5001";
 // export const URL = "http://192.168.219.81:5001";
+//export const URL = "http://192.168.219.124:5001";
 
 export const dummyCategory = {
     skinCare : [
@@ -86,10 +87,11 @@ export const dummyCategory = {
 
 }
 
-export function showSwal(strTag){
+export function showSwal(strTag, func){
     withReactContent(Swal).fire({
-        title: "Custom animation with Animate.css",
+        // title: "Custom animation with Animate.css",
         html : strTag,
+        showConfirmButton : false, // ok 버튼 숨기기
         showClass: {
           popup: `
             animate__animated
@@ -106,7 +108,19 @@ export function showSwal(strTag){
         },
         didOpen : () => {
             let list = document.getElementsByClassName("subtitle");
-            console.log(list);
+            for(let i = 0; i < list.length; i++)
+            {
+                
+                list[i].addEventListener("click",function(e){
+                    func(e, i)
+                })
+            }
         },
     })
 }
+
+export function modalClose(){
+    withReactContent(Swal).close();
+}
+
+

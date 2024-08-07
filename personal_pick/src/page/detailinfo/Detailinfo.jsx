@@ -6,7 +6,7 @@ import star from '../../img/별.png'
 import { useParams } from 'react-router-dom'
 import smile from '../../img/smile.png'
 import notsmile from '../../img/notSmile.png'
-import { FaStar } from 'react-icons/fa';
+import StarRating from './StarRating'
 
 
 const Detailinfo = () => {
@@ -22,17 +22,6 @@ const Detailinfo = () => {
          sendGet(URL + "/DetailPage?idx="+idx , setData);
     },[]);
 
-    const ARRAY = [0, 1, 2, 3, 4];
-
-    const [score, setScore] = useState([false, false, false, false, false]);
-    
-    const starScore = index => {
-        let star = [...score];
-        for (let i = 0; i < 5; i++) {
-          star[i] = i <= index ? true : false;
-        }
-        setScore(star);
-      };
 
     
   return (
@@ -139,14 +128,10 @@ const Detailinfo = () => {
                         <div className='reviewrate'>
                             평점
                             </div>
-                        <div className='reviewratestar'>
-                        {ARRAY.map((el, index) => (
-                                <FaStar
-                                    key={index}
-                                    size="14"
-                                ></FaStar>
-                                ))}
-                        </div>
+                            <div className='reviewratestar'>
+                            <StarRating />
+                            </div>
+
 
 
                         </div>

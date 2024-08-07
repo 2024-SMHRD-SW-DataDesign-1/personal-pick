@@ -133,7 +133,7 @@
 
 .dislike {
     margin: auto;
-    transform: translate(346px, -255px);
+    transform: translate(346px, -253px);
 }
 
 .margintop2 {
@@ -158,8 +158,25 @@
 }
 .reviewrate {
     margin: auto;
+    transform: translate(73px, -98px);
+}
+
+.reviewratestar {
+    margin: auto;
+    display: flex;
+    transform: translate(35px, -83px);
 }
 
 .reviewratecount {
     margin: auto;
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+
+.starrate{
+    cursor: pointer;
+    transition: color 200ms;
 }
