@@ -34,7 +34,7 @@ const Search = () => {
     const [searchText, setSearchText] = useState([]);
 
     const {value} = useParams()
-    console.log("now value : "+ value);
+    console.log("value : "+ value);
 
     useEffect(()=>{
         sendGet(URL + "/SearchPage?value="+value , setSearchText);
@@ -157,7 +157,7 @@ const Search = () => {
                                         </div> 
                                        
                                     <div className='review'>
-                                        <span><img className='star1' src={Star}></img></span>
+                                        <span><img className='star' src={Star}></img></span>
                                         <span className='grade'>{item.grade}</span>
                                         <span className='gray'>({item.grade_count})</span>
                                     </div> 
