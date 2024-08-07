@@ -119,4 +119,8 @@ export function showSwal(strTag, func){
     })
 }
 
+export function modalClose(){
+    withReactContent(Swal).close();
+}
+
 

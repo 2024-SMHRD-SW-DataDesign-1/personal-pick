@@ -6,8 +6,7 @@ from ppMain import ppMainPage
 from ppDetail import ppDetailPage
 from join import ppJoin
 from ppLogin import ppLogin
-from ppSearch import ppSearch
-from ppSearchObject import ppSearchObject
+from ppSearch import ppSearch, ppSearchList
 
 app = Flask(__name__, static_folder='../build', static_url_path='/')
 CORS(app) 
@@ -20,7 +19,7 @@ api.add_resource(ppDetailPage, '/DetailPage')
 api.add_resource(ppJoin, '/JoinPage')
 api.add_resource(ppLogin, '/LoginPage')
 api.add_resource(ppSearch, '/SearchPage')
-api.add_resource(ppSearchObject, '/SearchObject')
+api.add_resource(ppSearchList, '/SearchList')
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5001, debug=True)
