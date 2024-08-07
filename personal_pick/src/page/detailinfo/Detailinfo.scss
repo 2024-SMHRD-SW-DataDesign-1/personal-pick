@@ -19,14 +19,30 @@
     text-align: center;
     width: 31.6%;
     border-bottom: 1px solid silver;
+    top:0px;
+    z-index: 10;
 }
 
+.goback {
+    width: 60px;
+    display: block;
+    height: 40px;
+    border: 0;
+    background-color: transparent;
+    transform: translate(-10px, 4px);
+    cursor: pointer;
+}
+
+
+
 .itemname label {
-    line-height: 40px;
     font-size: 20px;
     font-weight: 700;
-    transform: translateY(-50%);
     font-family: "Pretendard-Regular";
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    transform: translate(0px, -30px);
 }
 
 .brandimg {
@@ -88,7 +104,254 @@
 
 #main1{
     /* float: left; */
-    height: 149vh;
+    height: 266vh;
     background-color: greenyellow;
 }
+
+.smile{
+    margin: auto;
+    transform: translate(0px, 27px);
+}
+
+.like {
+    margin: auto;
+    display: flex;
+    transform: translate(33px, -2px);
+    font-size: 19px;
+}
+
+.dontlike{
+    margin: auto;
+    display: flex;
+    transform: translate(30px, -1px);
+    font-size: 19px;
+}
+
+.bar {
+    --tw-bg-opacity: 1;
+    background-color: rgba(242, 242, 242, var(--tw-bg-opacity));
+    height: 10px;
+    border-width: 0;
+    transform: translate(0px, 21px);
+}
+
+.bar2 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(242, 242, 242, var(--tw-bg-opacity));
+    height: 10px;
+    border-width: 0;
+    transform: translate(0px, -200px);
+}
+
+.bar3 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(242, 242, 242, var(--tw-bg-opacity));
+    height: 1px;
+    border-width: 0px;
+    transform: translate(0px, -124px);
+}
+
+.margintop1 {
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: -24px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 500
+}
+
+.dislike {
+    margin: auto;
+    transform: translate(346px, -232px);
+}
+
+.margintop2 {
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: -24px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 500
+}
+
+.review {
+    margin: auto;
+    transform: translate(0px, -146px);
+    display: flex;
+}
+
+.reviewcount{
+    margin: auto;
+    margin-left: 26px;
+    font-size: 18px;
+}
+.reviewrate {
+    margin: auto;
+    transform: translate(108px, -105px);
+}
+
+.reviewratestar {
+    margin: auto;
+    display: flex;
+    transform: translate(71px, -96px);
+}
+
+.reviewratecount {
+    margin: auto;
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+
+.starrate{
+    cursor: pointer;
+    transition: color 200ms;
+}
+
+.graphbarmain {
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    transform: translate(-110px, -174px);
+}
+
+.graphbartext {
+    transform: translate(-14px, 58px);
+    font-size: 16px;
+}
+
+.graphbar {
+    margin-top: 4px;
+    height: 50px;
+    width: 4px;
+    border-radius: 99999px;
+    background-color: #f7f7f7;
+}
+
+
+.accountmain {
+    margin: auto;
+}
+
+.accountinfo{
+    display: flex;
+    transform: translate(70px, -167px);
+}
+
+.accountimg{
+    display: flex;
+    transform: translate(10px, -119px);
+}
+
+.nickname{
+    display: flex;
+    font-size: 19px;
+}
+
+.skintype{
+    display: flex;
+    font-size: 15px;
+    line-height: 29px;
+    color: gray;
+}
+
+.accountstar{
+    display: flex;
+    transform: translate(67px, -171px);
+}
+
+.accountdate{
+    display: flex;
+    transform: translate(190px, -197px);
+    font-size: 17px;
+}
+
+.goodcommentmain{
+    display: flex;
+    transform: translate(0px, -444%);
+}
+
+.goodcomment {
+    margin-left: 12px;
+    line-height: 37px;
+    transform: translate(0px, -4px);
+    font-size: 22px;
+}
+
+.sosocommentmain{
+    display: flex;
+    transform: translate(2px, -137px);
+}
+
+.sosocomment {
+    margin-left: 16px;
+    line-height: 32px;
+    font-size: 22px;
+    transform: translate(-2px, -3px);
+}
+
+
+.accountinfo1{
+    display: flex;
+    transform: translate(70px, -167px);
+}
+
+.accountimg1{
+    display: flex;
+    transform: translate(10px, -119px);
+}
+
+.nickname1{
+    display: flex;
+    font-size: 19px;
+}
+
+.skintype1{
+    display: flex;
+    font-size: 15px;
+    line-height: 29px;
+    color: gray;
+}
+
+.accountstar1{
+    display: flex;
+    transform: translate(67px, -171px);
+}
+
+.accountdate1{
+    display: flex;
+    transform: translate(190px, -197px);
+    font-size: 17px;
+}
+
+.goodcommentmain1{
+    display: flex;
+    transform: translate(0px, -444%);
+}
+
+.goodcomment1 {
+    margin-left: 12px;
+    line-height: 37px;
+    transform: translate(0px, -4px);
+    font-size: 22px;
+}
+
+.sosocommentmain1{
+    display: flex;
+    transform: translate(2px, -137px);
+}
+
+.sosocomment1 {
+    margin-left: 16px;
+    line-height: 32px;
+    font-size: 22px;
+    transform: translate(-2px, -3px);
+}
+
+
+
+
+
 
