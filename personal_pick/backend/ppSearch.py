@@ -1,6 +1,6 @@
 from flask_restx import Resource
 from flask import request, jsonify
-from db_utils import setQuery, searchQuery
+from db_utils import setQuery, searchQuery, testQuery
 import pymysql
 
 class ppSearch(Resource):
@@ -57,4 +57,8 @@ class ppSearchList(Resource):
             cursor.close()
             db.close()
 
-        return {"message": "Data inserted successfully"}, 201
+    
+    def get(self):
+        data = setQuery("select * from searchlist")
+        # print("select data:", data)
+        return jsonify(data)

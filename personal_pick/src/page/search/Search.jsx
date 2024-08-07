@@ -3,13 +3,17 @@ import InputBox from '../../components/inputbox/InputBox';
 import { sendGet, URL } from '../../util/util';
 import './Search.scss';
 import Star from '../../img/별.png';
+import Back from '../../img/뒤로가기.png';
 
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const Search = () => {
+
     // 페이지 이동 함수
     const nav = useNavigate();
+
+
 
     // 내가 찾고 싶은 제품을 검색했을 때 나타나는 제품리스트
     const [list, setList] = useState([]);
@@ -25,18 +29,26 @@ const Search = () => {
     }, []); // 빈 배열을 두 번째 인자로 전달하여 마운트 시 한 번만 실행
 
 
-    // 내가 찾고 싶은 제품 단어를 검색했을 때 나타나는 최근 검색어
-    // searchHistory : 최근 검색어를 저장할 상태 변수(최근 검색어를 저장하는 배열)
-    const [searchHistory, setSearchHistory] = useState([]);
+
+    // 'params' 사용해서 사용자가 검색한 단어를 받아와 백엔드에서 구축한 value로 보내기!
+    const [searchText, setSearchText] = useState([]);
 
     const {value} = useParams()
     console.log("value : "+ value);
 
     useEffect(()=>{
-        sendGet(URL + "/SearchPage?value="+value , setSearchHistory);
+        sendGet(URL + "/SearchPage?value="+value , setSearchText);
     },[]);
+
+    console.log('return : ',searchText);
     
-    console.log(searchHistory);
+    // console.log(searchHistory);
+
+
+
+    // 내가 찾고 싶은 제품 단어를 검색했을 때 나타나는 최근 검색어
+    // searchHistory : 최근 검색어를 저장할 상태 변수(최근 검색어를 저장하는 배열)
+    const [searchHistory, setSearchHistory] = useState([]);
     
     // 검색어를 추가하는 함수
     const searchAdd = (searchTerm) => {  // 새로운 검색어, 사용자가 검색을 수행할 때 handleSearch 함수로 전달
@@ -46,7 +58,7 @@ const Search = () => {
         const handleLogin = async (searchTerm) => {
             searchTerm.preventDefault();           
             // URL + /login 경로로 id, pw를 담아서 요청을 보냄
-            const response = await axios.post(URL + '/SearchPage', {
+            const response = await axios.get(URL + '/SearchPage', {
                 searchTerm
             });
             
@@ -55,20 +67,32 @@ const Search = () => {
             
             
         }
+        //console.log("in");
+           
         setSearchHistory((prevHistory) => { // 기존(이전)에 검색했던 데이터 리스트(배열)
             // 이전 검색어 리스트에 새로운 검색어를 배열 끝에 추가
             // 스프레드 문법(...) : 내가 보관하고 있던 이전까지의 데이터 유지시킨 후 그 뒤에 데이터 연결
             const newHistory = [...prevHistory, searchTerm];
+            console.log(prevHistory);
+            
             // 검색어 리스트가 5개를 초과하면 가장 오래된 검색어 제거
             if (newHistory.length > 5) {
                 newHistory.shift();  // 가장 오래된 검색어 제거 함수
             }
+
             // 최신 검색어 리스트를 반환하여 상태 업데이트
+            console.log("newHistoy:",newHistory);
+
+            // 검색한 5개의 리스트를 백엔드로 보내기 (새로고침 했을 때 검색한 단어가 날아감 방지)
+            // 백엔드에서 다시 받아와서 최근 검색어에 넣어주기
+
+
             return newHistory;
+                       
         });
     };
-
     
+
 
     // 검색어를 삭제하는 함수
     const searchDelete = (indexToDelete) => {
@@ -81,30 +105,35 @@ const Search = () => {
         );
     };
 
+
+
     // 제품 클릭 시 detailinfo 페이지로 이동하는 함수
     const handleProductClick = (idx) => {
         nav(`/detailinfo/${idx}`);
     };
+
+
 
     return (
         <div>
             <div id='wrapper' className='Search'>
                 {/* InputBox 컴포넌트에 searchAdd 함수를 전달하여 검색어 입력 시 호출되게 함 */}
                 <div className='searchbtn'>
-                    <InputBox func={searchAdd}></InputBox>
+                    <button className='backbtn' type="button" onClick={()=> nav('/')}><span><img className='back' src={Back}></img></span></button>
+                    <span><InputBox func={searchAdd}></InputBox></span>
                 </div>
                 {/* <div style={{ height: '120px' }}> */}
                 <div>
                     <div className='recent'>
-                        <h className='recentName'>최근 검색어</h>
-                        <button type='button' className='btn'><span>전체 삭제</span></button>
+                        <h2 className='recentName'>최근 검색어</h2>
+                        <button type='button' className='deletebtn'><span>전체 삭제</span></button>
                     </div>
                         
                     <div className='search'>
                         {/* 검색 기록을 화면에 표시 */}
                         {searchHistory.map((item, index) => (
                             // 각 검색어를 리스트 아이템으로 표시
-                            <span className='recent_search' key={index}>{item}<button onClick={() => searchDelete(index)}> X</button></span>
+                            <span className='researchbtn' key={index}>{item}<button onClick={() => searchDelete(index)}> X</button></span>
                         ))}
                     </div>
                     <hr className='line' />
@@ -128,7 +157,7 @@ const Search = () => {
                                         </div> 
                                        
                                     <div className='review'>
-                                        <span><img className='star' src={Star}></img></span>
+                                        <span><img className='star1' src={Star}></img></span>
                                         <span className='grade'>{item.grade}</span>
                                         <span className='gray'>({item.grade_count})</span>
                                     </div> 

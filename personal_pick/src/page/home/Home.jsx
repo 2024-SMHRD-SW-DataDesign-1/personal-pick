@@ -143,6 +143,7 @@ const Home = () => {
 
     });
     const [data, setData] = useState([]);
+    const [userChoiceRank, setUserChoiceRank] = useState([...itemDic])
 
     // [] -> 첫 렌더링에만 실행
     useEffect(()=>{        
@@ -150,7 +151,7 @@ const Home = () => {
     },[])
 
     useEffect(()=>{        
-        sendGet(URL + '/CategorySel?category='+categoryDic.subtitle, show)
+        sendGet(URL + '/CategorySel?category='+categoryDic.subtitle, setUserChoiceRank)
     },[categoryDic])
 
     // data 값이 변경될 때마다 실행
@@ -179,7 +180,7 @@ const Home = () => {
             <div className="basic-text">화해 고객들이 직접 <span> 선택한 랭킹🎁 </span> <img className="category_arrow" src={Right} alt="" /> </div> 
             
             <Category dic ={categoryDic} setDic={setCategoryDic}/>
-            <Itemview data={itemDic}/>
+            <Itemview data={userChoiceRank}/>
 
             <div className="home_page_btn">
                 카테고리 전체보기

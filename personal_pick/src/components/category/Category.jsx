@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { dummyCategory, modalClose, sendPost, showSwal, URL } from '../../util/util';
+import React from 'react';
+import { dummyCategory, modalClose, showSwal } from '../../util/util';
 import Up from '../../img/위쪽.png'
 import Down from '../../img/아래쪽.png'
 import Right from '../../img/오른쪽.png'
@@ -122,7 +122,6 @@ const Category = ({dic, setDic}) => {
         }
     
     }
-
 
     return (
         <div>

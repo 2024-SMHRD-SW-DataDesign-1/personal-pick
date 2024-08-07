@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './InputBox.scss'
 import { useNavigate } from 'react-router-dom';
-const InputBox = ({func =null}) => {
+const InputBox = ({func}) => {
     const [value, setValue] = useState("");
     const nav = useNavigate();
+
     
     
 
@@ -12,10 +13,9 @@ const InputBox = ({func =null}) => {
             <input className='search_box' type="text" onChange={(e)=>setValue(e.target.value)}/>
             <button className="btntype" onClick={()=>{
                 
-                if (func=null)
-                {
-                    func(value)
-                }
+
+                func(value)
+                
                 
                 nav("/search/"+value);
 
