@@ -1,4 +1,13 @@
-// 최근 검색어
+.searchbtn {
+    padding-left: 16px;
+    padding-right: 16px;
+    // display: flex;
+    // align-items: baseline;
+    // justify-content: center;
+
+}
+
+// 최근 검색어 부분
 .recent {
     padding-top: 16px;
     padding-left: 20px;
@@ -6,28 +15,35 @@
     display: flex;
     justify-content: space-between;
 }
-
+// '최근 검색어' 글씨
 .recentName {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 700;
-    
+    letter-spacing: -.1px;
 }
 
-// .searchbtn {
-//     display: flex;
-//     justify-content: center;
-// }
+.backbtn {
+    width: 15px;
+    height: 18px;
+    // color: black;
+    display: block;
+    border: 0;
+    background-color: transparent;
+}
 
-.btn {
-    font-size: 15px;
+.back {
+    width: 15px;
+    height: 18px;
+}
+// 전체 삭제
+.deletebtn {
+    font-size: 12px;
     font-weight: 700;
     border: 0;
     background-color: transparent;
 }
 
-
-
-// 최근 검색어의 검색어
+// 최근 검색어의 사용자가 검색한 단어들
 .search {
     padding-bottom: 24px;
     padding-top: 24px;
@@ -35,13 +51,21 @@
     padding-right: 20px;
 
 }
-
-.recent_search {
+// 최근 검색어의 사용자가 검색한 단어 버튼
+.researchbtn {
     display: inline-block; /* 이 요소가 다른 요소와 나란히 배치되도록 함 */
     margin: 5px; /* 검색어 간 간격을 줌 */
     padding: 5px; /* 요소 내부의 여백을 줌 */
     border: 1px solid black; /* 테두리 설정 */
-    border-radius: 5px; /* 테두리 둥글게 설정 */
+    border-radius: 8px; /* 테두리 둥글게 설정 */
+    border-color: #e8e8e8;
+    color: #666;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    height: 32px;
+    display: inline-flex;
 }
 
 // 최근 검색어 아래의 줄
@@ -51,25 +75,29 @@
     border: 0 solid #f2f2f2;
 }
 
-// 제품
+// 지금 가장 많이 구매하고 있어요 :)
 .product {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     padding-top: 16px;
     padding-right: 20px;    
     padding-bottom: 16px;
+    letter-spacing: -.2px;
 }
+
 // 검색했을 때 나오는 전체 제품들 양 옆 패딩 주기
 .products {
     padding-left: 20px;
     padding-right: 20px;
     align-items: center;
 }
+
 // 제품 하나
 .product1 {
     margin-top: 15px;
     
 }
+
 // 한 개의 제품마다 사진이랑 제품명들 양 옆으로 조정 후 위아래 패딩
 .flex {
     display: flex;
@@ -79,13 +107,14 @@
     color: black;
     //background-color: rgb(221, 191, 205);
 }
+
 .idx {
     display: flex;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     margin-right: 4px;
     width: 30px;
-    height: 72px;
+    //height: 72px;
     justify-content: center;
     align-items: center;
 }
@@ -95,6 +124,18 @@
     align-items: center;
     font-size: 20px;
     letter-spacing: -.1px;
+    line-height: 21px;
+}
+
+.font {
+    font-size: 14px;
+    align-items: center;
+}
+
+.brand {
+    font-size: 14px;
+    color :#999;
+    margin-right: 3px;
 }
 
 .review {
@@ -103,42 +144,26 @@
     
 }
 
-.font {
-    font-size: 18px;
-    align-items: center;
+.grade {
+    color: #666;
+    margin-right: 1.5px;
+    font-size: 13px;
+    margin-left: 2px;
 }
+
 .gray {
-    font-size: 16px;
+    font-size: 12px;
     color :#999;
 }
 
 .jungga {
     color: #666;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .won {
+    font-size: 15px;
     margin-right: 3px;
-}
-
-.brand {
-    font-size: 18px;
-    color :#999;
-    margin-right: 3px;
-}
-
-.star {
-    width: 14px;
-    height: 13px;
-    margin-right: 3px;
-}
-
-.grade {
     color: #666;
-    margin-right: 1.5px;
-    font-size: 16px;
 }
 
-// .sPrice {
-//     font-size: 18px;
-// }

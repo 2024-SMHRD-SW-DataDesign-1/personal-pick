@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { dummyCategory, modalClose, sendPost, showSwal, URL } from '../../util/util';
+import { dummyCategory, modalClose, sendGet, sendPost, showSwal, URL } from '../../util/util';
 import Up from '../../img/위쪽.png'
 import Down from '../../img/아래쪽.png'
 import Right from '../../img/오른쪽.png'
@@ -111,9 +111,23 @@ const Category = ({categoryList,setCategoryList,categoryTitle,setCategoryTitle})
     
     }
 
+    function show(data)
+{
+    console.log(data)
+}
+   
+
     useEffect(()=>{
-        sendPost(URL+ "/SearchObject", null, ['r','a','s','c','v'])
+        //sendPost(URL+ "/SearchList", null, [1, 2,'s','c','v'])
     },[])
+
+    useEffect(()=>{
+        sendGet(URL+ "/SearchList", show )
+    },[])
+
+    // useEffect(()=>{
+    //     sendPost(URL+ "/SearchList", null, [1,2,3,4,5])
+    // },[])
     return (
         <div>
             <button onClick={() =>showModal()}>
