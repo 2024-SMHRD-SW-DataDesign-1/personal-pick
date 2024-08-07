@@ -135,7 +135,8 @@ function show(data)
 const Home = () => {
     // 페이지 이동 함수
     const nav = useNavigate();
-
+    const [categoryList, setCategoryList] = useState([]);
+    const [categoryTitle, setCategoryTitle] = useState("카테고리 전체");
 
     const [data, setData] = useState([]);
 
@@ -160,7 +161,7 @@ const Home = () => {
             </div>
             <h2 className="basic-text">화해 고객들이 직접 <span> 선택한 랭킹🎁 </span> </h2> 
             
-            <Category/>
+            <Category categoryList={categoryList} setCategoryList={setCategoryList} categoryTitle={categoryTitle} setCategoryTitle={setCategoryTitle}/>
             <Itemview data={itemDic}/>
             {/* sendGet으로 필요한 데이터 세 가지 받아오고 그 데이터 이름을 data라는 키 값으로 보내주면 됨! */}
 

@@ -47,9 +47,8 @@ function getData(value){
 }
 
 
-const Category = () => {
-    const [categoryList, setCategoryList] = useState([]);
-    const [categoryTitle, setCategoryTitle] = useState("카테고리 전체");
+const Category = ({categoryList,setCategoryList,categoryTitle,setCategoryTitle}) => {
+
     
     function showModal()
     {
