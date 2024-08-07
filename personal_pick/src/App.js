@@ -11,6 +11,7 @@ import { createStore } from 'redux';
 import personalReducer from './redux/reducer/reducer';
 import { Provider } from 'react-redux';
 
+import './App.css'
 
 
 const store = createStore(personalReducer)

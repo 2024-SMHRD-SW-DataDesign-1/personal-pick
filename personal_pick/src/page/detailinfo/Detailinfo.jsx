@@ -5,9 +5,10 @@ import './Detailinfo.scss'
 import star from '../../img/별.png'
 import { useParams } from 'react-router-dom'
 import smile from '../../img/smile.png'
-import notsmile from '../../img/notSmile.png'
+import notsmile from '../../img/무표정.png'
 import StarRating from './StarRating'
 import account from '../../img/account.png'
+import goback from '../../img/왼쪽.png'
 
 
 const Detailinfo = () => {
@@ -38,6 +39,7 @@ const Detailinfo = () => {
                     {/* 화장품 이름 */}
                     
                     <div className='itemname'>
+                    <button className='goback' type="button" onClick={()=> navigate('/')}><span><img src={goback} width={33} height={30}></img></span></button>
                     <label>{item.cos_name}</label>
                     </div>
                     </div>
@@ -79,9 +81,10 @@ const Detailinfo = () => {
 
                         <hr className='bar'/>
 
+                        {/*ai 리뷰 */}
                         <div className='reviewinfo'>
                         <span className='aireview'>AI 가 분석한 리뷰</span><br/>
-                        <img src ={smile} className='smile' width={40}/>
+                        <img src ={smile} className='smile' width={26} height={26}/>
                         <span className='like'>좋아요</span>
                         <div className='likereview'>
                             <span className='margintop1'>진정되는</span>
@@ -100,8 +103,8 @@ const Detailinfo = () => {
                         </div>
 
                         <div className='dislike'>
-                        <img src ={notsmile} className='smile' width={40}/>
-                        <span className='like'>아쉬워요</span>
+                        <img src ={notsmile} className='smile' width={23} height={23}/>
+                        <span className='dontlike'>아쉬워요</span>
                             <span className='margintop2'>가루날림이 있는</span>
                             <br/>
                             <span className='margintop2'>마르는</span>
@@ -133,7 +136,7 @@ const Detailinfo = () => {
                             <StarRating />
                             </div>
                     
-                        
+                        {/* 평점 그래프 */}
                         <div className='graphbarmain'>
                         <div className='graphbar'/>
                         <span className='graphbartext'>5점</span>
@@ -147,6 +150,8 @@ const Detailinfo = () => {
                         <span className='graphbartext'>1점</span>
                         </div>
 
+                        {/* 계정 정보 , 리뷰 */}
+                        <div className='accountmain'>
                         <div className='accountimg'>
                             <img src = {account} width={50}/>
                             </div>
@@ -157,6 +162,46 @@ const Detailinfo = () => {
                         <div className='accountstar'>
                             <StarRating/>
                             </div>
+                        <div className='accountdate'>
+                            <span>날짜</span>
+                            </div>
+                        
+                        <div className='goodcommentmain'>
+                            <img src = {smile} width={30} height={30}></img>
+                            <span className='goodcomment'>좋은말</span>
+                            </div>
+
+                        <div className='sosocommentmain'>
+                            <img src = {notsmile} width={25} height={25}></img>
+                            <span className='sosocomment'>아쉬운말</span>
+                            </div>
+
+                        <hr className='bar3'/>
+
+                        <div className='accountimg1'>
+                            <img src = {account} width={50}/>
+                            </div>
+                        <div className='accountinfo1'>
+                            <span className='nickname1'>닉네임</span>
+                            <span className='skintype1'>20대/건성/아토피/여드름</span>
+                            </div>
+                        <div className='accountstar1'>
+                            <StarRating/>
+                            </div>
+                        <div className='accountdate1'>
+                            <span>날짜</span>
+                            </div>
+                        
+                        <div className='goodcommentmain1'>
+                            <img src = {smile} width={30} height={30}></img>
+                            <span className='goodcomment1'>좋은말</span>
+                            </div>
+
+                        <div className='sosocommentmain1'>
+                            <img src = {notsmile} width={25} height={25}></img>
+                            <span className='sosocomment1'>아쉬운말</span>
+                            </div>
+                        </div>
                         </div>
                         </div>
                     </div> 

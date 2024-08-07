@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { dummyCategory, modalClose, sendGet, sendPost, showSwal, URL } from '../../util/util';
+import React from 'react';
+import { dummyCategory, modalClose, showSwal } from '../../util/util';
 import Up from '../../img/위쪽.png'
 import Down from '../../img/아래쪽.png'
 import Right from '../../img/오른쪽.png'
@@ -47,14 +47,15 @@ function getData(value){
 }
 
 
-const Category = ({categoryList,setCategoryList,categoryTitle,setCategoryTitle}) => {
+const Category = ({dic, setDic}) => {
 
     
     function showModal()
     {
         let str = "";
         titleList.map((item, idx)=>{
-            str += `<div class='subtitle cursor'>${item} <img class="category_arrow" src="${idx == 0? Up : Right}" alt="팀로고" /></div>`;
+            str += `<div class='subtitle cursor'>${item} <img class="category_arrow" src="${idx === 0? Up : Right}" alt="팀로고" /></div>`;
+            return null;
         })
         
         showSwal(str, underView)
@@ -63,10 +64,15 @@ const Category = ({categoryList,setCategoryList,categoryTitle,setCategoryTitle})
     function underView(e, idx)
     {
         let titleTag = document.getElementsByClassName("subtitle");
-        if(idx == 0)
+        if(idx === 0)
         {
-            setCategoryList([])
-            setCategoryTitle(titleList[0])
+            setDic({
+                ...dic,
+                maintitle:titleList[0],
+                list : [],
+                subtitle : ""
+            }
+                )
             modalClose()
             return
         }
@@ -76,7 +82,7 @@ const Category = ({categoryList,setCategoryList,categoryTitle,setCategoryTitle})
     
         if(categoryState[idx])
         {
-            titleTag[idx].innerHTML =titleList[idx] + `<img class="category_arrow" src="${idx == 0? Up : Right}" alt="팀로고" />`;
+            titleTag[idx].innerHTML =titleList[idx] + `<img class="category_arrow" src="${idx === 0? Up : Right}" alt="팀로고" />`;
             categoryState[idx] = !categoryState[idx]
             return;
         }
@@ -89,6 +95,7 @@ const Category = ({categoryList,setCategoryList,categoryTitle,setCategoryTitle})
         let tag ='<div class="flex_col flex_wrap">';
         result.map((item)=>{
             tag += `<div class="category_item">${item}</div>`;
+            return null;
         })
         tag += '</div>';
         
@@ -102,40 +109,28 @@ const Category = ({categoryList,setCategoryList,categoryTitle,setCategoryTitle})
                 e.stopPropagation() // 부모요소의 이벤트 차단
                 // 이벤트 요소의 부모태그의 스트링값을 찾아서 맞는 데이터 리턴
                 let title = e.target.parentNode.parentNode.innerText.split("\n")[0];
-                let list = getData(title);                
-                setCategoryTitle(title);
-                setCategoryList(list);
+                let list1 = getData(title); 
+                setDic({
+                    ...dic,
+                    list : list1,
+                    maintitle:title,
+                    subtitle : e.target.innerText
+                });               
+
                 modalClose()
             })
         }
     
     }
 
-    function show(data)
-{
-    console.log(data)
-}
-   
-
-    useEffect(()=>{
-        //sendPost(URL+ "/SearchList", null, [1, 2,'s','c','v'])
-    },[])
-
-    useEffect(()=>{
-        sendGet(URL+ "/SearchList", show )
-    },[])
-
-    // useEffect(()=>{
-    //     sendPost(URL+ "/SearchList", null, [1,2,3,4,5])
-    // },[])
     return (
         <div>
             <button onClick={() =>showModal()}>
-                {categoryTitle}
+                {dic.maintitle}
             </button>
             {
-                categoryList.length > 0 && 
-                categoryList.map((item, idx)=>{
+                dic.list.length > 0 && 
+                dic.list.map((item, idx)=>{
                     return <button key={idx}>{item}</button>
                 })
             }
