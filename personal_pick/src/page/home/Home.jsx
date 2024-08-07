@@ -129,21 +129,29 @@ let itemDic = [
 
 function show(data)
 {
-
+    console.log(data)
 }
 
 const Home = () => {
     // 페이지 이동 함수
     const nav = useNavigate();
-    const [categoryList, setCategoryList] = useState([]);
-    const [categoryTitle, setCategoryTitle] = useState("카테고리 전체");
 
+    const [categoryDic, setCategoryDic] = useState({
+        list : [],
+        maintitle : "카테고리 전체",
+        subtitle : ""
+
+    });
     const [data, setData] = useState([]);
 
     // [] -> 첫 렌더링에만 실행
     useEffect(()=>{        
         sendGet(URL+'/MainPage', setData);        
     },[])
+
+    useEffect(()=>{        
+        sendGet(URL + '/CategorySel?category='+categoryDic.subtitle, show)
+    },[categoryDic])
 
     // data 값이 변경될 때마다 실행
     // 데이터 로드 확인
@@ -170,14 +178,14 @@ const Home = () => {
             </div>
             <div className="basic-text">화해 고객들이 직접 <span> 선택한 랭킹🎁 </span> <img className="category_arrow" src={Right} alt="" /> </div> 
             
-            <Category categoryList={categoryList} setCategoryList={setCategoryList} categoryTitle={categoryTitle} setCategoryTitle={setCategoryTitle}/>
+            <Category dic ={categoryDic} setDic={setCategoryDic}/>
             <Itemview data={itemDic}/>
 
             <div className="home_page_btn">
                 카테고리 전체보기
                 <img className="star" src={Right} alt="" />
             </div>
-
+            
             {/* sendGet으로 필요한 데이터 세 가지 받아오고 그 데이터 이름을 data라는 키 값으로 보내주면 됨! */}
 
 

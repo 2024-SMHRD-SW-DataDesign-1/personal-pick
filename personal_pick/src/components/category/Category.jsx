@@ -47,7 +47,7 @@ function getData(value){
 }
 
 
-const Category = ({categoryList,setCategoryList,categoryTitle,setCategoryTitle}) => {
+const Category = ({dic, setDic}) => {
 
     
     function showModal()
@@ -66,8 +66,13 @@ const Category = ({categoryList,setCategoryList,categoryTitle,setCategoryTitle})
         let titleTag = document.getElementsByClassName("subtitle");
         if(idx === 0)
         {
-            setCategoryList([])
-            setCategoryTitle(titleList[0])
+            setDic({
+                ...dic,
+                maintitle:titleList[0],
+                list : [],
+                subtitle : ""
+            }
+                )
             modalClose()
             return
         }
@@ -104,29 +109,29 @@ const Category = ({categoryList,setCategoryList,categoryTitle,setCategoryTitle})
                 e.stopPropagation() // 부모요소의 이벤트 차단
                 // 이벤트 요소의 부모태그의 스트링값을 찾아서 맞는 데이터 리턴
                 let title = e.target.parentNode.parentNode.innerText.split("\n")[0];
-                let list = getData(title);                
-                setCategoryTitle(title);
-                setCategoryList(list);
+                let list1 = getData(title); 
+                setDic({
+                    ...dic,
+                    list : list1,
+                    maintitle:title,
+                    subtitle : e.target.innerText
+                });               
+
                 modalClose()
             })
         }
     
     }
 
-    useEffect(()=>{
-        sendPost(URL+ "/SearchList", null, ['r','a','s','c','v'])
-    },[])
-    // useEffect(()=>{
-    //     sendPost(URL+ "/SearchList", null, [1,2,3,4,5])
-    // },[])
+
     return (
         <div>
             <button onClick={() =>showModal()}>
-                {categoryTitle}
+                {dic.maintitle}
             </button>
             {
-                categoryList.length > 0 && 
-                categoryList.map((item, idx)=>{
+                dic.list.length > 0 && 
+                dic.list.map((item, idx)=>{
                     return <button key={idx}>{item}</button>
                 })
             }
