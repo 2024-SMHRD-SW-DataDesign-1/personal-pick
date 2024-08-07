@@ -157,7 +157,7 @@ const Search = () => {
                                         </div> 
                                        
                                     <div className='review'>
-                                        <span><img className='star' src={Star}></img></span>
+                                        <span><img className='star1' src={Star}></img></span>
                                         <span className='grade'>{item.grade}</span>
                                         <span className='gray'>({item.grade_count})</span>
                                     </div> 
