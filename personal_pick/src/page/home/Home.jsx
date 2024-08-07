@@ -3,11 +3,11 @@ import React, {useEffect, useState} from "react";
 import CustomSwiper from '../../components/customswiper/CustomSwiper'
 import { useNavigate } from "react-router-dom";
 import InputBox from "../../components/inputbox/InputBox";
-import { sendGet, URL } from "../../util/util";
+import { getDay, sendGet, URL } from "../../util/util";
 import Category from "../../components/category/Category";
 import Itemview from "../../components/itemview/Itemview"
 import './Home.scss'
-
+import Right from '../../img/오른쪽.png'
 
 // <div className='MainView inner'>    
 
@@ -148,29 +148,52 @@ const Home = () => {
     // data 값이 변경될 때마다 실행
     // 데이터 로드 확인
 
+    // 오늘날짜
+    let today = new Date()
+
     return (
         <div id='wrapper' className='MainView inner'>    
 
             {/* Main */}
-            <div className='flex_col width inner'>
+            <div className='flex_col width inner' >
                 <img src="" alt="팀로고" />
-                <InputBox func={show}/>
+                <div onClick={() =>nav('/search/')}>
+                    <InputBox func={show} />
+                </div>
             </div>
+
+            <div className="basic-text">{today.getMonth()+"월 " + today.getDate() + "일 " + getDay(today.getDay())} <span> 조회수🎁 </span> 급상승<img className="category_arrow" src={Right} alt="" /> </div> 
+            
+
             <div>
                 <CustomSwiper list={data}/>
             </div>
-            <h2 className="basic-text">화해 고객들이 직접 <span> 선택한 랭킹🎁 </span> </h2> 
+            <div className="basic-text">화해 고객들이 직접 <span> 선택한 랭킹🎁 </span> <img className="category_arrow" src={Right} alt="" /> </div> 
             
             <Category categoryList={categoryList} setCategoryList={setCategoryList} categoryTitle={categoryTitle} setCategoryTitle={setCategoryTitle}/>
             <Itemview data={itemDic}/>
+
+            <div className="home_page_btn">
+                카테고리 전체보기
+                <img className="star" src={Right} alt="" />
+            </div>
+
             {/* sendGet으로 필요한 데이터 세 가지 받아오고 그 데이터 이름을 data라는 키 값으로 보내주면 됨! */}
+
 
             <h2 className="basic-text">내 피부에 꼭 맞는 제품 랭킹</h2>
             <Itemview data={itemDic}/>
 
+            <div className="home_page_btn">
+                10대 전체보기
+                <img className="star" src={Right} alt="" />
+            </div>
             <h2 className="basic-text">나이대별 추천</h2>
             <Itemview data={itemDic}/>
-
+            <div className="home_page_btn">
+                브랜드 전체보기
+                <img className="star" src={Right} alt="" />
+            </div>
   
         </div>
         
