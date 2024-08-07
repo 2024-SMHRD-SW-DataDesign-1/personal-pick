@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import {sendGet , URL } from '../../util/util'
 import { useNavigate } from 'react-router-dom'
 import './Detailinfo.scss'
-import star from '../../img/별.png'
+import star1 from '../../img/별.png'
 import { useParams } from 'react-router-dom'
 import smile from '../../img/smile.png'
 import notsmile from '../../img/무표정.png'
 import StarRating from './StarRating'
 import account from '../../img/account.png'
 import goback from '../../img/왼쪽.png'
+import ScrollToTopButton from './ScrollToTopButton'
 
 
 const Detailinfo = () => {
@@ -23,7 +24,6 @@ const Detailinfo = () => {
     useEffect(()=>{
          sendGet(URL + "/DetailPage?idx="+idx , setData);
     },[]);
-
 
     
   return (
@@ -49,7 +49,7 @@ const Detailinfo = () => {
                         <img src ={item.cos_img_src}/>
 
                         {/* 화장품 브랜드 이미지, 이름 */}
-
+                        
                         <div className='brand'>
                             <img src = {item.brand_img_src} className='brandimg'/><span id='brandname'>{item.brand_name}</span>
                         </div>
@@ -61,7 +61,7 @@ const Detailinfo = () => {
                         </div>
 
                         <div className='starinfo'>
-                        <img src = {star} className='star' width={18}/>{item.grade}({item.grade_count})
+                        <img src = {star1} className='star' width={18}/>{item.grade}({item.grade_count})
                         </div>
 
                         <div className='priceinfo'>
@@ -82,23 +82,17 @@ const Detailinfo = () => {
                         <hr className='bar'/>
 
                         {/*ai 리뷰 */}
+                        <span className='aireview'><span className='ai'>AI</span>가 분석한 리뷰</span>
                         <div className='reviewinfo'>
-                        <span className='aireview'>AI 가 분석한 리뷰</span><br/>
+                        <div className='likereview'>
                         <img src ={smile} className='smile' width={26} height={26}/>
                         <span className='like'>좋아요</span>
-                        <div className='likereview'>
                             <span className='margintop1'>진정되는</span>
-                            <br/>
                             <span className='margintop1'>쿨링되는</span>
-                            <br/>
                             <span className='margintop1'>수분있는</span>
-                            <br/>
                             <span className='margintop1'>모공관리되는</span>
-                            <br/>
                             <span className='margintop1'>자극없는</span>
-                            <br/>
                             <span className='margintop1'>향에 만족한</span>
-                            <br/>
                             <span className='margintop1'>보습되는</span>
                         </div>
 
@@ -106,36 +100,34 @@ const Detailinfo = () => {
                         <img src ={notsmile} className='smile' width={23} height={23}/>
                         <span className='dontlike'>아쉬워요</span>
                             <span className='margintop2'>가루날림이 있는</span>
-                            <br/>
                             <span className='margintop2'>마르는</span>
-                            <br/>
                             <span className='margintop2'>흘러내리는</span>
-                            <br/>
                             <span className='margintop2'>잔여물이 남는</span>
-                            <br/>
                             <span className='margintop2'>노폐물 제거 안되는</span>
-                            <br/>
                             <span className='margintop2'>가려운</span>
-                            <br/>
                             <span className='margintop2'>내장 도구가 안좋은</span>
                         </div>
+                        </div>
 
-                        <hr className='bar2'/>
+                        {/* <hr className='bar2'/> */}
 
-                        <div className='review'>
+
+                        <div className='detailreview'>
                             리뷰
                         <div className='reviewcount'>
                             1432
                             </div>
                             </div>
 
-                        <div className='reviewrate'>
-                            평점
-                            </div>
-                            <div className='reviewratestar'>
+                        {/*평점 전체 div  */}
+                        <div className='reviewall'>
+                        {/*평점 구간 */}
+                        <div className='reviewratemain'>
+                            <h1>평점</h1>
                             <StarRating />
                             </div>
-                    
+                            
+
                         {/* 평점 그래프 */}
                         <div className='graphbarmain'>
                         <div className='graphbar'/>
@@ -149,9 +141,10 @@ const Detailinfo = () => {
                         <div className='graphbar'/>
                         <span className='graphbartext'>1점</span>
                         </div>
+                        </div>
 
-                        {/* 계정 정보 , 리뷰 */}
-                        <div className='accountmain'>
+                       {/* 계정 정보 및 사용자 리뷰 */}
+                       <div className='accountmain'>
                         <div className='accountimg'>
                             <img src = {account} width={50}/>
                             </div>
@@ -202,9 +195,27 @@ const Detailinfo = () => {
                             <span className='sosocomment1'>아쉬운말</span>
                             </div>
                         </div>
+
+
+                        <div className='ingredientmain'>
+                            <span>성분</span>
+                            </div>
+
+                        <div className='ingredientdropbox'>
+                            <input type = "dropbox" className='idropbox'></input>
+                        </div>
+
+
+                        {/* <div class = "up-btn">
+                            <ScrollToTopButton/>
+                        </div> */}
+
+
+
+
+
                         </div>
                         </div>
-                    </div> 
                 ))
             ) : (
             // 데이터를 불러오는데 실패하면 실행
