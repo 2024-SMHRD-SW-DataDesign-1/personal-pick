@@ -9,8 +9,7 @@ import notsmile from '../../img/무표정.png'
 import StarRating from './StarRating'
 import account from '../../img/account.png'
 import goback from '../../img/왼쪽.png'
-import ScrollToTopButton from './ScrollToTopButton'
-
+import { FaAngleDown } from "react-icons/fa";
 
 const Detailinfo = () => {
     // 페이지 이동 함수
@@ -123,7 +122,7 @@ const Detailinfo = () => {
                         <div className='reviewall'>
                         {/*평점 구간 */}
                         <div className='reviewratemain'>
-                            <h1>평점</h1>
+                            <span className='reviewtext'>평점</span>
                             <StarRating />
                             </div>
                             
@@ -202,7 +201,19 @@ const Detailinfo = () => {
                             </div>
 
                         <div className='ingredientdropbox'>
-                            <input type = "dropbox" className='idropbox'></input>
+                        <input id="dropdown" type="checkbox" />
+                        <label className="dropdownLabel" for="dropdown">
+                        <div>화장품 성분보기</div>
+                        <FaAngleDown className="caretIcon" />
+                        </label>
+                        <div className="contentcategory">
+                            <ul>
+                                <li>Option 1</li>
+                                <li>Option 2</li>
+                                <li>Option 3</li>
+                                <li>Option 4</li>
+                            </ul>
+                        </div>
                         </div>
 
 
