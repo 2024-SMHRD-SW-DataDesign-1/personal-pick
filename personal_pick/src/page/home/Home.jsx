@@ -160,18 +160,16 @@ const Home = () => {
 
     // 오늘날짜
     let today = new Date()
-
+    let testTag = document.getElementById('wrapper')
+    console.log(testTag)
     return (
-        <div id='wrapper' >    
+        <div id='wrapper' className="inner" >    
         {/* // <div id='wrapper' >     */}
 
             {/* Main */}
             <img src={Logo} className="logoimg" alt="팀로고" />
-            <div className='flex_col width inner' >
-                
-                <div onClick={() =>nav('/search/')}>
-                    <InputBox func={show} />
-                </div>
+            <div className='flex_col width' >
+                <InputBox func={show} />
             </div>
 
             <div className="basic-text">{today.getMonth()+"월 " + today.getDate() + "일 " + getDay(today.getDay())} <span> 조회수🎁 </span> 급상승<img className="category_arrow" src={Right} alt="" /> </div> 
