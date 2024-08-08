@@ -8,6 +8,7 @@ import Category from "../../components/category/Category";
 import Itemview from "../../components/itemview/Itemview"
 import './Home.scss'
 import Right from '../../img/오른쪽.png'
+import Logo from '../../img/로고.png'
 
 // <div className='MainView inner'>    
 
@@ -164,8 +165,9 @@ const Home = () => {
         <div id='wrapper' className='MainView inner'>    
 
             {/* Main */}
+            <img src={Logo} className="logoimg" alt="팀로고" />
             <div className='flex_col width inner' >
-                <img src="" alt="팀로고" />
+                
                 <div onClick={() =>nav('/search/')}>
                     <InputBox func={show} />
                 </div>

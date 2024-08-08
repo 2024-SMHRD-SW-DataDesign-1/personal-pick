@@ -27,6 +27,7 @@ export function sendPost(url, func=null, data = null) {
         .catch(error => {
             console.error("요청 실패 : ", error);
         });
+        
 }
 
 
@@ -41,9 +42,9 @@ export function sendDel(url, func=null, data=null)
         })
 }
 
- export const URL = "http://192.168.219.111:5001";
+//  export const URL = "http://192.168.219.111:5001";
 // export const URL = "http://192.168.219.81:5001";
-//export const URL = "http://192.168.219.124:5001";
+export const URL = "http://192.168.219.124:5001";
 
 export const dummyCategory = {
     skinCare : [

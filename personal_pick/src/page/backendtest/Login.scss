@@ -4,42 +4,49 @@
         /* 박스 내용 중앙 정렬 */
         /* 가운데 정렬 */
         display: flex;
+        // flex-direction: column;
         /* 수직 */
-        /* align-items: center; */
+        // align-items: center;
         /* 수평 */
         justify-content: center;
+        margin: 0;
+
+        // width: 80%;
     
         background-color: white;
     }
     
     
     .table{
-        /* display: flex; */
+        // display: flex;
         /* 수직 정렬 */
         flex-direction: column;
         /* 수평 정렬 */
-        /* align-items: center; */
+        align-items: center;
         /* box-sizing: border-box; */
         
         /* 위쪽 공간 띄움 */
         padding: 3vh 0 0 0;
         height: 20vh;
+
+        h2 {
+            margin-bottom: 2.5vh;
+            font-size: 10vh;
+            color: #333;
+        
+            /* position: left; */
+            font-weight: bold;
+            font-size: 3.5vh;
+        }
     }
     
-    .table h2 {
-        margin-bottom: 2.5vh;
-        font-size: 10vh;
-        color: #333;
-    
-        /* position: left; */
-        font-weight: bold;
-        font-size: 3.5vh;
-    }
     
     /* 입력 필드 스타일 */
     .textbox {
-        /* width: 100% - 2vh; */
-        padding: 1vh;
+        // 100 - 패딩10, 마진4
+        width: 86%;
+        padding: 5%;
+        margin: 0 2%;
         margin-bottom: 1.5vh;
     
         font-size: 2vh;
@@ -50,11 +57,23 @@
     
     
     /* 버튼 스타일 */
+    .button_login{
+        display: flex;
+        width: 100%;
+        margin-bottom: 1.5vh;
+    }
+
+    .button_2{
+        display: flex;
+        width: 100%;
+        // padding: 0.5vw;
+    }
+    
     button {
-        height: 5vh;
-        width: 40%;
-        padding: 0.5vw;
-        margin: 0vh 5%;
+        height: 4.5vh;
+        width: 100%;
+        // padding: 0.5vw;
+        margin: 0vh 2%;
         
         border-width: 0.1vh;
         border-style: solid;
@@ -63,7 +82,7 @@
     
         /* background-color: #007bff; */
         /* color: #fff; */
-        font-size: 2vh;
+        font-size: 1.8vh;
     
         /* 마우스 올릴 때 커서 손모양으로 변환 */
         cursor: pointer;
