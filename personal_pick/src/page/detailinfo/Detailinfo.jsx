@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {sendGet , URL } from '../../util/util'
+import {sendGet , showSwal, URL } from '../../util/util'
 import { useNavigate } from 'react-router-dom'
 import './Detailinfo.scss'
 import star1 from '../../img/별.png'
@@ -10,6 +10,7 @@ import StarRating from './StarRating'
 import account from '../../img/account.png'
 import goback from '../../img/왼쪽.png'
 import { FaAngleDown } from "react-icons/fa";
+import detailright from '../../img/오른쪽.png'
 
 const Detailinfo = () => {
     // 페이지 이동 함수
@@ -23,6 +24,23 @@ const Detailinfo = () => {
     useEffect(()=>{
          sendGet(URL + "/DetailPage?idx="+idx , setData);
     },[]);
+
+
+    const showmodal = (e , ranking) => {
+        let str = ``
+        str += `<div class = "subtitle">화장품 1</div>`
+        str += `<div class = "subtitle">화장품 2</div>`
+        showSwal(str,test)
+
+        let str1 = ``
+        str1 += `<div class = "modalranking">랭킹/수상 정보</div>`
+        showSwal(str1)
+    }
+
+
+    const test = (e) => {
+        console.log(12)
+    }
 
     
   return (
@@ -60,21 +78,20 @@ const Detailinfo = () => {
                         </div>
 
                         <div className='starinfo'>
-                        <img src = {star1} className='star' width={18}/>{item.grade}({item.grade_count})
+                        <img src = {star1} className='star' width={18}/><span className='starinfotext'>{item.grade}({item.grade_count})</span>
                         </div>
 
                         <div className='priceinfo'>
                         <div className='price'>
-                        정가 : 
+                        정가 :<span className='pricetext'>{item.price}원 / {item.vol}ml</span>
                         </div>
-                        {item.price}원 / {item.vol}ml
                         </div>
 
-                        <div className='rankinginfo'>
+                        <div className='rankinginfo' onClick={(ranking)=>showmodal(ranking)}>
                         <div className='ranking'>
-                        랭킹 : 
+                        랭킹 :<span className='rankingtext'>{item.ranking}</span>
                         </div>
-                        {item.ranking}
+                        <img src = {detailright} width={25} height={25}/>
                         </div>
                         </div>
 
@@ -142,20 +159,15 @@ const Detailinfo = () => {
                         </div>
                         </div>
 
-                       {/* 계정 정보 및 사용자 리뷰 */}
-                       <div className='accountmain'>
-                        <div className='accountimg'>
-                            <img src = {account} width={50}/>
-                            </div>
+                         {/* 계정 정보 및 사용자 리뷰 */}
+                         <div className='accountmain'>
                         <div className='accountinfo'>
-                            <span className='nickname'>닉네임</span>
-                            <span className='skintype'>20대/건성/아토피/여드름</span>
-                            </div>
+                        <img src = {account} width={50}/>
+                        <span className='nickname'>닉네임</span>
+                        <span className='skintype'>20대/건성/아토피/여드름</span>
                         <div className='accountstar'>
-                            <StarRating/>
+                            <StarRating/><span>날짜</span>
                             </div>
-                        <div className='accountdate'>
-                            <span>날짜</span>
                             </div>
                         
                         <div className='goodcommentmain'>
@@ -164,66 +176,36 @@ const Detailinfo = () => {
                             </div>
 
                         <div className='sosocommentmain'>
-                            <img src = {notsmile} width={25} height={25}></img>
+                            <img src = {notsmile} width={26} height={28}></img>
                             <span className='sosocomment'>아쉬운말</span>
                             </div>
-
+                            </div>
                         <hr className='bar3'/>
 
-                        <div className='accountimg1'>
-                            <img src = {account} width={50}/>
-                            </div>
-                        <div className='accountinfo1'>
-                            <span className='nickname1'>닉네임</span>
-                            <span className='skintype1'>20대/건성/아토피/여드름</span>
-                            </div>
-                        <div className='accountstar1'>
-                            <StarRating/>
-                            </div>
-                        <div className='accountdate1'>
-                            <span>날짜</span>
-                            </div>
                         
-                        <div className='goodcommentmain1'>
-                            <img src = {smile} width={30} height={30}></img>
-                            <span className='goodcomment1'>좋은말</span>
-                            </div>
-
-                        <div className='sosocommentmain1'>
-                            <img src = {notsmile} width={25} height={25}></img>
-                            <span className='sosocomment1'>아쉬운말</span>
-                            </div>
-                        </div>
+                        
 
 
                         <div className='ingredientmain'>
                             <span>성분</span>
                             </div>
 
-                        <div className='ingredientdropbox'>
-                        <input id="dropdown" type="checkbox" />
+                        <div className='ingredientdropbox' onClick={(e)=>showmodal(e)}> 
+                        <input id="dropdown" type="checkbox"/>
                         <label className="dropdownLabel" for="dropdown">
                         <div>화장품 성분보기</div>
                         <FaAngleDown className="caretIcon" />
                         </label>
-                        <div className="contentcategory">
-                            <ul>
-                                <li>Option 1</li>
-                                <li>Option 2</li>
-                                <li>Option 3</li>
-                                <li>Option 4</li>
-                            </ul>
                         </div>
-                        </div>
+
+                        <div className='ingredientcomposition'>
+                            <span className='compositiontext'>구성 성분</span>
+                            </div>
 
 
                         {/* <div class = "up-btn">
                             <ScrollToTopButton/>
                         </div> */}
-
-
-
-
 
                         </div>
                         </div>
