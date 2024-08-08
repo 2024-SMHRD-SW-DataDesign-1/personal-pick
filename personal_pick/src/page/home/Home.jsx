@@ -165,7 +165,7 @@ const Home = () => {
     return (
         <div id='wrapper' className="inner" >    
         {/* // <div id='wrapper' >     */}
-
+        
             {/* Main */}
             <img src={Logo} className="logoimg" alt="팀로고" />
             <div className='flex_col width' >
