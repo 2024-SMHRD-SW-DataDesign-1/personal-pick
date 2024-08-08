@@ -31,7 +31,7 @@ let itemDic = [
         brand_name: '브랜드이름1',
         cos_name: '코스네임일',
         // cos_name: '여기이름길면줄바꿈되게해야함',
-        cos_img_src: 'https://img.hwahae.co.kr/products/2107141/2107141_20240715175717.jpg?format=webp&size=600x600',
+        cos_img_src: 'https://img.hwahae.co.kr/products/2008579/2008579_20230522181131.jpg?format=webp&size=600x600',
         grade: 4.74,
         grade_count: 2456,
         price: 4000,
@@ -42,7 +42,7 @@ let itemDic = [
         idx: 2,
         brand_name: '브랜드이름2',
         cos_name: '코스네임이',
-        cos_img_src: 'https://img.hwahae.co.kr/products/1993475/1993475_20240312112855.jpg?format=webp&size=600x600',
+        cos_img_src: 'https://img.hwahae.co.kr/products/1942105/1942105_20230216173808.jpg?format=webp&size=600x600',
         grade: 4.74,
         grade_count: 2456,
         price: 4000,
@@ -53,7 +53,7 @@ let itemDic = [
         idx: 3,
         brand_name: '브랜드이름3',
         cos_name: '코스네임삼',
-        cos_img_src: 'https://img.hwahae.co.kr/products/1993475/1993475_20240312112855.jpg?format=webp&size=600x600',
+        cos_img_src: '	https://img.hwahae.co.kr/products/1914381/1914381_20230202180621.jpg?format=webp&size=600x600',
         grade: 4.74,
         grade_count: 2456,
         price: 4000,
@@ -64,7 +64,7 @@ let itemDic = [
         idx: 4,
         brand_name: '브랜드이름4',
         cos_name: '코스네임사',
-        cos_img_src: 'https://img.hwahae.co.kr/products/1832892/1832892_20220801000000.jpg?format=webp&size=600x600',
+        cos_img_src: 'https://img.hwahae.co.kr/products/1872716/1872716_20240227094302.jpg?format=webp&size=600x600',
         grade: 4.74,
         grade_count: 2456,
         price: 4000,
@@ -75,7 +75,7 @@ let itemDic = [
         idx: 5,
         brand_name: '브랜드이름5',
         cos_name: '코스네임오',
-        cos_img_src: "https://img.hwahae.co.kr/products/1897092/1897092_20220801000000.jpg?format=webp&size=600x600",
+        cos_img_src: "https://img.hwahae.co.kr/products/1858863/1858863_20220801000000.jpg?format=webp&size=600x600",
         grade: 4.74,
         grade_count: 2456,
         price: 4000,
@@ -86,7 +86,7 @@ let itemDic = [
         idx: 6,
         brand_name: '브랜드이름6',
         cos_name: '코스네임육',
-        cos_img_src: 'https://img.hwahae.co.kr/products/2058047/2058047_20230808102719.jpg?format=webp&size=600x600',
+        cos_img_src: 'https://img.hwahae.co.kr/products/1944992/1944992_20230602135720.jpg?format=webp&size=600x600',
         grade: 4.74,
         grade_count: 2456,
         price: 4000,
@@ -162,7 +162,8 @@ const Home = () => {
     let today = new Date()
 
     return (
-        <div id='wrapper' className='MainView inner'>    
+        <div id='wrapper' >    
+        {/* // <div id='wrapper' >     */}
 
             {/* Main */}
             <img src={Logo} className="logoimg" alt="팀로고" />
