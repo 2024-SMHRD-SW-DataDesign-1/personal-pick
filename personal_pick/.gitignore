@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # js
-setIp.js
+./util/setIp.js
