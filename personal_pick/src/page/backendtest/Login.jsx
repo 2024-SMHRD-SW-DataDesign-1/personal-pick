@@ -112,8 +112,11 @@ const Login = () => {
                                 required
                             />
                         </div>
-                        <div>
+                        <div className='button_login'>
                             <button type="submit">로그인</button>
+                        </div>
+                        <div className='button_2'>
+                            <button onClick={{}}>회원가입</button>
                             <button onClick={home}>뒤로가기</button>
                         </div>
                             {/* 회원가입 실패 시 출력 */}
