@@ -165,8 +165,9 @@ const Home = () => {
         <div id='wrapper' className='MainView inner'>    
 
             {/* Main */}
+            <img src={Logo} className="logoimg" alt="팀로고" />
             <div className='flex_col width inner' >
-                <img src={Logo} className="logoimg" alt="팀로고" />
+                
                 <div onClick={() =>nav('/search/')}>
                     <InputBox func={show} />
                 </div>
