@@ -67,3 +67,14 @@ class ppSearchList(Resource):
         print("select data:", data)
         print("list : " ,list)
         return list
+    
+
+    def delete(self):
+        value = request.args.to_dict()
+        data = str(value['value'])
+
+        print("delete val : ", data)
+
+        sql = "delete FROM searchlist WHERE product LIKE '%s'"
+        setQuery(sql, data)
+
