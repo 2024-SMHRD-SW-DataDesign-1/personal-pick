@@ -12,37 +12,34 @@
         background-color: rgba(135, 206, 235, 0.3);
 
         /* padding:0 1vw 0 1vw; */
-    }
-
-    #head > .left{
-        /* 상하 기준 가운데 정렬 */
-        display:table-cell;
-        vertical-align: middle;
-
-        width: 50%;
-        height: 100%;
-        padding-left: 1vw ;
-    }
-
-    #head > .right{
-        /* 상하 기준 가운데 정렬 */
-        display:table-cell;
-        vertical-align: middle;
-
-        /* 오른쪽 정렬 */
-        text-align: right;
-
-        width: 50%;
-        height: 100%;
-    }
-
-    #head > .right > img{
-        /* 이미지 위치 조절 */
-        padding-right: 1vw;
-
-        /* 이미지 크기 조절 */
-        height: 3vh;
-        width: 3vh;
+        > .left{
+            /* 상하 기준 가운데 정렬 */
+            display:table-cell;
+            vertical-align: middle;
+    
+            width: 50%;
+            height: 100%;
+            padding-left: 1vw ;
+        }
+        > .right{
+            /* 상하 기준 가운데 정렬 */
+            display:table-cell;
+            vertical-align: middle;
+    
+            /* 오른쪽 정렬 */
+            text-align: right;
+    
+            width: 50%;
+            height: 100%;
+            > img{
+                /* 이미지 위치 조절 */
+                padding-right: 1vw;
+        
+                /* 이미지 크기 조절 */
+                height: 3vh;
+                width: 3vh;
+            }
+        }
     }
 
     h1{
@@ -65,145 +62,153 @@
     }
 
     #main{
-    /* -> public/index.css
-        height: 90vh;
-        background-color: greenyellow;
-    */
-        /* 상하 기준 가운데 정렬 */
-        /* display:table;
-        line-height: 50%; */
-
         height: 100%;
         width: 56vw;
         padding: 0 2vw 0vh 2vw;
         
         background-color: white;
-    }
-
-    #main .fst{
-        /* 가운데 정렬 */
-        display: flex;
-        /* 수직 */
-        align-items: center;
-        /* 수평 */
-        /* justify-content: center;  */
-        padding: 1vh 0;
-        height: 10vh;
-        background-color: white;
-    }
-
-    #main .fst > img{
-        /* 위치 조절 */
-        padding: 0 4vw 0 0vw;
-
-        /* 이미지 크기 조절 */
-        height: 5vw;
-        width: 5vw;
-    }
-
-    #main .fst .middle{
-        width: 40vw;
-    }
-
-    #main .fst .right{
-        /* 가운데 정렬 */
-        display: flex;
-        /* 수직 */
-        align-items: center;
-        /* 수평 */
-        justify-content: center; 
-
-        height: 100%;
-        width: 7vw;
-    }
-
-    #main .fst .right > img{
-        /* 이미지 크기 조절 */
-        margin-left: 4vw ;
-        height: 2.5vw;
-        width: 2.5vw;
-    }
-
-    #main .scd{
-        /* 가운데 정렬 */
-        display: flex;
-        /* 수직 */
-        align-items: center;
-        /* 수평 */
-        /* justify-content: center;  */
+        .fst{
+            /* 가운데 정렬 */
+            display: flex;
+            /* 수직 */
+            align-items: center;
+            /* 수평 */
+            /* justify-content: center;  */
+            padding: 1vh 0;
+            height: 10vh;
+            background-color: white;
+            > img{
+                /* 위치 조절 */
+                padding: 0 4vw 0 0vw;
         
-        height: 10vh;
-        margin: 1vh 0.5vw;
+                /* 이미지 크기 조절 */
+                height: 5vw;
+                width: 5vw;
+            }
+            .middle{
+                width: 40vw;
+            }
+            .right{
+                /* 가운데 정렬 */
+                display: flex;
+                /* 수직 */
+                align-items: center;
+                /* 수평 */
+                justify-content: center; 
+        
+                height: 100%;
+                width: 7vw;
+                > img{
+                    /* 이미지 크기 조절 */
+                    margin-left: 4vw ;
+                    height: 2.5vw;
+                    width: 2.5vw;
+                }
+            }
+        }
+
+        .scd{
+            /* 가운데 정렬 */
+            display: flex;
+            /* 수직 */
+            align-items: center;
+            /* 수평 */
+            /* justify-content: center;  */
             
-        /* 테두리 두께, 색상 지정 */
-        border: 0vh solid gray;
-
-        /* 모서리 라운딩 */
-        border-radius: 1rem;
-
-        /* 그림자 효과 */
-        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-
-        /* 배경 이미지로 선 추가 */
-        background:
-        linear-gradient(to right, 
-            transparent 0, 
-            rgba(0, 0, 0, 0.5) 1px, 
-            /* 선 위치 */
-            transparent 2px) 33.333% 50%,
-        linear-gradient(to right, 
-            transparent 0, 
-            rgba(0, 0, 0, 0.5) 1px, 
-            transparent 2px) 66.666% 50%;
-        background-size: 1px 50%; /* 선 길이를 절반으로 조정 */
-        background-repeat: no-repeat;
-    }
-
-    #main .scd .left,
-    #main .scd .middle,
-    #main .scd .right {
-        /* 가운데 정렬 */
-        display: flex;
-        /* 수직으로 배치 */
-        flex-direction: column; /* 세로 방향으로 정렬 */
-        align-items: center; /* 수평 가운데 정렬 */
-        justify-content: center; /* 수직 가운데 정렬 */
-
-        width: 19vw;
-    }
-
-    #main .text{
-        padding: 2vh 0 2vh 0.5vw;
-    }
-
-    #main .text > img{
-        /* 사진 크기 조정 */
-        height: 10vh;
-        width: 10vh;
-    }
-
-    #main .ad{
-        /* 가운데 정렬 */
-        display: flex;
-        /* 수직 */
-        align-items: center;
-        /* 수평 */
-        justify-content: center;
-
-        height: 11vh;
-        margin: 0vh 0.5vw;
-        background-color: rgba(144, 238, 144, 0.4); 
+            height: 10vh;
+            margin: 1vh 0.5vw;
+                
+            /* 테두리 두께, 색상 지정 */
+            border: 0vh solid gray;
+    
+            /* 모서리 라운딩 */
+            border-radius: 1rem;
+    
+            /* 그림자 효과 */
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    
+            /* 배경 이미지로 선 추가 */
+            background:
+            linear-gradient(to right, 
+                transparent 0, 
+                rgba(0, 0, 0, 0.5) 1px, 
+                /* 선 위치 */
+                transparent 2px) 33.333% 50%,
+            linear-gradient(to right, 
+                transparent 0, 
+                rgba(0, 0, 0, 0.5) 1px, 
+                transparent 2px) 66.666% 50%;
+            background-size: 1px 50%; /* 선 길이를 절반으로 조정 */
+            background-repeat: no-repeat;
+            .left,.middle,.right {
+                /* 가운데 정렬 */
+                display: flex;
+                /* 수직으로 배치 */
+                flex-direction: column; /* 세로 방향으로 정렬 */
+                align-items: center; /* 수평 가운데 정렬 */
+                justify-content: center; /* 수직 가운데 정렬 */
         
-        /* 테두리 두께, 색상 지정 */
-        border: 0vh solid gray;
+                width: 19vw;
+            }
+        }
 
-        /* 모서리 라운딩 */
-        border-radius: 1rem;
-    }
+        .text{
+            padding: 2vh 0 2vh 0.5vw;
+            > img{
+                /* 사진 크기 조정 */
+                height: 10vh;
+                width: 10vh;
+            }
+        }
 
-    #main .last{
-        /* 아래 foot 있어서 아래쪽 패딩 더 줌 */
-        padding: 2.5vh 0 10vh 0.5vw;
+        .ad{
+            /* 가운데 정렬 */
+            display: flex;
+            /* 수직 */
+            align-items: center;
+            /* 수평 */
+            justify-content: center;
+    
+            height: 11vh;
+            margin: 0vh 0.5vw;
+            background-color: rgba(144, 238, 144, 0.4); 
+            
+            /* 테두리 두께, 색상 지정 */
+            border: 0vh solid gray;
+    
+            /* 모서리 라운딩 */
+            border-radius: 1rem;
+        }
+
+        .ad2{
+            // 가운데 정렬
+            display: flex;
+            // 수평 방향 정렬
+            flex-direction: column;
+            // align-items: center;
+            justify-content: center;
+    
+            height: 10vh;
+            margin: 0vh 0.5vw;
+            padding-left: 25px;
+            background-color: rgb(220, 220, 220); 
+            
+            /* 테두리 두께, 색상 지정 */
+            border: 0vh solid gray;
+    
+            /* 모서리 라운딩 */
+            border-radius: 1vh;
+            p{
+                font-size: 1.6vh;
+                color: rgba(10, 10, 10, 1);
+                vertical-align: middle;
+            }
+        }
+
+        .last{
+            /* 아래 foot 있어서 아래쪽 패딩 더 줌 */
+            padding: 2.5vh 0 10vh 0.5vw;
+        }
     }
 
     #foot {
@@ -253,23 +258,21 @@
         background-size: 50% 3vh;
         background-repeat: no-repeat;
         background-color: white;
+        .icon{
+            /* 가운데 정렬 */
+            display: flex;
+            /* 수직 */
+            align-items: center;
+            /* 수평 */
+            justify-content: center; 
+    
+            height: 100%;
+            width: 20%;
+            /* background-color: gray; */
+            > img{
+                height: 5vh;
+                width: 5vh;
+            }
+        }
     }
-
-    #foot .icon{
-        /* 가운데 정렬 */
-        display: flex;
-        /* 수직 */
-        align-items: center;
-        /* 수평 */
-        justify-content: center; 
-
-        height: 100%;
-        width: 20%;
-        /* background-color: gray; */
-    }
-    #foot .icon > img{
-        height: 5vh;
-        width: 5vh;
-    }
-
 }

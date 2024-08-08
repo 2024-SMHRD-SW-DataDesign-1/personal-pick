@@ -31,6 +31,8 @@ const Join = () => {
                 id: id,
                 pw: pw
             });
+            console.log('response.data : ',response.data);
+            
 
             if (response.data === 201) {
                 // 회원가입 성공 시 홈 페이지로 이동

@@ -16,6 +16,11 @@ const personalReducer = (state = initialState, action) => {
             }
             break;
         case types.LOGOUT:
+            return{
+                ...state,
+                isUser : false,
+                userData : null
+            }
             break;
         default:
             return state;

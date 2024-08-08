@@ -13,8 +13,7 @@ function ScrollToTopButton() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const   
- scrollToTop = () => {
+  const scrollToTop = () => {
     refContainer.current.scrollTo({
       top: 0,
       behavior: 'smooth'
