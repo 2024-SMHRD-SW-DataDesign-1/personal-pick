@@ -2,7 +2,7 @@ from flask import Flask
 from flask_restx import Api
 from flask_cors import CORS
 # from hello import test
-from ppMain import ppMainPage
+from ppMain import ppMainPage, ppCategorySel
 from ppDetail import ppDetailPage
 from join import ppJoin
 from ppLogin import ppLogin

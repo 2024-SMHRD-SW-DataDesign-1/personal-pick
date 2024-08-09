@@ -54,6 +54,12 @@
     margin-top: 25px
 }
 
+.starinfotext {
+    display: flex;
+    line-height: 14px;
+    margin-top: 8px;
+}
+
 .brand {
     font-family: 'Pretendard-Regular';
 }
@@ -76,6 +82,7 @@
 .priceinfo {
     display: flex;
     margin-top: 30px;
+    justify-content: space-between;
 }
 
 .price {
@@ -84,9 +91,18 @@
     font-weight: 700;
 }
 
+.pricetext{
+    margin-left: 25px;
+}
+
+.rankingtext{
+    margin-left: 25px;
+}
+
 .rankinginfo {
     display: flex;
     margin-top: 30px;
+    justify-content: space-between;
 }
 
 .ranking {
@@ -99,8 +115,11 @@
 #main1{
     /* float: left; */
     height: 266vh;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(247, 150, 150);
 }
+
+
+// AI가 분석하는 리뷰
 
 .smile{
     margin: auto;
@@ -139,7 +158,6 @@
     background-color: rgb(242, 242, 242, var(--tw-bg-opacity));
     height: 6px;
     border-width: 0px;
-    transform: translate(0px, -124px);
 }
 
 .margintop1 {
@@ -199,19 +217,12 @@
     margin-bottom: 9px;
 }
 
+// 리뷰 평점
 .reviewall {
     display: flex;
     width: 28vw;
 }
 
-.reviewratemain {
-    display: inline-grid;
-    /* align-items: center; */
-    justify-content: center;
-    width: 29vw;
-    font-family: "Pretendard-Regular";
-    text-align: center;
-}
 
 .graphbarmain {
         display: ruby;
@@ -219,6 +230,14 @@
         margin-top: 43px;
 }
 
+
+.reviewratemain {
+    display: inline-grid;
+    align-items: center;
+    justify-content: center;
+    width: 29vw;
+    text-align: center;
+}
 
 .reviewcount{
     margin: auto;
@@ -232,7 +251,11 @@
     font-weight: 600;
 }
 
-
+.reviewtext {
+    font-family: "Pretendard-Regular";
+    font-size: 25px;
+    font-weight: 600;
+}
 
 
 input[type="radio"] {
@@ -258,20 +281,19 @@ input[type="radio"] {
     background-color: #cdc2c2;
 }
 
-
+// 계정 정보 및 리뷰 
 .accountmain {
-    margin: auto;
-    transform: translate(10px, 159px);
+    font-family: "Pretendard-Regular";
+    margin-top: 40px;
 }
 
 .accountinfo{
+    margin: auto;
     display: flex;
-    transform: translate(70px, -167px);
 }
 
 .accountimg{
     display: flex;
-    transform: translate(10px, -119px);
 }
 
 .nickname{
@@ -288,120 +310,103 @@ input[type="radio"] {
 
 .accountstar{
     display: flex;
-    transform: translate(67px, -171px);
 }
 
 .accountdate{
     display: flex;
-    transform: translate(190px, -197px);
     font-size: 17px;
 }
 
 .goodcommentmain{
     display: flex;
-    transform: translate(0px, -444%);
+    margin-top: 20px;
 }
 
 .goodcomment {
     margin-left: 12px;
-    line-height: 37px;
-    transform: translate(0px, -4px);
+    line-height: 31px;
     font-size: 22px;
 }
 
-.sosocommentmain{
+.sosocommentmain {
     display: flex;
-    transform: translate(2px, -137px);
+    margin-left: 2px;
+    margin-top: 10px;
 }
 
 .sosocomment {
-    margin-left: 16px;
-    line-height: 32px;
-    font-size: 22px;
-    transform: translate(-2px, -3px);
-}
-
-
-.accountinfo1{
-    display: flex;
-    transform: translate(70px, -167px);
-}
-
-.accountimg1{
-    display: flex;
-    transform: translate(10px, -119px);
-}
-
-.nickname1{
-    display: flex;
-    font-size: 19px;
-}
-
-.skintype1{
-    display: flex;
-    font-size: 15px;
-    line-height: 29px;
-    color: gray;
-}
-
-.accountstar1{
-    display: flex;
-    transform: translate(67px, -171px);
-}
-
-.accountdate1{
-    display: flex;
-    transform: translate(190px, -197px);
-    font-size: 17px;
-}
-
-.goodcommentmain1{
-    display: flex;
-    transform: translate(0px, -444%);
-}
-
-.goodcomment1 {
-    margin-left: 12px;
-    line-height: 37px;
-    transform: translate(0px, -4px);
+    margin-left: 13px;
+    line-height: 31px;
     font-size: 22px;
 }
 
-.sosocommentmain1{
-    display: flex;
-    transform: translate(2px, -137px);
-}
-
-.sosocomment1 {
-    margin-left: 16px;
-    line-height: 32px;
-    font-size: 22px;
-    transform: translate(-2px, -3px);
-}
 
 .ingredientmain{
     font-family: "Pretendard-Regular";
     margin-top: 70px;
     font-size: 25px;
     font-weight: 600;
+    margin-bottom: 23px;
+}
+
+.ingredientdropbox {
+    min-width: 150px;
+    box-shadow: 0 4px 5px 0 #00000026;
+    position: relative;
+}
+
+#dropdown {
+    left: 0;
+    visibility: hidden;
+    position: absolute;
+}
+
+.dropdownLabel {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.contentcategory {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 5px 0 #00000026;
+}
+
+#dropdown:checked + label + div {
+    display: block;
+    border-top: 1px solid #00000026;
+}
+
+.caretIcon {
+    transition: transform 250ms ease-out;
+}
+
+#dropdown:checked + label > .caretIcon {
+    transform: rotate(-180deg);
+}
+
+.content ul {
+    list-style-type: none;
+    padding: 12px;
+    margin: 0;
+
+}
+
+.content ul li {
+    margin: 0.8rem 0;
 }
 
 
-
-.up-btn{
-    width: 200px;
-    height: 200px;
-    background-color: purple;
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    text-align: center;
-    line-height: 200px;
-    font-size: 50px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    user-select: none;
+.ingredientcomposition {
+    font-family: "Pretendard-Regular";
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 

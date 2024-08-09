@@ -113,4 +113,12 @@ table {
   cursor: pointer;
 }
 
+.float_r {
+  float: right;
+}
+
+.float_l {
+  float: left;
+}
+
 /*# sourceMappingURL=index.css.map */
