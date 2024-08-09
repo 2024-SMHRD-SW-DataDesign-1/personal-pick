@@ -119,7 +119,7 @@ const Search = () => {
                         {/* 검색 기록을 화면에 표시 */}
                         {searchHistory.length > 0 && searchHistory.map((item, index) => (
                             // 각 검색어를 리스트 아이템으로 표시
-                            <span className='recentSearchName' key={index}>{item}<button className='recentSearchbtn' onClick={() => searchDelete(index)}> X</button></span>
+                            <button className='recentSearchName' key={index}>{item}<span className='recentSearchbtn' onClick={() => searchDelete(index)}><strong>X</strong></span></button>
                         ))}
                     </div>
                     <hr className='line' />

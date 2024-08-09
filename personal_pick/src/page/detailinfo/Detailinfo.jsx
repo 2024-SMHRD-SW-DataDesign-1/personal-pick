@@ -26,15 +26,20 @@ const Detailinfo = () => {
     },[]);
 
 
-    const showmodal = (e , ranking) => {
+    const showmodal = (e) => {
         let str = ``
         str += `<div class = "subtitle">화장품 1</div>`
         str += `<div class = "subtitle">화장품 2</div>`
         showSwal(str,test)
 
-        let str1 = ``
-        str1 += `<div class = "modalranking">랭킹/수상 정보</div>`
-        showSwal(str1)
+        
+    }
+
+    const showmodal1 = (e) => {
+
+        let str = ``
+        str += `<div class = "subtitle">랭킹/수상 정보</div>`
+        showSwal(str,test1)
     }
 
 
@@ -42,10 +47,13 @@ const Detailinfo = () => {
         console.log(12)
     }
 
+    const test1 = (e) => {
+        console.log(e.target.innerText)
+    }
+
     
   return (
-        <div id="wrapper" className='container'>
-
+        <div id = "wrapper">
             {/* Main */}
             {/* 데이터를 성공적으로 불러오면 실행 */}
             {data.length > 0 ? (
@@ -56,7 +64,7 @@ const Detailinfo = () => {
                     {/* 화장품 이름 */}
                     
                     <div className='itemname'>
-                    <button className='goback' type="button" onClick={()=> navigate('/')}><span><img src={goback} width={33} height={30}></img></span></button>
+                    <button className='goback' type="button" onClick={()=> navigate('/Search')}><span><img src={goback} width={33} height={30}></img></span></button>
                     <label>{item.cos_name}</label>
                     </div>
                     </div>
@@ -87,7 +95,7 @@ const Detailinfo = () => {
                         </div>
                         </div>
 
-                        <div className='rankinginfo' onClick={(ranking)=>showmodal(ranking)}>
+                        <div className='rankinginfo' onClick={(e)=>showmodal1(e)}>
                         <div className='ranking'>
                         랭킹 :<span className='rankingtext'>{item.ranking}</span>
                         </div>
@@ -99,8 +107,9 @@ const Detailinfo = () => {
 
                         {/*ai 리뷰 */}
                         <span className='aireview'><span className='ai'>AI</span>가 분석한 리뷰</span>
-                        <div className='reviewinfo'>
-                        <div className='likereview'>
+
+                        <div className='flex justify-between px-20 my-24 reviewinfo'>
+                        <div className='likereview grow mr-24 w-1/2'>
                         <img src ={smile} className='smile' width={26} height={26}/>
                         <span className='like'>좋아요</span>
                             <span className='margintop1'>진정되는</span>
@@ -112,7 +121,7 @@ const Detailinfo = () => {
                             <span className='margintop1'>보습되는</span>
                         </div>
 
-                        <div className='dislike'>
+                        <div className='dislike grow mr-24 w-1/2'>
                         <img src ={notsmile} className='smile' width={23} height={23}/>
                         <span className='dontlike'>아쉬워요</span>
                             <span className='margintop2'>가루날림이 있는</span>
@@ -176,7 +185,7 @@ const Detailinfo = () => {
                             </div>
 
                         <div className='sosocommentmain'>
-                            <img src = {notsmile} width={26} height={28}></img>
+                            <img src = {notsmile} width={26} height={26}></img>
                             <span className='sosocomment'>아쉬운말</span>
                             </div>
                             </div>
@@ -199,13 +208,45 @@ const Detailinfo = () => {
                         </div>
 
                         <div className='ingredientcomposition'>
-                            <span className='compositiontext'>구성 성분</span>
+                            <span className='compositiontext'>성분 구성</span>
                             </div>
 
 
                         {/* <div class = "up-btn">
                             <ScrollToTopButton/>
                         </div> */}
+
+                        {/* 성분 구성 위험 단계 */}
+
+                        <div class="flex justify-between mt-16">
+                        <div className="flex items-center gap-x-4">
+                        <div className="w-[10px] h-[10px] rounded-full bg-mint-600"></div>
+                        <span className="hds-text-smalltext-large text-mint-600">1-2</span>
+                        <span className="hds-text-smalltext-large text-gray-tertiary">낮은 위험</span>
+                        </div>
+
+                        <div className="flex items-center gap-x-4">
+                        <div className="w-[10px] h-[10px] rounded-full bg-yellow-600"></div>
+                        <span className="hds-text-smalltext-large text-yellow-600">3-6</span>
+                        <span className="hds-text-smalltext-large text-gray-tertiary">중간 위험</span>
+                        </div>
+
+                        <div className="flex items-center gap-x-4">
+                        <div className="w-[10px] h-[10px] rounded-full bg-red-600"></div>
+                        <span className="hds-text-smalltext-large text-red-600">7-10</span>
+                        <span className="hds-text-smalltext-large text-gray-tertiary">높은 위험</span>
+                        </div>
+
+                        <div className="flex items-center gap-x-4">
+                        <div className="w-[10px] h-[10px] rounded-full bg-gray-600"></div>
+                        <span className="hds-text-smalltext-large text-gray-tertiary">등급 미정</span>
+                        </div>
+                        </div>
+
+                        {/* 성분 구성 막대 */}
+                        <div className="flex flex-row-reverse mt-16 h-12 rounded-4 bg-gray-600">
+                        </div>
+
 
                         </div>
                         </div>
@@ -214,9 +255,7 @@ const Detailinfo = () => {
             // 데이터를 불러오는데 실패하면 실행
                 <p>데이터 연결 실패</p>
             )}
-            
-    </div>
-   
+            </div>
   )
 }
 
