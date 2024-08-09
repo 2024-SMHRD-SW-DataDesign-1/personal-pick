@@ -199,7 +199,7 @@ const Home = () => {
                 <img className="star" src={Right} alt="" />
             </div>
             <h2 className="basic-text">나이대별 추천</h2>
-            <Itemview data={userChoiceRank}/>
+            <Itemview data={itemDic}/>
             <div className="home_page_btn">
                 브랜드 전체보기
                 <img className="star" src={Right} alt="" />
