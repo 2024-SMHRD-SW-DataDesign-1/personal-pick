@@ -5,11 +5,6 @@
     font-style: normal;
 }
 
-#wrapper{
-    width: 40vw;
-    margin: 0 30vw;
-
-}
 
 
 .imgmain1{
@@ -18,16 +13,23 @@
     justify-content: center;
 }
 
-.itemname {
+.w-full {
+    width: 100%;
+}
+
+
+ .itemname {
     position: fixed;
     height: 38px;
     background: white;
-    text-align: center;
-    width: 40.4%;
-    border-bottom: 1px solid rgb(255, 255, 255);
-    top:0px;
-    z-index: 10;
-}
+     text-align: center;
+     width: 32.9vw;
+     border-bottom: 1px solid rgb(255, 255, 255);
+     top:0px;
+     z-index: 10;
+ }
+
+ // 메인 부분
 
 .goback {
     width: 60px;
@@ -51,9 +53,7 @@
     transform: translate(0px, -30px);
 }
 
-.brandimg {
-    border: 1px;
-}
+
 
 .starinfo{
     display: flex;
@@ -63,13 +63,12 @@
 .starinfotext {
     display: flex;
     line-height: 14px;
-    margin-top: 8px;
+    margin-top: 3px
 }
 
 .brand {
     font-family: 'Pretendard-Regular';
     margin-left: 10px;
-    margin-top: 20px;
 }
 
 .iteminfo {
@@ -78,8 +77,7 @@
 }
 
 #brandname {
-    display: flex;
-    transform: translate(38px, -25px);
+    margin-left: 14px;
 }
 
 .nameinfo {
@@ -138,9 +136,7 @@
 .justify-between {
     justify-content: space-between;
 }
-.flex {
-    display: flex;
-}
+
 .my-24 {
     margin-bottom: 24px;
     margin-top: 24px;
@@ -159,7 +155,6 @@
 .smile {
     display: flex;
     position: absolute;
-    margin-top: 3px;
 }
 
 .like {
@@ -199,7 +194,7 @@
 
 .margintop1 {
     margin: auto;
-    margin-top: 8px;
+    margin-top: 16px;
     display: flex;
     font-size: 16px;
     font-weight: 500
@@ -216,11 +211,12 @@
 }
 
 .aireview {
-    margin-top: 27px;
+    margin-top: 40px;
     display: flex;
     font-family: "Pretendard-Regular";
     font-size: 26px;
     margin-bottom: 23px;
+    margin-left: 9px;
 }
 
 .ai{
@@ -236,7 +232,7 @@
 
 .margintop2 {
     margin: auto;
-    margin-top: 8px;
+    margin-top: 16px;
     display: flex;
     font-size: 16px;
     font-weight: 500
@@ -250,19 +246,15 @@
     font-weight: 600;
     margin-top: 48px;
     margin-bottom: 9px;
+    margin-left: 9px;
 }
 
 // 리뷰 평점
-.reviewall {
-    display: flex;
-    width: 28vw;
-}
 
 
 .graphbarmain {
         display: ruby;
-        width: 20vw;
-        margin-top: 43px;
+        width: 44vw;
 }
 
 
@@ -323,59 +315,116 @@ input[type="radio"] {
 }
 
 .accountinfo{
-    margin: auto;
-    display: flex;
+    margin: auto;;
     margin-left: 10px;
 }
 
-.accountimg{
-    display: flex;
+
+.object-center {
+    object-position: center;
+}
+.object-cover {
+    object-fit: cover;
+}
+.rounded-full {
+    border-radius: 99999px;
+}
+.w-40 {
+    width: 40px;
+}
+.h-40 {
+    height: 40px;
+}
+img {
+    vertical-align: top;
+}
+img, video {
+    height: auto;
+    max-width: 100%;
 }
 
 .nickname{
-    display: flex;
     font-size: 19px;
 }
 
+.hds-text-subtitle-medium {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 21px;
+    margin-left: 9px;
+}
+
 .skintype{
-    display: flex;
-    font-size: 15px;
-    line-height: 29px;
     color: gray;
 }
 
-.accountstar{
+.ml-2 {
+    margin-left: 2px;
+}
+.hds-text-smalltext-large {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+
+.accountstar {
     display: flex;
+    position: relative;
+    place-self: flex-end;
+    margin-left: -190px;
+}
+
+.textonly{
+    margin-top: -10px;
+}
+
+.relative {
+    position: relative;
 }
 
 .accountdate{
-    display: flex;
-    font-size: 17px;
+    margin-bottom: -27px;
 }
 
+.bg-gray-300 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(232, 232, 232, var(--tw-bg-opacity));
+}
+.w-\[1px\] {
+    width: 1px;
+    margin-right: 119px;
+}
+
+.text-gray-quaternary {
+    color: #aaa;
+}
+.ml-8 {
+    margin-left: 8px;
+}
+
+
 .goodcommentmain{
-    display: flex;
     margin-top: 20px;
     margin-left: 10px;
 }
 
+
 .goodcomment {
-    margin-left: 12px;
-    line-height: 31px;
-    font-size: 22px;
+    margin-left: 10px;
+    line-height: 32px;
 }
 
 .sosocommentmain {
-    display: flex;
     margin-top: 10px;
     margin-left: 11px;
 }
 
 .sosocomment {
-    margin-left: 13px;
+    margin-left: 12px;
     line-height: 31px;
-    font-size: 22px;
-    margin-top: -2px;
+    margin-top: -3px;
 }
 
 
@@ -444,7 +493,7 @@ input[type="radio"] {
 .ingredientcomposition {
     font-family: "Pretendard-Regular";
     margin-top: 40px;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
 }
 
@@ -452,7 +501,7 @@ input[type="radio"] {
 // 성분 구성 위험 단계 부분 (공통 css)
 
 .justify-between {
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .mt-16 {
@@ -465,6 +514,7 @@ input[type="radio"] {
 .items-center {
     align-items: center;
 }
+
 .flex {
     display: flex;
 }
@@ -482,7 +532,7 @@ input[type="radio"] {
 }
 
 .hds-text-smalltext-large {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     letter-spacing: 0;
     line-height: 18px;
