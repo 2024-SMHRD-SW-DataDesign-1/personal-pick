@@ -12,7 +12,7 @@ import personalReducer from './redux/reducer/reducer';
 import { Provider } from 'react-redux';
 
 import './App.css'
-
+import './index.scss'
 const store = createStore(personalReducer)
 
 
