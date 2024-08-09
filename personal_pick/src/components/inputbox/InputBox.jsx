@@ -9,9 +9,9 @@ const InputBox = ({func}) => {
     
 
     return (
-        <div className='flex_col inputBox' >
-            <input className='search_box' type="text" onChange={(e)=>setValue(e.target.value)}/>
-            <button className="btntype" onClick={()=>{
+        <div className='width' onClick={() =>nav('/search/')}>
+            <input className='float_l search_box width' type="text" onChange={(e)=>setValue(e.target.value)}/>
+            <button className="btntype " onClick={()=>{
                 
 
                 func(value)

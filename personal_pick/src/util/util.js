@@ -2,6 +2,7 @@ import axios from 'axios'
 import withReactContent from 'sweetalert2-react-content'
 import Swal from 'sweetalert2'
 import 'animate.css';
+import { IP } from './setIp';
 
 export function sendGet(url, func=null ) {
     axios
@@ -42,9 +43,7 @@ export function sendDel(url, func=null, data=null)
         })
 }
 
-//  export const URL = "http://192.168.219.111:5001";
-// export const URL = "http://192.168.219.81:5001";
-export const URL = "http://192.168.219.124:5001";
+export const URL = IP;
 
 export const dummyCategory = {
     skinCare : [
@@ -107,7 +106,7 @@ export function showSwal(strTag, func){
             animate__faster
           `
         },
-        didOpen : () => {
+        didOpen : () => {               
             let list = document.getElementsByClassName("subtitle");
             for(let i = 0; i < list.length; i++)
             {
