@@ -94,8 +94,8 @@ const Search = () => {
 
 
     return (
-        <div>
-            <div id='wrapper' className='Search'>
+        <div id='wrapper'>
+            <div className='Search'>
                 {/* InputBox 컴포넌트에 searchAdd 함수를 전달하여 검색어 입력 시 호출되게 함 */}
                 <div className='searchbtn'>
                     <button className='backbtn' type="button" onClick={()=> nav('/')}><span><img className='back' src={Back}></img></span></button>
