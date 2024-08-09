@@ -22,28 +22,17 @@ const Join = () => {
     }, [state]);
     
     // 회원가입에 필요한 변수들
-    const [userID, setUserID] = useState('');
-    const [pw, setPW] = useState('');
-    const [userName, setUserName] = useState('');
-    const [nickName, setNickName] = useState('');
+    const [id, setId] = useState('');
+    const [pw, setPw] = useState('');
+    const [name, setName] = useState('');
+    const [nm, setNm] = useState('');
     const [email, setEmail] = useState('');
-    const [ageGroup, setAgeGroup] = useState('');
+    const [age, setAge] = useState('');
+    const [sex, setSex] = useState('');
+
     const [skinType, setSkinType] = useState('');
     // 회원가입 실패 시 출력할 메세지 저장 변수
     const [message, setMessage] = useState('');
-
-    const handleAGChange = (event) => {
-        // 아래 체크박스에서 선택한 연령대로 ageGroup을 변경하는 함수
-        const { id } = event.target;
-        const temp = id === 'box1' ? '10대' :
-                     id === 'box2' ? '20대' :
-                     id === 'box3' ? '30대' : '';
-        setAgeGroup(temp);
-    };
-    useEffect(() => {
-        // 변경된 연령대 출력(첫 랜더링, ageGroup이 변경될 때)
-        console.log('ageGroup : ',ageGroup);
-    }, [ageGroup]);
 
     const handleSTChange = (event) => {
         // 아래 체크박스에서 선택한 피부 타입으로 ageGroup을 변경하는 함수
@@ -58,6 +47,17 @@ const Join = () => {
         console.log('skinType : ',skinType);
     }, [skinType]);
 
+    const handleSex = (event) => {
+        // 아래 체크박스에서 선택한 연령대로 ageGroup을 변경하는 함수
+        const { id } = event.target;
+        const temp = id === 'box1' ? '남' :
+                     id === 'box2' ? '여' : '';
+        setSex(temp);
+    };
+    useEffect(() => {
+        // 변경된 연령대 출력(첫 랜더링, ageGroup이 변경될 때)
+        console.log('성별 : ',sex);
+    }, [sex]);
 
 
 
@@ -66,13 +66,13 @@ const Join = () => {
     const handleSubmit = async (event) => {
         // console창에 보낼 데이터 출력
         console.log('data : ',{
-            userName: userName,
-            nickName: nickName,
-            userID: userID,
-            pw: pw,
-            email : email,
-            ageGroup : ageGroup,
-            skinType : skinType
+            user_id: id,
+            user_pw: pw,
+            user_name: name,
+            user_nm: nm,
+            user_email : email,
+            user_age : age,
+            user_sex : sex
         });
         
         event.preventDefault();
@@ -81,13 +81,13 @@ const Join = () => {
             // get : select
             // post : insert, update, delete
             const response = await axios.post(URL + "/TestJoin", {
-                userName: userName,
-                nickName: nickName,
-                userID: userID,
-                pw: pw,
-                email : email,
-                ageGroup : ageGroup,
-                skinType : skinType
+                user_id: id,
+                user_pw: pw,
+                user_name: name,
+                user_nm: nm,
+                user_email : email,
+                user_age : age,
+                user_sex : sex
             });
             // 응답받은 데이터 출력 : 201(성공) or 500(실패)
             console.log('response.data : ',response.data);
@@ -115,49 +115,57 @@ const Join = () => {
     return (
         <div id='join'>
             <div id='wrapper'>
+                <div id='head'>
+                    <h1>Personal Pick</h1>
+                </div>
                 <div id='main'>
-                    <form className='table' onSubmit={handleSubmit}>
-                        <h1>회원가입</h1>
+                    <form className='join_form' onSubmit={handleSubmit}>
+                        
+            
                         <div>
                             <input
                                 className='textbox'
                                 placeholder='ID'
                                 type="text"
-                                value={userID}
-                                onChange={(e) => setUserID(e.target.value)}
+                                value={id}
+                                onChange={(e) => setId(e.target.value)}
                                 required
                             />
                         </div>
+
                         <div>
                             <input
                                 className='textbox'
                                 placeholder='Password'
                                 type="text"
                                 value={pw}
-                                onChange={(e) => setPW(e.target.value)}
+                                onChange={(e) => setPw(e.target.value)}
                                 required
                             />
                         </div>
+
                         <div>
                             <input
                                 className='textbox'
                                 placeholder='이름'
                                 type="text"
-                                value={userName}
-                                onChange={(e) => setUserName(e.target.value)}
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
                                 required
                             />
                         </div>
+
                         <div>
                             <input
                                 className='textbox'
                                 placeholder='닉네임'
                                 type="text"
-                                value={nickName}
-                                onChange={(e) => setNickName(e.target.value)}
+                                value={nm}
+                                onChange={(e) => setNm(e.target.value)}
                                 required
                             />
                         </div>
+
                         <div>
                             <input
                                 className='textbox'
@@ -169,32 +177,35 @@ const Join = () => {
                             />
                         </div>
 
+                        <div>
+                            <input
+                                className='textbox'
+                                placeholder='나이'
+                                type="text"
+                                value={age}
+                                onChange={(e) => setAge(e.target.value)}
+                                required
+                            />
+                        </div>
+
                         <div className="checkbox">
                         <div className='left'>
-                            <p>연령대</p>
+                            <p>성별</p>
                             <input
                                 type="checkbox"
                                 id="box1"
-                                checked={ageGroup === '10대'}
-                                onChange={handleAGChange}
+                                checked={sex === '남'}
+                                onChange={handleSex}
                             />
-                            <label htmlFor="box1">10대</label><br />
+                            <label htmlFor="box1">남</label><br />
 
                             <input
                                 type="checkbox"
                                 id="box2"
-                                checked={ageGroup === '20대'}
-                                onChange={handleAGChange}
+                                checked={sex === '여'}
+                                onChange={handleSex}
                             />
-                            <label htmlFor="box2">20대</label><br />
-
-                            <input
-                                type="checkbox"
-                                id="box3"
-                                checked={ageGroup === '30대'}
-                                onChange={handleAGChange}
-                            />
-                            <label htmlFor="box3">30대</label><br />
+                            <label htmlFor="box2">여</label><br />
                             </div>
                             
                             <div className='right'>

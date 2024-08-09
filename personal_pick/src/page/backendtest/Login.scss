@@ -1,124 +1,146 @@
-#login,
-#join{
+#login #wrapper,
+#join #wrapper{
+    width: 40vw ;
+    margin: 0 30vw;
+    
+    // test용
+    height: 100vh;
+    background-color: greenyellow !important;
+
+    #head{
+        background-color: white;
+        h1{
+            /* position: left; */
+            font-weight: bold;
+            font-size: 3.5vh;
+
+            padding: 1vh 0 1vh 1vw;
+            margin-bottom: 1.5vh;
+        }
+    }
+    
     #main{
         /* 박스 내용 중앙 정렬 */
         /* 가운데 정렬 */
-        display: flex;
+        // display: flex;
         // flex-direction: column;
         /* 수직 */
         // align-items: center;
         /* 수평 */
-        justify-content: center;
+        // justify-content: center;
         margin: 0;
 
-        // width: 80%;
+        width: 100%;
     
         background-color: white;
-    }
-    
-    
-    .table{
-        // display: flex;
-        /* 수직 정렬 */
-        flex-direction: column;
-        /* 수평 정렬 */
-        align-items: center;
-        /* box-sizing: border-box; */
-        
-        /* 위쪽 공간 띄움 */
-        padding: 3vh 0 0 0;
-        height: 20vh;
 
-        h2 {
-            margin-bottom: 2.5vh;
-            font-size: 10vh;
-            color: #333;
-        
-            /* position: left; */
-            font-weight: bold;
-            font-size: 3.5vh;
+
+            
+    
+        .join_form{
+            // display: flex;
+            /* 수직 정렬 */
+            flex-direction: column;
+            /* 수평 정렬 */
+            align-items: center;
+            /* box-sizing: border-box; */
+            
+            /* 위쪽 공간 띄움 */
+            // padding: auto;
+            padding: 1vh 1vw 0 1vw;
+            height: 20vh;
+
+            h2 {
+                margin-bottom: 2.5vh;
+                font-size: 10vh;
+                color: #333;
+            
+                /* position: left; */
+                font-weight: bold;
+                font-size: 3.5vh;
+            }
         }
-    }
-    
-    
-    /* 입력 필드 스타일 */
-    .textbox {
-        // 100 - 패딩10, 마진4
-        width: 86%;
-        padding: 5%;
-        margin: 0 2%;
-        margin-bottom: 1.5vh;
-    
-        font-size: 2vh;
-        border-width: 0.1vh;
-        border-style: solid;
-        border-color: gray;
-    }
-
-    .checkbox {
-        display: flex;
-        // 수직 정렬
-        // flex-direction: column;
-        // 수평 정렬
-        // align-items: center;
-        // box-sizing: border-box;
-
-        // 100 - 패딩10, 마진4
-        width: 86%;
-        padding: 5%;
-        margin: 0 2%;
-        margin-bottom: 1.5vh;
-    
-        font-size: 2vh;
-        border-width: 0.1vh;
-        border-style: solid;
-        border-color: gray;
-        .left, .right{
-            width: 50%;
-        }
-        p{
+        
+        
+        /* 입력 필드 스타일 */
+        .textbox {
+            // 100 - 패딩10, 마진4
+            width: 86%;
             padding: 5%;
+            margin: 0 2%;
+            margin-bottom: 1.5vh;
+        
+            font-size: 2vh;
+            border-width: 0.1vh;
+            border-style: solid;
+            border-color: gray;
         }
-    }
-    
-    
-    /* 버튼 스타일 */
-    .button_login{
-        display: flex;
-        // width: 90%;
-        margin-bottom: 1.5vh;
-    }
 
-    .button_2{
-        display: flex;
-        width: 100%;
-        // padding: 0.5vw;
-    }
-    
-    button {
-        height: 4.5vh;
-        width: 100%;
-        // padding: 0.5vw;
-        margin: 0vh 2%;
+        .checkbox {
+            display: flex;
+            // 수직 정렬
+            // flex-direction: column;
+            // 수평 정렬
+            // align-items: center;
+            // box-sizing: border-box;
+
+            // 100 - 패딩10, 마진4
+            width: 86%;
+            padding: 5%;
+            margin: 0 2%;
+            margin-bottom: 1.5vh;
         
-        border-width: 0.1vh;
-        border-style: solid;
-        border-color: gray;
-        border-radius: 0.5vh;
-    
-        /* background-color: #007bff; */
-        /* color: #fff; */
-        font-size: 1.8vh;
-    
-        /* 마우스 올릴 때 커서 손모양으로 변환 */
-        cursor: pointer;
+            font-size: 2vh;
+            border-width: 0.1vh;
+            border-style: solid;
+            border-color: gray;
+            .left, .right{
+                width: 50%;
+            }
+            p{
+                padding: 5%;
+            }
+        }
         
-        /* hover 설정 */
-        transition: background-color 0.3s ease;
-    }
-    
-    
-    button:hover {
-        background-color: rgb(169, 169, 169);
+        
+        /* 버튼 스타일 */
+        .button_login{
+            display: flex;
+            // width: 90%;
+            margin-bottom: 1.5vh;
+        }
+
+        .button_2{
+            display: flex;
+            width: 100%;
+            // padding: 0.5vw;
+        }
+        
+        button {
+            height: 4.5vh;
+            width: 100%;
+            // padding: 0.5vw;
+            margin: 0vh 2%;
+            
+            border-width: 0.1vh;
+            border-style: solid;
+            border-color: gray;
+            border-radius: 0.5vh;
+        
+            /* background-color: #007bff; */
+            /* color: #fff; */
+            font-size: 1.8vh;
+        
+            /* 마우스 올릴 때 커서 손모양으로 변환 */
+            cursor: pointer;
+            
+            /* hover 설정 */
+            transition: background-color 0.3s ease;
+        }
+        
+        
+        button:hover {
+            background-color: rgb(169, 169, 169);
+        }
     }
 }
