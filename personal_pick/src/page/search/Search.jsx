@@ -16,13 +16,13 @@ const Search = () => {
 
 
     // 사용자가 찾고 싶은 제품을 검색했을 때 나타나는 제품리스트
-    const [product, setProduct] = useState([]);
+    const [productList, setProductList] = useState([]);
     // 사용자가 검색한 검색어
     const [inputvalue, setInputvalue] = useState("");
 
 
     const showConsole = (cosdata) => {
-        setProduct(cosdata);  // 실시간 적용되게(렌더링)       
+        setProductList(cosdata);  // 실시간 적용되게(렌더링)   
     };
 
 
@@ -91,6 +91,11 @@ const Search = () => {
     };
 
 
+    // 최근검색어의 단어 클릭 시 그 단어의 제품리스트 띄우는 함수
+    const searchClick = (searchClickValue) => {
+        setInputvalue(searchClickValue);
+    }
+
 
     // 제품 클릭 시 detailinfo 페이지로 이동하는 함수
     const handleProductClick = (idx) => {
@@ -118,7 +123,7 @@ const Search = () => {
                         {/* 검색 기록을 화면에 표시 */}
                         {searchHistory.length > 0 && searchHistory.map((item, index) => (
                             // 각 검색어를 리스트 아이템으로 표시
-                            <button className='recentSearchName' key={index}>{item}<span className='recentSearchbtn' onClick={() => searchDelete(index)}><strong className='xbtn'>X</strong></span></button>
+                            <button className='recentSearchName' key={index} onClick={() => searchClick(item)}>{item}<span className='deletebtn' onClick={() => searchDelete(index)}><strong className='xbtn'>X</strong></span></button>
                         ))}
                     </div>
                     <hr className='line' />
@@ -130,7 +135,7 @@ const Search = () => {
                 </div>
                 <div className='products'>
                     <ul>
-                        {product.length > 0 && product.map((item) => (
+                        {productList.length > 0 && productList.map((item) => (
                             <li className='product1' key={item.idx} onClick={() => handleProductClick(item.idx)}>
                                 <a className='flex'>
                                     <div className='idx'>{item.idx}</div>
