@@ -5,13 +5,25 @@
     font-style: normal;
 }
 
+#wrapper{
+    width: 40vw;
+    margin: 0 30vw;
+
+}
+
+
+.imgmain1{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
 
 .itemname {
     position: fixed;
     height: 38px;
     background: white;
     text-align: center;
-    width: 60.7%;
+    width: 40.4%;
     border-bottom: 1px solid rgb(255, 255, 255);
     top:0px;
     z-index: 10;
@@ -57,6 +69,7 @@
 .brand {
     font-family: 'Pretendard-Regular';
     margin-left: 10px;
+    margin-top: 20px;
 }
 
 .iteminfo {
@@ -112,7 +125,7 @@
 #main1{
     /* float: left; */
     height: 266vh;
-    background-color: rgb(247, 150, 150);
+    background-color: rgb(255, 255, 255);
 }
 
 
@@ -208,7 +221,6 @@
     font-family: "Pretendard-Regular";
     font-size: 26px;
     margin-bottom: 23px;
-    margin-left: 10px;
 }
 
 .ai{
@@ -220,7 +232,6 @@
     font-family: 'Pretendard-Regular';
     font-weight: 700;
     font-size: 23px;
-    margin-left: 10px;
 }
 
 .margintop2 {
@@ -239,7 +250,6 @@
     font-weight: 600;
     margin-top: 48px;
     margin-bottom: 9px;
-    margin-left: 10px;
 }
 
 // 리뷰 평점

@@ -11,9 +11,10 @@
     font-weight: 700;
     font-size: 15px;
     background-color: #222;
-    padding: 17px 60px;
+    padding: 17px 40px;
     margin: 0 ;
     box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+    
 }
 
 .btntype span {
@@ -42,11 +43,13 @@ transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
 .search_box{
-    width : 60%;
+    width : 50%;
     padding: 17px 60px;
     border : 2px solid rgb(130,170,73);  
+    
 }
 
 .margin_a{
-    margin : auto;
+    display: flex;
+    justify-content: center;
 }
