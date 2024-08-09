@@ -85,8 +85,8 @@ table {
 }
 
 #wrapper {
-  width: 40vw;
-  margin: 0 30vw;
+  width: 700px;
+  margin: 0 auto;
 }
 
 #head {
