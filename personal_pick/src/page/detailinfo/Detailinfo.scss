@@ -18,16 +18,15 @@
 }
 
 
- .itemname {
+.itemname {
     position: fixed;
     height: 38px;
     background: white;
-     text-align: center;
-     width: 32.9vw;
-     border-bottom: 1px solid rgb(255, 255, 255);
-     top:0px;
-     z-index: 10;
- }
+    width: 37vw;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    top: 0px;
+    z-index: 10;
+}
 
  // 메인 부분
 
@@ -294,7 +293,7 @@
 
 .graphbarmain {
         display: ruby;
-        width: 44vw;
+        width: 19vw;
 }
 
 
@@ -474,6 +473,7 @@ img, video {
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 23px;
+    margin-left: 6px;
 }
 
 .ingredientdropbox {
@@ -535,6 +535,7 @@ img, video {
     margin-top: 90px;
     font-size: 24px;
     font-weight: 600;
+    margin-left: 6px;
 }
 
 
@@ -659,8 +660,24 @@ img, video {
     font-size: 23px;
     font-weight: 600;
     margin-top: 80px;
+    margin-left: 6px;
 }
 
+.allingredientbar{
+    --tw-bg-opacity: 1;
+    background-color: rgba(242, 242, 242, var(--tw-bg-opacity));
+    height: 10px;
+    border-width: 0;
+    transform: translate(0px, 135px);
+}
+
+.ingredientbar {
+    --tw-bg-opacity: 1;
+    background-color: rgba(242, 242, 242, var(--tw-bg-opacity));
+    height: 10px;
+    border-width: 0;
+    transform: translate(0px, 103px);
+}
 .caution {
     margin-top: 48px;
 }

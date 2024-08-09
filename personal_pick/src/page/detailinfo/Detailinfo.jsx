@@ -213,6 +213,8 @@ const Detailinfo = () => {
                             <span>성분</span>
                             </div>
 
+                        <hr className='ingredientbar'/>
+
                         <div className='ingredientdropbox' onClick={(e)=>showmodal(e)}> 
                         <input id="dropdown" type="checkbox"/>
                         <label className="dropdownLabel" for="dropdown">
@@ -261,6 +263,8 @@ const Detailinfo = () => {
                         {/* 성분 구성 막대 */}
                         <div className="flex flex-row-reverse mt-16 h-12 rounded-4 bg-gray-600">
                         </div>
+
+                        <hr className='allingredientbar'/>
 
 
                         {/* 전체 성분 */}
