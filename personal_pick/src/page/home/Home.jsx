@@ -144,10 +144,17 @@ const Home = () => {
         sendGet(URL+'/MainPage', setData);        
     },[])
 
-    useEffect(()=>{        
+    useEffect(()=>{    
+        console.log(categoryDic)   
+        
+        
         sendGet(URL + '/CategorySel?category='+categoryDic.subtitle, setUserChoiceRank)
         
     },[categoryDic])
+
+    useEffect(()=>{        
+        console.log(userChoiceRank)   
+    },[userChoiceRank])
 
 
     // 오늘날짜
