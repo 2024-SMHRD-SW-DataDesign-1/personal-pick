@@ -7,7 +7,6 @@ from ppDetail import ppDetailPage
 from join import ppJoin
 from ppLogin import ppLogin
 from ppSearch import ppSearch, ppSearchList
-from ppCategory import ppCategorySel
 from Test import testJoin
 
 app = Flask(__name__, static_folder='../build', static_url_path='/')
