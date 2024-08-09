@@ -12,7 +12,8 @@ import personalReducer from './redux/reducer/reducer';
 import { Provider } from 'react-redux';
 
 import './App.css'
-
+import './index.scss'
+import TotalItem from './page/totalitem/TotalItem';
 const store = createStore(personalReducer)
 
 
@@ -29,6 +30,7 @@ function App() {
                         <Route path='/mypage' element={<Mypage />}></Route>
                         <Route path='/search/:value' element={<Search />}></Route>
                         <Route path='/search' element={<Search />}></Route>
+                        <Route path='/totalitem' element={<TotalItem />}></Route>
                         <Route path='/detailinfo/:idx' element={<Detailinfo />}></Route>
                     </Routes>
                 </div>

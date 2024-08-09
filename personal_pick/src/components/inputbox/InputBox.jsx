@@ -10,8 +10,8 @@ const InputBox = ({func}) => {
 
     return (
         <div className='width margin_a' onClick={() =>nav('/search/')}>
-            <input className='float_l search_box width' type="text" onChange={(e)=>setValue(e.target.value)}/>
-            <button className="btntype " onClick={()=>{
+            <input className='search_box width' type="text" onChange={(e)=>setValue(e.target.value)}/>
+            <button className="btn-1" onClick={()=>{
                 
 
                 func(value)

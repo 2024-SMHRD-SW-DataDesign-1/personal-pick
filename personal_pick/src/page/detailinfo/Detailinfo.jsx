@@ -70,11 +70,14 @@ const Detailinfo = () => {
                     </div>
 
                         <div id = 'main1'>
+
                         {/* 화장품 사진 */}
+                        <div className='imgmain1 my-24'>
                         <img src ={item.cos_img_src}/>
+                        </div>
 
                         {/* 화장품 브랜드 이미지, 이름 */}
-                        
+                        <div className='brandmain my-24'>
                         <div className='brand'>
                             <img src = {item.brand_img_src} className='brandimg'/><span id='brandname'>{item.brand_name}</span>
                         </div>
@@ -102,11 +105,12 @@ const Detailinfo = () => {
                         <img src = {detailright} width={25} height={25}/>
                         </div>
                         </div>
+                        </div>
 
                         <hr className='bar'/>
 
                         {/*ai 리뷰 */}
-                        <span className='aireview'><span className='ai'>AI</span>가 분석한 리뷰</span>
+                        <span className='flex justify-between px-20 my-24 aireview'><span className='ai'>AI가 분석한 리뷰</span></span>
 
                         <div className='flex justify-between px-20 my-24 reviewinfo'>
                         <div className='likereview grow mr-24 w-1/2'>
@@ -137,7 +141,7 @@ const Detailinfo = () => {
                         {/* <hr className='bar2'/> */}
 
 
-                        <div className='detailreview'>
+                        <div className='detailreview flex justify-between px-20 my-24'>
                             리뷰
                         <div className='reviewcount'>
                             1432
@@ -145,7 +149,7 @@ const Detailinfo = () => {
                             </div>
 
                         {/*평점 전체 div  */}
-                        <div className='reviewall'>
+                        <div className='reviewall flex justify-between px-20 my-24'>
                         {/*평점 구간 */}
                         <div className='reviewratemain'>
                             <span className='reviewtext'>평점</span>
@@ -154,7 +158,7 @@ const Detailinfo = () => {
                             
 
                         {/* 평점 그래프 */}
-                        <div className='graphbarmain'>
+                        <div className='graphbarmain flex justify-between px-20 my-24'>
                         <div className='graphbar'/>
                         <span className='graphbartext'>5점</span>
                         <div className='graphbar'/>
