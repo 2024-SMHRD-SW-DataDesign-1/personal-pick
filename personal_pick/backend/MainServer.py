@@ -8,6 +8,7 @@ from join import ppJoin
 from ppLogin import ppLogin
 from ppSearch import ppSearch, ppSearchList
 from ppCategory import ppCategorySel
+from Test import testJoin
 
 app = Flask(__name__, static_folder='../build', static_url_path='/')
 CORS(app) 
@@ -22,6 +23,8 @@ api.add_resource(ppLogin, '/LoginPage')
 api.add_resource(ppSearch, '/SearchPage')
 api.add_resource(ppSearchList, '/SearchList')
 api.add_resource(ppCategorySel, '/CategorySel')
+
+api.add_resource(testJoin, '/TestJoin')
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5001, debug=True)
