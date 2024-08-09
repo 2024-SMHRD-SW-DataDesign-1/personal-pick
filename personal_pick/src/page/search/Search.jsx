@@ -5,8 +5,7 @@ import './Search.scss';
 import Star from '../../img/별.png';
 import Back from '../../img/뒤로가기.png';
 
-import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Search = () => {
 
@@ -119,7 +118,7 @@ const Search = () => {
                         {/* 검색 기록을 화면에 표시 */}
                         {searchHistory.length > 0 && searchHistory.map((item, index) => (
                             // 각 검색어를 리스트 아이템으로 표시
-                            <button className='recentSearchName' key={index}>{item}<span className='recentSearchbtn' onClick={() => searchDelete(index)}><strong>X</strong></span></button>
+                            <button className='recentSearchName' key={index}>{item}<span className='recentSearchbtn' onClick={() => searchDelete(index)}><strong className='xbtn'>X</strong></span></button>
                         ))}
                     </div>
                     <hr className='line' />
