@@ -120,14 +120,14 @@
 
 
 #main1{
-    /* float: left; */
     overflow-y : scroll;
     height: 96vh;
-    // height: 266vh;
     background-color: rgb(255, 255, 255);
     padding-bottom: 7px;
 }
-
+#main1::-webkit-scrollbar {
+    display: none;
+  }
 
 // AI가 분석하는 리뷰
 
@@ -154,10 +154,7 @@
     margin-right: 24px;
 }
 
-.smile {
-    // display: flex;
-    // position: absolute;
-}
+
 
 .liketext{
     margin: auto;
