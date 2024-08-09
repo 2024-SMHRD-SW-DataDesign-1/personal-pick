@@ -16,14 +16,16 @@ const Search = () => {
 
 
 
-    // 내가 찾고 싶은 제품을 검색했을 때 나타나는 제품리스트
+    // 사용자가 찾고 싶은 제품을 검색했을 때 나타나는 제품리스트
     const [list, setList] = useState([]);
+    // 사용자가 검색한 검색어
     const [inputvalue, setInputvalue] = useState("");
 
+
     const showConsole = (cosdata) => {
-        setList(cosdata);  // 실시간 적용되게(렌더링)
-        
+        setList(cosdata);  // 실시간 적용되게(렌더링)       
     };
+
 
     // 컴포넌트가 처음 렌더링될 때 데이터 가져오기
     useEffect(() => {
@@ -36,6 +38,7 @@ const Search = () => {
 
 
     useEffect(() => {
+        // 검색어 전체 리스트 형식으로 가져오는 게 아니라 단어 객체 하나만 가져온다는 것
         sendGet(URL + "/SearchPage?value="+inputvalue, showConsole);
     }, [inputvalue]); // 빈 배열을 두 번째 인자로 전달하여 마운트 시 한 번만 실행
 
@@ -47,23 +50,20 @@ const Search = () => {
 
     useEffect(()=>{
         sendPost(URL + "/SearchList", null, searchHistory);
-    },[searchHistory]);
+    },[searchHistory]); // 빈배열 안에 searchHistory(최근 검색어)가 있는 경우는 최근검색어를 검색하고 화면에 나왔을 때 렌더링하겠다는 뜻
     
     
     // 검색어를 추가하는 함수
-    // inputbox에서 검색어를 받아옴 searchadd로
+    // inputbox에서 검색어를 searchadd로 받아옴 
     const searchAdd = (searchValue) => {  // 새로운 검색어, 사용자가 검색을 수행할 때 handleSearch 함수로 전달
         setInputvalue(searchValue)
         // 이전 검색어 리스트에 새로운 검색어를 배열 끝에 추가
-        // 스프레드 문법(...) : 내가 보관하고 있던 이전까지의 데이터 유지시킨 후 그 뒤에 데이터 연결
         // 5개 과거(이전) 데이터 있는데 + 현재(최신) 데이터 1개 => 총 6개 배열 나옴
-        const newHistory = [searchValue, ...searchHistory];
-        
+        const newHistory = [searchValue, ...searchHistory];        
         // 검색어 리스트가 5개를 초과하면 가장 오래된 검색어 제거
         if (newHistory.length > 5) {
             newHistory.pop();   // 가장 오래된 검색어 제거 함수(오른쪽 검색어 제거)           
-        }
-              
+        }              
         // 최근 검색어의 바뀐 데이터(내가 최근에 검색한 단어들)를 계속해서 화면에 출력하는 역할(연결점 같은 것)
         setSearchHistory([...newHistory])
 
@@ -78,7 +78,9 @@ const Search = () => {
         // 각 요소의 인덱스(index)가 indexToDelete와 같지 않은 요소만 새로운 배열에 포함시킴
         // item을 사용하지 않기에 _ 로 표기 => 해당 인자를 사용하지 않겠다는 의미
         const newHistory = [...searchHistory];
+        // filter함수를 사용해 indexToDelete한 것이 아닌 index값들만 가져오는 것
         const newList = newHistory.filter((item, index) => index !== indexToDelete)
+        // 스트레드로 newList에 리스트 형식으로 묶어서 SearchHistory에 담아주기
         setSearchHistory([...newList]);
     };
 
