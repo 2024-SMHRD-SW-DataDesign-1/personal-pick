@@ -11,6 +11,8 @@ import account from '../../img/account.png'
 import goback from '../../img/왼쪽.png'
 import { FaAngleDown } from "react-icons/fa";
 import detailright from '../../img/오른쪽.png'
+import caution from '../../img/caution.png'
+import allergy from '../../img/allergy.png'
 
 const Detailinfo = () => {
     // 페이지 이동 함수
@@ -115,25 +117,25 @@ const Detailinfo = () => {
                         <div className='likereview grow mr-24 w-1/2'>
                         <img src ={smile} className='smile' width={26} height={26}/>
                         <span className='like'>좋아요</span>
-                            <span className='margintop1'>진정되는</span>
-                            <span className='margintop1'>쿨링되는</span>
-                            <span className='margintop1'>수분있는</span>
-                            <span className='margintop1'>모공관리되는</span>
-                            <span className='margintop1'>자극없는</span>
-                            <span className='margintop1'>향에 만족한</span>
-                            <span className='margintop1'>보습되는</span>
+                            <span className='margintop1'>진정되는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop1'>쿨링되는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop1'>수분있는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop1'>모공관리되는<span className='reviewdata1 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop1'>자극없는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop1'>향에 만족한<span className='reviewdata2 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop1'>보습되는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
                         </div>
 
                         <div className='dislike grow mr-24 w-1/2'>
                         <img src ={notsmile} className='smile' width={23} height={23}/>
                         <span className='dontlike'>아쉬워요</span>
-                            <span className='margintop2'>가루날림이 있는</span>
-                            <span className='margintop2'>마르는</span>
-                            <span className='margintop2'>흘러내리는</span>
-                            <span className='margintop2'>잔여물이 남는</span>
-                            <span className='margintop2'>노폐물 제거 안되는</span>
-                            <span className='margintop2'>가려운</span>
-                            <span className='margintop2'>내장 도구가 안좋은</span>
+                            <span className='margintop2'>가루날림이 있는<span className='reviewdata3 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop2'>마르는<span className='reviewdata4 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop2'>흘러내리는<span className='reviewdata5 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop2'>잔여물이 남는<span className='reviewdata6 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop2'>노폐물 제거 안되는<span className='reviewdata7 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop2'>가려운<span className='reviewdata8 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop2'>내장 도구가 안좋은<span className='reviewdata7 hds-text-body-medium text-gray-tertiary'>0</span></span>
                         </div>
                         </div>
 
@@ -260,7 +262,38 @@ const Detailinfo = () => {
                         <div className="flex flex-row-reverse mt-16 h-12 rounded-4 bg-gray-600">
                         </div>
 
-                        <hr className='bar3'/>
+
+                        {/* 전체 성분 */}
+                        <div className='allingredient mt-8 px-20'>
+                            <span>전체 성분 (들어올값)개</span>
+                        </div>
+
+                        <div className= 'caution mt-8 px-20'>
+                            <div className='flex gap-x-8'>
+                            <img src={caution} alt="caution"/>
+                            <span className = 'cautiontext hds-text-body-medium text-gray-secondary'>
+                                20가지 주의성분
+                                </span>
+                                <div className='ingredientbetween'>
+                                    <span className='hds-text-subtitle-medium text-gray-primary'>0</span>
+                                    <span className='hds-text-body-medium text-gray-secondary'>개</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className= 'allergy mt-8 px-20'>
+                            <div className='flex gap-x-8'>
+                            <img src={allergy} alt="allergy"></img>
+                            <span className = 'allergytext hds-text-body-medium text-gray-secondary'>
+                                알레르기 주의성분
+                                </span>
+                                <div className='ingredientbetween1'>
+                                    <span className='hds-text-subtitle-medium text-gray-primary'>0</span>
+                                    <span className='hds-text-body-medium text-gray-secondary'>개</span>
+                                </div>
+                            </div>
+                        </div>
+
 
                         </div>
                         </div>

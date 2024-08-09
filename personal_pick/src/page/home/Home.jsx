@@ -3,26 +3,14 @@ import React, {useEffect, useState} from "react";
 import CustomSwiper from '../../components/customswiper/CustomSwiper'
 import { useNavigate } from "react-router-dom";
 import InputBox from "../../components/inputbox/InputBox";
-import { getDay, sendGet, URL } from "../../util/util";
+import { sendGet, URL } from "../../util/util";
 import Category from "../../components/category/Category";
 import Itemview from "../../components/itemview/Itemview"
 import './Home.scss'
 import Right from '../../img/오른쪽.png'
 import Logo from '../../img/로고.png'
+import { getDay, titleList, userAgeList, userTypeList } from "../../util/utilStr";
 
-// <div className='MainView inner'>    
-
-// {/* Main */}
-// <div className='viewWidth flex_col '>
-//     <img src="" alt="팀로고" />
-//     <InputBox func={show}/>
-// </div>
-// <CustomSwiper list={data}/>
-// <p>
-//     화해 고객들이 직접 선택한 랭킹🎁
-// </p>
-
-// </div>
 
 // 데이터 6개만 받아올 예정!
 let itemDic = [
@@ -137,6 +125,7 @@ const Home = () => {
     // 페이지 이동 함수
     const nav = useNavigate();
 
+    // 화해 고객들이 직접 선택한 랭킹🎁
     const [categoryDic, setCategoryDic] = useState({
         list : [],
         maintitle : "카테고리 전체",
@@ -145,23 +134,32 @@ const Home = () => {
     });
     const [data, setData] = useState([]);
     const [userChoiceRank, setUserChoiceRank] = useState([...itemDic])
+    // 내피부에 꼭 맞는 제품 랭킹
+    const [userItemRank, setUserItemRank] = useState("건성");
+    // 나이대별 추천
+    const [userAgePick, setUserAgePick] = useState("10대");
 
     // [] -> 첫 렌더링에만 실행
     useEffect(()=>{        
         sendGet(URL+'/MainPage', setData);        
     },[])
 
-    useEffect(()=>{        
+    useEffect(()=>{    
+        console.log(categoryDic)   
+        
+        
         sendGet(URL + '/CategorySel?category='+categoryDic.subtitle, setUserChoiceRank)
+        
     },[categoryDic])
 
-    // data 값이 변경될 때마다 실행
-    // 데이터 로드 확인
+    useEffect(()=>{        
+        console.log(userChoiceRank)   
+    },[userChoiceRank])
+
 
     // 오늘날짜
     let today = new Date()
-    let testTag = document.getElementById('wrapper')
-    console.log(testTag)
+
     return (
         <div id='wrapper' className="inner" >    
         {/* // <div id='wrapper' >     */}
@@ -180,10 +178,10 @@ const Home = () => {
             </div>
             <div className="basic-text">화해 고객들이 직접 <span> 선택한 랭킹🎁 </span> <img className="category_arrow" src={Right} alt="" /> </div> 
             
-            <Category dic ={categoryDic} setDic={setCategoryDic}/>
+            <Category dic ={categoryDic} setDic={setCategoryDic} categoryData={titleList}/>
             <Itemview data={userChoiceRank}/>
 
-            <div className="home_page_btn">
+            <div className="home_page_btn" onClick={() => nav('/totalitem' )}>
                 카테고리 전체보기
                 <img className="star" src={Right} alt="" />
             </div>
@@ -192,16 +190,18 @@ const Home = () => {
 
 
             <h2 className="basic-text">내 피부에 꼭 맞는 제품 랭킹</h2>
-            <Itemview data={userChoiceRank}/>
+            <Category dic ={userItemRank} setDic={setUserItemRank} categoryData={userTypeList}/>
+            <Itemview data={itemDic}/>
 
-            <div className="home_page_btn">
-                10대 전체보기
+            <div className="home_page_btn" >
+                {userItemRank + ' 전체보기'} 
                 <img className="star" src={Right} alt="" />
             </div>
             <h2 className="basic-text">나이대별 추천</h2>
-            <Itemview data={userChoiceRank}/>
+            <Category dic ={userAgePick} setDic={setUserAgePick} categoryData={userAgeList}/>
+            <Itemview data={itemDic}/>
             <div className="home_page_btn">
-                브랜드 전체보기
+                {userAgePick + " 전체보기"}
                 <img className="star" src={Right} alt="" />
             </div>
   

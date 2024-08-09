@@ -157,6 +157,46 @@
     position: absolute;
 }
 
+.liketext{
+    margin: auto;
+}
+
+.reviewdata {
+    margin-left: 236px;
+}
+
+.reviewdata1 {
+    margin-left: 209px;
+}
+
+.reviewdata2 {
+    margin-left: 218px;
+}
+
+.reviewdata3 {
+    margin-left: 195px;
+}
+
+.reviewdata4 {
+    margin-left: 254px;
+}
+
+.reviewdata5 {
+    margin-left: 226px;
+}
+
+.reviewdata6 {
+    margin-left: 208px;
+}
+
+.reviewdata7 {
+    margin-left: 176px;
+}
+
+.reviewdata8 {
+    margin-left: 253px;
+}
+
 .like {
     margin: auto;
     margin-left: 28px;
@@ -492,7 +532,7 @@ img, video {
 
 .ingredientcomposition {
     font-family: "Pretendard-Regular";
-    margin-top: 40px;
+    margin-top: 90px;
     font-size: 24px;
     font-weight: 600;
 }
@@ -511,6 +551,11 @@ img, video {
 .gap-x-4 {
     column-gap: 4px;
 }
+
+.gap-x-8 {
+    column-gap: 8px;
+}
+
 .items-center {
     align-items: center;
 }
@@ -605,4 +650,43 @@ img, video {
 
 .mt-16 {
     margin-top: 16px;
+}
+
+// 전체 성분 
+
+.allingredient{
+    font-family: 'Pretendard-Regular';
+    font-size: 23px;
+    font-weight: 600;
+    margin-top: 80px;
+}
+
+.caution {
+    margin-top: 48px;
+}
+
+.allergy {
+    margin-top: 20px;
+}
+
+.cautiontext {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.text-gray-secondary {
+    color: #666;
+}
+
+.ingredientbetween{
+    margin-left: 433px;
+}
+
+.ingredientbetween1{
+    margin-left: 418px;
+}
+
+.allergytext {
+    font-size: 18px;
+    font-weight: 600;
 }

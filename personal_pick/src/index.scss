@@ -85,12 +85,12 @@ table {
 }
 
 .App{
-    background-color: rgb(239, 241, 243);
+    background-color: rgb(37, 103, 170);
   }
   
-  #wrapper{
-    background-color: white;
-  }
+#wrapper{
+
+}
 // 사이드 색 및 명암 css 
 
 // .effect8 {
@@ -126,6 +126,8 @@ table {
 #wrapper{
     width: 700px;
     margin: 0 auto;
+    background-color: white;
+    padding : 0 25px
 }
 
 #head{
@@ -156,4 +158,8 @@ table {
 
 .float_l{
     float:left;
+}
+
+.whiteText{
+    color : white;
 }

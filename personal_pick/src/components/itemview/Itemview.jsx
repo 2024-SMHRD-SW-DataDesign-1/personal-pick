@@ -24,7 +24,7 @@ const Itemveiw = ({data}) => {
 
     const nav = useNavigate();
 
-    console.log(data);
+    
     return (
         <div className='flex_row alldiv'>
             {data.length >0 && data.map((item, idx) => {
@@ -42,7 +42,7 @@ const Itemveiw = ({data}) => {
                             <div className='rank_name'>
                                 <span className='rank_brand_name'>{item.brand_name} </span>
                             </div>
-                                <span className='rank_cos_name'>&nbsp;{item.cos_name}</span>
+                                <span className='rank_cos_name'>{item.cos_name}</span>
                             <div className='rank_grade'>
                                 <img className='star' src={Star} alt="" />
                                 <span className='rank_cos_grade'>&nbsp;{item.grade}</span>

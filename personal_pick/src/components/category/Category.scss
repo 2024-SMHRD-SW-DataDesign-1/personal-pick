@@ -10,7 +10,8 @@
     border-radius: 6px;
     margin-right : 10px;
     margin-bottom : 8px;
-    padding : 5px;
+    padding : 7px;
+    color : black
 }
 
 .flex_wrap{
@@ -22,3 +23,23 @@
     height : 20;
     float : right;
 }
+
+.category_btn{
+    font-size : 13px;
+    border : 1px solid #f2f2f2;
+    border-radius: 6px;
+    margin-right : 10px;
+    margin-bottom : 8px;
+    padding : 7px;
+    background-color: rgb(61, 61, 61);
+    color : white;
+}
+
+.category_container{
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.category_container::-webkit-scrollbar {
+    // display: none;
+  }
