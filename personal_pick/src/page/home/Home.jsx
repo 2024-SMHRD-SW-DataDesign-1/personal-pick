@@ -174,7 +174,7 @@ const Home = () => {
             <Category dic ={categoryDic} setDic={setCategoryDic} categoryData={titleList}/>
             <Itemview data={userChoiceRank}/>
 
-            <div className="home_page_btn" onClick={() => nav('/totalitem' )}>
+            <div className="home_page_btn cursor" onClick={() => nav('/totalitem' )}>
                 카테고리 전체보기
                 <img className="star" src={Right} alt="" />
             </div>

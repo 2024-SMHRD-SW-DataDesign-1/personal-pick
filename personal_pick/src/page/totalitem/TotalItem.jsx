@@ -3,10 +3,12 @@ import ItemAll from "../../components/itemall/ItemAll"
 import { sendGet, URL } from "../../util/util";
 import './TotalItem.scss'
 import left_img from '../../img/왼쪽.png'
+import { useNavigate } from 'react-router-dom'
 
 
 const TotalItem = () => {
 
+    const nav = useNavigate();
     const [AllItem, setAllItem] = useState([]);
 
     // useEffect(()=>{
@@ -47,13 +49,13 @@ const TotalItem = () => {
     return (
         <div id='wrapper'>
             <div className="all_itemBox ">
-                <img className="leftimg float_l" src={left_img} alt="" />
+                <img className="leftimg float_l cursor" src={left_img} onClick={()=> nav('/')} alt=""  />
                 <div className="cos_rank_text">화해 랭킹</div>
                 <div>
-                    <button className="rank_btn" onClick={()=>setCateIdx(1)}>조회수 급상승</button>
-                    <button className="rank_btn" onClick={()=>setCateIdx(2)} >카테고리별</button>
-                    <button className="rank_btn" onClick={()=>setCateIdx(3)} >피부별</button>
-                    <button className="rank_btn" onClick={()=>setCateIdx(4)}>연령대별</button>
+                    <button className="rank_btn cursor" onClick={()=>setCateIdx(1)}>조회수 급상승</button>
+                    <button className="rank_btn cursor" onClick={()=>setCateIdx(2)} >카테고리별</button>
+                    <button className="rank_btn cursor" onClick={()=>setCateIdx(3)} >피부별</button>
+                    <button className="rank_btn cursor" onClick={()=>setCateIdx(4)}>연령대별</button>
                 </div>
                 
 
