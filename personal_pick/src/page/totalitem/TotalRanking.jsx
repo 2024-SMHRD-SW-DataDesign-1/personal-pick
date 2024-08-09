@@ -1,49 +1,47 @@
 import React, { useEffect, useState } from "react";
 import ItemAll from "../../components/itemall/ItemAll"
 import { sendGet, URL } from "../../util/util";
-import './TotalItem.scss'
+import './TotalRanking.scss'
 import left_img from '../../img/왼쪽.png'
+import { useParams } from "react-router-dom";
+import Category from "../../components/category/Category";
+import { choicRankingCategory } from "../../util/utilStr";
 
 
 const TotalItem = () => {
 
     const [AllItem, setAllItem] = useState([]);
 
-    // useEffect(()=>{
-    //     console.log(AllItem)
-    // },[AllItem])
-
-
+    const { category } = useParams();
     useEffect(() => {
-        // console.log(1);
-        
         sendGet(URL + '/MainPage', setAllItem);
-        console.log(AllItem);
 
-        let idx = 0; //idx 는 홈에서 받아온 카테고리 번호
-        setCateIdx(idx);
+        
     }, [])
-
+    const [cateIdx, setCateIdx] = useState(category)
 
     function showView(idx){
-        switch(idx){
+        
+        switch(parseInt(idx)){
             case 1:
-                // return <ItemAll data={AllItem}></ItemAll>
                 return <p>1</p>
             case 2:
-                return <ItemAll data={AllItem}></ItemAll>
+                return (
+                    <>
+                        <Category dic={AllItem} setDic={setCateIdx} categoryData={choicRankingCategory} />
+                        <div className="itemlist">
+                            <ItemAll data={AllItem}></ItemAll>
+                        </div>
+                    </>
+                )
             case 3:
-                // return <ItemAll data={AllItem}></ItemAll>
-                // return <ItemAll data={AllItem}></ItemAll>
                 return <p>3</p>               
             case 4:
-                // return <ItemAll data={AllItem}></ItemAll>
-                // return <ItemAll data={AllItem}></ItemAll>
                 return <p>4</p>
         }
     }
+    
 
-    const [cateIdx, setCateIdx] = useState(0)
     return (
         <div id='wrapper'>
             <div className="all_itemBox ">
@@ -58,11 +56,10 @@ const TotalItem = () => {
                 
 
 
+                
 
 
-                <div className="itemlist">
-                    {showView(cateIdx)}
-                </div>
+                {showView(cateIdx)}
                 
 
             </div>

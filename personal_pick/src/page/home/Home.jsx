@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
 import CustomSwiper from '../../components/customswiper/CustomSwiper'
 import { useNavigate } from "react-router-dom";
@@ -116,10 +116,10 @@ let itemDic = [
     }
 ]
 
-function show(data)
-{
+function show(data) {
     console.log(data)
 }
+
 
 const Home = () => {
     // 페이지 이동 함수
@@ -127,9 +127,9 @@ const Home = () => {
 
     // 화해 고객들이 직접 선택한 랭킹🎁
     const [categoryDic, setCategoryDic] = useState({
-        list : [],
-        maintitle : "카테고리 전체",
-        subtitle : ""
+        list: [],
+        maintitle: "카테고리 전체",
+        subtitle: ""
 
     });
     const [data, setData] = useState([]);
@@ -140,73 +140,87 @@ const Home = () => {
     const [userAgePick, setUserAgePick] = useState("10대");
 
     // [] -> 첫 렌더링에만 실행
-    useEffect(()=>{        
-        sendGet(URL+'/MainPage', setData);        
-    },[])
+    useEffect(() => {
+        sendGet(URL + '/MainPage', setData);
+    }, [])
 
-    useEffect(()=>{    
-        console.log(categoryDic)   
-        
-        
-        sendGet(URL + '/CategorySel?category='+categoryDic.subtitle, setUserChoiceRank)
-        
-    },[categoryDic])
+    useEffect(() => {
+        sendGet(URL + '/CategorySel?category=' + categoryDic.subtitle, setUserChoiceRank)
 
-    useEffect(()=>{        
-        console.log(userChoiceRank)   
-    },[userChoiceRank])
+    }, [categoryDic])
 
 
     // 오늘날짜
     let today = new Date()
 
+    function nextTotalPage(pageidx) {
+        nav('/totalitem/' + pageidx);
+    }
     return (
-        <div id='wrapper' className="inner" >    
-        {/* // <div id='wrapper' >     */}
-        
+        <div id='wrapper' className="inner" >
+            {/* // <div id='wrapper' >     */}
+
             {/* Main */}
             <img src={Logo} className="logoimg" alt="팀로고" />
             <div className='flex_col width' >
                 <InputBox func={show} />
             </div>
 
-            <div className="basic-text">{today.getMonth()+"월 " + today.getDate() + "일 " + getDay(today.getDay())} <span> 조회수🎁 </span> 급상승<img className="category_arrow" src={Right} alt="" /> </div> 
-            
+            <div className="basic-text cursor" onClick={() => nextTotalPage(1)}>
+                {today.getMonth() + "월 " + today.getDate() + "일 " + getDay(today.getDay())}
+                <span> 조회수🎁 </span> 급상승
+                <img className="category_arrow" src={Right} alt="" />
+            </div>
+
 
             <div>
-                <CustomSwiper list={data}/>
+                <CustomSwiper list={data} />
             </div>
-            <div className="basic-text">화해 고객들이 직접 <span> 선택한 랭킹🎁 </span> <img className="category_arrow" src={Right} alt="" /> </div> 
-            
-            <Category dic ={categoryDic} setDic={setCategoryDic} categoryData={titleList}/>
-            <Itemview data={userChoiceRank}/>
 
-            <div className="home_page_btn" onClick={() => nav('/totalitem' )}>
+            <div className="basic-text cursor" onClick={() => nextTotalPage(2)}>
+                화해 고객들이 직접
+                <span> 선택한 랭킹🎁 </span>
+                <img className="category_arrow" src={Right} alt="" /> 
+            </div>
+
+            <Category dic={categoryDic} setDic={setCategoryDic} categoryData={titleList} />
+            <Itemview data={userChoiceRank} />
+
+            <div className="home_page_btn cursor" onClick={() => nextTotalPage(2)}>
                 카테고리 전체보기
                 <img className="star" src={Right} alt="" />
             </div>
-            
+
             {/* sendGet으로 필요한 데이터 세 가지 받아오고 그 데이터 이름을 data라는 키 값으로 보내주면 됨! */}
 
 
-            <h2 className="basic-text">내 피부에 꼭 맞는 제품 랭킹</h2>
-            <Category dic ={userItemRank} setDic={setUserItemRank} categoryData={userTypeList}/>
-            <Itemview data={itemDic}/>
+            <div className="basic-text cursor" onClick={() => nextTotalPage(3)}>
+                내 피부에 꼭 맞는 제품 랭킹
+                <img className="category_arrow" src={Right} alt="" /> 
+            </div>
+            
+            <Category dic={userItemRank} setDic={setUserItemRank} categoryData={userTypeList} />
+            <Itemview data={itemDic} />
 
-            <div className="home_page_btn" >
-                {userItemRank + ' 전체보기'} 
+            <div className="home_page_btn cursor" onClick={() => nextTotalPage(3)}>
+                {userItemRank + ' 전체보기'}
                 <img className="star" src={Right} alt="" />
             </div>
-            <h2 className="basic-text">나이대별 추천</h2>
-            <Category dic ={userAgePick} setDic={setUserAgePick} categoryData={userAgeList}/>
-            <Itemview data={itemDic}/>
-            <div className="home_page_btn">
+
+            <div className="basic-text cursor" onClick={() => nextTotalPage(3)}>
+                나이대별 추천
+                <img className="category_arrow" src={Right} alt="" /> 
+            </div>
+            
+            <Category dic={userAgePick} setDic={setUserAgePick} categoryData={userAgeList} />
+            <Itemview data={itemDic} />
+            <div className="home_page_btn cursor" onClick={() => nextTotalPage(4)}>
                 {userAgePick + " 전체보기"}
                 <img className="star" src={Right} alt="" />
             </div>
-  
+
         </div>
-        
+
     );
 };
 

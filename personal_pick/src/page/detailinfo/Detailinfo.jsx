@@ -62,7 +62,7 @@ const Detailinfo = () => {
                 data.map((item, index) => (
                     <div key={index}>
 
-                    <div id = 'head'>
+                    <div >
                     {/* 화장품 이름 */}
                     
                     <div className='itemname'>
@@ -115,7 +115,7 @@ const Detailinfo = () => {
 
                         <div className='flex justify-between px-20 my-24 reviewinfo'>
                         <div className='likereview grow mr-24 w-1/2'>
-                        <img src ={smile} className='smile' width={26} height={26}/>
+                        <img src ={smile}  width={26} height={26}/>
                         <span className='like'>좋아요</span>
                             <span className='margintop1'>진정되는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
                             <span className='margintop1'>쿨링되는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
@@ -127,7 +127,7 @@ const Detailinfo = () => {
                         </div>
 
                         <div className='dislike grow mr-24 w-1/2'>
-                        <img src ={notsmile} className='smile' width={23} height={23}/>
+                        <img src ={notsmile}  width={23} height={23}/>
                         <span className='dontlike'>아쉬워요</span>
                             <span className='margintop2'>가루날림이 있는<span className='reviewdata3 hds-text-body-medium text-gray-tertiary'>0</span></span>
                             <span className='margintop2'>마르는<span className='reviewdata4 hds-text-body-medium text-gray-tertiary'>0</span></span>
