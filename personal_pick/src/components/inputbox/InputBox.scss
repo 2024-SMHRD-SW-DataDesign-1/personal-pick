@@ -13,8 +13,6 @@
     background-color: #222;
     padding: 17px 40px;
     margin: 0 ;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.20);
-    
 }
 
 .btntype span {
@@ -26,9 +24,9 @@ z-index: 1;
 content: "";
 position: absolute;
 left: 0;
-top: 0;
-height: 490%;
-width: 140%;
+top: 200;
+height: 500%;
+width: 200%;
 // background: #78c7d2;
 background: rgb(130,170,73);
 -webkit-transition: all .5s ease-in-out;
