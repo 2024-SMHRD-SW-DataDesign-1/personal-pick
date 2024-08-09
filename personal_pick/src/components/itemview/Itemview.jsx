@@ -24,7 +24,7 @@ const Itemveiw = ({data}) => {
 
     const nav = useNavigate();
 
-    console.log(data);
+    
     return (
         <div className='flex_row alldiv'>
             {data.length >0 && data.map((item, idx) => {
