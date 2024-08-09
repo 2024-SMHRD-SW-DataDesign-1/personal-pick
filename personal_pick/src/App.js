@@ -12,13 +12,6 @@ import personalReducer from './redux/reducer/reducer';
 import { Provider } from 'react-redux';
 
 import './App.css'
-import { useEffect } from 'react';
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    let tag = document.getElementById("root")
-    tag.classList.add("visible");
-})
 
 const store = createStore(personalReducer)
 
