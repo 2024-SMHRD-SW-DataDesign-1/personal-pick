@@ -26,15 +26,8 @@
       npx sass --watch ./personal_pick/public/index.scss ./personal_pick/public/index.css
     -->
     <style>
-        #root {
-            visibility: hidden;
-        }
-
-        #root.visible {
-            visibility: visible;
-        }
     </style>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index.css?after" type="text/css"/>
     <title>퍼스널픽</title>
 </head>
 
@@ -43,10 +36,7 @@
     <div id="root"></div>
     <script>
         
-        document.addEventListener('DOMContentLoaded', function () {
-            let tag = document.getElementById("root")
-            tag.classList.add("visible");
-        })
+
     </script>
     <!--
       This HTML file is a template.

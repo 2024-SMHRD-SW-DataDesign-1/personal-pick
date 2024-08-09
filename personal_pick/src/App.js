@@ -13,10 +13,11 @@ import { Provider } from 'react-redux';
 
 import './App.css'
 
-
 const store = createStore(personalReducer)
 
+
 function App() {
+
     return (
         <Provider store={store}>
             <BrowserRouter>

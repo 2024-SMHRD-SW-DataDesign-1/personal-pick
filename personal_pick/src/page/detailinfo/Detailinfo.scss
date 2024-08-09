@@ -5,19 +5,25 @@
     font-style: normal;
 }
 
-.container {
+#wrapper{
+    width: 40vw;
+    margin: 0 30vw;
+
+}
+
+
+.imgmain1{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    margin: auto;
+    justify-content: center;
+}
 
-
-  .itemname {
+.itemname {
     position: fixed;
     height: 38px;
     background: white;
     text-align: center;
-    width: 31.6%;
+    width: 40.4%;
     border-bottom: 1px solid rgb(255, 255, 255);
     top:0px;
     z-index: 10;
@@ -54,12 +60,21 @@
     margin-top: 25px
 }
 
+.starinfotext {
+    display: flex;
+    line-height: 14px;
+    margin-top: 8px;
+}
+
 .brand {
     font-family: 'Pretendard-Regular';
+    margin-left: 10px;
+    margin-top: 20px;
 }
 
 .iteminfo {
     font-family: 'Pretendard-Regular';
+    margin-left: 10px;
 }
 
 #brandname {
@@ -76,6 +91,7 @@
 .priceinfo {
     display: flex;
     margin-top: 30px;
+    justify-content: space-between;
 }
 
 .price {
@@ -84,9 +100,19 @@
     font-weight: 700;
 }
 
+.pricetext{
+    margin-left: 25px;
+}
+
+.rankingtext{
+    margin-left: 25px;
+}
+
 .rankinginfo {
     display: flex;
     margin-top: 30px;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
 .ranking {
@@ -102,19 +128,49 @@
     background-color: rgb(255, 255, 255);
 }
 
-.smile{
-    margin: auto;
+
+// AI가 분석하는 리뷰
+
+.px-20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.flex {
+    display: flex;
+}
+.my-24 {
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+.flex-grow, .grow {
+    flex-grow: 1;
+}
+.w-1\/2 {
+    width: 50%;
+}
+.mr-24 {
+    margin-right: 24px;
+}
+
+.smile {
+    display: flex;
+    position: absolute;
+    margin-top: 3px;
 }
 
 .like {
     margin: auto;
-    margin-left: 8px;
+    margin-left: 28px;
     font-size: 19px;
 }
 
 .dontlike{
     margin: auto;
-    margin-left: 8px;
+    margin-left: 26px;
     font-size: 19px;
 }
 
@@ -139,7 +195,6 @@
     background-color: rgb(242, 242, 242, var(--tw-bg-opacity));
     height: 6px;
     border-width: 0px;
-    transform: translate(0px, -124px);
 }
 
 .margintop1 {
@@ -158,16 +213,14 @@
 .dislike {
     display:table-cell;
     vertical-align: middle;
-    margin-left: 191px;
 }
 
 .aireview {
-    margin-top: 23px;
+    margin-top: 27px;
     display: flex;
-    font-family: 'Pretendard-Regular';
+    font-family: "Pretendard-Regular";
     font-size: 26px;
     margin-bottom: 23px;
-    
 }
 
 .ai{
@@ -199,6 +252,7 @@
     margin-bottom: 9px;
 }
 
+// 리뷰 평점
 .reviewall {
     display: flex;
     width: 28vw;
@@ -262,21 +316,20 @@ input[type="radio"] {
     background-color: #cdc2c2;
 }
 
-
+// 계정 정보 및 리뷰 
 .accountmain {
-    margin: auto;
-    transform: translate(10px, 159px);
     font-family: "Pretendard-Regular";
+    margin-top: 40px;
 }
 
 .accountinfo{
+    margin: auto;
     display: flex;
-    transform: translate(70px, -167px);
+    margin-left: 10px;
 }
 
 .accountimg{
     display: flex;
-    transform: translate(10px, -119px);
 }
 
 .nickname{
@@ -293,96 +346,38 @@ input[type="radio"] {
 
 .accountstar{
     display: flex;
-    transform: translate(67px, -171px);
 }
 
 .accountdate{
     display: flex;
-    transform: translate(190px, -197px);
     font-size: 17px;
 }
 
 .goodcommentmain{
     display: flex;
-    transform: translate(0px, -444%);
+    margin-top: 20px;
+    margin-left: 10px;
 }
 
 .goodcomment {
     margin-left: 12px;
-    line-height: 37px;
-    transform: translate(0px, -4px);
+    line-height: 31px;
     font-size: 22px;
 }
 
-.sosocommentmain{
+.sosocommentmain {
     display: flex;
-    transform: translate(2px, -137px);
+    margin-top: 10px;
+    margin-left: 11px;
 }
 
 .sosocomment {
-    margin-left: 16px;
-    line-height: 32px;
+    margin-left: 13px;
+    line-height: 31px;
     font-size: 22px;
-    transform: translate(-2px, -3px);
+    margin-top: -2px;
 }
 
-
-.accountinfo1{
-    display: flex;
-    transform: translate(70px, -167px);
-}
-
-.accountimg1{
-    display: flex;
-    transform: translate(10px, -119px);
-}
-
-.nickname1{
-    display: flex;
-    font-size: 19px;
-}
-
-.skintype1{
-    display: flex;
-    font-size: 15px;
-    line-height: 29px;
-    color: gray;
-}
-
-.accountstar1{
-    display: flex;
-    transform: translate(67px, -171px);
-}
-
-.accountdate1{
-    display: flex;
-    transform: translate(190px, -197px);
-    font-size: 17px;
-}
-
-.goodcommentmain1{
-    display: flex;
-    transform: translate(0px, -444%);
-}
-
-.goodcomment1 {
-    margin-left: 12px;
-    line-height: 37px;
-    transform: translate(0px, -4px);
-    font-size: 22px;
-}
-
-.sosocommentmain1{
-    display: flex;
-    transform: translate(2px, -137px);
-}
-
-.sosocomment1 {
-    margin-left: 16px;
-    line-height: 32px;
-    font-size: 22px;
-    transform: translate(-2px, -3px);
-}
 
 .ingredientmain{
     font-family: "Pretendard-Regular";
@@ -408,6 +403,8 @@ input[type="radio"] {
     display: flex;
     justify-content: space-between;
     padding: 12px;
+    cursor: pointer;
+    box-sizing: content-box;
 }
 
 .contentcategory {
@@ -444,20 +441,118 @@ input[type="radio"] {
 }
 
 
-.up-btn{
-    width: 200px;
-    height: 200px;
-    background-color: purple;
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    text-align: center;
-    line-height: 200px;
-    font-size: 50px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    user-select: none;
+.ingredientcomposition {
+    font-family: "Pretendard-Regular";
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 
+// 성분 구성 위험 단계 부분 (공통 css)
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.gap-x-4 {
+    column-gap: 4px;
+}
+.items-center {
+    align-items: center;
+}
+.flex {
+    display: flex;
+}
+
+.rounded-full {
+    border-radius: 99999px;
+}
+
+.w-\[10px\] {
+    width: 10px;
+}
+
+.h-\[10px\] {
+    height: 10px;
+}
+
+.hds-text-smalltext-large {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+
+.text-gray-tertiary {
+    color: #999;
+}
+
+// 청록색 부분
+.bg-mint-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 215, 210, var(--tw-bg-opacity));
+}
+
+.text-mint-600 {
+    --tw-text-opacity: 1;
+    color: rgba(25, 215, 210, var(--tw-text-opacity));
+}
+
+// 노란색 부분
+
+.bg-yellow-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 190, 20, var(--tw-bg-opacity));
+}
+
+.text-yellow-600 {
+    --tw-text-opacity: 1;
+    color: rgba(255, 190, 20, var(--tw-text-opacity));
+}
+
+// 빨간색 부분
+
+.bg-red-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 85, 85, var(--tw-bg-opacity));
+}
+
+.text-red-600 {
+    --tw-text-opacity: 1;
+    color: rgba(255, 85, 85, var(--tw-text-opacity));
+}
+
+// 등급 미정 부분
+
+.bg-gray-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(170, 170, 170, var(--tw-bg-opacity));
+}
+
+.text-gray-600 {
+    --tw-text-opacity: 1;
+    color: rgba(170, 170, 170, var(--tw-text-opacity));
+}
+
+// 성분 구성 막대
+
+.rounded-4 {
+    border-radius: 12px
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.h-12 {
+    height: 0px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}

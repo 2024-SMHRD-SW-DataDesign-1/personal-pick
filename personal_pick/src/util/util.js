@@ -106,7 +106,7 @@ export function showSwal(strTag, func){
             animate__faster
           `
         },
-        didOpen : () => {
+        didOpen : () => {               
             let list = document.getElementsByClassName("subtitle");
             for(let i = 0; i < list.length; i++)
             {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {sendGet , URL } from '../../util/util'
+import {sendGet , showSwal, URL } from '../../util/util'
 import { useNavigate } from 'react-router-dom'
 import './Detailinfo.scss'
 import star1 from '../../img/별.png'
@@ -10,6 +10,7 @@ import StarRating from './StarRating'
 import account from '../../img/account.png'
 import goback from '../../img/왼쪽.png'
 import { FaAngleDown } from "react-icons/fa";
+import detailright from '../../img/오른쪽.png'
 
 const Detailinfo = () => {
     // 페이지 이동 함수
@@ -24,10 +25,35 @@ const Detailinfo = () => {
          sendGet(URL + "/DetailPage?idx="+idx , setData);
     },[]);
 
+
+    const showmodal = (e) => {
+        let str = ``
+        str += `<div class = "subtitle">화장품 1</div>`
+        str += `<div class = "subtitle">화장품 2</div>`
+        showSwal(str,test)
+
+        
+    }
+
+    const showmodal1 = (e) => {
+
+        let str = ``
+        str += `<div class = "subtitle">랭킹/수상 정보</div>`
+        showSwal(str,test1)
+    }
+
+
+    const test = (e) => {
+        console.log(12)
+    }
+
+    const test1 = (e) => {
+        console.log(e.target.innerText)
+    }
+
     
   return (
-        <div id="wrapper" className='container'>
-
+        <div id = "wrapper">
             {/* Main */}
             {/* 데이터를 성공적으로 불러오면 실행 */}
             {data.length > 0 ? (
@@ -38,17 +64,20 @@ const Detailinfo = () => {
                     {/* 화장품 이름 */}
                     
                     <div className='itemname'>
-                    <button className='goback' type="button" onClick={()=> navigate('/')}><span><img src={goback} width={33} height={30}></img></span></button>
+                    <button className='goback' type="button" onClick={()=> navigate('/Search')}><span><img src={goback} width={33} height={30}></img></span></button>
                     <label>{item.cos_name}</label>
                     </div>
                     </div>
 
                         <div id = 'main1'>
+
                         {/* 화장품 사진 */}
+                        <div className='imgmain1 my-24'>
                         <img src ={item.cos_img_src}/>
+                        </div>
 
                         {/* 화장품 브랜드 이미지, 이름 */}
-                        
+                        <div className='brandmain my-24'>
                         <div className='brand'>
                             <img src = {item.brand_img_src} className='brandimg'/><span id='brandname'>{item.brand_name}</span>
                         </div>
@@ -60,30 +89,31 @@ const Detailinfo = () => {
                         </div>
 
                         <div className='starinfo'>
-                        <img src = {star1} className='star' width={18}/>{item.grade}({item.grade_count})
+                        <img src = {star1} className='star' width={18}/><span className='starinfotext'>{item.grade}({item.grade_count})</span>
                         </div>
 
                         <div className='priceinfo'>
                         <div className='price'>
-                        정가 : 
+                        정가 :<span className='pricetext'>{item.price}원 / {item.vol}ml</span>
                         </div>
-                        {item.price}원 / {item.vol}ml
                         </div>
 
-                        <div className='rankinginfo'>
+                        <div className='rankinginfo' onClick={(e)=>showmodal1(e)}>
                         <div className='ranking'>
-                        랭킹 : 
+                        랭킹 :<span className='rankingtext'>{item.ranking}</span>
                         </div>
-                        {item.ranking}
+                        <img src = {detailright} width={25} height={25}/>
+                        </div>
                         </div>
                         </div>
 
                         <hr className='bar'/>
 
                         {/*ai 리뷰 */}
-                        <span className='aireview'><span className='ai'>AI</span>가 분석한 리뷰</span>
-                        <div className='reviewinfo'>
-                        <div className='likereview'>
+                        <span className='flex justify-between px-20 my-24 aireview'><span className='ai'>AI가 분석한 리뷰</span></span>
+
+                        <div className='flex justify-between px-20 my-24 reviewinfo'>
+                        <div className='likereview grow mr-24 w-1/2'>
                         <img src ={smile} className='smile' width={26} height={26}/>
                         <span className='like'>좋아요</span>
                             <span className='margintop1'>진정되는</span>
@@ -95,7 +125,7 @@ const Detailinfo = () => {
                             <span className='margintop1'>보습되는</span>
                         </div>
 
-                        <div className='dislike'>
+                        <div className='dislike grow mr-24 w-1/2'>
                         <img src ={notsmile} className='smile' width={23} height={23}/>
                         <span className='dontlike'>아쉬워요</span>
                             <span className='margintop2'>가루날림이 있는</span>
@@ -111,7 +141,7 @@ const Detailinfo = () => {
                         {/* <hr className='bar2'/> */}
 
 
-                        <div className='detailreview'>
+                        <div className='detailreview flex justify-between px-20 my-24'>
                             리뷰
                         <div className='reviewcount'>
                             1432
@@ -119,7 +149,7 @@ const Detailinfo = () => {
                             </div>
 
                         {/*평점 전체 div  */}
-                        <div className='reviewall'>
+                        <div className='reviewall flex justify-between px-20 my-24'>
                         {/*평점 구간 */}
                         <div className='reviewratemain'>
                             <span className='reviewtext'>평점</span>
@@ -128,7 +158,7 @@ const Detailinfo = () => {
                             
 
                         {/* 평점 그래프 */}
-                        <div className='graphbarmain'>
+                        <div className='graphbarmain flex justify-between px-20 my-24'>
                         <div className='graphbar'/>
                         <span className='graphbartext'>5점</span>
                         <div className='graphbar'/>
@@ -142,20 +172,15 @@ const Detailinfo = () => {
                         </div>
                         </div>
 
-                       {/* 계정 정보 및 사용자 리뷰 */}
-                       <div className='accountmain'>
-                        <div className='accountimg'>
-                            <img src = {account} width={50}/>
-                            </div>
+                         {/* 계정 정보 및 사용자 리뷰 */}
+                         <div className='accountmain'>
                         <div className='accountinfo'>
-                            <span className='nickname'>닉네임</span>
-                            <span className='skintype'>20대/건성/아토피/여드름</span>
-                            </div>
+                        <img src = {account} width={50}/>
+                        <span className='nickname'>닉네임</span>
+                        <span className='skintype'>20대/건성/아토피/여드름</span>
                         <div className='accountstar'>
-                            <StarRating/>
+                            <StarRating/><span>날짜</span>
                             </div>
-                        <div className='accountdate'>
-                            <span>날짜</span>
                             </div>
                         
                         <div className='goodcommentmain'>
@@ -164,65 +189,67 @@ const Detailinfo = () => {
                             </div>
 
                         <div className='sosocommentmain'>
-                            <img src = {notsmile} width={25} height={25}></img>
+                            <img src = {notsmile} width={26} height={26}></img>
                             <span className='sosocomment'>아쉬운말</span>
                             </div>
-
+                            </div>
                         <hr className='bar3'/>
 
-                        <div className='accountimg1'>
-                            <img src = {account} width={50}/>
-                            </div>
-                        <div className='accountinfo1'>
-                            <span className='nickname1'>닉네임</span>
-                            <span className='skintype1'>20대/건성/아토피/여드름</span>
-                            </div>
-                        <div className='accountstar1'>
-                            <StarRating/>
-                            </div>
-                        <div className='accountdate1'>
-                            <span>날짜</span>
-                            </div>
                         
-                        <div className='goodcommentmain1'>
-                            <img src = {smile} width={30} height={30}></img>
-                            <span className='goodcomment1'>좋은말</span>
-                            </div>
-
-                        <div className='sosocommentmain1'>
-                            <img src = {notsmile} width={25} height={25}></img>
-                            <span className='sosocomment1'>아쉬운말</span>
-                            </div>
-                        </div>
+                        
 
 
                         <div className='ingredientmain'>
                             <span>성분</span>
                             </div>
 
-                        <div className='ingredientdropbox'>
-                        <input id="dropdown" type="checkbox" />
+                        <div className='ingredientdropbox' onClick={(e)=>showmodal(e)}> 
+                        <input id="dropdown" type="checkbox"/>
                         <label className="dropdownLabel" for="dropdown">
                         <div>화장품 성분보기</div>
                         <FaAngleDown className="caretIcon" />
                         </label>
-                        <div className="contentcategory">
-                            <ul>
-                                <li>Option 1</li>
-                                <li>Option 2</li>
-                                <li>Option 3</li>
-                                <li>Option 4</li>
-                            </ul>
                         </div>
-                        </div>
+
+                        <div className='ingredientcomposition'>
+                            <span className='compositiontext'>성분 구성</span>
+                            </div>
 
 
                         {/* <div class = "up-btn">
                             <ScrollToTopButton/>
                         </div> */}
 
+                        {/* 성분 구성 위험 단계 */}
 
+                        <div class="flex justify-between mt-16">
+                        <div className="flex items-center gap-x-4">
+                        <div className="w-[10px] h-[10px] rounded-full bg-mint-600"></div>
+                        <span className="hds-text-smalltext-large text-mint-600">1-2</span>
+                        <span className="hds-text-smalltext-large text-gray-tertiary">낮은 위험</span>
+                        </div>
 
+                        <div className="flex items-center gap-x-4">
+                        <div className="w-[10px] h-[10px] rounded-full bg-yellow-600"></div>
+                        <span className="hds-text-smalltext-large text-yellow-600">3-6</span>
+                        <span className="hds-text-smalltext-large text-gray-tertiary">중간 위험</span>
+                        </div>
+
+                        <div className="flex items-center gap-x-4">
+                        <div className="w-[10px] h-[10px] rounded-full bg-red-600"></div>
+                        <span className="hds-text-smalltext-large text-red-600">7-10</span>
+                        <span className="hds-text-smalltext-large text-gray-tertiary">높은 위험</span>
+                        </div>
+
+                        <div className="flex items-center gap-x-4">
+                        <div className="w-[10px] h-[10px] rounded-full bg-gray-600"></div>
+                        <span className="hds-text-smalltext-large text-gray-tertiary">등급 미정</span>
+                        </div>
+                        </div>
+
+                        {/* 성분 구성 막대 */}
+                        <div className="flex flex-row-reverse mt-16 h-12 rounded-4 bg-gray-600">
+                        </div>
 
 
                         </div>
@@ -232,9 +259,7 @@ const Detailinfo = () => {
             // 데이터를 불러오는데 실패하면 실행
                 <p>데이터 연결 실패</p>
             )}
-            
-    </div>
-   
+            </div>
   )
 }
 
