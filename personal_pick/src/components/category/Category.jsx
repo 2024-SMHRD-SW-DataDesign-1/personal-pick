@@ -144,6 +144,7 @@ const Category = ({dic, setDic, categoryData}) => {
         for(let i=0; i< itemTag.length; i++)
         {
             itemTag[i].addEventListener("click", (e)=>{
+                console.log(e.target.innerText)
                 if(isStrCheck(e.target.innerText))
                 {
                     return;
