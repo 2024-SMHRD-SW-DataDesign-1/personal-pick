@@ -183,7 +183,7 @@ const Home = () => {
             <Category dic ={categoryDic} setDic={setCategoryDic}/>
             <Itemview data={userChoiceRank}/>
 
-            <div className="home_page_btn">
+            <div className="home_page_btn" onClick={() => nav('/totalitem' )}>
                 카테고리 전체보기
                 <img className="star" src={Right} alt="" />
             </div>
@@ -194,12 +194,12 @@ const Home = () => {
             <h2 className="basic-text">내 피부에 꼭 맞는 제품 랭킹</h2>
             <Itemview data={userChoiceRank}/>
 
-            <div className="home_page_btn">
+            <div className="home_page_btn" >
                 10대 전체보기
                 <img className="star" src={Right} alt="" />
             </div>
             <h2 className="basic-text">나이대별 추천</h2>
-            <Itemview data={userChoiceRank}/>
+            <Itemview data={itemDic}/>
             <div className="home_page_btn">
                 브랜드 전체보기
                 <img className="star" src={Right} alt="" />

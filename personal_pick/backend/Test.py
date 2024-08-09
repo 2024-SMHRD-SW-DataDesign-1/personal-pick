@@ -1,18 +1,27 @@
 from flask_restx import Resource
 from flask import request, jsonify
-from db_utils import PostQuery
+from db_utils import PostQuery, setQuery
 
 class testJoin(Resource):
     def post(self):
         data = request.get_json()
         print(data)
-        print('1',data['userID'], data['pw'], data['userName'], data['nickName'], data['email'], data['ageGroup'], data['skinType'])
 
-        sql = "INSERT INTO Users (userID, pw, userName, nickName, email, ageGroup, skinType) VALUES(%s, %s, %s, %s, %s, %s, %s)"
-        value = data['userID'], data['pw'], data['userName'], data['nickName'], data['email'], data['ageGroup'], data['skinType']
+        sql = "INSERT INTO users (user_id, user_pw, user_name, user_nm, user_email, user_age, user_sex) VALUES(%s, %s, %s, %s, %s, %s, %s)"
+        value = data['user_id'], data['user_pw'], data['user_name'], data['user_nm'], data['user_email'], data['user_age'], data['user_sex']
         
         return PostQuery(sql, value)
 
+class testLogin(Resource):
+    def post(self):
+        data = request.get_json()
+        print(data)
+
+        sql = "SELECT * FROM users WHERE user_id = %s AND user_pw = %s"
+        value = data['user_id'], data['user_pw']
+
+        result = setQuery(sql, value)
+        return jsonify(result)
 
 # class testLogin(Resource):
 #     def post(self):
