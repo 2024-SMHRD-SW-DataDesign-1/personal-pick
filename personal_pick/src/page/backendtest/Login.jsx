@@ -12,8 +12,10 @@ const Login = () => {
     // 페이지 이동 함수
     const navigate = useNavigate();
     const home = () => navigate('/');
+    const join = () => navigate('/join');
     const mypage = () => navigate('/mypage');
 
+    // 로그인에 필요한 변수들
     const [id, setId] = useState('');
     const [pw, setPw] = useState('');
 
@@ -45,9 +47,9 @@ const Login = () => {
         e.preventDefault();
         try {
             // URL + /login 경로로 id, pw를 담아서 요청을 보냄
-            const response = await axios.post(URL + '/LoginPage', {
-                id,
-                pw
+            const response = await axios.post(URL + '/TestLogin', {
+                user_id : id,
+                user_pw : pw
             });
             const responseData = response.data[0]
             // 반환 데이터 확인
@@ -79,22 +81,38 @@ const Login = () => {
     return (
         <div id='login'>
             <div id='wrapper'>
+                <div id='head'>
+                    <div className='left'>
+                        <h1 onClick={home}>Personal Pick</h1>
+                    </div>
+                    <div className='right'>
+                        {state.isUser?
+                        <button onClick={handleLogout}>로그아웃</button>:
+                        <button onClick={join}>회원가입</button>
+                    }
+                    </div>
+                </div>
+                
                 <div id='main'>
-                    <form className='table' onSubmit={handleLogin}>
+                    <form className='join_form' onSubmit={handleLogin}>
                         {state.isUser?
                         <>
-                        <h2>{state.userData.nickname} 로그인</h2>
+                        <h2>{state.userData.user_name} 로그인</h2>
                         <div>
                             <button onClick={home}>메인 페이지</button>
                             <button onClick={mypage}>마이 페이지</button>
                             <button onClick={handleLogout}>로그아웃</button>
                         </div>
-                        </>
-                        :(<>
-                        <h2>Login</h2>
-                        <div>
+                        </>:
+
+                        (<>
+
+                        <div className='textbox'>
+                            <div className='imgbox'>
+                                <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="" />
+                            </div>
                             <input
-                                className='textbox'
+                                className='inputbox'
                                 placeholder='Id'
                                 type="text"
                                 value={id}
@@ -102,9 +120,13 @@ const Login = () => {
                                 required
                             />
                         </div>
-                        <div>
+                        
+                        <div className='textbox'>
+                            <div className='imgbox'>
+                                <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="" />
+                            </div>
                             <input
-                                className='textbox'
+                                className='inputbox'
                                 placeholder='Password'
                                 type="password"
                                 value={pw}
@@ -115,12 +137,8 @@ const Login = () => {
                         <div className='button_login'>
                             <button type="submit">로그인</button>
                         </div>
-                        <div className='button_2'>
-                            <button onClick={home}>회원가입</button>
-                            <button onClick={home}>뒤로가기</button>
-                        </div>
-                            {/* 회원가입 실패 시 출력 */}
-                            {error && <p style={{ color: 'red' }}>{error}</p>}
+                        {/* 회원가입 실패 시 출력 */}
+                        {error && <p style={{ color: 'red' }}>{error}</p>}
                         </>)}
                     </form>
                 </div>
