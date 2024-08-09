@@ -26,15 +26,20 @@ const Detailinfo = () => {
     },[]);
 
 
-    const showmodal = (e , ranking) => {
+    const showmodal = (e) => {
         let str = ``
         str += `<div class = "subtitle">화장품 1</div>`
         str += `<div class = "subtitle">화장품 2</div>`
         showSwal(str,test)
 
-        let str1 = ``
-        str1 += `<div class = "modalranking">랭킹/수상 정보</div>`
-        showSwal(str1)
+        
+    }
+
+    const showmodal1 = (e) => {
+
+        let str = ``
+        str += `<div class = "subtitle">랭킹/수상 정보</div>`
+        showSwal(str,test1)
     }
 
 
@@ -42,10 +47,13 @@ const Detailinfo = () => {
         console.log(12)
     }
 
+    const test1 = (e) => {
+        console.log(e.target.innerText)
+    }
+
     
   return (
-        <div id="wrapper" className='container'>
-
+        <div id="wrapper">
             {/* Main */}
             {/* 데이터를 성공적으로 불러오면 실행 */}
             {data.length > 0 ? (
@@ -56,7 +64,7 @@ const Detailinfo = () => {
                     {/* 화장품 이름 */}
                     
                     <div className='itemname'>
-                    <button className='goback' type="button" onClick={()=> navigate('/')}><span><img src={goback} width={33} height={30}></img></span></button>
+                    <button className='goback' type="button" onClick={()=> navigate('/Search')}><span><img src={goback} width={33} height={30}></img></span></button>
                     <label>{item.cos_name}</label>
                     </div>
                     </div>
@@ -87,7 +95,7 @@ const Detailinfo = () => {
                         </div>
                         </div>
 
-                        <div className='rankinginfo' onClick={(ranking)=>showmodal(ranking)}>
+                        <div className='rankinginfo' onClick={(e)=>showmodal1(e)}>
                         <div className='ranking'>
                         랭킹 :<span className='rankingtext'>{item.ranking}</span>
                         </div>
@@ -214,9 +222,7 @@ const Detailinfo = () => {
             // 데이터를 불러오는데 실패하면 실행
                 <p>데이터 연결 실패</p>
             )}
-            
-    </div>
-   
+            </div>
   )
 }
 

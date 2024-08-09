@@ -5,19 +5,13 @@
     font-style: normal;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 
-
-  .itemname {
+.itemname {
     position: fixed;
     height: 38px;
     background: white;
     text-align: center;
-    width: 31.6%;
+    width: 60.7%;
     border-bottom: 1px solid rgb(255, 255, 255);
     top:0px;
     z-index: 10;
@@ -62,10 +56,12 @@
 
 .brand {
     font-family: 'Pretendard-Regular';
+    margin-left: 10px;
 }
 
 .iteminfo {
     font-family: 'Pretendard-Regular';
+    margin-left: 10px;
 }
 
 #brandname {
@@ -103,6 +99,7 @@
     display: flex;
     margin-top: 30px;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .ranking {
@@ -121,19 +118,21 @@
 
 // AI가 분석하는 리뷰
 
-.smile{
-    margin: auto;
+.smile {
+    display: flex;
+    position: absolute;
+    margin-top: 3px;
 }
 
 .like {
     margin: auto;
-    margin-left: 8px;
+    margin-left: 28px;
     font-size: 19px;
 }
 
 .dontlike{
     margin: auto;
-    margin-left: 8px;
+    margin-left: 26px;
     font-size: 19px;
 }
 
@@ -180,12 +179,12 @@
 }
 
 .aireview {
-    margin-top: 23px;
+    margin-top: 27px;
     display: flex;
-    font-family: 'Pretendard-Regular';
+    font-family: "Pretendard-Regular";
     font-size: 26px;
     margin-bottom: 23px;
-    
+    margin-left: 10px;
 }
 
 .ai{
@@ -197,6 +196,7 @@
     font-family: 'Pretendard-Regular';
     font-weight: 700;
     font-size: 23px;
+    margin-left: 10px;
 }
 
 .margintop2 {
@@ -215,6 +215,7 @@
     font-weight: 600;
     margin-top: 48px;
     margin-bottom: 9px;
+    margin-left: 10px;
 }
 
 // 리뷰 평점
