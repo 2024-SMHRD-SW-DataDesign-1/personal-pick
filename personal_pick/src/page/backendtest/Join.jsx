@@ -9,6 +9,7 @@ const Join = () => {
     // 페이지 이동 함수
     const navigate = useNavigate();
     const home = () => navigate('/');
+    const login = () => navigate('/login');
 
     // redux
     // 상태 저장
@@ -59,9 +60,6 @@ const Join = () => {
         console.log('성별 : ',sex);
     }, [sex]);
 
-
-
-
     // 회원가입 버튼 클릭 시 실행
     const handleSubmit = async (event) => {
         // console창에 보낼 데이터 출력
@@ -94,7 +92,7 @@ const Join = () => {
             if (response.data === 201) {
                 // 회원가입 성공 시 메시지 출력 및 홈 페이지로 이동
                 alert('회원가입 성공');
-                // navigate('/');
+                navigate('/login');
             }else{
                 setMessage("회원가입 실패");
             }
@@ -116,27 +114,37 @@ const Join = () => {
         <div id='join'>
             <div id='wrapper'>
                 <div id='head'>
-                    <h1>Personal Pick</h1>
+                    <div className='left'>
+                        <h1 onClick={home}>Personal Pick</h1>
+                    </div>
+                    <div className='right'>
+                        <button onClick={login}>로그인</button>
+                    </div>
                 </div>
+
                 <div id='main'>
                     <form className='join_form' onSubmit={handleSubmit}>
-                        
-            
-                        <div>
+                        <div className='textbox'>
+                            <div className='imgbox'>
+                                <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="" />
+                            </div>
                             <input
-                                className='textbox'
-                                placeholder='ID'
+                                placeholder='아이디'
+                                className='inputbox'
                                 type="text"
                                 value={id}
                                 onChange={(e) => setId(e.target.value)}
                                 required
                             />
                         </div>
-
-                        <div>
+                        
+                        <div className='textbox'>
+                            <div className='imgbox'>
+                                <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="" />
+                            </div>
                             <input
-                                className='textbox'
-                                placeholder='Password'
+                                placeholder='비밀번호'
+                                className='inputbox'
                                 type="text"
                                 value={pw}
                                 onChange={(e) => setPw(e.target.value)}
@@ -144,10 +152,13 @@ const Join = () => {
                             />
                         </div>
 
-                        <div>
+                        <div className='textbox'>
+                            <div className='imgbox'>
+                                <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="" />
+                            </div>
                             <input
-                                className='textbox'
                                 placeholder='이름'
+                                className='inputbox'
                                 type="text"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
@@ -155,10 +166,13 @@ const Join = () => {
                             />
                         </div>
 
-                        <div>
+                        <div className='textbox'>
+                            <div className='imgbox'>
+                                <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="" />
+                            </div>
                             <input
-                                className='textbox'
                                 placeholder='닉네임'
+                                className='inputbox'
                                 type="text"
                                 value={nm}
                                 onChange={(e) => setNm(e.target.value)}
@@ -166,10 +180,13 @@ const Join = () => {
                             />
                         </div>
 
-                        <div>
+                        <div className='textbox'>
+                            <div className='imgbox'>
+                                <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="" />
+                            </div>
                             <input
-                                className='textbox'
                                 placeholder='이메일'
+                                className='inputbox'
                                 type="text"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
@@ -177,68 +194,82 @@ const Join = () => {
                             />
                         </div>
 
-                        <div>
-                            <input
-                                className='textbox'
+                        <div className='textbox'>
+                            <div className='imgbox'>
+                                <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="" />
+                            </div>                            <input
                                 placeholder='나이'
+                                className='inputbox'
                                 type="text"
                                 value={age}
                                 onChange={(e) => setAge(e.target.value)}
                                 required
+                                title="숫자를 입력하세요"
                             />
                         </div>
 
-                        <div className="checkbox">
-                        <div className='left'>
-                            <p>성별</p>
-                            <input
-                                type="checkbox"
-                                id="box1"
-                                checked={sex === '남'}
-                                onChange={handleSex}
-                            />
-                            <label htmlFor="box1">남</label><br />
+                        <table className="checkbox">
+                            <tbody>
+                            <tr>
+                                <td className='left'>성별</td>
+                                <td className='right'>
+                                    <input
+                                        type="checkbox"
+                                        id="box1"
+                                        checked={sex === '남'}
+                                        onChange={handleSex}
+                                    />
+                                    <label htmlFor="box1">남</label>
+                                    <input
+                                        type="checkbox"
+                                        id="box2"
+                                        checked={sex === '여'}
+                                        onChange={handleSex}
+                                    />
+                                    <label htmlFor="box2">여</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                {/* 공백 추가 */}
+                                <td colSpan="2" className='spacer'></td> 
+                            </tr>
 
-                            <input
-                                type="checkbox"
-                                id="box2"
-                                checked={sex === '여'}
-                                onChange={handleSex}
-                            />
-                            <label htmlFor="box2">여</label><br />
-                            </div>
-                            
-                            <div className='right'>
-                            <p>피부 타입</p>
-                            <input
-                                type="checkbox"
-                                id="box1"
-                                checked={skinType === 'dry'}
-                                onChange={handleSTChange}
-                            />
-                            <label htmlFor="checkbox1">건성</label><br />
+                            <tr>
+                                <td className='left'>피부 타입</td>
+                                <td className='right'>
+                                    <input
+                                        type="checkbox"
+                                        id="box1"
+                                        checked={skinType === 'dry'}
+                                        onChange={handleSTChange}
+                                    />
+                                    <label htmlFor="box1">건성</label>
+                                    <input
+                                        type="checkbox"
+                                        id="box2"
+                                        checked={skinType === 'oil'}
+                                        onChange={handleSTChange}
+                                    />
+                                    <label htmlFor="box2">지성</label>
+                                        <input
+                                            type="checkbox"
+                                            id="box3"
+                                            checked={skinType === 'comb'}
+                                            onChange={handleSTChange}
+                                        />
+                                    <label htmlFor="box3">복합성</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                {/* 공백 추가 */}
+                                <td colSpan="2" className='spacer'></td> 
+                            </tr>
 
-                            <input
-                                type="checkbox"
-                                id="box2"
-                                checked={skinType === 'oil'}
-                                onChange={handleSTChange}
-                            />
-                            <label htmlFor="box2">지성</label><br />
-
-                            <input
-                                type="checkbox"
-                                id="box3"
-                                checked={skinType === 'comb'}
-                                onChange={handleSTChange}
-                            />
-                            <label htmlFor="box3">복합성</label><br />
-                            </div>
-                        </div>
-
+                            </tbody>
+                        </table>
 
                         <button type="submit">회원가입</button>
-                        <button onClick={home}>뒤로가기</button>
+
                             {/* 회원가입 실패 시 message 출력 */}
                         <p style={{ color: 'red' }}>{message}</p>
                     </form>

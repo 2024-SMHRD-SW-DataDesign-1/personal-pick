@@ -1,6 +1,6 @@
 from flask_restx import Resource
 from flask import request, jsonify
-from db_utils import PostQuery
+from db_utils import PostQuery, setQuery
 
 class testJoin(Resource):
     def post(self):
@@ -12,6 +12,16 @@ class testJoin(Resource):
         
         return PostQuery(sql, value)
 
+class testLogin(Resource):
+    def post(self):
+        data = request.get_json()
+        print(data)
+
+        sql = "SELECT * FROM users WHERE user_id = %s AND user_pw = %s"
+        value = data['user_id'], data['user_pw']
+
+        result = setQuery(sql, value)
+        return jsonify(result)
 
 # class testLogin(Resource):
 #     def post(self):
