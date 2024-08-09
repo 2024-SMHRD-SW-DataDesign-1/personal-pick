@@ -53,7 +53,7 @@ const Detailinfo = () => {
 
     
   return (
-        <div id="wrapper">
+        <div id = "wrapper">
             {/* Main */}
             {/* 데이터를 성공적으로 불러오면 실행 */}
             {data.length > 0 ? (
@@ -107,8 +107,9 @@ const Detailinfo = () => {
 
                         {/*ai 리뷰 */}
                         <span className='aireview'><span className='ai'>AI</span>가 분석한 리뷰</span>
-                        <div className='reviewinfo'>
-                        <div className='likereview'>
+
+                        <div className='flex justify-between px-20 my-24 reviewinfo'>
+                        <div className='likereview grow mr-24 w-1/2'>
                         <img src ={smile} className='smile' width={26} height={26}/>
                         <span className='like'>좋아요</span>
                             <span className='margintop1'>진정되는</span>
@@ -120,7 +121,7 @@ const Detailinfo = () => {
                             <span className='margintop1'>보습되는</span>
                         </div>
 
-                        <div className='dislike'>
+                        <div className='dislike grow mr-24 w-1/2'>
                         <img src ={notsmile} className='smile' width={23} height={23}/>
                         <span className='dontlike'>아쉬워요</span>
                             <span className='margintop2'>가루날림이 있는</span>
@@ -184,7 +185,7 @@ const Detailinfo = () => {
                             </div>
 
                         <div className='sosocommentmain'>
-                            <img src = {notsmile} width={26} height={28}></img>
+                            <img src = {notsmile} width={26} height={26}></img>
                             <span className='sosocomment'>아쉬운말</span>
                             </div>
                             </div>
@@ -207,13 +208,45 @@ const Detailinfo = () => {
                         </div>
 
                         <div className='ingredientcomposition'>
-                            <span className='compositiontext'>구성 성분</span>
+                            <span className='compositiontext'>성분 구성</span>
                             </div>
 
 
                         {/* <div class = "up-btn">
                             <ScrollToTopButton/>
                         </div> */}
+
+                        {/* 성분 구성 위험 단계 */}
+
+                        <div class="flex justify-between mt-16">
+                        <div className="flex items-center gap-x-4">
+                        <div className="w-[10px] h-[10px] rounded-full bg-mint-600"></div>
+                        <span className="hds-text-smalltext-large text-mint-600">1-2</span>
+                        <span className="hds-text-smalltext-large text-gray-tertiary">낮은 위험</span>
+                        </div>
+
+                        <div className="flex items-center gap-x-4">
+                        <div className="w-[10px] h-[10px] rounded-full bg-yellow-600"></div>
+                        <span className="hds-text-smalltext-large text-yellow-600">3-6</span>
+                        <span className="hds-text-smalltext-large text-gray-tertiary">중간 위험</span>
+                        </div>
+
+                        <div className="flex items-center gap-x-4">
+                        <div className="w-[10px] h-[10px] rounded-full bg-red-600"></div>
+                        <span className="hds-text-smalltext-large text-red-600">7-10</span>
+                        <span className="hds-text-smalltext-large text-gray-tertiary">높은 위험</span>
+                        </div>
+
+                        <div className="flex items-center gap-x-4">
+                        <div className="w-[10px] h-[10px] rounded-full bg-gray-600"></div>
+                        <span className="hds-text-smalltext-large text-gray-tertiary">등급 미정</span>
+                        </div>
+                        </div>
+
+                        {/* 성분 구성 막대 */}
+                        <div className="flex flex-row-reverse mt-16 h-12 rounded-4 bg-gray-600">
+                        </div>
+
 
                         </div>
                         </div>

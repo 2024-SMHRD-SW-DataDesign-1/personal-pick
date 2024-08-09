@@ -118,6 +118,31 @@
 
 // AI가 분석하는 리뷰
 
+.px-20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.flex {
+    display: flex;
+}
+.my-24 {
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+.flex-grow, .grow {
+    flex-grow: 1;
+}
+.w-1\/2 {
+    width: 50%;
+}
+.mr-24 {
+    margin-right: 24px;
+}
+
 .smile {
     display: flex;
     position: absolute;
@@ -175,7 +200,6 @@
 .dislike {
     display:table-cell;
     vertical-align: middle;
-    margin-left: 191px;
 }
 
 .aireview {
@@ -291,6 +315,7 @@ input[type="radio"] {
 .accountinfo{
     margin: auto;
     display: flex;
+    margin-left: 10px;
 }
 
 .accountimg{
@@ -321,6 +346,7 @@ input[type="radio"] {
 .goodcommentmain{
     display: flex;
     margin-top: 20px;
+    margin-left: 10px;
 }
 
 .goodcomment {
@@ -331,14 +357,15 @@ input[type="radio"] {
 
 .sosocommentmain {
     display: flex;
-    margin-left: 2px;
     margin-top: 10px;
+    margin-left: 11px;
 }
 
 .sosocomment {
     margin-left: 13px;
     line-height: 31px;
     font-size: 22px;
+    margin-top: -2px;
 }
 
 
@@ -367,6 +394,7 @@ input[type="radio"] {
     justify-content: space-between;
     padding: 12px;
     cursor: pointer;
+    box-sizing: content-box;
 }
 
 .contentcategory {
@@ -411,3 +439,110 @@ input[type="radio"] {
 }
 
 
+// 성분 구성 위험 단계 부분 (공통 css)
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.gap-x-4 {
+    column-gap: 4px;
+}
+.items-center {
+    align-items: center;
+}
+.flex {
+    display: flex;
+}
+
+.rounded-full {
+    border-radius: 99999px;
+}
+
+.w-\[10px\] {
+    width: 10px;
+}
+
+.h-\[10px\] {
+    height: 10px;
+}
+
+.hds-text-smalltext-large {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+
+.text-gray-tertiary {
+    color: #999;
+}
+
+// 청록색 부분
+.bg-mint-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 215, 210, var(--tw-bg-opacity));
+}
+
+.text-mint-600 {
+    --tw-text-opacity: 1;
+    color: rgba(25, 215, 210, var(--tw-text-opacity));
+}
+
+// 노란색 부분
+
+.bg-yellow-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 190, 20, var(--tw-bg-opacity));
+}
+
+.text-yellow-600 {
+    --tw-text-opacity: 1;
+    color: rgba(255, 190, 20, var(--tw-text-opacity));
+}
+
+// 빨간색 부분
+
+.bg-red-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 85, 85, var(--tw-bg-opacity));
+}
+
+.text-red-600 {
+    --tw-text-opacity: 1;
+    color: rgba(255, 85, 85, var(--tw-text-opacity));
+}
+
+// 등급 미정 부분
+
+.bg-gray-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(170, 170, 170, var(--tw-bg-opacity));
+}
+
+.text-gray-600 {
+    --tw-text-opacity: 1;
+    color: rgba(170, 170, 170, var(--tw-text-opacity));
+}
+
+// 성분 구성 막대
+
+.rounded-4 {
+    border-radius: 12px
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.h-12 {
+    height: 0px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
