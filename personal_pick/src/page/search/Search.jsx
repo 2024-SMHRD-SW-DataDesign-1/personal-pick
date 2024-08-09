@@ -16,13 +16,13 @@ const Search = () => {
 
 
     // 사용자가 찾고 싶은 제품을 검색했을 때 나타나는 제품리스트
-    const [list, setList] = useState([]);
+    const [product, setProduct] = useState([]);
     // 사용자가 검색한 검색어
     const [inputvalue, setInputvalue] = useState("");
 
 
     const showConsole = (cosdata) => {
-        setList(cosdata);  // 실시간 적용되게(렌더링)       
+        setProduct(cosdata);  // 실시간 적용되게(렌더링)       
     };
 
 
@@ -130,7 +130,7 @@ const Search = () => {
                 </div>
                 <div className='products'>
                     <ul>
-                        {list.length > 0 && list.map((item) => (
+                        {product.length > 0 && product.map((item) => (
                             <li className='product1' key={item.idx} onClick={() => handleProductClick(item.idx)}>
                                 <a className='flex'>
                                     <div className='idx'>{item.idx}</div>
