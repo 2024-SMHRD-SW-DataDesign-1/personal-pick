@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import { URL } from '../../util/util'
 import { useNavigate } from 'react-router-dom';
@@ -7,11 +7,17 @@ import './Mypage.scss'
 import { useDispatch, useSelector } from 'react-redux';
 
 const Join = () => {
+
+    // redux
     // 상태 저장
     const state = useSelector(state => state);
-    
     // 상태 변경
     const dispatch = useDispatch();
+    // 상태 출력
+    useEffect(() => {
+        console.log('login : ',state.isUser);
+        console.log('userData : ',state.userData);
+    }, [state]);
 
     return (
         

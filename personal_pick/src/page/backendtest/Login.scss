@@ -54,12 +54,38 @@
         border-style: solid;
         border-color: gray;
     }
+
+    .checkbox {
+        display: flex;
+        // 수직 정렬
+        // flex-direction: column;
+        // 수평 정렬
+        // align-items: center;
+        // box-sizing: border-box;
+
+        // 100 - 패딩10, 마진4
+        width: 86%;
+        padding: 5%;
+        margin: 0 2%;
+        margin-bottom: 1.5vh;
+    
+        font-size: 2vh;
+        border-width: 0.1vh;
+        border-style: solid;
+        border-color: gray;
+        .left, .right{
+            width: 50%;
+        }
+        p{
+            padding: 5%;
+        }
+    }
     
     
     /* 버튼 스타일 */
     .button_login{
         display: flex;
-        width: 100%;
+        // width: 90%;
         margin-bottom: 1.5vh;
     }
 
