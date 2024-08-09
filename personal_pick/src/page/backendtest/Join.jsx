@@ -3,11 +3,23 @@ import axios from 'axios'
 import { URL } from '../../util/util'
 import { useNavigate } from 'react-router-dom';
 import './Login.scss'
+import { useSelector, useDispatch } from 'react-redux'
 
 const Join = () => {
     // 페이지 이동 함수
     const navigate = useNavigate();
     const home = () => navigate('/');
+
+    // redux
+    // 상태 저장
+    const state = useSelector(state => state);
+    // 상태 변경
+    const dispatch = useDispatch();
+    // 상태 출력
+    useEffect(() => {
+        console.log('login : ',state.isUser);
+        console.log('userData : ',state.userData);
+    }, [state]);
     
     // 회원가입에 필요한 변수들
     const [userID, setUserID] = useState('');
@@ -45,6 +57,10 @@ const Join = () => {
         // 변경된 피부 타입 출력(첫 랜더링, skinType이 변경될 때)
         console.log('skinType : ',skinType);
     }, [skinType]);
+
+
+
+
 
     // 회원가입 버튼 클릭 시 실행
     const handleSubmit = async (event) => {
