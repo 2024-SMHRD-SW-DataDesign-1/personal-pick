@@ -1,7 +1,7 @@
 from flask_restx import Resource
 from flask import request, jsonify
-from db_utils import setQuery, searchQuery, testQuery
-import pymysql
+from db_utils import setQuery, searchQuery
+from db_connection import db_connection
 
 class ppSearch(Resource):
     def get(self):
@@ -25,14 +25,7 @@ class ppSearchList(Resource):
         print("val", value)
 
      # MySQL 데이터베이스 연결
-        db = pymysql.connect(
-            host='project-db-cgi.smhrd.com',
-            port=3307,
-            user='campus_24SW_DD_p2_1',
-            password='smhrd1',
-            db='campus_24SW_DD_p2_1', 
-            charset='utf8mb4'
-        )
+        db = db_connection()
         
         # 데이터베이스 커서 생성
         cursor = db.cursor()
