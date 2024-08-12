@@ -61,15 +61,13 @@ const Detailinfo = () => {
             {/* 데이터를 성공적으로 불러오면 실행 */}
             {data.length > 0 ? (
                 data.map((item, index) => (
-                    <div key={index}>
+                    <div>
 
-                    <div >
                     {/* 화장품 이름 */}
                     
-                    <div className='itemname'>
+                    <div className='itemname'key={index}>
                     <button className='goback' type="button" onClick={()=> navigate('/Search')}><span><img src={goback} width={33} height={30}></img></span></button>
                     <label>{item.cos_name}</label>
-                    </div>
                     </div>
 
                         <div id = 'main1'>
@@ -127,7 +125,7 @@ const Detailinfo = () => {
                             <span className='margintop1'>보습되는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
                         </div>
                         <div className='w-[1px] bg-gray-300 aireviewbar'/>
-                        
+
                         <div className='dislike grow mr-24 w-1/2'>
                         <img src ={notsmile}  width={23} height={23} className='notsmileimg'/>
                             <span className='dontlike'>아쉬워요</span>
@@ -311,9 +309,6 @@ const Detailinfo = () => {
                             </div>
 
 
-                        {/* <div class = "up-btn">
-                            <ScrollToTopButton/>
-                        </div> */}
 
                         {/* 성분 구성 위험 단계 */}
 
@@ -379,10 +374,18 @@ const Detailinfo = () => {
                                 </div>
                             </div>
                         </div>
-
-
-                        
                         </div>
+
+                        {/* 하단 고정 버튼 */}
+
+                        <div className='fixed bottom-[0] left-[0] w-full z-10 pointer-events-none z-10'>
+                        <div className='max-w-[600px] mx-auto bg-white'>
+                        <div class="allreviewbtncontainer1">
+                            <a class="allreviewbtn1 btn-6">구매하기</a>
+                            </div>
+                            </div>
+                            </div>
+
                         </div>
                 ))
             ) : (

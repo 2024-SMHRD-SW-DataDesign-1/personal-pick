@@ -25,40 +25,24 @@ class testLogin(Resource):
         result = setQuery(sql, value)
         return jsonify(result)
 
-# 로그인 한 유저 데이터 select
+# 로그인 한 유저의 유저 데이터 select
 class testUserData(Resource):
     def get(self):
         user_name = request.args.get('user_name')
-        # # data = request.args.to_dict()
-        # data = request.get_json()
-        # print(data)
 
-        # value = data['user_name']
-        # print('value : ',value)
-
-        # result = setQuery(f'SELECT * FROM users WHERE user_name Like "%{value}%"')
-        # result = setQuery('SELECT * FROM users WHERE user_name LIKE %s', (f'%{user_name}%',))
         result = setQuery(f'SELECT * FROM users WHERE user_name LIKE "%{user_name}%"')
         return jsonify(result)
 
-# class ppCategorySel(Resource):
+# 로그인 한 유저의 주문/배송 데이터 select
+class testOrderData(Resource):
+    def get(self):
+        user_name = request.args.get('user_name')
+        print('user_name : ',user_name)
+        
+        sql =f'''SELECT t.order_id, t.user_id, t.order_date, t.order_status
+                FROM test_orders t
+                INNER JOIN users u ON t.user_id = u.user_id
+                WHERE u.user_name = "{user_name}"'''
 
-#     def get(self):
-#         data = request.args.to_dict()
-#         cateValue = data['category']
-#         print("cateValue : ",cateValue)
-#         data = setQuery(f'select * from cos_data where cos_name like "%{cateValue}%" limit 9')
-#         # data = setQuery("""select * from cos_data""")
-#         return jsonify(data)
-
-
-# class testLogin(Resource):
-#     def post(self):
-#         data = request.get_json()
-#         print(data)
-
-#         sql = "SELECT * FROM test1 WHERE id = %s AND pw = %s"
-#         value = data['id'], data['pw']
-
-#         result = setQuery(sql, value)
-#         return jsonify(result)
+        result = setQuery(sql)
+        return jsonify(result)
