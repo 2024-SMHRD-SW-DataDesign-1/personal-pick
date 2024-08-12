@@ -72,7 +72,7 @@ const Search = () => {
         }              
         // 최근 검색어의 바뀐 데이터(내가 최근에 검색한 단어들)를 계속해서 화면에 출력하는 역할(연결점 같은 것)
         setSearchHistory([...newHistory])
-
+        setInputvalue("");
     };
     
 
