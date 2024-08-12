@@ -64,7 +64,7 @@
 
     #main{
         height: 100%;
-        width: 56vw;
+        // width: 700px;
         padding: 0 2vw 0vh 2vw;
         
         background-color: white;
@@ -149,7 +149,7 @@
                 align-items: center; /* 수평 가운데 정렬 */
                 justify-content: center; /* 수직 가운데 정렬 */
         
-                width: 19vw;
+                width: 33.333%;
             }
         }
 
@@ -213,6 +213,7 @@
     }
 
     #foot {
+        // width: 700px;
         /* 가운데 정렬 */
         display: flex;
         /* 수직 */
@@ -231,7 +232,7 @@
         position: fixed;
         bottom: 0; /* 화면의 아래쪽에 위치 */
         height: 6vh;
-        width: 60vw; /* 전체 너비를 차지 */
+        width: 700px; /* 전체 너비를 차지 */
 
         /* 그림자 효과 */
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
@@ -241,27 +242,27 @@
         linear-gradient(to right, 
                 transparent 0, 
                 rgba(0, 0, 0, 0.3) 0.5px, 
-                transparent 2px) 12vw 50%,
+                transparent 2px) 20% 50%,
             linear-gradient(to right, 
                 transparent 0, 
                 rgba(0, 0, 0, 0.3) 0.5px, 
-                transparent 2px) 24vw 50%,
+                transparent 2px) 40% 50%,
             linear-gradient(to right, 
                 transparent 0, 
                 rgba(0, 0, 0, 0.3) 0.5px, 
-                transparent 2px) 36vw 50%,
+                transparent 2px) 60% 50%,
             linear-gradient(to right, 
                 transparent 0, 
                 rgba(0, 0, 0, 0.3) 0.5px, 
-                transparent 2px) 48vw 50%;
+                transparent 2px) 80% 50%;
 
-        /* 길이 3vh, 위치 50% */
-        background-size: 50% 3vh;
+        background-size: 1px 50%;
         background-repeat: no-repeat;
         background-color: white;
         .icon{
             /* 가운데 정렬 */
             display: flex;
+            flex-direction: column;
             /* 수직 */
             align-items: center;
             /* 수평 */
@@ -270,9 +271,24 @@
             height: 100%;
             width: 20%;
             /* background-color: gray; */
+            > p{
+                margin: 0;
+                padding: 0;
+                font-size: 12px;
+            }
             > img{
-                height: 5vh;
-                width: 5vh;
+                height: 35px;
+                width: 35px;
+
+                // hover transform 효과 천천히
+                transition: transform 0.2s ease
+            }
+
+            > img:hover{
+                // 이미지 확대
+                transform: scale(1.1);
+                // 마우스 포인터 변경
+                cursor: pointer;
             }
         }
     }

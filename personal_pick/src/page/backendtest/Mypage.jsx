@@ -7,7 +7,11 @@ import './Mypage.scss'
 import { useDispatch, useSelector } from 'react-redux';
 
 const Join = () => {
-
+    // 페이지 이동 함수
+    const navigate = useNavigate();
+    const home = () => navigate('/');
+    const join = () => navigate('/join');
+    const login = () => navigate('/login');
     // redux
     // 상태 저장
     const state = useSelector(state => state);
@@ -39,7 +43,7 @@ const Join = () => {
                 <div className='fst'>
                     <img src="https://cdn-icons-png.flaticon.com/512/6063/6063734.png" alt="" />
                     <span className='middle'>
-                        <h1>{state.userData.nickname}</h1>
+                        <h1>{state.isUser?state.userData.user_nm:'이름'}</h1>
                         <p>연령대 피부타입</p>
                     </span>
                     <span className='right'>
@@ -116,8 +120,12 @@ const Join = () => {
             </div>
             <div id='foot'>
                 <span className='icon'>
-                    <img src="https://cdn-icons-png.flaticon.com/512/8304/8304806.png" alt="" />
-                    <h1>home</h1>
+                    <img
+                    src="https://cdn-icons-png.flaticon.com/512/8304/8304806.png"
+                    alt="" 
+                    title='Home'
+                    onClick={home}/>
+                    <p>Home</p>
                 </span>
                 <span className='icon'>
                     <img src="https://cdn-icons-png.flaticon.com/512/636/636600.png" alt="" />
