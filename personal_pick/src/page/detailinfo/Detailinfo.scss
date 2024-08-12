@@ -1,10 +1,3 @@
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
 
 
 .imgmain1{
@@ -45,7 +38,6 @@
 .itemname label {
     font-size: 20px;
     font-weight: 700;
-    font-family: "Pretendard-Regular";
     display: flex;
     margin: auto;
     justify-content: center;
@@ -66,12 +58,11 @@
 }
 
 .brand {
-    font-family: 'Pretendard-Regular';
     margin-left: 10px;
 }
 
 .iteminfo {
-    font-family: 'Pretendard-Regular';
+
     margin-left: 10px;
 }
 
@@ -81,7 +72,7 @@
 
 .nameinfo {
     display: flex;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 700;
 }
 
@@ -202,13 +193,13 @@
 
 .like {
     margin: auto;
-    font-size: 19px;
+    font-size: 18px;
     margin-left: 7px;
 }
 
 .dontlike{
     margin: auto;
-    font-size: 19px;
+    font-size: 18px;
     margin-left: 7px;
 }
 
@@ -248,9 +239,9 @@
 
 .margintop1 {
     margin: auto;
-    margin-top: 16px;
+    margin-top: 33px;
     display: flex;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500
 }
 
@@ -266,10 +257,8 @@
 }
 
 .aireview {
-    margin-top: 40px;
     display: flex;
-    font-family: "Pretendard-Regular";
-    font-size: 26px;
+    font-size: 23px;
     margin-bottom: 23px;
     margin-left: 9px;
 }
@@ -280,24 +269,22 @@
 
 .reviewinfo {
     display:flex;
-    font-family: 'Pretendard-Regular';
     font-weight: 700;
     font-size: 23px;
 }
 
 .margintop2 {
     margin: auto;
-    margin-top: 16px;
+    margin-top: 33px;
     display: flex;
-    font-size: 16px;
-    font-weight: 500
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .detailreview {
     margin: auto;
     display: flex;
-    font-family: "Pretendard-Regular";
-    font-size: 24px;
+    font-size: 23px;
     font-weight: 600;
     margin-top: 48px;
     margin-bottom: 9px;
@@ -334,7 +321,6 @@
 }
 
 .reviewtext {
-    font-family: "Pretendard-Regular";
     font-size: 25px;
     font-weight: 600;
 }
@@ -464,7 +450,6 @@ input[type="radio"] {
 
 // 계정 정보 및 리뷰 
 .accountmain {
-    font-family: "Pretendard-Regular";
     margin-top: 40px;
 }
 
@@ -525,7 +510,7 @@ img, video {
     display: flex;
     position: relative;
     place-self: flex-end;
-    margin-left: -171px;
+    margin-left: -194px;
 }
 
 .textonly{
@@ -580,9 +565,8 @@ img, video {
 
 
 .ingredientmain{
-    font-family: "Pretendard-Regular";
     margin-top: 70px;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 600;
     margin-bottom: 23px;
     margin-left: 11px;
@@ -643,9 +627,8 @@ img, video {
 
 
 .ingredientcomposition {
-    font-family: "Pretendard-Regular";
     margin-top: 90px;
-    font-size: 24px;
+    font-size: 23px;
     font-weight: 600;
     margin-left: 11px;
 }
@@ -673,8 +656,8 @@ img, video {
     background-size: 200% auto;
     color: rgb(0,0,0);
     border-radius: 10px;
+    font-weight: 600;
     cursor: pointer;
-    font-family: 'Pretendard-Regular';
     margin-top: 30px;
     font-size: 18px;
    }
@@ -795,7 +778,6 @@ img, video {
 // 전체 성분 
 
 .allingredient{
-    font-family: 'Pretendard-Regular';
     font-size: 23px;
     font-weight: 600;
     margin-top: 80px;
