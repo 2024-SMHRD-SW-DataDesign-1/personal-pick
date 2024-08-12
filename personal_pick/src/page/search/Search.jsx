@@ -83,6 +83,8 @@ const Search = () => {
 
         // 검색어를 inputvalue에 설정하여 검색 실행
         setInputvalue(searchValue);
+
+        
     };
 
 
