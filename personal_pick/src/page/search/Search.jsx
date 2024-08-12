@@ -82,7 +82,7 @@ const Search = () => {
         }
 
         // 검색어를 inputvalue에 설정하여 검색 실행
-        setInputvalue(searchValue);
+        setInputvalue("");
 
         
     };
@@ -127,7 +127,7 @@ const Search = () => {
                     <div className='back'>
                         <img   onClick={() => nav('/')} src={Back}></img>
                     </div>
-                        <InputBox className='width'func={searchAdd}></InputBox>
+                        <InputBox className='width'func={searchAdd} inputvalue= {inputvalue} setvalue={setInputvalue}></InputBox>
     
                 </div>
                 {/* <div style={{ height: '120px' }}> */}
