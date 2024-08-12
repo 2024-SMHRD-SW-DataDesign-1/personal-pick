@@ -5,13 +5,23 @@ import './TotalRanking.scss'
 import left_img from '../../img/왼쪽.png'
 import { useNavigate, useParams } from "react-router-dom";
 import Category from "../../components/category/Category";
-import { choicRankingCategory } from "../../util/utilStr";
+import { choicRankingCategory, titleList } from "../../util/utilStr";
 
+const list = ["조회수 급상승", "카테고리별", "피부별", "연령대별"]
 
 const TotalItem = () => {
 
     const nav = useNavigate();
+    // TotalRanking 데이터 관리
     const [AllItem, setAllItem] = useState([]);
+    // 카테고리별 상태관리
+    const [totalCate, setTotalCate] = useState({
+        
+        list: [],
+        maintitle: "카테고리 전체",
+        subtitle: ""
+        
+    })
 
     const { category } = useParams();
     useEffect(() => {
@@ -29,7 +39,7 @@ const TotalItem = () => {
             case 2:
                 return (
                     <>
-                        <Category dic={AllItem} setDic={setCateIdx} categoryData={choicRankingCategory} />
+                        <Category dic={totalCate} setDic={setTotalCate} categoryData={titleList} />
                         <div className="itemlist">
                             <ItemAll data={AllItem}></ItemAll>
                         </div>
@@ -41,6 +51,10 @@ const TotalItem = () => {
                 return <p>4</p>
         }
     }
+
+    function changeClass( idx){
+        setCateIdx(idx)
+    }
     
 
     return (
@@ -48,17 +62,13 @@ const TotalItem = () => {
             <div className="all_itemBox ">
                 <img className="leftimg float_l cursor" src={left_img} onClick={()=> nav('/')} alt=""  />
                 <div className="cos_rank_text">화해 랭킹</div>
-                <div>
-                    <button className="rank_btn cursor" onClick={()=>setCateIdx(1)}>조회수 급상승</button>
-                    <button className="rank_btn cursor" onClick={()=>setCateIdx(2)} >카테고리별</button>
-                    <button className="rank_btn cursor" onClick={()=>setCateIdx(3)} >피부별</button>
-                    <button className="rank_btn cursor" onClick={()=>setCateIdx(4)}>연령대별</button>
+                <div className="totalcatebox">
+                    {list.map((item, idx) => {
+                        return <button key={idx} className={cateIdx == idx+1 ? "rank_btn cursor rank_btn_click" : "rank_btn cursor"} onClick={()=>changeClass(idx+1)}>{item}</button>
+                    })}
+                    
+
                 </div>
-                
-
-
-                
-
 
                 {showView(cateIdx)}
                 

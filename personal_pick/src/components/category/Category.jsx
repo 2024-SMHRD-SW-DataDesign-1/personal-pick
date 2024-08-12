@@ -47,6 +47,8 @@ const Category = ({dic, setDic, categoryData}) => {
         return result
     }
     function showView(){
+        console.log(dic)
+        
         if(categoryData[0] === '건성' || categoryData[0] === '10대')
         {
             return (
@@ -59,7 +61,6 @@ const Category = ({dic, setDic, categoryData}) => {
         }
         else if(categoryData[0] === "카테고리 전체")
         {
-            
             return (
                 <>
                     <button className='category_btn cursor' onClick={() =>showModal()}>
@@ -69,7 +70,7 @@ const Category = ({dic, setDic, categoryData}) => {
                         dic.list === null ?
                         ""
                         :
-                        dic.list.map((item, idx)=>{
+                         dic.list.map((item, idx)=>{
                             return <button className={dic.subtitle == item ? "category_btn" :"category_item"} key={idx} onClick={(e)=>categoryClickEvent(e)}>{item}</button>
                         })
 
