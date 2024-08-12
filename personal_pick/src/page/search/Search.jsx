@@ -3,7 +3,7 @@ import InputBox from '../../components/inputbox/InputBox';
 import { sendDel, sendGet, sendPost, URL } from '../../util/util';
 import './Search.scss';
 import Star from '../../img/별.png';
-import Back from '../../img/뒤로가기.png';
+import Back from '../../img/왼쪽.png';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -38,8 +38,8 @@ const Search = () => {
 
     useEffect(() => {
         // 검색어 전체 리스트 형식으로 가져오는 게 아니라 단어 객체 하나만 가져온다는 것
-        sendGet(URL + "/SearchPage?value="+inputvalue, showConsole);
-    }, [inputvalue]); 
+        sendGet(URL + "/SearchPage?value=" + inputvalue, showConsole);
+    }, [inputvalue]);
 
 
     // 내가 찾고 싶은 제품 단어를 검색했을 때 나타나는 최근 검색어
@@ -48,33 +48,45 @@ const Search = () => {
 
     // 굳이 sendDel을 만들지 않아도 sendPost로 내가 검색한 최근검새어 리스트(ex.5개)를 보낼 것이고
     // X 버튼을 onClick 했을 때에 남은 리스트(ex.4개)도 sendPost로 보내기때문에 sendDel를 만들 필요 없음
-    useEffect(()=>{
-        console.log(searchHistory);        
+    useEffect(() => {
+        console.log(searchHistory);
         sendPost(URL + "/SearchList", null, searchHistory);
-    },[searchHistory]); // 빈배열 안에 searchHistory(최근 검색어)가 있는 경우는 최근검색어를 검색하고 화면에 나왔을 때 렌더링하겠다는 뜻
-    
+    }, [searchHistory]); // 빈배열 안에 searchHistory(최근 검색어)가 있는 경우는 최근검색어를 검색하고 화면에 나왔을 때 렌더링하겠다는 뜻
+
     // 절대 주석 풀지 말 것!!!!!!!!!!!!
     // useEffect(() => {
     //     sendDel(URL + "/SearchList?value=", searchHistory)
     // },[searchHistory])
 
-    
+
+
     // 검색어를 추가하는 함수
     // inputbox에서 검색어를 searchadd로 받아옴 
     const searchAdd = (searchValue) => {  // 새로운 검색어
-        setInputvalue(searchValue)
-        // 이전 검색어 리스트에 새로운 검색어를 배열 끝에 추가
-        // 5개 과거(이전) 데이터 있는데 + 현재(최신) 데이터 1개 => 총 6개 배열 나옴
-        const newHistory = [searchValue, ...searchHistory];        
-        // 검색어 리스트가 5개를 초과하면 가장 오래된 검색어 제거
-        if (newHistory.length > 5) {
-            newHistory.pop();   // 가장 오래된 검색어 제거 함수(오른쪽 검색어 제거)           
-        }              
-        // 최근 검색어의 바뀐 데이터(내가 최근에 검색한 단어들)를 계속해서 화면에 출력하는 역할(연결점 같은 것)
-        setSearchHistory([...newHistory])
-        setInputvalue("");
+        // 최근 검색어 단어 중복 제거
+        // 새로운 검색어가 이미 검색 기록에 존재하는지 확인
+        if (searchHistory.indexOf(searchValue) !== -1) {
+            // 검색어가 이미 존재하면, 해당 검색어를 최근 검색어 목록 맨 앞으로 이동
+            const updatedHistory = searchHistory.filter(item => item !== searchValue);
+            setSearchHistory([searchValue, ...updatedHistory]);
+        } else {
+            // 새로운 검색어가 존재하지 않으면 추가
+            // 5개 과거(이전) 데이터 있는데 + 현재(최신) 데이터 1개 => 총 6개 배열 나옴(이전 검색어 리스트에 새로운 검색어를 배열 끝에 추가)
+            const newHistory = [searchValue, ...searchHistory];
+            // 검색어 리스트가 5개를 초과하면 가장 오래된 검색어 제거
+            if (newHistory.length > 5) {
+                newHistory.pop();  // 가장 오래된 검색어 제거
+            }
+            // 최근 검색어의 바뀐 데이터(내가 최근에 검색한 단어들)를 계속해서 화면에 출력하는 역할(연결점 같은 것)
+            setSearchHistory([...newHistory])
+        }
+
+        // 검색어를 inputvalue에 설정하여 검색 실행
+        setInputvalue(searchValue);
+
+        
     };
-    
+
 
 
     // 검색어를 삭제하는 함수
@@ -109,8 +121,14 @@ const Search = () => {
             <div className='Search'>
                 {/* InputBox 컴포넌트에 searchAdd 함수를 전달하여 검색어 입력 시 호출되게 함 */}
                 <div className='searchbtn'>
-                    <button className='backbtn' type="button" onClick={()=> nav('/')}><span><img className='back' src={Back}></img></span></button>
-                    <span><InputBox func={searchAdd}></InputBox></span>
+                    {/* <button className='' type="button" onClick={() => nav('/')}> */}
+                        {/* </button> */}
+                        
+                    <div className='back'>
+                        <img   onClick={() => nav('/')} src={Back}></img>
+                    </div>
+                        <InputBox className='width'func={searchAdd}></InputBox>
+    
                 </div>
                 {/* <div style={{ height: '120px' }}> */}
                 <div>
@@ -118,7 +136,7 @@ const Search = () => {
                         <h2 className='recentName'>최근 검색어</h2>
                         {/* <button type='button' className='deletebtn'><span>전체 삭제</span></button> */}
                     </div>
-                        
+
                     <div className='search'>
                         {/* 검색 기록을 화면에 표시 */}
                         {searchHistory.length > 0 && searchHistory.map((item, index) => (
@@ -141,22 +159,22 @@ const Search = () => {
                                     <div className='idx'>{item.idx}</div>
                                     <span><img src={item.cos_img_src} style={{ width: '90px' }} alt={item.cos_name}></img></span>
                                     <div className='items'>
-                                    <div className='font'>
-                                        <span className='brand'>{item.brand_name}</span>
-                                        <span>{item.cos_name}</span>
-                                        </div> 
-                                       
-                                    <div className='review1'>
-                                        <span><img className='star1' src={Star}></img></span>
-                                        <span className='grade'>{item.grade}</span>
-                                        <span className='gray'>({item.grade_count})</span>
-                                    </div> 
-                                    <div>
-                                        <span className='jungga'>정가 </span>
-                                        <span className='won'>{item.price}원</span>
-                                        <span className='gray'>/{item.vol}ml</span>
+                                        <div className='font'>
+                                            <span className='searchbrand'>{item.brand_name}</span>
+                                            <span>{item.cos_name}</span>
                                         </div>
-                                    <br />
+
+                                        <div className='review1'>
+                                            <span><img className='star1' src={Star}></img></span>
+                                            <span className='grade'>{item.grade}</span>
+                                            <span className='gray'>({item.grade_count})</span>
+                                        </div>
+                                        <div>
+                                            <span className='jungga'>정가 </span>
+                                            <span className='won'>{item.price}원</span>
+                                            <span className='gray'>/{item.vol}ml</span>
+                                        </div>
+                                        <br />
                                     </div>
                                 </a>
                             </li>
