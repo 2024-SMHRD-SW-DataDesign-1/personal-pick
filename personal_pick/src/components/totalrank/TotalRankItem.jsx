@@ -1,7 +1,7 @@
 import React from 'react';
 import Star from '../../img/별.png'
 import { useNavigate } from 'react-router-dom'
-import './ItemAll.scss'
+import './TotalRankItem.scss'
 
 const ItemAll = ({ data }) => {
 

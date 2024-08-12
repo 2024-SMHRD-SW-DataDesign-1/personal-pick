@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ItemAll from "../../components/itemall/ItemAll"
+import ItemAll from "../../components/totalrank/TotalRankItem";
 import { sendGet, URL } from "../../util/util";
 import './TotalRanking.scss'
 import left_img from '../../img/왼쪽.png'
