@@ -4,8 +4,12 @@
 */
 
 .swiper{
-    width : 50%;
+     width : 500px;
 
+}
+
+*{
+    user-select: none;
 }
 
 html, body, div, span, applet, object, iframe,

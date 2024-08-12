@@ -6,26 +6,52 @@ import star1 from '../../img/별.png'
 import { useParams } from 'react-router-dom'
 import smile from '../../img/smile.png'
 import notsmile from '../../img/무표정.png'
-import StarRating from './StarRating'
 import account from '../../img/account.png'
 import goback from '../../img/왼쪽.png'
 import { FaAngleDown } from "react-icons/fa";
 import detailright from '../../img/오른쪽.png'
 import caution from '../../img/caution.png'
 import allergy from '../../img/allergy.png'
+import ScrollToTop from '../../components/scrolltotop/ScrollToTop'
+import { setScore } from '../../util/util'
+import StarRating from './StarRating'
+
 
 const Detailinfo = () => {
     // 페이지 이동 함수
     const navigate = useNavigate();
     const home = () => navigate('/');
 
+    
     const [data , setData] = useState([]);
+    const [review , setReview] = useState([]);
+    const [scoreavg , setScoreAvg] = useState([])
+    const [scorecnt , setScoreCnt] = useState([])
+    // const [starscore , setStarScore] = useState(0);
+    
+
 
     const {idx} = useParams()
 
     useEffect(()=>{
          sendGet(URL + "/DetailPage?idx="+idx , setData);
+         sendGet(URL + "/ReviewPage?idx="+idx , setReview);
+         sendGet(URL + "/ScoreAvgPage?idx="+idx ,setScoreAvg);
+         sendGet(URL + "/ScoreCntPage?idx="+idx ,setScoreCnt);
     },[]);
+    
+
+    useEffect(()=>{
+       console.log(review)
+   },[review]);
+   
+   useEffect(()=>{
+    console.log(scoreavg)
+   },[scoreavg]);
+
+   useEffect(()=>{
+    console.log(scorecnt)
+   },[scorecnt]);
 
 
     const showmodal = (e) => {
@@ -36,6 +62,8 @@ const Detailinfo = () => {
 
         
     }
+
+
 
     const showmodal1 = (e) => {
 
@@ -52,7 +80,7 @@ const Detailinfo = () => {
     const test1 = (e) => {
         console.log(e.target.innerText)
     }
-    
+
 
     
   return (
@@ -61,15 +89,13 @@ const Detailinfo = () => {
             {/* 데이터를 성공적으로 불러오면 실행 */}
             {data.length > 0 ? (
                 data.map((item, index) => (
-                    <div key={index}>
+                    <div>
 
-                    <div >
                     {/* 화장품 이름 */}
                     
-                    <div className='itemname'>
-                    <button className='goback' type="button" onClick={()=> navigate('/Search')}><span><img src={goback} width={33} height={30}></img></span></button>
+                    <div className='itemname'key={index}>
+                    <button className='goback' type="button" onClick={()=> navigate('/Search')}><span className= "gobackbtn"><img src={goback} width={20} height={20}></img></span></button>
                     <label>{item.cos_name}</label>
-                    </div>
                     </div>
 
                         <div id = 'main1'>
@@ -127,7 +153,7 @@ const Detailinfo = () => {
                             <span className='margintop1'>보습되는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
                         </div>
                         <div className='w-[1px] bg-gray-300 aireviewbar'/>
-                        
+
                         <div className='dislike grow mr-24 w-1/2'>
                         <img src ={notsmile}  width={23} height={23} className='notsmileimg'/>
                             <span className='dontlike'>아쉬워요</span>
@@ -233,11 +259,7 @@ const Detailinfo = () => {
                         <span className='skintype hds-text-smalltext-large ml-2 text-gray-secondary'>20대/건성/아토피/여드름</span><br/>
                         </div>
                         <div className='accountstar'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
+                        {setScore(4)}
                             </div>
                             <span className='hds-text-smalltext-large ml-8 text-gray-quaternary accountdate'>날짜</span>
                             </div>
@@ -249,40 +271,14 @@ const Detailinfo = () => {
 
                         <div className='sosocommentmain flex items-start gap-x-8 mt-24'>
                             <img src = {notsmile} width={28} height={25}></img>
-                            <span className='sosocomment'>아쉬운말</span>
+                            <span className='sosocomment'>{item.bad_review}</span>
                             </div>
                             </div>
 
 
                         <hr className='bar3'/>
 
-                        <div className='accountmain'>
-                        <div className='accountinfo flex items-center'>
-                        <img src = {account} width={50} className='w-40 h-40 rounded-full object-cover object-center'/>
-                        <div className='textonly'>
-                        <span className='nickname hds-text-subtitle-medium text-gray-primary'>닉네임</span>
-                        <span className='skintype hds-text-smalltext-large ml-2 text-gray-secondary'>20대/건성/아토피/여드름</span><br/>
-                        </div>
-                        <div className='accountstar'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
-                            </div>
-                            <span className='hds-text-smalltext-large ml-8 text-gray-quaternary accountdate'>날짜</span>
-                            </div>
-                        
-                        <div className='goodcommentmain flex items-start gap-x-8 mt-24'>
-                            <img src = {smile} width={32} height={31}></img>
-                            <span className='goodcomment'>좋은말</span>
-                            </div>
 
-                        <div className='sosocommentmain flex items-start gap-x-8 mt-24'>
-                            <img src = {notsmile} width={28} height={25}></img>
-                            <span className='sosocomment'>아쉬운말</span>
-                            </div>
-                            </div>
 
                             {/* 리뷰 전체보기 버튼 */}
                             <div class="allreviewbtncontainer">
@@ -311,9 +307,6 @@ const Detailinfo = () => {
                             </div>
 
 
-                        {/* <div class = "up-btn">
-                            <ScrollToTopButton/>
-                        </div> */}
 
                         {/* 성분 구성 위험 단계 */}
 
@@ -379,10 +372,29 @@ const Detailinfo = () => {
                                 </div>
                             </div>
                         </div>
-
-
-                        
                         </div>
+
+                        {/* 하단 고정 버튼 쪽*/}
+
+                        {/* 페이지업 버튼 */}
+
+                         <ScrollToTop/>
+
+
+                        <div className='fixed bottom-[0] left-[0] w-full z-10 pointer-events-none z-10'>
+                        <div className='max-w-[600px] mx-auto bg-white'>
+                        <div className="allreviewbtncontainer1">
+                            <a className="allreviewbtn1 btn-6">구매하기</a>
+                            </div>
+                            </div>
+                            </div>
+
+                        {/* 댓글쓰기 쓸때 쓸 별점 */}
+                        {/* {setStarMenu(setStarScore) */}
+
+
+                    
+
                         </div>
                 ))
             ) : (

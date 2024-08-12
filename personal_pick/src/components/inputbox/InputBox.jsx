@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './InputBox.scss'
 import { useNavigate } from 'react-router-dom';
-const InputBox = ({func}) => {
+import InputBoxSearch from '../../img/돋보기.png';
+
+const InputBox = ({inputvalue, setvalue, func}) => {
     const [value, setValue] = useState("");
     const nav = useNavigate();
 
@@ -10,17 +12,17 @@ const InputBox = ({func}) => {
 
     return (
         <div className='width margin_a' onClick={() =>nav('/search/')}>
-            <input className='search_box width' type="text" onChange={(e)=>setValue(e.target.value) } value={value}/>
+            <input className='search_box width' type="text" onChange={(e)=>setvalue(e.target.value) } value={inputvalue} placeholder="검색어를 입력해 주세요"/>
             <button className="btn-1" onClick={()=>{
                 
 
-                func(value)
+                func(inputvalue)
                 
                 
-                nav("/search/"+value);
+                nav("/search/"+inputvalue);
 
             }}>
-                <span>검색하기</span>
+                <span><img className='inputboxSearch' src={InputBoxSearch}></img></span>
             </button>
         </div>
     );
