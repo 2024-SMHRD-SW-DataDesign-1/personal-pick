@@ -218,7 +218,7 @@ const Home = () => {
                 {userAgePick + " 전체보기"}
                 <img className="star" src={Right} alt="" />
             </div>
-
+            <div className="home_page_btn cursor" onClick={() =>nav('/login')}>로그인</div>
         </div>
 
     );
