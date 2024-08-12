@@ -154,66 +154,81 @@
     margin-right: 24px;
 }
 
-
+.aireviewbar{
+    display: flex;
+    margin-right: 36px;
+}
 
 .liketext{
     margin: auto;
 }
 
+
 .reviewdata {
-    margin-left: 236px;
+    margin-left: 214px;
 }
 
 .reviewdata1 {
-    margin-left: 209px;
+    margin-left: 186px;
 }
 
 .reviewdata2 {
-    margin-left: 218px;
+    margin-left: 196px;
 }
 
 .reviewdata3 {
-    margin-left: 195px;
+    margin-left: 169px;
 }
 
 .reviewdata4 {
-    margin-left: 254px;
+    margin-left: 228px;
 }
 
 .reviewdata5 {
-    margin-left: 226px;
+    margin-left: 200px;
 }
 
 .reviewdata6 {
-    margin-left: 208px;
+    margin-left: 182px;
 }
 
 .reviewdata7 {
-    margin-left: 176px;
+    margin-left: 150px;
 }
 
 .reviewdata8 {
-    margin-left: 253px;
+    margin-left: 227px;
 }
 
 .like {
     margin: auto;
-    margin-left: 28px;
     font-size: 19px;
+    margin-left: 7px;
 }
 
 .dontlike{
     margin: auto;
-    margin-left: 26px;
     font-size: 19px;
+    margin-left: 7px;
 }
+
+.smileimg{
+    margin: auto;
+    margin-bottom: -4px
+}
+
+.notsmileimg {
+    margin: auto;
+    margin-bottom: -4px
+}
+
 
 .bar {
     --tw-bg-opacity: 1;
     background-color: rgba(242, 242, 242, var(--tw-bg-opacity));
     height: 10px;
     border-width: 0;
-    transform: translate(0px, 21px);
+    margin-bottom: 30px;
 }
 
 .bar2 {
@@ -221,7 +236,7 @@
     background-color: rgba(242, 242, 242, var(--tw-bg-opacity));
     height: 10px;
     border-width: 0;
-    transform: translate(0px, -200px);
+    margin-bottom: 31px;
 }
 
 .bar3 {
@@ -247,6 +262,7 @@
 .dislike {
     display:table-cell;
     vertical-align: middle;
+    margin-top: 3px;
 }
 
 .aireview {
@@ -285,7 +301,7 @@
     font-weight: 600;
     margin-top: 48px;
     margin-bottom: 9px;
-    margin-left: 9px;
+    margin-left: 11px;
 }
 
 // 리뷰 평점
@@ -301,7 +317,7 @@
     display: inline-grid;
     align-items: center;
     justify-content: center;
-    width: 29vw;
+    width: 7vw;
     text-align: center;
 }
 
@@ -347,6 +363,105 @@ input[type="radio"] {
     background-color: #cdc2c2;
 }
 
+.h-\[95px\] {
+    height: 95px;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+.items-center {
+    align-items: center;
+}
+.flex-col {
+    flex-direction: column;
+}
+.w-\[20px\] {
+    width: 20px;
+}
+.flex {
+    display: flex;
+}
+
+.hds-text-white {
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+.hds-leading-\[16px\] {
+    line-height: 16px;
+}
+.hds-text-smalltext-medium {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 14px;
+}
+.hds-px-4 {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.hds-bg-yellow-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 190, 20, var(--tw-bg-opacity));
+}
+.hds-rounded-4 {
+    border-radius: 4px;
+}
+.hds-h-16 {
+    height: 16px;
+}
+.hds-inline-block {
+    display: inline-block;
+    margin-bottom: 27px;
+}
+
+.background-gray-secondary-hovered {
+    background-color: #f7f7f7;
+}
+
+.items-end {
+    align-items: flex-end;
+}
+.w-4 {
+    width: 4px;
+}
+.h-\[50px\] {
+    height: 50px;
+}
+.flex {
+    display: flex;
+}
+.mt-4 {
+    margin-top: 4px;
+}
+
+.bg-yellow-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 190, 20, var(--tw-bg-opacity));
+}
+
+.w-4 {
+    width: 4px;
+}
+
+.text-yellow-600 {
+    --tw-text-opacity: 1;
+    color: rgba(255, 190, 20, var(--tw-text-opacity));
+}
+.mt-8 {
+    margin-top: 8px;
+}
+.hds-text-caption-large {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+
+.items-end {
+    align-items: flex-end;
+}
+
 // 계정 정보 및 리뷰 
 .accountmain {
     font-family: "Pretendard-Regular";
@@ -365,9 +480,7 @@ input[type="radio"] {
 .object-cover {
     object-fit: cover;
 }
-.rounded-full {
-    border-radius: 99999px;
-}
+
 .w-40 {
     width: 40px;
 }
@@ -391,7 +504,7 @@ img, video {
     font-weight: 700;
     letter-spacing: 0;
     line-height: 21px;
-    margin-left: 9px;
+    margin-left: 8px;
 }
 
 .skintype{
@@ -412,7 +525,7 @@ img, video {
     display: flex;
     position: relative;
     place-self: flex-end;
-    margin-left: -190px;
+    margin-left: -171px;
 }
 
 .textonly{
@@ -432,8 +545,7 @@ img, video {
     background-color: rgba(232, 232, 232, var(--tw-bg-opacity));
 }
 .w-\[1px\] {
-    width: 1px;
-    margin-right: 119px;
+    width: 3px;
 }
 
 .text-gray-quaternary {
@@ -446,7 +558,7 @@ img, video {
 
 .goodcommentmain{
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 9px;
 }
 
 
@@ -473,7 +585,7 @@ img, video {
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 23px;
-    margin-left: 6px;
+    margin-left: 11px;
 }
 
 .ingredientdropbox {
@@ -535,9 +647,45 @@ img, video {
     margin-top: 90px;
     font-size: 24px;
     font-weight: 600;
-    margin-left: 6px;
+    margin-left: 11px;
 }
 
+// 전체 리뷰보기 버튼
+
+.allreviewbtncontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    /* width: 80vw; */
+    /* margin: 0 auto; */
+    /* min-height: 100vh; */
+}
+
+
+.allreviewbtn {
+    flex: 1 1 auto;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(0,0,0);
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Pretendard-Regular';
+    margin-top: 30px;
+    font-size: 18px;
+   }
+  
+  .btn-5:hover {
+    background-position: right center; /* change the direction of the change here */
+  }
+
+  .btn-5 {
+    background-image: linear-gradient(to right, rgb(130, 170, 73) 51%, rgb(130, 170, 73) 51%, #ffecd2 100%);
+  }
 
 // 성분 구성 위험 단계 부분 (공통 css)
 
@@ -561,9 +709,6 @@ img, video {
     align-items: center;
 }
 
-.flex {
-    display: flex;
-}
 
 .rounded-full {
     border-radius: 99999px;
@@ -577,12 +722,6 @@ img, video {
     height: 10px;
 }
 
-.hds-text-smalltext-large {
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: 18px;
-}
 
 .text-gray-tertiary {
     color: #999;
@@ -660,7 +799,7 @@ img, video {
     font-size: 23px;
     font-weight: 600;
     margin-top: 80px;
-    margin-left: 6px;
+    margin-left: 11px;
 }
 
 .allingredientbar{
@@ -706,4 +845,12 @@ img, video {
 .allergytext {
     font-size: 18px;
     font-weight: 600;
+}
+
+.ingredientnumber {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 21px;
+    margin-left: -27px;
 }

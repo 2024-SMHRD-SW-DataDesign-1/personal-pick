@@ -52,6 +52,7 @@ const Detailinfo = () => {
     const test1 = (e) => {
         console.log(e.target.innerText)
     }
+    
 
     
   return (
@@ -115,8 +116,8 @@ const Detailinfo = () => {
 
                         <div className='flex justify-between px-20 my-24 reviewinfo'>
                         <div className='likereview grow mr-24 w-1/2'>
-                        <img src ={smile}  width={26} height={26}/>
-                        <span className='like'>좋아요</span>
+                        <img src ={smile}  width={26} height={26} className='smileimg'/>
+                            <span className='like'>좋아요</span>
                             <span className='margintop1'>진정되는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
                             <span className='margintop1'>쿨링되는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
                             <span className='margintop1'>수분있는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
@@ -125,10 +126,11 @@ const Detailinfo = () => {
                             <span className='margintop1'>향에 만족한<span className='reviewdata2 hds-text-body-medium text-gray-tertiary'>0</span></span>
                             <span className='margintop1'>보습되는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
                         </div>
-
+                        <div className='w-[1px] bg-gray-300 aireviewbar'/>
+                        
                         <div className='dislike grow mr-24 w-1/2'>
-                        <img src ={notsmile}  width={23} height={23}/>
-                        <span className='dontlike'>아쉬워요</span>
+                        <img src ={notsmile}  width={23} height={23} className='notsmileimg'/>
+                            <span className='dontlike'>아쉬워요</span>
                             <span className='margintop2'>가루날림이 있는<span className='reviewdata3 hds-text-body-medium text-gray-tertiary'>0</span></span>
                             <span className='margintop2'>마르는<span className='reviewdata4 hds-text-body-medium text-gray-tertiary'>0</span></span>
                             <span className='margintop2'>흘러내리는<span className='reviewdata5 hds-text-body-medium text-gray-tertiary'>0</span></span>
@@ -139,7 +141,7 @@ const Detailinfo = () => {
                         </div>
                         </div>
 
-                        {/* <hr className='bar2'/> */}
+                        <hr className='bar2'/> 
 
 
                         <div className='detailreview mt-8 px-20'>
@@ -160,18 +162,65 @@ const Detailinfo = () => {
                         <div className='w-[1px] bg-gray-300'/>
 
 
-                        {/* 평점 그래프 */}
-                        <div className='graphbarmain'>
-                        <div className='graphbar'/>
-                        <span className='graphbartext'>5점</span>
-                        <div className='graphbar'/>
-                        <span className='graphbartext'>4점</span>
-                        <div className='graphbar'/>
-                        <span className='graphbartext'>3점</span>
-                        <div className='graphbar'/>
-                        <span className='graphbartext'>2점</span>
-                        <div className='graphbar'/>
-                        <span className='graphbartext'>1점</span>
+                        <div className="flex gap-x-8 h-[95px]">
+                        {/* 5점 */}
+                        <div className='flex flex-col items-center justify-end w-[20px]'>
+                        <span className='hds-inline-block hds-rounded-4 hds-h-16 hds-px-4 hds-text-smalltext-medium hds-leading-[16px] hds-bg-yellow-600 hds-text-white'>
+                            들어올 값
+                        </span>
+                        <div className='flex items-end w-4 h-[50px] mt-4 rounded-full background-gray-secondary-hovered'>
+                        <div class="w-4 rounded-full bg-yellow-600" height= {67}></div>
+                        </div>
+
+                        <span className='hds-text-caption-large mt-8 text-yellow-600'>
+                            5점
+                        </span>
+                        </div>
+
+                        {/* 4점 */}
+                        <div className='flex flex-col items-center justify-end w-[20px]'>
+                        <div className='flex items-end w-4 h-[50px] mt-4 rounded-full background-gray-secondary-hovered'>
+                        <div class="w-4 rounded-full bg-yellow-600" height= {67}></div>
+                        </div>
+
+                        <span className='hds-text-smalltext-large mt-8 text-gray-tertiary'>
+                            4점
+                        </span>
+                        </div>
+
+                        {/* 3점 */}
+                        <div className='flex flex-col items-center justify-end w-[20px]'>
+                        <div className='flex items-end w-4 h-[50px] mt-4 rounded-full background-gray-secondary-hovered'>
+                        <div class="w-4 rounded-full bg-yellow-600" height= {67}></div>
+                        </div>
+
+                        <span className='hds-text-smalltext-large mt-8 text-gray-tertiary'>
+                            3점
+                        </span>
+                        </div>
+
+                        {/* 2점 */}
+                        <div className='flex flex-col items-center justify-end w-[20px]'>
+                        <div className='flex items-end w-4 h-[50px] mt-4 rounded-full background-gray-secondary-hovered'>
+                        <div class="w-4 rounded-full bg-yellow-600" height= {67}></div>
+                        </div>
+
+                        <span className='hds-text-smalltext-large mt-8 text-gray-tertiary'>
+                            2점
+                        </span>
+                        </div>
+
+                        {/* 1점 */}
+                        <div className='flex flex-col items-center justify-end w-[20px]'>
+                        <div className='flex items-end w-4 h-[50px] mt-4 rounded-full background-gray-secondary-hovered'>
+                        <div class="w-4 rounded-full bg-yellow-600" height= {67}></div>
+                        </div>
+
+                        <span className='hds-text-smalltext-large mt-8 text-gray-tertiary'>
+                            1점
+                        </span>
+                        </div>
+
                         </div>
                         </div>
 
@@ -194,7 +243,7 @@ const Detailinfo = () => {
                             </div>
                         
                         <div className='goodcommentmain flex items-start gap-x-8 mt-24'>
-                            <img src = {smile} width={33} height={31}></img>
+                            <img src = {smile} width={32} height={31}></img>
                             <span className='goodcomment'>좋은말</span>
                             </div>
 
@@ -206,6 +255,39 @@ const Detailinfo = () => {
 
 
                         <hr className='bar3'/>
+
+                        <div className='accountmain'>
+                        <div className='accountinfo flex items-center'>
+                        <img src = {account} width={50} className='w-40 h-40 rounded-full object-cover object-center'/>
+                        <div className='textonly'>
+                        <span className='nickname hds-text-subtitle-medium text-gray-primary'>닉네임</span>
+                        <span className='skintype hds-text-smalltext-large ml-2 text-gray-secondary'>20대/건성/아토피/여드름</span><br/>
+                        </div>
+                        <div className='accountstar'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
+                            </div>
+                            <span className='hds-text-smalltext-large ml-8 text-gray-quaternary accountdate'>날짜</span>
+                            </div>
+                        
+                        <div className='goodcommentmain flex items-start gap-x-8 mt-24'>
+                            <img src = {smile} width={32} height={31}></img>
+                            <span className='goodcomment'>좋은말</span>
+                            </div>
+
+                        <div className='sosocommentmain flex items-start gap-x-8 mt-24'>
+                            <img src = {notsmile} width={28} height={25}></img>
+                            <span className='sosocomment'>아쉬운말</span>
+                            </div>
+                            </div>
+
+                            {/* 리뷰 전체보기 버튼 */}
+                            <div class="allreviewbtncontainer">
+                            <a class="allreviewbtn btn-5">리뷰 전체보기</a>
+                            </div>
 
                         {/* 성분 */}
 
@@ -279,7 +361,7 @@ const Detailinfo = () => {
                                 20가지 주의성분
                                 </span>
                                 <div className='ingredientbetween'>
-                                    <span className='hds-text-subtitle-medium text-gray-primary'>0</span>
+                                    <span className='ingredientnumber text-gray-primary'>0</span>
                                     <span className='hds-text-body-medium text-gray-secondary'>개</span>
                                 </div>
                             </div>
@@ -292,13 +374,14 @@ const Detailinfo = () => {
                                 알레르기 주의성분
                                 </span>
                                 <div className='ingredientbetween1'>
-                                    <span className='hds-text-subtitle-medium text-gray-primary'>0</span>
+                                    <span className='ingredientnumber text-gray-primary'>0</span>
                                     <span className='hds-text-body-medium text-gray-secondary'>개</span>
                                 </div>
                             </div>
                         </div>
 
 
+                        
                         </div>
                         </div>
                 ))
