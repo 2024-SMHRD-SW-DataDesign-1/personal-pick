@@ -205,7 +205,16 @@ const Join = () => {
                     <img src="https://cdn-icons-png.flaticon.com/512/6063/6063734.png" alt="" />
                     <span className='middle'>
                         <h1>{userData?userData.user_nm:'이름'}</h1>
-                        <p>연령대 피부타입</p>
+                        <p>{userData?(
+                            '연령대 : ' +
+                            (userData.user_age<10?'10세 이하':
+                            userData.user_age<20?'10대':
+                            userData.user_age<30?'20대':
+                            userData.user_age<40?'30대':
+                            userData.user_age<50?'40대':
+                            userData.user_age<60?'50대':
+                            userData.user_age<70?'60대':'70세 이상')
+                            ):'-'}</p>
                     </span>
                     <span className='right'>
                         <img src="https://cdn-icons-png.flaticon.com/512/54/54366.png" alt="" />
