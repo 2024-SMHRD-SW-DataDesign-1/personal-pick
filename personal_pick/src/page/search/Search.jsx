@@ -38,7 +38,7 @@ const Search = () => {
 
     useEffect(() => {
         // 검색어 전체 리스트 형식으로 가져오는 게 아니라 단어 객체 하나만 가져온다는 것
-        //sendGet(URL + "/SearchPage?value=" + inputvalue, showConsole);
+        sendGet(URL + "/SearchPage?value=" + inputvalue, showConsole);
     }, [inputvalue]);
 
 
@@ -81,6 +81,7 @@ const Search = () => {
             setSearchHistory([...newHistory])
         }
         sendGet(URL + "/SearchPage?value=" + searchValue, showConsole);
+        
         // 검색어를 inputvalue에 설정하여 검색 실행
         setInputvalue("");
 
@@ -127,7 +128,7 @@ const Search = () => {
                     <div className='back'>
                         <img   onClick={() => nav('/')} src={Back}></img>
                     </div>
-                        <InputBox className='width'func={searchAdd} inputvalue= {inputvalue} setvalue={setInputvalue}></InputBox>
+                        <InputBox className='width' func={searchAdd} inputvalue= {inputvalue} setvalue={setInputvalue}></InputBox>
     
                 </div>
                 {/* <div style={{ height: '120px' }}> */}
@@ -148,6 +149,7 @@ const Search = () => {
                 </div>
                 {/* 서버에서 가져온 제품 리스트를 화면에 표시 */}
                 <div className='product'>
+                    {/* <p>{today.getMonth() + "월 " + today.getDate() + "일 " + getDay(today.getDay())}</p> */}
                     <h2>지금 가장 많이 구매하고 있어요:)</h2>
                     {/* <strong>검색한 제품 개수{idx}</strong> */}
                 </div>
@@ -155,11 +157,11 @@ const Search = () => {
                     <ul>
                         {productList.length > 0 && productList.map((item) => (
                             <li className='product1' key={item.idx} onClick={() => handleProductClick(item.idx)}>
-                                <a className='flex'>
+                                <div className='searchflex'>
                                     <div className='idx'>{item.idx}</div>
-                                    <span><img src={item.cos_img_src} style={{ width: '90px' }} alt={item.cos_name}></img></span>
+                                    <img src={item.cos_img_src} style={{ width: '80px', height: '80px'}} alt={item.cos_name}></img>
                                     <div className='items'>
-                                        <div className='font'>
+                                        <div className='searchfont'>
                                             <span className='searchbrand'>{item.brand_name}</span>
                                             <span>{item.cos_name}</span>
                                         </div>
@@ -169,14 +171,14 @@ const Search = () => {
                                             <span className='grade'>{item.grade}</span>
                                             <span className='gray'>({item.grade_count})</span>
                                         </div>
-                                        <div>
+                                        <div className='searchprice'>
                                             <span className='jungga'>정가 </span>
                                             <span className='won'>{item.price}원</span>
                                             <span className='gray'>/{item.vol}ml</span>
                                         </div>
                                         <br />
                                     </div>
-                                </a>
+                                </div>
                             </li>
                         ))}
                     </ul>

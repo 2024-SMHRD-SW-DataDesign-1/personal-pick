@@ -188,7 +188,7 @@ const Home = () => {
 
             <div className="home_page_btn cursor" onClick={() => nextTotalPage(2)}>
                 카테고리 전체보기
-                <img className="star" src={Right} alt="" />
+                <img className="homeright" src={Right} alt="" />
             </div>
 
             {/* sendGet으로 필요한 데이터 세 가지 받아오고 그 데이터 이름을 data라는 키 값으로 보내주면 됨! */}
@@ -204,7 +204,7 @@ const Home = () => {
 
             <div className="home_page_btn cursor" onClick={() => nextTotalPage(3)}>
                 {userItemRank + ' 전체보기'}
-                <img className="star" src={Right} alt="" />
+                <img className="homeright" src={Right} alt="" />
             </div>
 
             <div className="basic-text cursor" onClick={() => nextTotalPage(3)}>
@@ -216,7 +216,7 @@ const Home = () => {
             <Itemview data={itemDic} />
             <div className="home_page_btn cursor" onClick={() => nextTotalPage(4)}>
                 {userAgePick + " 전체보기"}
-                <img className="star" src={Right} alt="" />
+                <img className="homeright" src={Right} alt="" />
             </div>
             <div className="home_page_btn cursor" onClick={() =>nav('/login')}>로그인</div>
         </div>

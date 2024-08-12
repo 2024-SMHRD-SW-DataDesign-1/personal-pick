@@ -29,6 +29,9 @@
     border : 1px solid  #f2f2f2;
     border-radius: 7px;
     margin-bottom: 100px;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(61, 61, 61);
 }
 .home_page_btn:last-child{
     margin-bottom: 0
@@ -42,4 +45,9 @@
 // 로고 이미지 사이즈 안 맞는 거 수정 필요
 .logoimg{
     width: 100%;
+}
+
+.homeright {
+    height: 13px;
+    padding-left: 3px;
 }
