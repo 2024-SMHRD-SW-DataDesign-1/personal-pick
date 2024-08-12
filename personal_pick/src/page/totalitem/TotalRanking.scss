@@ -1,6 +1,6 @@
 .all_itemBox{
     // align-items: center;
-    background-color: pink;
+    // background-color: pink;
 }
 
 
@@ -30,14 +30,21 @@
 
 
 .rank_btn{
-    background-color: aqua;
+    background-color: white;
     border-width: 0px;
-    padding: 13px;
+    padding: 10px 0;
     font-size: 15px;
     color: #666666;
-    // margin-right: 20p;
+    margin-right : 4%;
+    
+}
 
+.rank_btn_click{
+    border-bottom : 4px solid black;
 }
 
 
 
+.totalcatebox{
+    margin-bottom: 20px;
+}
