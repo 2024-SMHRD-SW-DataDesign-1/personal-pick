@@ -1,18 +1,8 @@
-import pymysql
 from db_connection import db_connection
 
 def setQuery(sql=None, data = None):
 
     db = db_connection()
-
-    db = pymysql.connect(
-        host='project-db-cgi.smhrd.com',
-        port=3307,
-        user='personal_pick',
-        password='1234',
-        db='personal_pick', 
-        charset='utf8mb4'
-    )
 
     # 데이터에 접근
     cursor = db.cursor()
