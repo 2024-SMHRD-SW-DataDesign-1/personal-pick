@@ -1,5 +1,5 @@
 // npm i -s react-router-dom
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 
 import Home from './page/home/Home';
 import Search from './page/search/Search';
@@ -34,6 +34,8 @@ function App() {
                         <Route path='/detailinfo/:idx' element={<Detailinfo />}></Route>
                     </Routes>
                 </div>
+
+
             </BrowserRouter>
         </Provider>
     );

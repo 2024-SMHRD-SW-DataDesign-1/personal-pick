@@ -50,7 +50,10 @@ export function showSwal(strTag, func){
     withReactContent(Swal).fire({
         // title: "Custom animation with Animate.css",
         html : strTag,
-        showConfirmButton : false, // ok 버튼 숨기기
+        showConfirmButton : false, // ok 버튼 숨기기,
+        position :'bottom',
+        width : "100%",
+        
         showClass: {
           popup: `
             animate__animated
