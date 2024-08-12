@@ -1,27 +1,15 @@
 
 
-.imgmain1{
-    display: flex;
-    margin: auto;
-    justify-content: center;
-}
-
-.w-full {
-    width: 100%;
-}
-
+// 상단 고정
 
 .itemname {
-    // position: fixed;
     height: 38px;
     background: white;
-    // width: 37vw;
     border-bottom: 1px solid rgb(255, 255, 255);
     top: 0px;
     z-index: 10;
+    position: sticky;
 }
-
- // 메인 부분
 
 .goback {
     width: 60px;
@@ -42,8 +30,16 @@
     margin: auto;
     justify-content: center;
     transform: translate(0px, -30px);
+    
 }
 
+ // 메인 부분
+
+ .w-full {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
 
 
 .starinfo{
@@ -62,7 +58,6 @@
 }
 
 .iteminfo {
-
     margin-left: 10px;
 }
 
@@ -111,14 +106,16 @@
 
 
 #main1{
-    overflow-y : scroll;
-    height: 96vh;
+    //overflow-y : scroll;
+    //height: 96vh;
     background-color: rgb(255, 255, 255);
-    padding-bottom: 7px;
+    //padding-bottom: 7px; 
 }
+
 #main1::-webkit-scrollbar {
     display: none;
-  }
+}
+
 
 // AI가 분석하는 리뷰
 
@@ -408,15 +405,16 @@ input[type="radio"] {
 .items-end {
     align-items: flex-end;
 }
-.w-4 {
-    width: 4px;
-}
+
+
 .h-\[50px\] {
     height: 50px;
 }
+
 .flex {
     display: flex;
 }
+
 .mt-4 {
     margin-top: 4px;
 }
@@ -662,13 +660,13 @@ img, video {
     font-size: 18px;
    }
   
-  .btn-5:hover {
+.btn-5:hover {
     background-position: right center; /* change the direction of the change here */
-  }
+}
 
-  .btn-5 {
-    background-image: linear-gradient(to right, rgb(130, 170, 73) 51%, rgb(130, 170, 73) 51%, #ffecd2 100%);
-  }
+.btn-5 {
+    background-image: linear-gradient(to right, rgb(145 209 204) 50%, rgb(56 157 243) 50%, #ffecd2 100%);
+}
 
 // 성분 구성 위험 단계 부분 (공통 css)
 
@@ -836,3 +834,72 @@ img, video {
     line-height: 21px;
     margin-left: -27px;
 }
+
+// 아래 구매하기 고정 버튼
+
+
+.z-10 {
+    z-index: 10;
+}
+
+.left-\[0\], .left-\[0px\] {
+    left: 0;
+}
+
+.bottom-\[0\], .bottom-\[0px\] {
+    bottom: 0;
+}
+
+.fixed {
+    position: sticky;
+    background-color: white;
+}
+
+
+
+.bg-white {
+    background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+
+.max-w-\[600px\] {
+    max-width: 600px;
+}
+
+.mx-auto {
+    width: 312px;
+    margin-bottom: 9px;
+}
+
+.allreviewbtncontainer1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+
+.allreviewbtn1 {
+    flex: 1 1 auto;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(0,0,0);
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 18px;
+   }
+  
+.allreviewbtn1:hover {
+    background-position: right center; /* change the direction of the change here */
+}
+
+.btn-6 {
+    background-image: linear-gradient(to right, rgb(145 209 204) 50%, rgb(56 157 243) 50%, #ffecd2 100%);
+}
+
+
+
