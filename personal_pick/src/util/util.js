@@ -3,6 +3,8 @@ import withReactContent from 'sweetalert2-react-content'
 import Swal from 'sweetalert2'
 import 'animate.css';
 import { IP } from './setIp';
+import emptyStar from '../img/빈별.png'
+import star from '../img/별.png'
 
 export function sendGet(url, func=null ) {
     axios
@@ -102,4 +104,51 @@ export function setIcon(idx){
         default:
             return <div>{idx+1}</div>
     }
+}
+
+// 댓글 쓰기용 별점 출력
+export function setStarMenu(func)
+{
+    let List = []
+    for(let i =1; i< 6; i++)
+    {
+        List.push(<img key={i} className={'star comdStar'} src={emptyStar} onClick={(e)=>{
+            func(i);
+            changeStar(List,i);
+        }}/>)
+    }
+    return List;
+}
+function changeStar(list, idx)
+{
+    let before = document.getElementsByClassName('comdStar');
+    for(let i = 0; i< before.length; i++)
+    {
+        if(i<idx)
+        {
+            before[i].src = star;
+        }
+        else
+        {
+            before[i].src = emptyStar;
+        }
+    }
+}
+
+
+// 상세페이지에서 리뷰 별점 출력
+
+export function setScore(idx){
+    let stars = []
+    for(let i = 0; i<5; i++)
+    {
+        if(i<idx)
+        {
+            stars.push(<img key={i} className='star' src={star} alt='별'/>)
+        }
+        else{
+            stars.push(<img key={i} className='star' src={emptyStar} alt='별'/>)
+        }
+    }
+    return stars;
 }
