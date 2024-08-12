@@ -3,7 +3,7 @@ import InputBox from '../../components/inputbox/InputBox';
 import { sendDel, sendGet, sendPost, URL } from '../../util/util';
 import './Search.scss';
 import Star from '../../img/별.png';
-import Back from '../../img/뒤로가기.png';
+import Back from '../../img/왼쪽.png';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -120,9 +120,13 @@ const Search = () => {
                 {/* InputBox 컴포넌트에 searchAdd 함수를 전달하여 검색어 입력 시 호출되게 함 */}
                 <div className='searchbtn'>
                     {/* <button className='' type="button" onClick={() => nav('/')}> */}
-                        <img className='back'  onClick={() => nav('/')} src={Back}></img>
                         {/* </button> */}
-                    <span><InputBox className='searchwidth'func={searchAdd}></InputBox></span>
+                        
+                    <div className='back'>
+                        <img   onClick={() => nav('/')} src={Back}></img>
+                    </div>
+                        <InputBox className='width'func={searchAdd}></InputBox>
+    
                 </div>
                 {/* <div style={{ height: '120px' }}> */}
                 <div>

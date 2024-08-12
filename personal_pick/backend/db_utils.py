@@ -1,14 +1,16 @@
 import pymysql
-
+from db_connection import db_connection
 
 def setQuery(sql=None, data = None):
-    # MySQL 데이터베이스 연결
+
+    db = db_connection()
+
     db = pymysql.connect(
         host='project-db-cgi.smhrd.com',
         port=3307,
-        user='campus_24SW_DD_p2_1',
-        password='smhrd1',
-        db='campus_24SW_DD_p2_1', 
+        user='personal_pick',
+        password='1234',
+        db='personal_pick', 
         charset='utf8mb4'
     )
 
@@ -33,14 +35,7 @@ def setQuery(sql=None, data = None):
 def PostQuery(sql = None, data = None):
     try:
         # MySQL 데이터베이스 연결
-        db = pymysql.connect(
-            host='project-db-cgi.smhrd.com',
-            port=3307,
-            user='campus_24SW_DD_p2_1',
-            password='smhrd1',
-            db='campus_24SW_DD_p2_1', 
-            charset='utf8mb4'
-        )
+        db = db_connection()
 
         # 데이터에 접근
         cursor = db.cursor()
@@ -61,14 +56,7 @@ def searchQuery(cursor, sql, data=None):
 # 나중에 포스트 형식 쓸 때 주석 풀 예정
 def testQuery(sql = None, data = None):
     # MySQL 데이터베이스 연결
-    db = pymysql.connect(
-        host='project-db-cgi.smhrd.com',
-        port=3307,
-        user='campus_24SW_DD_p2_1',
-        password='smhrd1',
-        db='campus_24SW_DD_p2_1', 
-        charset='utf8mb4'
-    )
+    db = db_connection()
     
     # 데이터에 접근
     cursor = db.cursor()

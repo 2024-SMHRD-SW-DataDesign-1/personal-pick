@@ -11,6 +11,8 @@ import account from '../../img/account.png'
 import goback from '../../img/왼쪽.png'
 import { FaAngleDown } from "react-icons/fa";
 import detailright from '../../img/오른쪽.png'
+import caution from '../../img/caution.png'
+import allergy from '../../img/allergy.png'
 
 const Detailinfo = () => {
     // 페이지 이동 함수
@@ -60,7 +62,7 @@ const Detailinfo = () => {
                 data.map((item, index) => (
                     <div key={index}>
 
-                    <div id = 'head'>
+                    <div >
                     {/* 화장품 이름 */}
                     
                     <div className='itemname'>
@@ -72,37 +74,36 @@ const Detailinfo = () => {
                         <div id = 'main1'>
 
                         {/* 화장품 사진 */}
-                        <div className='imgmain1 my-24'>
-                        <img src ={item.cos_img_src}/>
-                        </div>
+                        <img className='w-full' src ={item.cos_img_src}/>
+
 
                         {/* 화장품 브랜드 이미지, 이름 */}
                         <div className='brandmain my-24'>
-                        <div className='brand'>
+                        <div className='brand flex items-center px-20'>
                             <img src = {item.brand_img_src} className='brandimg'/><span id='brandname'>{item.brand_name}</span>
                         </div>
 
                         {/* 화장품 정보 */}
                         <div className ='iteminfo'>
-                        <div className='nameinfo'>
+                        <div className='nameinfo mt-8 px-20'>
                         {item.cos_name}
                         </div>
 
-                        <div className='starinfo'>
+                        <div className='starinfo hds-flex hds-items-center hds-space-x-2 px-20 mt-16'>
                         <img src = {star1} className='star' width={18}/><span className='starinfotext'>{item.grade}({item.grade_count})</span>
                         </div>
 
-                        <div className='priceinfo'>
+                        <div className='priceinfo px-20 mt-24'>
                         <div className='price'>
                         정가 :<span className='pricetext'>{item.price}원 / {item.vol}ml</span>
                         </div>
                         </div>
 
                         <div className='rankinginfo' onClick={(e)=>showmodal1(e)}>
-                        <div className='ranking'>
+                        <div className='ranking px-20 mt-24'>
                         랭킹 :<span className='rankingtext'>{item.ranking}</span>
                         </div>
-                        <img src = {detailright} width={25} height={25}/>
+                        <img src = {detailright} width={23} height={23}/>
                         </div>
                         </div>
                         </div>
@@ -110,38 +111,38 @@ const Detailinfo = () => {
                         <hr className='bar'/>
 
                         {/*ai 리뷰 */}
-                        <span className='flex justify-between px-20 my-24 aireview'><span className='ai'>AI가 분석한 리뷰</span></span>
+                        <span className='aireview mt-8 px-20'><span className='ai'>AI가 분석한 리뷰</span></span>
 
                         <div className='flex justify-between px-20 my-24 reviewinfo'>
                         <div className='likereview grow mr-24 w-1/2'>
-                        <img src ={smile} className='smile' width={26} height={26}/>
+                        <img src ={smile}  width={26} height={26}/>
                         <span className='like'>좋아요</span>
-                            <span className='margintop1'>진정되는</span>
-                            <span className='margintop1'>쿨링되는</span>
-                            <span className='margintop1'>수분있는</span>
-                            <span className='margintop1'>모공관리되는</span>
-                            <span className='margintop1'>자극없는</span>
-                            <span className='margintop1'>향에 만족한</span>
-                            <span className='margintop1'>보습되는</span>
+                            <span className='margintop1'>진정되는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop1'>쿨링되는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop1'>수분있는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop1'>모공관리되는<span className='reviewdata1 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop1'>자극없는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop1'>향에 만족한<span className='reviewdata2 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop1'>보습되는<span className='reviewdata hds-text-body-medium text-gray-tertiary'>0</span></span>
                         </div>
 
                         <div className='dislike grow mr-24 w-1/2'>
-                        <img src ={notsmile} className='smile' width={23} height={23}/>
+                        <img src ={notsmile}  width={23} height={23}/>
                         <span className='dontlike'>아쉬워요</span>
-                            <span className='margintop2'>가루날림이 있는</span>
-                            <span className='margintop2'>마르는</span>
-                            <span className='margintop2'>흘러내리는</span>
-                            <span className='margintop2'>잔여물이 남는</span>
-                            <span className='margintop2'>노폐물 제거 안되는</span>
-                            <span className='margintop2'>가려운</span>
-                            <span className='margintop2'>내장 도구가 안좋은</span>
+                            <span className='margintop2'>가루날림이 있는<span className='reviewdata3 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop2'>마르는<span className='reviewdata4 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop2'>흘러내리는<span className='reviewdata5 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop2'>잔여물이 남는<span className='reviewdata6 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop2'>노폐물 제거 안되는<span className='reviewdata7 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop2'>가려운<span className='reviewdata8 hds-text-body-medium text-gray-tertiary'>0</span></span>
+                            <span className='margintop2'>내장 도구가 안좋은<span className='reviewdata7 hds-text-body-medium text-gray-tertiary'>0</span></span>
                         </div>
                         </div>
 
                         {/* <hr className='bar2'/> */}
 
 
-                        <div className='detailreview flex justify-between px-20 my-24'>
+                        <div className='detailreview mt-8 px-20'>
                             리뷰
                         <div className='reviewcount'>
                             1432
@@ -156,9 +157,11 @@ const Detailinfo = () => {
                             <StarRating />
                             </div>
                             
+                        <div className='w-[1px] bg-gray-300'/>
+
 
                         {/* 평점 그래프 */}
-                        <div className='graphbarmain flex justify-between px-20 my-24'>
+                        <div className='graphbarmain'>
                         <div className='graphbar'/>
                         <span className='graphbartext'>5점</span>
                         <div className='graphbar'/>
@@ -174,34 +177,43 @@ const Detailinfo = () => {
 
                          {/* 계정 정보 및 사용자 리뷰 */}
                          <div className='accountmain'>
-                        <div className='accountinfo'>
-                        <img src = {account} width={50}/>
-                        <span className='nickname'>닉네임</span>
-                        <span className='skintype'>20대/건성/아토피/여드름</span>
+                        <div className='accountinfo flex items-center'>
+                        <img src = {account} width={50} className='w-40 h-40 rounded-full object-cover object-center'/>
+                        <div className='textonly'>
+                        <span className='nickname hds-text-subtitle-medium text-gray-primary'>닉네임</span>
+                        <span className='skintype hds-text-smalltext-large ml-2 text-gray-secondary'>20대/건성/아토피/여드름</span><br/>
+                        </div>
                         <div className='accountstar'>
-                            <StarRating/><span>날짜</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" class="text-gray-100"><path fill="currentColor" d="M17.712 21.992c-.12 0-.25-.03-.36-.09l-5.347-2.958-5.347 2.959a.75.75 0 0 1-.79-.04.761.761 0 0 1-.31-.74l1.03-6.328-4.378-4.478c-.2-.2-.26-.5-.17-.76.09-.27.32-.46.6-.5l5.997-.92L11.315 2.4c.25-.53 1.11-.53 1.36 0l2.688 5.738 5.997.92c.28.04.51.24.6.5.09.269.02.559-.17.759l-4.358 4.478 1.03 6.328a.76.76 0 0 1-.74.88z"></path></svg>
                             </div>
+                            <span className='hds-text-smalltext-large ml-8 text-gray-quaternary accountdate'>날짜</span>
                             </div>
                         
-                        <div className='goodcommentmain'>
-                            <img src = {smile} width={30} height={30}></img>
+                        <div className='goodcommentmain flex items-start gap-x-8 mt-24'>
+                            <img src = {smile} width={33} height={31}></img>
                             <span className='goodcomment'>좋은말</span>
                             </div>
 
-                        <div className='sosocommentmain'>
-                            <img src = {notsmile} width={26} height={26}></img>
+                        <div className='sosocommentmain flex items-start gap-x-8 mt-24'>
+                            <img src = {notsmile} width={28} height={25}></img>
                             <span className='sosocomment'>아쉬운말</span>
                             </div>
                             </div>
+
+
                         <hr className='bar3'/>
 
-                        
-                        
+                        {/* 성분 */}
 
-
-                        <div className='ingredientmain'>
+                        <div className='ingredientmain mt-8 px-20'>
                             <span>성분</span>
                             </div>
+
+                        <hr className='ingredientbar'/>
 
                         <div className='ingredientdropbox' onClick={(e)=>showmodal(e)}> 
                         <input id="dropdown" type="checkbox"/>
@@ -211,7 +223,8 @@ const Detailinfo = () => {
                         </label>
                         </div>
 
-                        <div className='ingredientcomposition'>
+                        {/* 성분 구성 */}
+                        <div className='ingredientcomposition mt-8 px-20'>
                             <span className='compositiontext'>성분 구성</span>
                             </div>
 
@@ -249,6 +262,40 @@ const Detailinfo = () => {
 
                         {/* 성분 구성 막대 */}
                         <div className="flex flex-row-reverse mt-16 h-12 rounded-4 bg-gray-600">
+                        </div>
+
+                        <hr className='allingredientbar'/>
+
+
+                        {/* 전체 성분 */}
+                        <div className='allingredient mt-8 px-20'>
+                            <span>전체 성분 (들어올값)개</span>
+                        </div>
+
+                        <div className= 'caution mt-8 px-20'>
+                            <div className='flex gap-x-8'>
+                            <img src={caution} alt="caution"/>
+                            <span className = 'cautiontext hds-text-body-medium text-gray-secondary'>
+                                20가지 주의성분
+                                </span>
+                                <div className='ingredientbetween'>
+                                    <span className='hds-text-subtitle-medium text-gray-primary'>0</span>
+                                    <span className='hds-text-body-medium text-gray-secondary'>개</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className= 'allergy mt-8 px-20'>
+                            <div className='flex gap-x-8'>
+                            <img src={allergy} alt="allergy"></img>
+                            <span className = 'allergytext hds-text-body-medium text-gray-secondary'>
+                                알레르기 주의성분
+                                </span>
+                                <div className='ingredientbetween1'>
+                                    <span className='hds-text-subtitle-medium text-gray-primary'>0</span>
+                                    <span className='hds-text-body-medium text-gray-secondary'>개</span>
+                                </div>
+                            </div>
                         </div>
 
 
