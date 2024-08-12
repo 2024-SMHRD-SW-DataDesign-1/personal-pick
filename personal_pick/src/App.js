@@ -8,6 +8,7 @@ import Detailinfo from './page/detailinfo/Detailinfo';
 import Login from './page/backendtest/Login';
 import Join from './page/backendtest/Join';
 import Order from './page/backendtest/Order'
+import Point from './page/backendtest/Point'
 import { createStore } from 'redux';
 import personalReducer from './redux/reducer/reducer';
 import { Provider } from 'react-redux';
@@ -30,6 +31,7 @@ function App() {
                         <Route path='/login' element={<Login />}></Route>
                         <Route path='/mypage' element={<Mypage />}></Route>
                         <Route path='/order' element={<Order />}></Route>
+                        <Route path='/point' element={<Point />}></Route>
                         <Route path='/search/:value' element={<Search />}></Route>
                         <Route path='/search' element={<Search />}></Route>
                         <Route path='/totalitem/:category' element={<TotalRanking />}></Route>

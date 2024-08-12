@@ -9,9 +9,9 @@ import { getLoginSession } from '../../util/session'
 const Order = (e) => {
     // 페이지 이동 함수
     const navigate = useNavigate();
-    const home = () => navigate('/');
-    const join = () => navigate('/join');
-    const login = () => navigate('/login');
+    // const home = () => navigate('/');
+    // const join = () => navigate('/join');
+    // const login = () => navigate('/login');
     const mypage = () => navigate('/mypage');
     
     // 로그인 유저 주문/배송 데이터 저장
@@ -30,7 +30,7 @@ const Order = (e) => {
                     }
                 });
                 
-                console.log('OrderData : ',responseOrderData.data);
+                // console.log('OrderData : ',responseOrderData.data);
                 
                 setOrderData(responseOrderData.data)
             }
@@ -39,7 +39,7 @@ const Order = (e) => {
         // 화면이 첫 랜더링 될 때 함수 실행
         LoadUsersData();
     }, []);
-    console.log('orderData', orderData);
+    // console.log('orderData', orderData);
     
     // 날짜 문자열을 변환
     // Thu, 01 Aug 2024 14:30:00 GMT

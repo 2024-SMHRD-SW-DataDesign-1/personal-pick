@@ -9,9 +9,11 @@ const Join = () => {
     // 페이지 이동 함수
     const navigate = useNavigate();
     const home = () => navigate('/');
-    const join = () => navigate('/join');
-    const login = () => navigate('/login');
+    // const join = () => navigate('/join');
+    // const login = () => navigate('/login');
     const order = () => navigate('/order');
+    const point = () => navigate('/point');
+
     
 
     // 로그인 유저 데이터 저장
@@ -53,7 +55,7 @@ const Join = () => {
         // 화면이 첫 랜더링 될 때 함수 실행
         LoadUsersData();
     }, []);
-    console.log('userData : ',userData);
+    // console.log('userData : ',userData);
     
 
     return (
@@ -99,7 +101,7 @@ const Join = () => {
                         <p>{userData?orderData.length:0}</p>
                     </span>
                     <span className='middle'>
-                        <h1>포인트</h1>
+                        <h2 onClick={point}>포인트</h2>
                         <p>0 P</p>
                     </span>
                     <span className='right'>
