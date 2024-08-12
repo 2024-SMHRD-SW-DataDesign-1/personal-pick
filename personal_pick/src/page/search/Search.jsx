@@ -38,7 +38,7 @@ const Search = () => {
 
     useEffect(() => {
         // 검색어 전체 리스트 형식으로 가져오는 게 아니라 단어 객체 하나만 가져온다는 것
-        sendGet(URL + "/SearchPage?value=" + inputvalue, showConsole);
+        //sendGet(URL + "/SearchPage?value=" + inputvalue, showConsole);
     }, [inputvalue]);
 
 
@@ -49,7 +49,7 @@ const Search = () => {
     // 굳이 sendDel을 만들지 않아도 sendPost로 내가 검색한 최근검새어 리스트(ex.5개)를 보낼 것이고
     // X 버튼을 onClick 했을 때에 남은 리스트(ex.4개)도 sendPost로 보내기때문에 sendDel를 만들 필요 없음
     useEffect(() => {
-        console.log(searchHistory);
+        
         sendPost(URL + "/SearchList", null, searchHistory);
     }, [searchHistory]); // 빈배열 안에 searchHistory(최근 검색어)가 있는 경우는 최근검색어를 검색하고 화면에 나왔을 때 렌더링하겠다는 뜻
 
@@ -80,9 +80,9 @@ const Search = () => {
             // 최근 검색어의 바뀐 데이터(내가 최근에 검색한 단어들)를 계속해서 화면에 출력하는 역할(연결점 같은 것)
             setSearchHistory([...newHistory])
         }
-
+        sendGet(URL + "/SearchPage?value=" + searchValue, showConsole);
         // 검색어를 inputvalue에 설정하여 검색 실행
-        setInputvalue(searchValue);
+        setInputvalue("");
 
         
     };
@@ -127,7 +127,7 @@ const Search = () => {
                     <div className='back'>
                         <img   onClick={() => nav('/')} src={Back}></img>
                     </div>
-                        <InputBox className='width'func={searchAdd}></InputBox>
+                        <InputBox className='width'func={searchAdd} inputvalue= {inputvalue} setvalue={setInputvalue}></InputBox>
     
                 </div>
                 {/* <div style={{ height: '120px' }}> */}
