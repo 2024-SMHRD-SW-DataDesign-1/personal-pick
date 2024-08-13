@@ -65,10 +65,13 @@
 }
 
 .category_container{
+    padding-top : 10px;
+    padding-bottom : 10px;
     overflow-x: scroll;
     white-space: nowrap;
+    background-color: #f4fff2;
 }
 
 .category_container::-webkit-scrollbar {
-    // display: none;
+    display: none;
   }
