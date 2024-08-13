@@ -51,7 +51,8 @@
 .starinfotext {
     display: flex;
     line-height: 14px;
-    margin-top: 3px
+    margin-top: 3px;
+    font-size: 14px;
 }
 
 .brand {
@@ -64,11 +65,12 @@
 
 #brandname {
     margin-left: 14px;
+    font-size: 12px;
 }
 
 .nameinfo {
     display: flex;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 700;
 }
 
@@ -82,6 +84,7 @@
     display: flex;
     margin-right: 40px;
     font-weight: 700;
+    font-size: 14px;
 }
 
 .pricetext{
@@ -103,6 +106,7 @@
     display: flex;
     margin-right: 40px;
     font-weight: 700;
+    font-size: 14px;
 }
 
 
@@ -191,7 +195,7 @@
 
 .like {
     margin: auto;
-    font-size: 18px;
+    font-size: 17px;
     margin-left: 7px;
 }
 
@@ -263,6 +267,7 @@
 
 .ai{
     font-weight: 700;
+    font-size: 20px;
 }
 
 .reviewinfo {
@@ -656,6 +661,7 @@ img, video {
     color: rgb(0,0,0);
     border-radius: 10px;
     font-weight: 600;
+    text-decoration-line: none;
     cursor: pointer;
     margin-top: 30px;
     font-size: 18px;
@@ -837,7 +843,7 @@ img, video {
 }
 
 
-// 아래 구매하기 고정 버튼
+// 아래 앱으로 보기 고정 버튼
 
 
 .z-10 {
@@ -890,6 +896,7 @@ img, video {
     background-size: 200% auto;
     color: rgb(0,0,0);
     border-radius: 10px;
+    text-decoration-line: none;
     font-weight: 600;
     cursor: pointer;
     font-size: 18px;

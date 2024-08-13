@@ -83,7 +83,8 @@ const Search = () => {
         sendGet(URL + "/SearchPage?value=" + searchValue, showConsole);
         
         // 검색어를 inputvalue에 설정하여 검색 실행
-        setInputvalue("");
+        // setInputvalue("");
+        setInputvalue(inputvalue);
 
         
     };
