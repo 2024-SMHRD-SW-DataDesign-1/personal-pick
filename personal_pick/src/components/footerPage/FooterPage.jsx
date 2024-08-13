@@ -5,6 +5,7 @@ import './FooterPage.scss'
 const FooterPage = () => {
   return (
     <div id='wrapper' >
+      <div className='division_line'></div>
       <img src={Logo} className="logoimg" alt="팀로고" />
       <div className='footer'>
         <p>주식회사 퍼스널픽</p>
