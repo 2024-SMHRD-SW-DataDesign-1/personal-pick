@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { modalClose, showSwal } from '../../util/util';
 import Up from '../../img/위쪽.png'
 import Down from '../../img/아래쪽.png'
@@ -46,8 +46,10 @@ const Category = ({dic, setDic, categoryData}) => {
         }
         return result
     }
+
+
     function showView(){
-        console.log(dic)
+        
         
         if(categoryData[0] === '건성' || categoryData[0] === '10대')
         {
@@ -145,7 +147,7 @@ const Category = ({dic, setDic, categoryData}) => {
         for(let i=0; i< itemTag.length; i++)
         {
             itemTag[i].addEventListener("click", (e)=>{
-                console.log(e.target.innerText)
+                
                 if(isStrCheck(e.target.innerText))
                 {
                     return;
@@ -176,6 +178,7 @@ const Category = ({dic, setDic, categoryData}) => {
 
     function categoryClickEvent(e){
         e.stopPropagation()
+        
         if(categoryData[0] === '건성' || categoryData[0] === "10대")
         {
             setDic(e.target.innerText)
@@ -189,8 +192,36 @@ const Category = ({dic, setDic, categoryData}) => {
         }
     }
 
+
+    const [isMoving, setIsMoving] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    let scroll = document.getElementsByClassName('category_container');
+    const handleMouseDown = (e) => {
+        setIsMoving(true);
+        setStartX(e.pageX - scroll[0].offsetLeft);
+        setScrollLeft(scroll[0].scrollLeft);
+    };
+    
+    const handleMouseMove = (e) => {
+        if (!isMoving) return;
+        e.preventDefault();
+        const x = e.pageX - scroll[0].offsetLeft;
+        const walk = (x - startX) * 1.5; // 스크롤 속도 조절
+        scroll[0].scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsMoving(false);
+    };
+
+    const mouseout = () => {
+        
+        setIsMoving(false);
+    }
     return (
-        <div className='category_container' >
+        <div className='category_container cursor' onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} onMouseLeave={mouseout}>
             {
                 showView()
             }
