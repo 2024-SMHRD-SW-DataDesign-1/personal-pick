@@ -1,7 +1,9 @@
 .tempSkin_Container{
-    align-items: center;
-    justify-content: space-around;
-    height :400px;
+    // align-items: center;
+    // justify-content: space-around;
+    display: inline-block;
+    width : 80px;
+    text-align: center;
 }
 
 .skinChart{
@@ -19,4 +21,17 @@
     border : none;
     border-radius: 10px;
     overflow : hidden;
+    margin : auto;
 }
+
+.tempskin_Title{
+    word-break:break-all;
+}
+
+.temSkin_main{
+    display : flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
