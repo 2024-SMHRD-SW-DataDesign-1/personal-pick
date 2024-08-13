@@ -58,7 +58,7 @@
 
 // 최근 검색어의 사용자가 검색한 단어들
 .search {
-    padding-bottom: 16px;
+    padding-bottom: 24px;
     padding-top: 24px;
     padding-left: 20px;
     padding-right: 20px;
@@ -95,15 +95,32 @@
     height: 10px;
     background-color: #f3f3f3;
     border: 0 solid #f2f2f2;
+    margin: 0;
+}
+
+.h-24{
+    height: 24px;
+}
+
+.timeproduct {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.searchtime {
+    color: #666;
+    line-height: normal;
+    font-size: 12px;
 }
 
 // 지금 가장 많이 구매하고 있어요 :)
 .product {
     font-size: 20px;
     font-weight: 700;
-    padding-top: 16px;
-    padding-right: 20px;    
-    padding-bottom: 16px;
+    margin-top: 5px;
+    // padding-top: 16px;
+    // padding-right: 20px;    
+    // padding-bottom: 16px;
     letter-spacing: -.2px;
 }
 
@@ -140,6 +157,10 @@
     //height: 72px;
     justify-content: center;
     align-items: center;
+}
+
+.productimg {
+    padding: 3px;
 }
 
 .items {
