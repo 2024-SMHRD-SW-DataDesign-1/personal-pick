@@ -381,10 +381,15 @@ const Detailinfo = () => {
                         {/* 댓글쓰기 쓸때 쓸 별점 */}
                         {/* {setStarMenu(setStarScore) */}
 
+
+
                         <br /><br /><br /><br /><br />
+                        {/* 목적별 성분 */}
                         <TempSkin/>
 
                         {/* 회색 텍스트 박스 */}
+
+                        {/*피부 타입별 성분 */}
                         <br /><br /><br /><br /><br />
                         <SkinType/>
                         <br /><br /><br /><br /><br />
