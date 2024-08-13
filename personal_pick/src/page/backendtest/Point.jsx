@@ -7,8 +7,8 @@ import { getLoginSession } from '../../util/session'
 
 
 const Point = (e) => {
-    const style_main = {
-        backgroundColor: 'gray',
+    const style_fst = {
+        // backgroundColor: 'gray',
         // padding: '20px',
         // borderRadius: '4px',
     };
@@ -67,11 +67,17 @@ const Point = (e) => {
                     </span>
                 </div>
 
-                <div id='main' style={style_main}>
-                    <div className='fst'>
-                        <img src="https://cdn-icons-png.flaticon.com/512/6063/6063734.png" alt="" />
-                        <span className='right'></span>
+                <div id='main'>
+                    <div className='fst' style={style_fst}>
+                        <span>사용 가능 포인트</span>
+                        <span className='right'>3500P</span>
+
+                        {/* <img src="https://cdn-icons-png.flaticon.com/512/6063/6063734.png" alt="" />
+                        <span className='right'></span> */}
                     </div>
+                    <div className='ad'>
+                    <h1>AD</h1>
+                </div>
                 </div>
 
             </div>
