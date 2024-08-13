@@ -15,6 +15,8 @@ import allergy from '../../img/allergy.png'
 import ScrollToTop from '../../components/scrolltotop/ScrollToTop'
 import { setScore } from '../../util/util'
 import StarRating from './StarRating'
+import TempSkin from '../../components/tempskin/TempSkin'
+import SkinType from '../../components/skintype/SkinType'
 
 
 const Detailinfo = () => {
@@ -282,7 +284,7 @@ const Detailinfo = () => {
 
                             {/* 리뷰 전체보기 버튼 */}
                             <div class="allreviewbtncontainer">
-                            <a class="allreviewbtn btn-5">리뷰 전체보기</a>
+                            <a class="allreviewbtn btn-5" href='https://play.google.com/store/search?q=%EC%83%98%ED%94%8C%EB%A1%9C%EB%93%9C&c=apps&hl=ko'>리뷰 전체보기</a>
                             </div>
 
                         {/* 성분 */}
@@ -376,24 +378,37 @@ const Detailinfo = () => {
 
                         {/* 하단 고정 버튼 쪽*/}
 
-                        {/* 페이지업 버튼 */}
-
-                         <ScrollToTop/>
-
-
-                        <div className='fixed bottom-[0] left-[0] w-full z-10 pointer-events-none z-10'>
-                        <div className='max-w-[600px] mx-auto bg-white'>
-                        <div className="allreviewbtncontainer1">
-                            <a className="allreviewbtn1 btn-6">구매하기</a>
-                            </div>
-                            </div>
-                            </div>
-
                         {/* 댓글쓰기 쓸때 쓸 별점 */}
                         {/* {setStarMenu(setStarScore) */}
 
 
-                    
+
+                        <br /><br /><br /><br /><br />
+                        {/* 목적별 성분 */}
+                        <TempSkin/>
+
+                        {/* 회색 텍스트 박스 */}
+
+                        {/*피부 타입별 성분 */}
+                        <br /><br /><br /><br /><br />
+                        <SkinType/>
+                        <br /><br /><br /><br /><br />
+
+
+
+                        {/* 페이지업 버튼 */}
+
+                        <ScrollToTop/>
+
+
+                        <div className='fixed bottom-[0] left-[0] w-full z-10 pointer-events-none z-10'>
+                            <div className='max-w-[600px] mx-auto bg-white'>
+                            <div className="allreviewbtncontainer1">
+                            <a className="allreviewbtn1 btn-6" href='https://play.google.com/store/search?q=%EC%83%98%ED%94%8C%EB%A1%9C%EB%93%9C&c=apps&hl=ko'>앱으로 보기</a>
+                            </div>
+                            </div>
+                            </div>
+                        
 
                         </div>
                 ))
