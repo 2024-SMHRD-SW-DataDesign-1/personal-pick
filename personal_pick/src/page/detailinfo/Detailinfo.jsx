@@ -404,10 +404,10 @@ const Detailinfo = () => {
                         <div className='fixed bottom-[0] left-[0] w-full z-10 pointer-events-none z-10'>
                             <div className='max-w-[600px] mx-auto bg-white'>
                             <div className="allreviewbtncontainer1">
-    <a className="allreviewbtn1 btn-6" href='https://play.google.com/store/search?q=%EC%83%98%ED%94%8C%EB%A1%9C%EB%93%9C&c=apps&hl=ko'>앱으로 보기</a>
-    </div>
-    </div>
-    </div>
+                            <a className="allreviewbtn1 btn-6" href='https://play.google.com/store/search?q=%EC%83%98%ED%94%8C%EB%A1%9C%EB%93%9C&c=apps&hl=ko'>앱으로 보기</a>
+                            </div>
+                            </div>
+                            </div>
                         
 
                         </div>
