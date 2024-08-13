@@ -1,6 +1,4 @@
 .tempSkin_Container{
-    // align-items: center;
-    // justify-content: space-around;
     display: inline-block;
     width : 80px;
     text-align: center;
@@ -8,7 +6,6 @@
 
 .skinChart{
     // object-fit: fill;
-
 }
 
 .skinChart_back{
@@ -30,7 +27,7 @@
 
 .temSkin_main{
     display : flex;
-    flex-wrap: nowrap;
+
     overflow-x: auto;
     scrollbar-width: none;
 }
