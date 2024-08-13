@@ -12,6 +12,7 @@ import Point from './page/backendtest/Point'
 import { createStore } from 'redux';
 import personalReducer from './redux/reducer/reducer';
 import { Provider } from 'react-redux';
+import Footer from './components/footerPage/FooterPage';
 
 import './App.css'
 import './index.scss'
@@ -37,7 +38,9 @@ function App() {
                         <Route path='/totalitem/:category' element={<TotalRanking />}></Route>
                         <Route path='/detailinfo/:idx' element={<Detailinfo />}></Route>
                     </Routes>
+                    <Footer></Footer>
                 </div>
+
 
 
             </BrowserRouter>
