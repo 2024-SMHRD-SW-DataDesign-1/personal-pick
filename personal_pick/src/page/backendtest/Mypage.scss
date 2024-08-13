@@ -145,8 +145,13 @@
                 // 수직
                 align-items: center;
                 /* 수평 */
-                justify-content: center; 
-        
+                justify-content: flex-end; 
+                // float: left;
+                
+                // 부모 클래스(.fst) 내에서 .right의 width를 100%로 설정
+                // .middle과 같은 다른 요소가 차지하는 공간이 있다면, 나머지 공간을 차지해 총 합이 100%가 되게 설정
+                flex: 1;
+                
                 height: 100%;
                 // width: 7vw;
                 > img{
