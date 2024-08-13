@@ -167,7 +167,7 @@ const Home = () => {
             </div>
 
             <div className="basic-text cursor" onClick={() => nextTotalPage(1)}>
-                {today.getMonth() + "월 " + today.getDate() + "일 " + getDay(today.getDay())}
+                {(today.getMonth()+1) + "월 " + today.getDate() + "일 " + getDay(today.getDay())}
                 <span> 조회수🎁 </span> 급상승
                 <img className="category_arrow" src={Right} alt="" />
             </div>
