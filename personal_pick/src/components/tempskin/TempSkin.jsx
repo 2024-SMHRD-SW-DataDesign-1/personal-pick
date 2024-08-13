@@ -6,55 +6,11 @@ let dic = {
     value : "피부 보습"
 }
 
-let skinList = [
-    {
-        count : 3,
-        value : "피부 보습"
-    },{
-        count : 3,
-        value : "피부 보습"
-    },{
-        count : 3,
-        value : "피부 보습"
-    },{
-        count : 3,
-        value : "피부 보습"
-    },{
-        count : 3,
-        value : "피부 보습"
-    },{
-        count : 3,
-        value : "피부 보습"
-    },{
-        count : 3,
-        value : "피부 보습"
-    },{
-        count : 3,
-        value : "피부 보습"
-    },{
-        count : 3,
-        value : "피부 보습"
-    },{
-        count : 3,
-        value : "피부 보습"
-    },{
-        count : 3,
-        value : "피부 보습"
-    },
-    {
-        count : 3,
-        value : "피부 보습"
-    },
-    {
-        count : 3,
-        value : "피부 보습"
-    }
-]
 
 const TempSkin = ( {list} ) => {
     return (
         <div className='temSkin_main'>
-            {skinList.map((dic,idx)=>{
+            {list.map((dic,idx)=>{
                 return (
                     <div >
                         <div className='tempSkin_Container' key={idx}>
