@@ -287,7 +287,7 @@
 .detailreview {
     margin: auto;
     display: flex;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 600;
     margin-top: 48px;
     margin-bottom: 9px;
@@ -417,10 +417,6 @@ input[type="radio"] {
     height: 50px;
 }
 
-.flex {
-    display: flex;
-}
-
 .mt-4 {
     margin-top: 4px;
 }
@@ -514,7 +510,7 @@ img, video {
     display: flex;
     position: relative;
     place-self: flex-end;
-    margin-left: -194px;
+    margin-left: -170px;
 }
 
 .textonly{
@@ -570,7 +566,7 @@ img, video {
 
 .ingredientmain{
     margin-top: 70px;
-    font-size: 23px;
+    font-size: 21px;
     font-weight: 600;
     margin-bottom: 23px;
     margin-left: 11px;
@@ -632,9 +628,10 @@ img, video {
 
 .ingredientcomposition {
     margin-top: 90px;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 600;
     margin-left: 11px;
+    margin-bottom: 55px;
 }
 
 // 전체 리뷰보기 버튼
@@ -715,6 +712,10 @@ img, video {
     color: #999;
 }
 
+.colordanger {
+    margin-top: 20px;
+}
+
 // 청록색 부분
 .bg-mint-600 {
     --tw-bg-opacity: 1;
@@ -773,7 +774,7 @@ img, video {
 }
 
 .h-12 {
-    height: 0px;
+    height: 15px;
 }
 
 .mt-16 {
@@ -783,7 +784,7 @@ img, video {
 // 전체 성분 
 
 .allingredient{
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 600;
     margin-top: 80px;
     margin-left: 11px;

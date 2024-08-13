@@ -83,6 +83,50 @@ const Detailinfo = () => {
         console.log(e.target.innerText)
     }
 
+    let skinList = [
+        {
+            count : 1,
+            value : "피부 보습1"
+        },{
+            count : 2,
+            value : "피부 보습2"
+        },{
+            count : 3,
+            value : "피부 보습3"
+        },{
+            count : 4,
+            value : "피부 보습4"
+        },{
+            count : 3,
+            value : "피부 보습5"
+        },{
+            count : 3,
+            value : "피부 보습"
+        },{
+            count : 3,
+            value : "피부 보습"
+        },{
+            count : 3,
+            value : "피부 보습"
+        },{
+            count : 3,
+            value : "피부 보습"
+        },{
+            count : 3,
+            value : "피부 보습"
+        },{
+            count : 3,
+            value : "피부 보습"
+        },
+        {
+            count : 3,
+            value : "피부 보습"
+        },
+        {
+            count : 3,
+            value : "피부 보습"
+        }
+    ]
 
     
   return (
@@ -94,7 +138,7 @@ const Detailinfo = () => {
                     <div>
 
                     {/* 화장품 이름 */}
-                    
+                
                     <div className='itemname'key={index}>
                     <button className='goback' type="button" onClick={()=> navigate('/Search')}><span className= "gobackbtn"><img src={goback} width={20} height={20}></img></span></button>
                     <label>{item.cos_name}</label>
@@ -170,7 +214,6 @@ const Detailinfo = () => {
                         </div>
 
                         <hr className='bar2'/> 
-
 
                         <div className='detailreview mt-8 px-20'>
                             리뷰
@@ -248,34 +291,37 @@ const Detailinfo = () => {
                             1점
                         </span>
                         </div>
+                        </div>
+                        </div>
 
-                        </div>
-                        </div>
 
                          {/* 계정 정보 및 사용자 리뷰 */}
+                         {review.map((cos_idx) =>(
                          <div className='accountmain'>
                         <div className='accountinfo flex items-center'>
                         <img src = {account} width={50} className='w-40 h-40 rounded-full object-cover object-center'/>
                         <div className='textonly'>
-                        <span className='nickname hds-text-subtitle-medium text-gray-primary'>닉네임</span>
-                        <span className='skintype hds-text-smalltext-large ml-2 text-gray-secondary'>20대/건성/아토피/여드름</span><br/>
+                        <span className='nickname hds-text-subtitle-medium text-gray-primary'>{cos_idx.user_id}</span>
+                        <span className='skintype hds-text-smalltext-large ml-2 text-gray-secondary'>{cos_idx.user_age}/{cos_idx.type}/{cos_idx.matter1}/{cos_idx.matter2}</span><br/>
                         </div>
                         <div className='accountstar'>
-                        {setScore(4)}
+                        {setScore(3)}
                             </div>
-                            <span className='hds-text-smalltext-large ml-8 text-gray-quaternary accountdate'>날짜</span>
-                            </div>
+                        <span className='hds-text-smalltext-large ml-8 text-gray-quaternary accountdate'>{cos_idx.review_date}</span>
+                        </div>
+                        
                         
                         <div className='goodcommentmain flex items-start gap-x-8 mt-24'>
                             <img src = {smile} width={32} height={31}></img>
-                            <span className='goodcomment'>좋은말</span>
+                            <span className='goodcomment'>{cos_idx.good_review}</span>
                             </div>
 
                         <div className='sosocommentmain flex items-start gap-x-8 mt-24'>
                             <img src = {notsmile} width={28} height={25}></img>
-                            <span className='sosocomment'>{item.bad_review}</span>
+                            <span className='sosocomment'>{cos_idx.bad_review}</span>
                             </div>
                             </div>
+                        ))}
 
 
                         <hr className='bar3'/>
@@ -312,7 +358,7 @@ const Detailinfo = () => {
 
                         {/* 성분 구성 위험 단계 */}
 
-                        <div class="flex justify-between mt-16">
+                        <div class="colordanger flex justify-between mt-16">
                         <div className="flex items-center gap-x-4">
                         <div className="w-[10px] h-[10px] rounded-full bg-mint-600"></div>
                         <span className="hds-text-smalltext-large text-mint-600">1-2</span>
@@ -385,7 +431,9 @@ const Detailinfo = () => {
 
                         <br /><br /><br /><br /><br />
                         {/* 목적별 성분 */}
-                        <TempSkin/>
+                        <TempSkin list = {skinList}/>
+                       
+                        
 
                         {/* 회색 텍스트 박스 */}
 
