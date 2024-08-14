@@ -109,8 +109,8 @@ const SkinType = () => {
         <Bar className='barr' data={data} options={options} />
       </span>
       <span className='right'>
-        <h1>123</h1>
-        <h1>123</h1>
+        <h1 className='goodlike'>4</h1>
+        <h1 className='badhate'>1</h1>
       </span>
     </div>
   );
