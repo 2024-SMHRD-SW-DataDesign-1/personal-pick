@@ -95,3 +95,4 @@ export const isStrCheck = (str) => {
         return !isCheck;
     }
 }
+
