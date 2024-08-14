@@ -6,7 +6,7 @@ const FooterPage = () => {
   return (
     <div id='wrapper' >
       <div className='division_line'></div>
-      <img src={Logo} className="logoimg" alt="팀로고" />
+      {/* <img src={Logo} className="logoimg" alt="팀로고" /> */}
       <div className='footer'>
         <p>주식회사 퍼스널픽</p>
         <p>팀장 : 최지원 / 팀원 : 김도연 이상현 오세원 정승진 </p>
