@@ -110,12 +110,6 @@
 }
 
 
-#main1{
-    //overflow-y : scroll;
-    //height: 96vh;
-    background-color: rgb(255, 255, 255);
-    //padding-bottom: 7px; 
-}
 
 #main1::-webkit-scrollbar {
     display: none;
@@ -219,7 +213,7 @@
 .bar {
     --tw-bg-opacity: 1;
     background-color: rgba(242, 242, 242, var(--tw-bg-opacity));
-    height: 10px;
+    height: 8px;
     border-width: 0;
     margin-bottom: 30px;
 }
@@ -227,7 +221,7 @@
 .bar2 {
     --tw-bg-opacity: 1;
     background-color: rgba(242, 242, 242, var(--tw-bg-opacity));
-    height: 10px;
+    height: 8px;
     border-width: 0;
     margin-bottom: 31px;
 }
@@ -255,7 +249,7 @@
 .dislike {
     display:table-cell;
     vertical-align: middle;
-    margin-top: 3px;
+    margin-top: 2px;
 }
 
 .aireview {
@@ -446,6 +440,11 @@ input[type="radio"] {
 
 .items-end {
     align-items: flex-end;
+}
+
+.reviewstar {
+    display: flex;
+    position: relative;
 }
 
 // 계정 정보 및 리뷰 
@@ -786,22 +785,22 @@ img, video {
 .allingredient{
     font-size: 20px;
     font-weight: 600;
-    margin-top: 80px;
+    margin-top: 43px;
     margin-left: 11px;
 }
 
-.allingredientbar{
+.allingredientbar {
     --tw-bg-opacity: 1;
     background-color: rgba(242, 242, 242, var(--tw-bg-opacity));
-    height: 10px;
+    height: 5px;
     border-width: 0;
-    transform: translate(0px, 135px);
+    margin-top: 65px;
 }
 
 .ingredientbar {
     --tw-bg-opacity: 1;
     background-color: rgba(242, 242, 242, var(--tw-bg-opacity));
-    height: 10px;
+    height: 4px;
     border-width: 0;
     transform: translate(0px, 103px);
 }
@@ -843,6 +842,48 @@ img, video {
     margin-left: -27px;
 }
 
+// 목적별 성분
+
+.purpose {
+    margin: auto;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    margin-top: 43px;
+}
+
+.purposeingredientbar {
+    --tw-bg-opacity: 1;
+    background-color: rgba(242, 242, 242, var(--tw-bg-opacity));
+    height: 4px;
+    border-width: 0;
+    margin-top: 43px;
+}
+
+// 회색 텍스트 박스 
+.graybox {
+    margin: auto;
+    margin-top: 47px;
+}
+
+.background-gray-secondary-disabled, .background-gray-secondary-hovered {
+    background-color: #f7f7f7;
+}
+
+.py-16 {
+    padding-bottom: 16px;
+    padding-top: 16px;
+}
+
+.px-20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.rounded-8 {
+    border-radius: 8px;
+}
 
 // 아래 앱으로 보기 고정 버튼
 
@@ -911,5 +952,44 @@ img, video {
     background-image: linear-gradient(to right, rgb(145 209 204) 50%, rgb(56 157 243) 50%, #ffecd2 100%);
 }
 
+.grayboxareabar {
+    --tw-bg-opacity: 1;
+    background-color: rgba(242, 242, 242, var(--tw-bg-opacity));
+    height: 5px;
+    border-width: 0;
+    margin-top: 65px;
+}
 
+// 피부 타입 성분
+
+.skintypeingredient {
+    margin: auto;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    margin-top: 43px;
+}
+
+// 회색 텍스트 박스 2
+
+.pt-12 {
+    padding-top: 12px;
+}
+.pb-16 {
+    padding-bottom: 16px;
+}
+.px-20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.graybox2 {
+    margin: auto;
+    margin-top: 47px;
+}
 

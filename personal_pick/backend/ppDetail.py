@@ -40,7 +40,8 @@ class ppGetReveiw(Resource):
                             JOIN 
                                 reviews r ON u.user_id = r.user_id
                             WHERE 
-                                cos_idx = %s""", idx)
+                                cos_idx = %s
+                            limit 2""", idx)
         # print("dataquery: ", data)
         
         return jsonify(data)
@@ -53,7 +54,7 @@ class ppScoreAvg(Resource):
         value = request.args.to_dict()
         idx = int(value['idx'])
         print("idx : ",idx)
-        data = setQuery("""select round(avg(score)) as score_avg
+        data = setQuery("""select round(avg(score), 2) as score_avg
                             from reviews
                             where cos_idx = %s""", idx)
         return jsonify(data)
@@ -65,8 +66,21 @@ class ppScoreCnt(Resource):
         value = request.args.to_dict()
         idx = int(value['idx'])
         print("idx : ",idx)
-        data = setQuery("""select count(score) as score_cnt
+        data = setQuery("""select score, count(score) as score_cnt
                             from reviews
                             where cos_idx = %s
                             group by score""", idx)
+        return jsonify(data)
+    
+
+class ppReviewCnt(Resource):
+
+    def get(self):
+        value = request.args.to_dict()
+        idx = int(value['idx'])
+        print("idx : ",idx)
+        data = setQuery("""select count(good_review) as review_cnt
+                            from reviews
+                            where cos_idx = %s
+                            group by cos_idx;""", idx)
         return jsonify(data)
