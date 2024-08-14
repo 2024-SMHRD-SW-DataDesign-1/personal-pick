@@ -154,7 +154,7 @@ const Search = () => {
                     <hr className='line' />
                 </div>
                 {/* 서버에서 가져온 제품 리스트를 화면에 표시 */}
-                <div className='h-24'></div>
+                <div className='h-24'/>
                 <div className='timeproduct'>
                     <p className='searchtime'>{today.getMonth()+1 + "월 " + today.getDate() + "일 " + getDay(today.getDay()) + today.getHours() + ":00" }</p>
                     <h2 className='product'>지금 가장 많이 구매하고 있어요:)</h2>

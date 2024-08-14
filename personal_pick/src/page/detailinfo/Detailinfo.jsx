@@ -27,8 +27,9 @@ const Detailinfo = () => {
     
     const [data , setData] = useState([]);
     const [review , setReview] = useState([]);
-    const [scoreavg , setScoreAvg] = useState([])
-    const [scorecnt , setScoreCnt] = useState([])
+    const [scoreavg , setScoreAvg] = useState([]);
+    const [scorecnt , setScoreCnt] = useState([]);
+    const [reviewcnt , setReviewCnt] = useState([]);
     // const [starscore , setStarScore] = useState(0);
     
 
@@ -38,8 +39,9 @@ const Detailinfo = () => {
     useEffect(()=>{
          sendGet(URL + "/DetailPage?idx="+idx , setData);
          sendGet(URL + "/ReviewPage?idx="+idx , setReview);
-         sendGet(URL + "/ScoreAvgPage?idx="+idx ,setScoreAvg);
-         sendGet(URL + "/ScoreCntPage?idx="+idx ,setScoreCnt);
+         sendGet(URL + "/ScoreAvg?idx="+idx ,setScoreAvg);
+         sendGet(URL + "/ScoreCnt?idx="+idx ,setScoreCnt);
+         sendGet(URL + "/ReviewCnt?idx="+idx ,setReviewCnt);
     },[]);
     
 
@@ -54,6 +56,10 @@ const Detailinfo = () => {
    useEffect(()=>{
     console.log(scorecnt)
    },[scorecnt]);
+
+   useEffect(()=>{
+    console.log(reviewcnt)
+   },[reviewcnt]);
 
 
     const showmodal = (e) => {
@@ -225,13 +231,16 @@ const Detailinfo = () => {
                         {/*평점 전체 div  */}
                         <div className='reviewall flex justify-between px-20 my-24'>
                         {/*평점 구간 */}
+                        {scoreavg.map((item) => (
                         <div className='reviewratemain'>
-                            <span className='reviewtext'>평점</span>
-                            <StarRating />
+                            <span className='reviewtext'>{item.score_avg}</span>
+                            <div className='reviewstar'>
+                            {setScore(`${item.score_avg}`)}
                             </div>
+                            </div>
+                        ))}
                             
                         <div className='w-[1px] bg-gray-300'/>
-
 
                         <div className="flex gap-x-8 h-[95px]">
                         {/* 5점 */}
@@ -296,29 +305,28 @@ const Detailinfo = () => {
 
 
                          {/* 계정 정보 및 사용자 리뷰 */}
-                         {review.map((cos_idx) =>(
+                         {review.map((item) =>(
                          <div className='accountmain'>
                         <div className='accountinfo flex items-center'>
                         <img src = {account} width={50} className='w-40 h-40 rounded-full object-cover object-center'/>
                         <div className='textonly'>
-                        <span className='nickname hds-text-subtitle-medium text-gray-primary'>{cos_idx.user_id}</span>
-                        <span className='skintype hds-text-smalltext-large ml-2 text-gray-secondary'>{cos_idx.user_age}/{cos_idx.type}/{cos_idx.matter1}/{cos_idx.matter2}</span><br/>
+                        <span className='nickname hds-text-subtitle-medium text-gray-primary'>{item.user_id}</span>
+                        <span className='skintype hds-text-smalltext-large ml-2 text-gray-secondary'>{item.user_age}/{item.type}/{item.matter1}/{item.matter2}</span><br/>
                         </div>
                         <div className='accountstar'>
-                        {setScore(3)}
+                        {setScore(`${item.score}`)}
                             </div>
-                        <span className='hds-text-smalltext-large ml-8 text-gray-quaternary accountdate'>{cos_idx.review_date}</span>
+                        <span className='hds-text-smalltext-large ml-8 text-gray-quaternary accountdate'>{item.review_date}</span>
                         </div>
-                        
                         
                         <div className='goodcommentmain flex items-start gap-x-8 mt-24'>
                             <img src = {smile} width={32} height={31}></img>
-                            <span className='goodcomment'>{cos_idx.good_review}</span>
+                            <span className='goodcomment'>{item.good_review}</span>
                             </div>
 
                         <div className='sosocommentmain flex items-start gap-x-8 mt-24'>
                             <img src = {notsmile} width={28} height={25}></img>
-                            <span className='sosocomment'>{cos_idx.bad_review}</span>
+                            <span className='sosocomment'>{item.bad_review}</span>
                             </div>
                             </div>
                         ))}
@@ -426,23 +434,46 @@ const Detailinfo = () => {
 
                         {/* 댓글쓰기 쓸때 쓸 별점 */}
                         {/* {setStarMenu(setStarScore) */}
+                        <hr className='purposeingredientbar'/>
 
-
-
-                        <br /><br /><br /><br /><br />
                         {/* 목적별 성분 */}
+                        <div className='purpose mt-8 px-20'>
+                            <span className='purposetext'>목적별 성분</span>
+                            </div>
                         <TempSkin list = {skinList}/>
-                       
+                        
+                        {/* 회색 텍스트 박스1 */}
+                        <div className='graybox px-20 py-16 background-gray-secondary-disabled rounded-8'>
+                            <p className='hds-text-smalltext-large text-gray-tertiary'>목적별 성분 정보는 포함된 성분의 배합목적에 관한 정보로서, 완제품인 화장품의 기능성 효능ㆍ효과에 관한 정보가 아니며, 해당 성분의 포함 사실만으로 관련 기능이 보장되지 않습니다.</p>
+                            </div>
+
+                        <hr className='grayboxareabar'/>
                         
 
-                        {/* 회색 텍스트 박스 */}
-
                         {/*피부 타입별 성분 */}
-                        <br /><br /><br /><br /><br />
+                        <div className='skintypeingredient mt-8 px-20'>
+                            <span className='skintypeingredienttext'>피부 타입별 성분</span>
+                            </div>
                         <SkinType/>
-                        <br /><br /><br /><br /><br />
 
+                        {/* 회색 텍스트 박스2 */}
 
+                        <ul className='graybox2 pt-12 px-20 pb-16 background-gray-secondary-disabled rounded-8'>
+                            <li className='flex items-start gap-x-8 mt-4'>
+                                <span className='hds-text-smalltext-large text-gray-tertiary'>ㆍ</span>
+                                <span className='hds-text-smalltext-large text-gray-tertiary'>구매 전에 제조판매업자가 표기한 전성분 표를 한 번 더 확인하시길 권장드립니다.</span>
+                            </li>
+
+                            <li className='flex items-start gap-x-8 mt-4'>
+                                <span className='hds-text-smalltext-large text-gray-tertiary'>ㆍ</span>
+                                <span className='hds-text-smalltext-large text-gray-tertiary'>정보를 허가없이 상업적으로 활용할 경우, 법적 조치를 받을 수 있습니다.</span>
+                            </li>
+
+                            <li className='flex items-start gap-x-8 mt-4'>
+                                <span className='hds-text-smalltext-large text-gray-tertiary'>ㆍ</span>
+                                <span className='hds-text-smalltext-large text-gray-tertiary'>성분별 해당 제품 내 배합 비율은 브랜드사에서 제공한 정보로 모든 책임은 브랜드사에 있습니다.</span>
+                            </li>
+                        </ul>
 
                         {/* 페이지업 버튼 */}
 
