@@ -14,9 +14,9 @@ import caution from '../../img/caution.png'
 import allergy from '../../img/allergy.png'
 import ScrollToTop from '../../components/scrolltotop/ScrollToTop'
 import { setScore } from '../../util/util'
-import StarRating from './StarRating'
 import TempSkin from '../../components/tempskin/TempSkin'
 import SkinType from '../../components/skintype/SkinType'
+import DetailGraphBar from './DetailGraphBar'
 
 
 const Detailinfo = () => {
@@ -134,6 +134,25 @@ const Detailinfo = () => {
         }
     ]
 
+    let cntList = [
+        {
+            count : 5,
+            value : "5점"
+        },{
+            count : 1,
+            value : "4점"
+        },{
+            count : 2,
+            value : "3점"
+        },{
+            count : 2,
+            value : "2점"
+        },{
+            count : 1,
+            value : "1점"
+        }   
+]
+
     
   return (
         <div id = "wrapper">
@@ -145,7 +164,7 @@ const Detailinfo = () => {
 
                     {/* 화장품 이름 */}
                 
-                    <div className='itemname'key={index}>
+                    <div className='itemname' key={index}>
                     <button className='goback' type="button" onClick={()=> navigate('/Search')}><span className= "gobackbtn"><img src={goback} width={20} height={20}></img></span></button>
                     <label>{item.cos_name}</label>
                     </div>
@@ -239,67 +258,12 @@ const Detailinfo = () => {
                             </div>
                             </div>
                         ))}
-                            
+
                         <div className='w-[1px] bg-gray-300'/>
-
+                            
+                        {/* 평점 별점그래프 구간 */}   
                         <div className="flex gap-x-8 h-[95px]">
-                        {/* 5점 */}
-                        <div className='flex flex-col items-center justify-end w-[20px]'>
-                        <span className='hds-inline-block hds-rounded-4 hds-h-16 hds-px-4 hds-text-smalltext-medium hds-leading-[16px] hds-bg-yellow-600 hds-text-white'>
-                            들어올 값
-                        </span>
-                        <div className='flex items-end w-4 h-[50px] mt-4 rounded-full background-gray-secondary-hovered'>
-                        <div class="w-4 rounded-full bg-yellow-600" height= {67}></div>
-                        </div>
-
-                        <span className='hds-text-caption-large mt-8 text-yellow-600'>
-                            5점
-                        </span>
-                        </div>
-
-                        {/* 4점 */}
-                        <div className='flex flex-col items-center justify-end w-[20px]'>
-                        <div className='flex items-end w-4 h-[50px] mt-4 rounded-full background-gray-secondary-hovered'>
-                        <div class="w-4 rounded-full bg-yellow-600" height= {67}></div>
-                        </div>
-
-                        <span className='hds-text-smalltext-large mt-8 text-gray-tertiary'>
-                            4점
-                        </span>
-                        </div>
-
-                        {/* 3점 */}
-                        <div className='flex flex-col items-center justify-end w-[20px]'>
-                        <div className='flex items-end w-4 h-[50px] mt-4 rounded-full background-gray-secondary-hovered'>
-                        <div class="w-4 rounded-full bg-yellow-600" height= {67}></div>
-                        </div>
-
-                        <span className='hds-text-smalltext-large mt-8 text-gray-tertiary'>
-                            3점
-                        </span>
-                        </div>
-
-                        {/* 2점 */}
-                        <div className='flex flex-col items-center justify-end w-[20px]'>
-                        <div className='flex items-end w-4 h-[50px] mt-4 rounded-full background-gray-secondary-hovered'>
-                        <div class="w-4 rounded-full bg-yellow-600" height= {67}></div>
-                        </div>
-
-                        <span className='hds-text-smalltext-large mt-8 text-gray-tertiary'>
-                            2점
-                        </span>
-                        </div>
-
-                        {/* 1점 */}
-                        <div className='flex flex-col items-center justify-end w-[20px]'>
-                        <div className='flex items-end w-4 h-[50px] mt-4 rounded-full background-gray-secondary-hovered'>
-                        <div class="w-4 rounded-full bg-yellow-600" height= {67}></div>
-                        </div>
-
-                        <span className='hds-text-smalltext-large mt-8 text-gray-tertiary'>
-                            1점
-                        </span>
-                        </div>
+                        <DetailGraphBar list = {cntList}/>
                         </div>
                         </div>
 

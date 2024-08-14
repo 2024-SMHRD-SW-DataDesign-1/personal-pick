@@ -1,15 +1,20 @@
-
-
 // 상단 고정
 
 .itemname {
+    /* 기존 스타일 유지 */
     height: 38px;
     background: white;
     border-bottom: 1px solid rgb(255, 255, 255);
     top: 0px;
     z-index: 10;
     position: sticky;
-}
+  
+    /* 스크롤 시 그림자 추가 */
+    .sticky {
+      box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+  }
 
 .goback {
     width: 60px;
@@ -507,9 +512,9 @@ img, video {
 
 .accountstar {
     display: flex;
-    position: relative;
+    position: absolute;
     place-self: flex-end;
-    margin-left: -170px;
+    margin-left: 47px;
 }
 
 .textonly{
@@ -520,8 +525,11 @@ img, video {
     position: relative;
 }
 
-.accountdate{
+.accountdate {
     margin-bottom: -27px;
+    position: absolute;
+    display: flex;
+    transform: translate(107px, 0px);
 }
 
 .bg-gray-300 {
