@@ -209,7 +209,7 @@ const Detailinfo = () => {
                         <hr className='bar'/>
 
                         {/*ai 리뷰 */}
-                        <span className='aireview mt-8 px-20'><span className='ai'>AI가 분석한 리뷰</span></span>
+                        <span className='aireview mt-8 px-20'><span className='ai'>AI</span>가 분석한 리뷰</span>
 
                         <div className='flex justify-between px-20 my-24 reviewinfo'>
                         <div className='likereview grow mr-24 w-1/2'>

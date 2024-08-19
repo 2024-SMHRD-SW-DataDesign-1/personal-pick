@@ -21,6 +21,23 @@ const Search = () => {
     // 사용자가 검색한 검색어
     const [inputvalue, setInputvalue] = useState("");
 
+    const [isSticky, setIsSticky] = useState(false); // 상태 변수 추가
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setIsSticky(true); // 스크롤이 내려갈 때
+            } else {
+                setIsSticky(false); // 스크롤이 맨 위에 있을 때
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
 
     const showConsole = (cosdata) => {
         setProductList(cosdata);  // 실시간 적용되게(렌더링)   
@@ -124,7 +141,8 @@ const Search = () => {
 
     return (
         <div id='wrapper'>
-            <div className='Search'>
+            {/* <div id='main'> */}
+            <div className={`Search ${isSticky ? 'sticky' : ''}`}>
                 {/* InputBox 컴포넌트에 searchAdd 함수를 전달하여 검색어 입력 시 호출되게 함 */}
                 <div className='searchbtn'>
                     {/* <button className='' type="button" onClick={() => nav('/')}> */}
@@ -156,7 +174,7 @@ const Search = () => {
                 {/* 서버에서 가져온 제품 리스트를 화면에 표시 */}
                 <div className='h-24'/>
                 <div className='timeproduct'>
-                    <p className='searchtime'>{today.getMonth()+1 + "월 " + today.getDate() + "일 " + getDay(today.getDay()) + today.getHours() + ":00" }</p>
+                    <p className='searchtime'>{today.getMonth()+1 + "월 " + today.getDate() + "일 " + getDay(today.getDay()) + " " + today.getHours() + ":00" }</p>
                     <h2 className='product'>지금 가장 많이 구매하고 있어요:)</h2>
                     {/* <strong>검색한 제품 개수{idx}</strong> */}
                 </div>
@@ -191,6 +209,7 @@ const Search = () => {
                     </ul>
                 </div>
             </div>
+            {/* </div> */}
         </div>
     );
 };
