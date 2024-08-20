@@ -1,14 +1,25 @@
 .searchbtn {
     padding-left: 16px;
     padding-right: 16px;
-    padding-top: 16px;
+    padding-top: 8px;
     padding-bottom: 8px;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    // align-items: baseline;
-    // justify-content: center;
+    top: 0px; /* 상단 고정 */
+    z-index: 10; /* 상단 고정 */
+    position: sticky; /* 상단 고정 */
+    background-color: white;
+    transition: box-shadow 0.3s ease; /* 스크롤 시 부드럽게 그림자가 생기도록 전환 효과 추가 */
+    box-shadow: none; /* 기본 상태에서 그림자 제거 */
 }
+
+.Search.sticky .searchbtn {
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1); /* 스크롤 시 그림자 추가 */
+}
+
+// 나머지 CSS 코드 동일
+
 
 // 최근 검색어 부분
 .recent {
@@ -129,6 +140,9 @@
     padding-left: 20px;
     padding-right: 20px;
     align-items: center;
+    // max-height: calc(90vh - 300px); /* 화면 높이에서 푸터와 상단 일부를 제외한 높이 설정 */
+    // overflow-y: auto; /* 콘텐츠가 넘칠 경우 세로 스크롤바 표시 */
+    // padding-bottom: 20px; /* 스크롤 영역의 아래쪽에 여유 공간 추가 */
 }
 
 // 제품 하나

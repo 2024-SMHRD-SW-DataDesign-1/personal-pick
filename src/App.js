@@ -22,10 +22,10 @@ const store = createStore(personalReducer)
 
 
 function App() {
-
+    console.log(window.location)
     return (
         <Provider store={store}>
-            <BrowserRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <div className="App">
                     <Routes>
                         {/*<Route path='/' element={<Loading/>}></Route>*/}
